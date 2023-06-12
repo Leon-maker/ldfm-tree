@@ -1,0 +1,45 @@
+/**
+ * --------------------------------------------------------------------------------------------------------------
+ *                                                  DEDICATED VARIABLES 
+/**/
+
+// ------------- * Max width * -------------
+
+// End Smartphone mini (buger menu)
+$layout-breakpoint-end-smartphone-mini: 365px;
+
+// End Smartphone (buger menu)
+$layout-breakpoint-end-smartphone: 767px;
+
+// End Tablette (buger menu)
+$layout-breakpoint-end-tablette: 1024px;
+
+// End Menu burger (buger menu)
+$layout-breakpoint-end-burger: 1500px;
+
+
+// ------------- * Min Width * -------------
+
+// Start Smartphone mini (buger menu)
+$layout-breakpoint-start-smartphone: 319px;
+
+// Start Tablette (buger menu)
+$layout-breakpoint-start-tablette: 768px;
+
+// Start Desktop (buger menu)
+$layout-breakpoint-start-desktop: 1025px;
+
+// Start Desktop (without buger menu)
+$layout-breakpoint-start-noburger: 1501px;
+
+
+/**
+ * --------------------------------------------------------------------------------------------------------------
+ *                                                  DEDICATED FUNCTIONS 
+/**/
+
+
+/**
+ * --------------------------------------------------------------------------------------------------------------
+ *                                                  DEDICATED CLASSES 
+/**/

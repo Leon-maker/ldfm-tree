@@ -1,0 +1,80 @@
+/**
+ * --------------------------------------------------------------------------------------------------------------
+ *                                                  DEDICATED VARIABLES 
+/**/
+
+// -------------- * Primary colors * --------------
+
+$color-white   : #FFF5F5;
+$color-black   : #1C1C1C;
+$color-yellow  : #FFEB00;
+$color-pink    : #FF82D5;
+$color-green   : #1ED356;
+$color-violet  : #C31CB2;
+$color-blue    : #0080EC;
+
+// ------------- * Secondary colors * -------------
+
+$color-red     : #FF2E47;
+$color-orange  : #F85B3A;
+$color-green   : #00A95B;
+$color-grey    : #f5f7fc;
+
+/* Réseaux sociaux */
+$color-blue-facebook : #3b5998;
+$color-blue-twitter  : #1da1f2;
+$color-blue-linkedIn : #0077b5;
+
+/**
+ * --------------------------------------------------------------------------------------------------------------
+ *                                                  DEDICATED FUNCTIONS 
+/**/
+
+// -------------- * Background * --------------
+
+@mixin bkg-color($bkg-color) {
+  background-color: $bkg-color;
+}
+
+%bkg-filter {
+  backdrop-filter: brightness(0.9);
+}
+
+/**
+ * --------------------------------------------------------------------------------------------------------------
+ *                                                  DEDICATED CLASSES 
+/**/
+
+// -------------- * Color classes * --------------
+
+.white {
+  color: $color-white;
+}
+.black {
+  color: $color-black;
+}
+.blue {
+  color: $color-blue;
+}
+.red {
+  color: $color-red;
+}
+
+// -------------- * Background classes * --------------
+
+.bkg-white {
+  @include bkg-color(
+    $bkg-color: $color-white
+  )
+}
+.bkg-black {
+  @include bkg-color(
+    $bkg-color: $color-black
+  )
+}
+.bkg-blue {
+  @include bkg-color(
+    $bkg-color: $color-blue
+  )
+}
+

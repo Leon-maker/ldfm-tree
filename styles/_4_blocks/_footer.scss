@@ -1,0 +1,88 @@
+/**
+ * --------------------------------------------------------------------------------------------------------------
+ *                                                  DEDICATED VARIABLES 
+/**/
+
+// -------------- * Size Footer Fonts * --------------
+
+footer .site-navigation a {
+    font-size: pixelsCalc(15);
+    line-height: pixelsCalc(18);
+    @media all and (max-width: $layout-breakpoint-end-tablette) {
+      font-size: pixelsCalc(20);
+      line-height: pixelsCalc(24);
+    }
+} 
+
+/**
+ * --------------------------------------------------------------------------------------------------------------
+ *                                                  FOOTER 
+/**/
+
+footer  {
+    max-width: none !important;
+    background-color: $color-grey;
+    padding-left: 20px;
+    padding-right: 20px;
+    section {
+        margin: auto;
+        &.nav {
+            margin-top: 80px;
+            margin-bottom: 80px;
+            @media all and (max-width: $layout-breakpoint-end-tablette) {
+                margin-top: 0px;
+                margin-bottom: 20px;
+            }     
+            .site-branding {
+                margin: auto;
+                width: max-content;
+                img {
+                    width: 123px;
+                    height: auto;
+                }
+            }
+            .site-navigation {
+                @media all and (min-width: $layout-breakpoint-start-noburger) {
+                    justify-content: center;
+                }
+            }
+        }
+        &.coordonnees {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            @media all and (max-width: $layout-breakpoint-end-tablette) {
+                flex-direction: column;
+            }
+            p, a[href] {
+                text-align: center;
+                color: $color-grey;
+            }
+            p {
+                @media all and (min-width: $layout-breakpoint-start-desktop) {
+                    width: 33.33%;
+                }
+            }
+            a[href]:hover {
+                text-decoration: underline;
+                color: $color-grey;
+            }
+        }
+        &.legals {
+            display: flex;
+            justify-content: center;
+            a {
+                display: block;
+                color: #d7d7d9;
+                font-family: Montserrat,Sans-serif;
+                font-size: 14px;
+                font-weight: 300;
+                text-transform: capitalize;
+                &:hover {
+                    text-decoration: underline;
+                    color: $color-grey;
+                }
+            }
+        }
+    }
+}

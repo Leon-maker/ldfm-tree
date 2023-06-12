@@ -1,0 +1,60 @@
+/**
+ * --------------------------------------------------------------------------------------------------------------
+ *                                                  HIERARCHIE SCSS :         
+                            Du PLUS GLOBAL et PLUS PETIT  ->  au PLUS SPÉCIFIQUE et PLUS GRAND
+                                                 ( ORDRE IMPORTANT ! )
+
+
+/**
+ * --------------------------------------------------------------------------------------------------------------
+ *                                                  1 : PARAMETERS ( ORDRE IMPORTANT ! )
+//                              * Main parameters
+/**/
+@import '_1_parameters/_1.1_breakpoints';
+@import '_1_parameters/_1.2_fonts';
+@import '_1_parameters/_1.3_colors';
+@import '_1_parameters/_1.4_margins';
+@import '_1_parameters/_1.5_dispositions';
+@import '_1_parameters/_1.6_transitions';
+
+/**
+ * --------------------------------------------------------------------------------------------------------------
+ *                                                  2 : COMPONENTS
+//                              * CSS des composants (alerts, badges, dropdowns, progressbars, modals, well, ...)
+/**/
+@import '_2_components/_forms';
+@import '_2_components/_various';
+
+/**
+ * --------------------------------------------------------------------------------------------------------------
+ *                                                  3 : CARDS
+//                              * CSS des cards
+/**/
+@import '_3_cards/_all_cards';
+
+/**
+ * --------------------------------------------------------------------------------------------------------------
+ *                                                  4 : BLOCKS
+//                              * Les éléments (header, footer, menu, table, form, ...)
+/**/
+@import '_4_blocks/_header'; 
+@import '_4_blocks/_footer'; 
+@import '_4_blocks/_sections'; 
+
+/**
+ * --------------------------------------------------------------------------------------------------------------
+ *                                                  5 : MODELS
+//                              * CSS exclusif à ces templates uniquement
+/**/
+@import '_5_templates/_posts_archive';
+@import '_5_templates/_post_single';
+
+/**
+ * --------------------------------------------------------------------------------------------------------------
+ *                                                  6 : PAGES
+ * --------------------------------------------------------------------------------------------------------------
+//                              * CSS exclusif à ces pages uniquement
+/**/
+@import '_6_pages/_legals';
+@import '_6_pages/_contact';
+@import '_6_pages/_partial_prod';

@@ -1,0 +1,119 @@
+/**
+ * --------------------------------------------------------------------------------------------------------------
+ *                                                  DEDICATED VARIABLES 
+/**/
+
+// ------------- * Desktop * -------------
+
+$margin-width-desktop: 60px;
+$lateral-margin-width-desktop: 60px;
+$top-margin-width-desktop: 60px;
+$bottom-margin-width-desktop: 60px;
+  // Thiner if no margin
+$top-margin-width-desktop-thin: 77px;
+$bottom-margin-width-desktop-thin: 77px;
+
+// ------------- * Mobile * -------------
+
+$margin-width-mobile: 50px;
+$lateral-margin-width-mobile: 25px;
+
+$lateral-padding-width-mobile: 50px;
+
+/**
+ * --------------------------------------------------------------------------------------------------------------
+ *                                                  DEDICATED FUNCTIONS 
+/**/
+
+// ------------- * Standard margins * -------------
+
+@mixin standard-margin (){
+  @media all and (min-width: $layout-breakpoint-start-desktop) {
+    padding: $top-margin-width-desktop    
+            $lateral-margin-width-desktop 
+            $bottom-margin-width-desktop
+            $lateral-margin-width-desktop;
+  }
+  @media (max-width: $layout-breakpoint-end-tablette) {
+            padding: $margin-width-mobile 
+            $lateral-margin-width-mobile
+            $margin-width-mobile
+            $lateral-margin-width-mobile;
+  }
+}
+
+// ------------- * Lateral margins * -------------
+
+@mixin lateral-margin ($type){
+  @if $type == "section" {
+    @media all and (min-width: $layout-breakpoint-start-desktop) {
+      padding-left: $lateral-margin-width-desktop; 
+      padding-right: $lateral-margin-width-desktop; 
+    }
+    @media (max-width: $layout-breakpoint-end-tablette) {
+      padding-left: $lateral-margin-width-mobile;
+      padding-right: $lateral-margin-width-mobile;
+    }
+  } @else if $type == "inner-section" {
+    @media (max-width: $layout-breakpoint-end-tablette) {
+      margin-left: $lateral-margin-width-mobile;
+      margin-right: $lateral-margin-width-mobile;
+      width: auto !important;
+    }
+  }
+}
+
+// ------------- * Lateral margins on mobile * -------------
+
+@mixin lateral-margin-mobile ($type){
+  @if $type == "section" {
+    @media all and (min-width: $layout-breakpoint-start-desktop) {
+      padding-left: 0; 
+      padding-right: 0; 
+    }
+    @media (max-width: $layout-breakpoint-end-tablette) {
+      padding-left: $lateral-margin-width-mobile;
+      padding-right: $lateral-margin-width-mobile;
+    }
+  } 
+}
+
+// ------------- * No Top margin * -------------
+
+@mixin no-margin-top (){
+  @media all and (min-width: $layout-breakpoint-start-desktop) {
+    padding-top: 0;
+  }
+  @media (max-width: $layout-breakpoint-end-tablette) {
+    padding-top: 0;
+  }
+}
+
+// ------------- * No Bottom margin * -------------
+
+@mixin no-margin-bottom (){
+  @media all and (min-width: $layout-breakpoint-start-desktop) {
+    padding-bottom: 0;
+  }
+  @media (max-width: $layout-breakpoint-end-tablette) {
+    padding-bottom: 0;
+  }
+}
+
+// ------------- * Move up next section * -------------
+
+@mixin next-section-ascend (){
+  z-index: 12 !important;
+  @media all and (min-width: $layout-breakpoint-start-desktop) {
+    margin-bottom: - $bottom-margin-width-desktop;
+  }
+  @media (max-width: $layout-breakpoint-end-tablette) {
+    margin-bottom: - $lateral-padding-width-mobile;
+  }
+}
+
+
+/**
+ * --------------------------------------------------------------------------------------------------------------
+ *                                                  DEDICATED CLASSES 
+/**/

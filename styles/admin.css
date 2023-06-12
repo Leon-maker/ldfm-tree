@@ -1,0 +1,72 @@
+h1, h2, h3 ,h4, h5, h6, p {
+    font-family: inherit !important;
+}
+
+h1.wp-heading-inline {
+    font-size: 25px !important;
+}
+
+.theme-name,
+#wpbody h2,
+#wpbody h3,
+#nav-menu-meta h3,
+#customize-theme-controls h3,
+#post-body h3,
+#nav-menu-meta h2,
+#update-nav-menu h2,
+.postbox-header h2,
+.acf-label,
+.acf-repeater .acf-row-handle span {
+    font-size: 20px !important;
+}
+
+h1.wp-heading-inline,
+#nav-menu-meta h2,
+#update-nav-menu h2,
+.postbox-header h2,
+.acf-label,
+.acf-th label,
+.acf-repeater .acf-row-handle span {
+    font-weight: bold !important;
+}
+
+.postbox-header h2 {
+    color: #797979 !important;
+}
+
+.acf-th label {
+    font-style: italic;
+}
+
+.acf-flexible-content .layout .acf-fc-layout-handle {
+    /*background-color: #00B8E4;*/
+    background-color: #202428;
+    color: #eee;
+}
+
+.acf-repeater.-row > table > tbody > tr > td,
+.acf-repeater.-block > table > tbody > tr > td {
+    border-top: 2px solid #202428;
+}
+
+.acf-repeater .acf-row-handle {
+    vertical-align: top !important;
+    padding-top: 16px;
+}
+
+.acf-repeater .acf-row-handle span {
+    color: #202428;
+}
+
+.imageUpload img {
+    width: 75px;
+}
+
+.acf-repeater .acf-row-handle .acf-icon.-minus {
+    top: 30px;
+}
+
+.couvertures-grid tbody {
+    display: flex;
+    flex-wrap: wrap;
+}

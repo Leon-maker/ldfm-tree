@@ -1,0 +1,34 @@
+/**
+ * --------------------------------------------------------------------------------------------------------------
+ *                                                  DEDICATED VARIABLES 
+/**/
+
+/**
+ * --------------------------------------------------------------------------------------------------------------
+ *                                                  DEDICATED FUNCTIONS 
+/**/
+
+// ------------- * Flex disposition * -------------
+
+@mixin flex-disposition (
+  $flex-direction,
+  $flex-justify,
+  $align-items
+) {
+  display: flex;
+  flex-direction: $flex-direction;
+  justify-content: $flex-justify;
+  align-items: $align-items;
+}
+
+
+/**
+ * --------------------------------------------------------------------------------------------------------------
+ *                                                  DEDICATED CLASSES 
+/**/
+
+// -------------- * Text positions classes * --------------
+
+.text-center {
+  text-align: center;
+}

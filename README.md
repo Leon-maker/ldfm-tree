@@ -16,6 +16,7 @@ Dans le dossier "styles", sélectionnez "main.scss" et cochez les cases :
 "Source map"
 Dans les paramètres du projet, paramétrez l'upload :
 
+
 SFTP
 Host : Serveur mutualisé
 User : Identifiant FTP
