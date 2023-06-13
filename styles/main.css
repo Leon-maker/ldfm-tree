@@ -79,7 +79,7 @@
  * --------------------------------------------------------------------------------------------------------------
  *                                                  DEDICATED FUNCTIONS 
 /**/
-/* Font Size Function to create classes 
+/* Font Size Function to create classes
 ex :
 .font-size-10 {
   font-size: 1rem;
@@ -110,7 +110,7 @@ ex :
 
 /**
  * --------------------------------------------------------------------------------------------------------------
- *                                                  DEDICATED CLASSES 
+ *                                                  DEDICATED CLASSES
 /**/
 /**
  * --------------------------------------------------------------------------------------------------------------
@@ -152,8 +152,8 @@ h2 {
  *                                                  FONT-SIZES BY ELEMENTS
 /**/
 h1 {
-  font-size: 90px;
-  line-height: 108px;
+  font-size: 80px;
+  line-height: 80px;
 }
 @media all and (max-width: 1024px) {
   h1 {
@@ -163,8 +163,8 @@ h1 {
 }
 
 h2 {
-  font-size: 45px;
-  line-height: 54px;
+  font-size: 40px;
+  line-height: 45px;
 }
 @media all and (max-width: 1024px) {
   h2 {
@@ -174,7 +174,7 @@ h2 {
 }
 
 h3 {
-  font-size: 30px;
+  font-size: 20px;
   line-height: 36px;
 }
 @media all and (max-width: 1024px) {
@@ -185,7 +185,7 @@ h3 {
 }
 
 h4 {
-  font-size: 18px;
+  font-size: 14px;
   line-height: 21px;
 }
 @media all and (max-width: 1024px) {
@@ -196,7 +196,7 @@ h4 {
 }
 
 h5 {
-  font-size: 14px !important;
+  font-size: 12px !important;
   line-height: 16px !important;
 }
 @media all and (max-width: 1024px) {
@@ -229,7 +229,7 @@ footer .site-navigation a {
 }
 
 p {
-  font-size: 20px;
+  font-size: 16px;
   line-height: 24px;
 }
 @media all and (max-width: 1024px) {
@@ -584,12 +584,12 @@ header .site-branding a {
 }
 @media all and (min-width: 768px) {
   .site-navigation ul:not(.sub-menu) > li > a {
-    padding: 24px 60px;
+    padding: 24px 25px;
   }
 }
 @media all and (min-width: 1501px) {
   .site-navigation ul:not(.sub-menu) > li > a {
-    padding: 24px 60px;
+    padding: 24px 25px;
   }
 }
 
@@ -1016,21 +1016,6 @@ footer .has-children > a {
   padding-bottom: 3px;
 }
 
-@media (max-width: 767px) {
-  header + section:first-of-type,
-header + script + section:first-of-type,
-header + h1 + section:first-of-type {
-    margin-top: 110px;
-  }
-}
-@media all and (min-width: 768px) {
-  header + section:first-of-type,
-header + script + section:first-of-type,
-header + h1 + section:first-of-type {
-    margin-top: 100px;
-  }
-}
-
 @media all and (min-width: 1501px) {
   #overlay-header > .wrap.burger {
     display: none !important;
@@ -1078,6 +1063,98 @@ header.top-reached .menu > span {
 /* Changes on burger event */
 .burger-header.open .close line {
   stroke: #ffffff;
+}
+
+/**
+ * --------------------------------------------------------------------------------------------------------------
+ *                                                  MENUS DÉROULANTS
+ * --------------------------------------------------------------------------------------------------------------
+ */
+/**/
+.menu-item-has-children > a {
+  /*&.c1 { background: yellow; }
+  &.c2:after { background: red; }*/
+  position: relative;
+}
+.menu-item-has-children > a::after {
+  display: inline-block;
+  content: url("/wp-content/uploads/2023/04/chevron-down.svg");
+  margin-left: 10px;
+}
+.menu-item-has-children ul.sub-menu {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  display: none;
+  z-index: 2;
+}
+.menu-item-has-children ul.sub-menu.panel li:last-child {
+  border-bottom: 0;
+}
+.menu-item-has-children ul.sub-menu:not(.panel) {
+  position: absolute;
+  padding: 30.8px 0 0 0;
+}
+.menu-item-has-children ul.sub-menu:hover {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+@media all and (min-width: 1501px) {
+  .menu-item-has-children ul.sub-menu li {
+    border-left: 1px solid #000000;
+    border-right: 1px solid #000000;
+    border-bottom: 1px solid #000000;
+  }
+}
+.menu-item-has-children ul.sub-menu li a {
+  color: #000000;
+  text-decoration: none;
+  width: -webkit-fill-available;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+@media all and (min-width: 1025px) {
+  .menu-item-has-children ul.sub-menu li a {
+    padding: 10px 20px 10px 40px;
+  }
+}
+@media (max-width: 1024px) {
+  .menu-item-has-children ul.sub-menu li a {
+    padding: 10px 25px 10px 50px;
+  }
+}
+.menu-item-has-children ul.sub-menu li a::after {
+  display: inline-block;
+  content: url("/wp-content/uploads/2023/03/send-arrow.svg");
+  margin-left: 10px;
+  visibility: hidden;
+}
+.menu-item-has-children ul.sub-menu li a:hover {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.menu-item-has-children ul.sub-menu li a:hover::after {
+  visibility: visible;
+}
+.menu-item-has-children ul.sub-menu li:first-child {
+  border-top: 1px solid #000000;
+}
+
+.has-children > a.sub-menu-openned::after {
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+}
+.has-children > a.sub-menu-openned + ul.sub-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 /**

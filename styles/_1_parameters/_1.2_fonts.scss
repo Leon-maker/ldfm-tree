@@ -102,7 +102,7 @@ $font-size-quotient: 1;
   @return $pxSize / 10 + rem; // standard size: 10px
 }
 
-/* Font Size Function to create classes 
+/* Font Size Function to create classes
 ex :
 .font-size-10 {
   font-size: 1rem;
@@ -120,7 +120,7 @@ ex :
 
 /**
  * --------------------------------------------------------------------------------------------------------------
- *                                                  DEDICATED CLASSES 
+ *                                                  DEDICATED CLASSES
 /**/
 
 
@@ -129,7 +129,7 @@ ex :
  *                                                  FONT-FAMILIES BY ELEMENTS
 /**/
 
-// MAIN FONT :-------------------------------- // 
+// MAIN FONT :-------------------------------- //
 
 h1,
 h2,
@@ -138,20 +138,20 @@ h4,
 h5 {
   font-family: $font-main-700; // Elma Trio
   @supports ( -moz-appearance:none ){
-    font-weight: 500;  
+    font-weight: 500;
   }
-} 
+}
 h4,
 h5 {
   font-family: $font-main-400; // Elma Trio
-} 
+}
 
-// SECONDARY FONT :-------------------------------- // 
+// SECONDARY FONT :-------------------------------- //
 
 h1,
 h2 {
   font-family: $font-secondary-700; // Garnett
-} 
+}
 .site-navigation a {
   font-family: $font-secondary-400; // Garnett
 }
@@ -164,8 +164,8 @@ h2 {
 // FONTS :---------------------------------------- // SIZE 1
 
 h1 {
-  font-size: pixelsCalc(90);
-  line-height: pixelsCalc(108);
+  font-size: pixelsCalc(80);
+  line-height: pixelsCalc(80);
   @media all and (max-width: $layout-breakpoint-end-tablette) {
     font-size: pixelsCalc(45);
     line-height: pixelsCalc(54);
@@ -174,8 +174,8 @@ h1 {
 
 // FONTS :---------------------------------------- // SIZE 2
 h2 {
-  font-size: pixelsCalc(45);
-  line-height: pixelsCalc(54);
+  font-size: pixelsCalc(40);
+  line-height: pixelsCalc(45);
   @media all and (max-width: $layout-breakpoint-end-tablette) {
     font-size: pixelsCalc(35);
     line-height: pixelsCalc(42);
@@ -184,33 +184,33 @@ h2 {
 
 // FONTS :---------------------------------------- // SIZE 3
 h3 {
-  font-size: pixelsCalc(30);
+  font-size: pixelsCalc(20);
   line-height: pixelsCalc(36);
   @media all and (max-width: $layout-breakpoint-end-tablette) {
     font-size: pixelsCalc(25);
     line-height: pixelsCalc(30);
   }
-} 
+}
 
 // FONTS :---------------------------------------- // SIZE 4
 h4 {
-  font-size: pixelsCalc(18);
+  font-size: pixelsCalc(14);
   line-height: pixelsCalc(21);
   @media all and (max-width: $layout-breakpoint-end-tablette) {
     font-size: pixelsCalc(16);
     line-height: pixelsCalc(18);
   }
-} 
+}
 
 // FONTS :---------------------------------------- // SIZE 5
 h5 {
-  font-size: pixelsCalc(14) !important;
+  font-size: pixelsCalc(12) !important;
   line-height: pixelsCalc(16) !important;
   @media all and (max-width: $layout-breakpoint-end-tablette) {
     font-size: pixelsCalc(12) !important;
     line-height: pixelsCalc(14) !important;
   }
-} 
+}
 
 // FONTS :---------------------------------------- //  NAV LINKS
 header .site-navigation a {
@@ -220,7 +220,7 @@ header .site-navigation a {
     font-size: pixelsCalc(20);
     line-height: pixelsCalc(24);
   }
-} 
+}
 
 footer .site-navigation a {
   font-size: pixelsCalc(25);
@@ -229,11 +229,11 @@ footer .site-navigation a {
     font-size: pixelsCalc(20);
     line-height: pixelsCalc(24);
   }
-} 
+}
 
 // FONTS :---------------------------------------- //  P
 p {
-  font-size: pixelsCalc(20);
+  font-size: pixelsCalc(16);
   line-height: pixelsCalc(24);
   @media all and (max-width: $layout-breakpoint-end-tablette) {
     font-size: pixelsCalc(18);
