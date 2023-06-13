@@ -10,3 +10,34 @@
         opacity: 1 !important;
     }
 }
+  
+.cta-primary {
+color: black;
+padding-bottom: 2px;
+text-decoration: none;
+background-image: linear-gradient(black, black),
+    linear-gradient(black, black);
+background-size: 0% 2px, 0 2px;
+background-position: 0 100%, 0 100%;
+background-repeat: no-repeat;
+transition: background-size 0.5s linear;
+}
+
+.cta-primary:hover {
+background-size: 0 2px, 100% 2px;
+}
+
+.cta-secondary {
+    padding:0.75em 1.25em 0.75em 1.75em;
+    border-color:black;
+    border: 1px solid;
+    text-decoration:none;
+    color:black;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    border-radius: 25px;
+}
+
+.cta-secondary:hover {
+border: 2px solid
+}
