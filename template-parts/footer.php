@@ -6,10 +6,7 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 } ?>
-<section class="no-margin-bottom bkg-green instagram-feed">
-	<p> au besoin rajouter l'instagram feed au footer ici</p>
-	<?php //echo do_shortcode('[instagram-feed feed=1]'); ?>
-</section>
+
 
 <footer id="site-footer" class="site-footer bkg-green" role="contentinfo">
 	<div class="wrap">
@@ -30,55 +27,34 @@ if ( ! defined( 'ABSPATH' ) ) {
 					<?php } ?>
 				</div>
 
-				<?php get_template_part( 'template-parts/navigation/nav'); ?>
+				<div class="site-navigation">
+					<?php if ( (has_nav_menu( 'bottom' ))) : ?>
+						<div class="navigation navigation-two footer-navigation">
+							<div class="wrap">
+								<nav id="site-navigation-two" class="secondary-navigation" role="navigation">
+									<?php wp_nav_menu(array('theme_location' => 'bottom', 'menu_id' => 'menu-two')); ?>
+								</nav>
+							</div>
+						</div>
+					<?php endif; ?>
+				</div>
+					<?php if ( (has_nav_menu( 'bottom-end' ))) : ?>
+						<div class="footer-navigation ">
+							<div class="wrap-legal">
+								<nav id="site-navigation-two" class="secondary-navigation" role="navigation">
+									<?php wp_nav_menu(array('theme_location' => 'bottom-end', 'menu_id' => 'menu-two')); ?>
+								</nav>
+								<p>@influencesbym2023</p>
+							</div>
+						</div>
+					<?php endif; ?>
+
 			</section>
 
 		</div>
 
-		<div class="right-content">
-
-			<div class="formulaire newsletter">
-				<p>
-					<span class="seo-span">RESTE INFORMÉ !</span>
-				</p>
-				<p>Retrouve toutes nos nouveautés et nos actualités en t'inscrivant à notre newsletter !</p>
-				<?php echo do_shortcode('[gravityform id="2"]'); ?>
-			</div>
-
-			<div class="contact-menu bkg-green">
-				<ul>
-					<li>
-						<a href="/contact">
-						<p>
-							<span class="seo-span">NOUS CONTACTER</span>
-						</p>
-						</a>
-					</li>
-					<li>
-						<a href="tel:0611182430">06 07 08 09 10</a>
-					</li>
-					<li>
-						<a href="mailto:hello@thrive.fr">hello@thrive.fr</a>
-					</li>
-				</ul>
-			</div>
-
-			<?php if ( has_nav_menu( 'bottomn' ) ) : ?>
-				<div class="social-media-menu bkg-green">
-					<div class="wrap">
-						<?php get_template_part( 'template-parts/navigation/nav', 'social' ); ?>
-					</div><!-- .wrap -->
-				</div><!-- .navigation-social -->
-			<?php endif; ?>
-
-			<?php if ( has_nav_menu( 'bottom-end' ) ) : ?>
-				<div class="legals-menu">
-					<div class="wrap">
-						<?php get_template_part( 'template-parts/navigation/nav', 'legals' ); ?>
-					</div><!-- .wrap -->
-				</div><!-- .navigation-legals -->
-			<?php endif; ?>
-		</div>
+		
+		
 
 	</div>
     

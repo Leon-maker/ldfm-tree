@@ -30,7 +30,7 @@ prepros.cfg
 prepros-6.config
 prepros.config
 assets/css/main.css
-assets/css/main.css.map
+#assets/css/main.css.map
 assets/css/main.min.css
 assets/css/main.min.css.map
 assets/css/main-a.css
