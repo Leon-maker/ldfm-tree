@@ -6,81 +6,75 @@
 // ------------- * Main Font library * -------------
 
 @font-face {
-  font-family: 'ElmaTrio-Regular'; // FW-400
-  src: url('../fonts/elma-font-family/ElmaTrio-Regular.woff2') format('woff2');
-}
-/*@font-face {
-  font-family: 'ElmaTrio-Medium'; // FW-500
-  src: url('../fonts/elma-font-family/ElmaTrio-Medium.woff2') format('woff2');
-}*/
-@font-face {
-  font-family: 'ElmaTrio-SemiBold'; // FW-600
-  src: url('../fonts/elma-font-family/ElmaTrio-SemiBold.woff2') format('woff2');
+  font-family: 'Montserrat-Regular'; // FW-400
+  src: url('../fonts/Montserrat/static/Montserrat-Regular.ttf') format('ttf');
 }
 @font-face {
-  font-family: 'ElmaTrio-Bold'; // FW-700
-  src: url('../fonts/elma-font-family/ElmaTrio-Bold.woff2') format('woff2');
+  font-family: 'Montserrat-Medium'; // FW-500
+  src: url('../fonts/Montserrat/static/Montserrat-Medium.ttf') format('ttf');
 }
 @font-face {
-  font-family: 'ElmaTrio-ExtraBold'; // FW-800
-  src: url('../fonts/elma-font-family/ElmaTrio-ExtraBold.woff2') format('woff2');
+  font-family: 'Montserrat-SemiBold'; // FW-600
+  src: url('../fonts/Montserrat/static/Montserrat-SemiBold.ttf') format('ttf');
 }
 @font-face {
-  font-family: 'ElmaTrio-Black'; // FW-900
-  src: url('../fonts/elma-font-family/ElmaTrio-Black.woff2') format('woff2');
+  font-family: 'Montserrat-Bold'; // FW-700
+  src: url('../fonts/Montserrat/static/Montserrat-Bold.ttf') format('ttf');
+}
+@font-face {
+  font-family: 'Montserrat-ExtraBold'; // FW-800
+  src: url('../fonts/Montserrat/static/Montserrat-ExtraBold.ttf') format('ttf');
+}
+@font-face {
+  font-family: 'Montserrat-Black'; // FW-900
+  src: url('../fonts/Montserrat/static/Montserrat-Black.ttf') format('ttf');
 }
 
 
 // ------------- * Main Font Family * -------------
 
-$font-main-400: "ElmaTrio-Regular";        // FW-400
-$font-main-500: "ElmaTrio-Medium";         // FW-500
-$font-main-600: "ElmaTrio-SemiBold";       // FW-600
-$font-main-700: "ElmaTrio-Bold";           // FW-700
-$font-main-800: "ElmaTrio-ExtraBold";      // FW-800
-$font-main-900: 'ElmaTrio-Black';          // FW-900
+$font-main-400: "Montserrat-Regular";        // FW-400
+$font-main-500: "Montserrat-Medium";         // FW-500
+$font-main-600: "Montserrat-SemiBold";       // FW-600
+$font-main-700: "Montserrat-Bold";           // FW-700
+$font-main-800: "Montserrat-ExtraBold";      // FW-800
+$font-main-900: 'Montserrat-Black';          // FW-900
 
 // ------------- * Secondary Font library * -------------
 
 @font-face {
-  font-family: 'Garnett-Regular'; // FW-400
-  src: url('../fonts/garnett-font-family/Garnett-Regular.woff') format('woff'),
-       url('../fonts/garnett-font-family/Garnett-Regular.woff2') format('woff2');
+  font-family: 'Playfair-Regular'; // FW-400
+  src: url('../fonts/Playfair_Display/static/PlayfairDisplay-Regular.ttf') format('ttf'),
 }
 @font-face {
-  font-family: 'Garnett-Medium'; // FW-500
-  src: url('../fonts/garnett-font-family/Garnett-Medium.woff') format('woff'),
-       url('../fonts/garnett-font-family/Garnett-Medium.woff2') format('woff2');
+  font-family: 'Playfair-Medium'; // FW-500
+  src: url('../fonts/Playfair_Display/static/PlayfairDisplay-Medium.ttf') format('ttf'),
 }
 @font-face {
-  font-family: 'Garnett-SemiBold'; // FW-600
-  src: url('../fonts/garnett-font-family/Garnett-SemiBold.woff') format('woff'),
-       url('../fonts/garnett-font-family/Garnett-SemiBold.woff2') format('woff2');
+  font-family: 'Playfair-SemiBold'; // FW-600
+  src: url('../fonts/Playfair_Display/static/PlayfairDisplay-SemiBold.ttf') format('ttf'),
 }
 @font-face {
-  font-family: 'Garnett-Bold'; // FW-700
-  src: url('../fonts/garnett-font-family/Garnett-Bold.woff') format('woff'),
-       url('../fonts/garnett-font-family/Garnett-Bold.woff2') format('woff2');
+  font-family: 'Playfair-Bold'; // FW-700
+  src: url('../fonts/Playfair_Display/static/PlayfairDisplay-Bold.ttf') format('ttf'),
 }
 @font-face {
-  font-family: 'Garnett-ExtraBold'; // FW-800
-  src: url('../fonts/garnett-font-family/Garnett-ExtraBold.woff') format('woff'),
-       url('../fonts/garnett-font-family/Garnett-ExtraBold.woff2') format('woff2');
+  font-family: 'Playfair-ExtraBold'; // FW-800
+  src: url('../fonts/Playfair_Display/static/PlayfairDisplay-ExtraBold.ttf') format('ttf'),
 }
 @font-face {
-  font-family: 'Garnett-Black'; // FW-900
-  src: url('../fonts/garnett-font-family/Garnett-Black.woff') format('woff'),
-       url('../fonts/garnett-font-family/Garnett-Black.woff2') format('woff2');
+  font-family: 'Playfair-Black'; // FW-900
+  src: url('../fonts/Playfair_Display/static/PlayfairDisplay-Black.ttf') format('ttf'),
 }
 
 // ------------- * Secondary Font Family * -------------
 
-$font-secondary-400: "Garnett-Regular";    // FW-400
-$font-secondary-500: "Garnett-Medium";     // FW-500
-$font-secondary-600: "Garnett-SemiBold";   // FW-600
-$font-secondary-700: "Garnett-Bold";       // FW-700
-$font-secondary-800: "Garnett-ExtraBold";  // FW-800
-$font-secondary-900: 'Garnett-Black';      // FW-900
+$font-secondary-400: "Playfair-Regular";    // FW-400
+$font-secondary-500: "Playfair-Medium";     // FW-500
+$font-secondary-600: "Playfair-SemiBold";   // FW-600
+$font-secondary-700: "Playfair-Bold";       // FW-700
+$font-secondary-800: "Playfair-ExtraBold";  // FW-800
+$font-secondary-900: 'Playfair-Black';      // FW-900
 
 /**
  * --------------------------------------------------------------------------------------------------------------

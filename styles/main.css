@@ -28,52 +28,52 @@
  *                                                  DEDICATED VARIABLES 
 /**/
 @font-face {
-  font-family: "ElmaTrio-Regular";
-  src: url("../fonts/elma-font-family/ElmaTrio-Regular.woff2") format("woff2");
-}
-/*@font-face {
-  font-family: 'ElmaTrio-Medium'; // FW-500
-  src: url('../fonts/elma-font-family/ElmaTrio-Medium.woff2') format('woff2');
-}*/
-@font-face {
-  font-family: "ElmaTrio-SemiBold";
-  src: url("../fonts/elma-font-family/ElmaTrio-SemiBold.woff2") format("woff2");
+  font-family: "Montserrat-Regular";
+  src: url("../fonts/Montserrat/static/Montserrat-Regular.ttf") format("ttf");
 }
 @font-face {
-  font-family: "ElmaTrio-Bold";
-  src: url("../fonts/elma-font-family/ElmaTrio-Bold.woff2") format("woff2");
+  font-family: "Montserrat-Medium";
+  src: url("../fonts/Montserrat/static/Montserrat-Medium.ttf") format("ttf");
 }
 @font-face {
-  font-family: "ElmaTrio-ExtraBold";
-  src: url("../fonts/elma-font-family/ElmaTrio-ExtraBold.woff2") format("woff2");
+  font-family: "Montserrat-SemiBold";
+  src: url("../fonts/Montserrat/static/Montserrat-SemiBold.ttf") format("ttf");
 }
 @font-face {
-  font-family: "ElmaTrio-Black";
-  src: url("../fonts/elma-font-family/ElmaTrio-Black.woff2") format("woff2");
+  font-family: "Montserrat-Bold";
+  src: url("../fonts/Montserrat/static/Montserrat-Bold.ttf") format("ttf");
 }
 @font-face {
-  font-family: "Garnett-Regular";
-  src: url("../fonts/garnett-font-family/Garnett-Regular.woff") format("woff"), url("../fonts/garnett-font-family/Garnett-Regular.woff2") format("woff2");
+  font-family: "Montserrat-ExtraBold";
+  src: url("../fonts/Montserrat/static/Montserrat-ExtraBold.ttf") format("ttf");
 }
 @font-face {
-  font-family: "Garnett-Medium";
-  src: url("../fonts/garnett-font-family/Garnett-Medium.woff") format("woff"), url("../fonts/garnett-font-family/Garnett-Medium.woff2") format("woff2");
+  font-family: "Montserrat-Black";
+  src: url("../fonts/Montserrat/static/Montserrat-Black.ttf") format("ttf");
 }
 @font-face {
-  font-family: "Garnett-SemiBold";
-  src: url("../fonts/garnett-font-family/Garnett-SemiBold.woff") format("woff"), url("../fonts/garnett-font-family/Garnett-SemiBold.woff2") format("woff2");
+  font-family: "Playfair-Regular";
+  src: url("../fonts/Playfair_Display/static/PlayfairDisplay-Regular.ttf") format("ttf");
 }
 @font-face {
-  font-family: "Garnett-Bold";
-  src: url("../fonts/garnett-font-family/Garnett-Bold.woff") format("woff"), url("../fonts/garnett-font-family/Garnett-Bold.woff2") format("woff2");
+  font-family: "Playfair-Medium";
+  src: url("../fonts/Playfair_Display/static/PlayfairDisplay-Medium.ttf") format("ttf");
 }
 @font-face {
-  font-family: "Garnett-ExtraBold";
-  src: url("../fonts/garnett-font-family/Garnett-ExtraBold.woff") format("woff"), url("../fonts/garnett-font-family/Garnett-ExtraBold.woff2") format("woff2");
+  font-family: "Playfair-SemiBold";
+  src: url("../fonts/Playfair_Display/static/PlayfairDisplay-SemiBold.ttf") format("ttf");
 }
 @font-face {
-  font-family: "Garnett-Black";
-  src: url("../fonts/garnett-font-family/Garnett-Black.woff") format("woff"), url("../fonts/garnett-font-family/Garnett-Black.woff2") format("woff2");
+  font-family: "Playfair-Bold";
+  src: url("../fonts/Playfair_Display/static/PlayfairDisplay-Bold.ttf") format("ttf");
+}
+@font-face {
+  font-family: "Playfair-ExtraBold";
+  src: url("../fonts/Playfair_Display/static/PlayfairDisplay-ExtraBold.ttf") format("ttf");
+}
+@font-face {
+  font-family: "Playfair-Black";
+  src: url("../fonts/Playfair_Display/static/PlayfairDisplay-Black.ttf") format("ttf");
 }
 /**
  * --------------------------------------------------------------------------------------------------------------
@@ -121,7 +121,7 @@ h2,
 h3,
 h4,
 h5 {
-  font-family: "ElmaTrio-Bold";
+  font-family: "Montserrat-Bold";
 }
 @supports (-moz-appearance: none) {
   h1,
@@ -135,16 +135,16 @@ h5 {
 
 h4,
 h5 {
-  font-family: "ElmaTrio-Regular";
+  font-family: "Montserrat-Regular";
 }
 
 h1,
 h2 {
-  font-family: "Garnett-Bold";
+  font-family: "Playfair-Bold";
 }
 
 .site-navigation a {
-  font-family: "Garnett-Regular";
+  font-family: "Playfair-Regular";
 }
 
 /**
@@ -934,7 +934,7 @@ footer .has-children > a {
   padding: 0 25px;
 }
 .burger .burger-menu .burger-menu-wrapper .secondary-menu-burger ul li a {
-  font-family: "ElmaTrio-Regular";
+  font-family: "Montserrat-Regular";
   font-size: 18px;
   line-height: 18px;
   color: #000000;
@@ -977,7 +977,7 @@ footer .has-children > a {
   margin: 12px 0;
 }
 .burger .burger-menu .burger-menu-wrapper .social-media-menu .wrap ul#menu-social li a {
-  font-family: "ElmaTrio-Regular";
+  font-family: "Montserrat-Regular";
   font-size: 18px;
   line-height: 18px;
   color: #000000;
