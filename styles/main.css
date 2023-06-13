@@ -253,11 +253,11 @@ p {
  *                                                  DEDICATED CLASSES 
 /**/
 .white {
-  color: #FFF5F5;
+  color: #ffffff;
 }
 
 .black {
-  color: #1C1C1C;
+  color: #000000;
 }
 
 .blue {
@@ -269,15 +269,15 @@ p {
 }
 
 .bkg-white {
-  background-color: #FFF5F5;
+  background-color: #ffffff;
 }
 
 .bkg-black {
-  background-color: #1C1C1C;
+  background-color: #000000;
 }
 
-.bkg-blue {
-  background-color: #0080EC;
+.bkg-grey {
+  background-color: #FAFAFA;
 }
 
 /**
@@ -349,7 +349,7 @@ p {
 /**/
 /* LIENS A HREF */
 a[href] {
-  color: #1C1C1C;
+  color: #000000;
 }
 a[href]:not(.std-link) {
   text-decoration: none;
@@ -390,10 +390,10 @@ header {
   top: 0;
   left: 0;
   right: 0;
-  border-bottom: 1px solid #1C1C1C;
+  border-bottom: 1px solid #000000;
 }
 header:not(.top-reached) {
-  background-color: #FFF5F5 !important;
+  background-color: #ffffff !important;
 }
 @media (max-width: 767px) {
   header {
@@ -574,7 +574,7 @@ header .site-branding a {
   display: -ms-flexbox;
   display: flex;
   text-align: left;
-  color: #1C1C1C;
+  color: #000000;
   text-decoration: none;
 }
 @media (max-width: 767px) {
@@ -607,7 +607,7 @@ header .site-branding a {
 }
 @media all and (min-width: 1025px) and (min-width: 1501px) {
   header .navigation.navigation-one .wrap:after {
-    border-right: 1px solid #1C1C1C;
+    border-right: 1px solid #000000;
   }
 }
 /**
@@ -650,23 +650,23 @@ li.has-children ul.sub-menu:hover {
 }
 @media all and (min-width: 1501px) {
   li.has-children ul.sub-menu li {
-    border-left: 1px solid #1C1C1C;
-    border-right: 1px solid #1C1C1C;
-    border-bottom: 1px solid #1C1C1C;
+    border-left: 1px solid #000000;
+    border-right: 1px solid #000000;
+    border-bottom: 1px solid #000000;
   }
 }
 @media all and (max-width: 1500px) {
   li.has-children ul.sub-menu li:first-child {
-    border-top: 1px solid #FFF5F5;
+    border-top: 1px solid #ffffff;
   }
 }
 @media all and (min-width: 1501px) {
   li.has-children ul.sub-menu li:first-child {
-    border-top: 1px solid #1C1C1C;
+    border-top: 1px solid #000000;
   }
 }
 li.has-children ul.sub-menu li a {
-  color: #1C1C1C;
+  color: #000000;
   text-decoration: none;
   width: -webkit-fill-available;
   display: -webkit-box;
@@ -747,7 +747,7 @@ footer .has-children > a {
   top: 0;
   left: 0;
   z-index: 999;
-  background-color: #FFF5F5;
+  background-color: #ffffff;
 }
 .burger-menu.open {
   position: fixed;
@@ -816,14 +816,14 @@ footer .has-children > a {
 }
 .burger-header .menu {
   cursor: pointer;
-  color: #1C1C1C;
+  color: #000000;
   font-size: 14px;
 }
 .burger-header .menu span {
   display: block;
   height: 2px;
   border-radius: 2px;
-  background-color: #1C1C1C;
+  background-color: #000000;
 }
 .burger-header .menu span.long-line {
   width: 40px;
@@ -843,7 +843,7 @@ footer .has-children > a {
 }
 @media all and (min-width: 1501px) {
   .burger-header .logo .wrap a {
-    border-right: 1px solid #1C1C1C;
+    border-right: 1px solid #000000;
   }
 }
 .burger-header .logo .wrap.open {
@@ -852,10 +852,10 @@ footer .has-children > a {
 }
 
 .burger li {
-  border-bottom: 1px solid #FFF5F5;
+  border-bottom: 1px solid #ffffff;
 }
 .burger li a {
-  color: #FFF5F5 !important;
+  color: #ffffff !important;
 }
 .burger li.has-children > a:after {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='9.803' height='6.31' viewBox='0 0 9.803 6.31'%3E%3Cpath id='Tracé_20809' data-name='Tracé 20809' d='M0,4.9,4.529,0,8.838,4.9' transform='translate(9.326 5.34) rotate(180)' fill='none' stroke='%23fff' stroke-width='1.3'/%3E%3C/svg%3E%0A");
@@ -897,22 +897,22 @@ footer .has-children > a {
 @media (max-width: 767px) {
   .burger .burger-menu .burger-menu-wrapper .principal-menu-burger {
     margin-top: 70px;
-    border-top: 1px solid #FFF5F5;
+    border-top: 1px solid #ffffff;
   }
 }
 @media (min-width: 768px) {
   .burger .burger-menu .burger-menu-wrapper .principal-menu-burger {
-    border-top: 1px solid #FFF5F5;
+    border-top: 1px solid #ffffff;
   }
 }
 @media (min-width: 1501px) {
   .burger .burger-menu .burger-menu-wrapper .principal-menu-burger {
-    border-top: 1px solid #1C1C1C;
+    border-top: 1px solid #000000;
   }
 }
 .burger .burger-menu .burger-menu-wrapper .secondary-menu-burger,
 .burger .burger-menu .burger-menu-wrapper .social-media-menu {
-  background-color: #00A95B;
+  background-color: #1ED356;
   width: -webkit-fill-available;
 }
 .burger .burger-menu .burger-menu-wrapper .secondary-menu-burger {
@@ -937,7 +937,7 @@ footer .has-children > a {
   font-family: "ElmaTrio-Regular";
   font-size: 18px;
   line-height: 18px;
-  color: #1C1C1C;
+  color: #000000;
   text-decoration: none;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -980,7 +980,7 @@ footer .has-children > a {
   font-family: "ElmaTrio-Regular";
   font-size: 18px;
   line-height: 18px;
-  color: #1C1C1C;
+  color: #000000;
   text-decoration: none;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1053,10 +1053,10 @@ header + h1 + section:first-of-type {
 /**/
 /* Changes on scroll event */
 header:not(.top-reached) .sub-menu {
-  background-color: #FFF5F5 !important;
+  background-color: #ffffff !important;
 }
 header.top-reached a {
-  color: #FFF5F5 !important;
+  color: #ffffff !important;
 }
 header.top-reached .has-children > a:after {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='9.803' height='6.31' viewBox='0 0 9.803 6.31'%3E%3Cpath id='Tracé_20809' data-name='Tracé 20809' d='M0,4.9,4.529,0,8.838,4.9' transform='translate(9.326 5.34) rotate(180)' fill='none' stroke='%23fff' stroke-width='1.3'/%3E%3C/svg%3E%0A");
@@ -1064,10 +1064,10 @@ header.top-reached .has-children > a:after {
   background-position: center;
 }
 header.top-reached .close line {
-  stroke: #FFF5F5;
+  stroke: #ffffff;
 }
 header.top-reached .menu > span {
-  background-color: #FFF5F5;
+  background-color: #ffffff;
 }
 @media (max-width: 1500px) {
   header a:not(.custom-logo-link) {
@@ -1077,7 +1077,7 @@ header.top-reached .menu > span {
 
 /* Changes on burger event */
 .burger-header.open .close line {
-  stroke: #FFF5F5;
+  stroke: #ffffff;
 }
 
 /**
@@ -1101,7 +1101,7 @@ footer .site-navigation a {
 /**/
 footer {
   max-width: none !important;
-  background-color: #f5f7fc;
+  background-color: #FAFAFA;
   padding-left: 20px;
   padding-right: 20px;
 }
@@ -1156,7 +1156,7 @@ footer section.coordonnees {
 }
 footer section.coordonnees p, footer section.coordonnees a[href] {
   text-align: center;
-  color: #f5f7fc;
+  color: #FAFAFA;
 }
 @media all and (min-width: 1025px) {
   footer section.coordonnees p {
@@ -1165,7 +1165,7 @@ footer section.coordonnees p, footer section.coordonnees a[href] {
 }
 footer section.coordonnees a[href]:hover {
   text-decoration: underline;
-  color: #f5f7fc;
+  color: #FAFAFA;
 }
 footer section.legals {
   display: -webkit-box;
@@ -1185,7 +1185,7 @@ footer section.legals a {
 }
 footer section.legals a:hover {
   text-decoration: underline;
-  color: #f5f7fc;
+  color: #FAFAFA;
 }
 
 /**
