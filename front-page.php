@@ -34,7 +34,7 @@ $title_page = 'ACCUEIL';
         <div class="left-container">
       		<a href="thrive_wp/read-me" class="block text-center">README</a>
 		</div>
-		<h4>salut</h4>
+		<h4>salu</h4>
 
     </div>
 </section>
