@@ -1,0 +1,23 @@
+.contact-section-container{
+    display: flex;
+    flex-direction: column;
+    margin: 0px $lateral-margin-width-desktop ;
+
+    & .contact-section-header-title{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+
+        & >p{
+            opacity: 0.5;
+            color: $color-black;
+            text-transform: uppercase;
+        }
+        & >h2{
+            margin-top: 10px;
+            text-transform: uppercase;
+            color: $color-black;
+            font-weight: 600;
+        }
+    }
+}

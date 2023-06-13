@@ -426,6 +426,7 @@ a[href]:not(.std-link) {
  *                                                  3 : CARDS
 //                              * CSS des cards
 /**/
+/** contact-card **/
 /**
  * --------------------------------------------------------------------------------------------------------------
  *                                                  4 : BLOCKS
@@ -1463,6 +1464,40 @@ section.section-half .columns-wrapper .right-container {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.contact-section-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 0px 60px;
+}
+.contact-section-container .contact-section-header-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+.contact-section-container .contact-section-header-title > p {
+  opacity: 0.5;
+  color: #000000;
+  text-transform: uppercase;
+}
+.contact-section-container .contact-section-header-title > h2 {
+  margin-top: 10px;
+  text-transform: uppercase;
+  color: #000000;
+  font-weight: 600;
 }
 
 /**

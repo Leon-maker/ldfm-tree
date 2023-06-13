@@ -38,6 +38,8 @@ $title_page = 'ACCUEIL';
 
     </div>
 </section>
+<?php echo do_shortcode("[shortcode-contact-section]"); ?>
+
 
 <?php get_footer() ?>
 

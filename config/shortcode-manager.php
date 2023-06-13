@@ -4,3 +4,5 @@ require_once get_template_directory() . '/shortcodes/shortcode-example.php';
 require_once get_template_directory() . '/shortcodes/shortcode-cta_primary.php';
 require_once get_template_directory() . '/shortcodes/shortcode-cta_secondary.php';
 require_once get_template_directory() . '/shortcodes/shortcode-fil_ariane.php';
+require_once get_template_directory() . '/shortcodes/shortcode-contact-section.php';
+
