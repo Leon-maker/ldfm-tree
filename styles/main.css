@@ -28,58 +28,58 @@
  *                                                  DEDICATED VARIABLES 
 /**/
 @font-face {
-  font-family: "ElmaTrio-Regular";
-  src: url("../fonts/elma-font-family/ElmaTrio-Regular.woff2") format("woff2");
-}
-/*@font-face {
-  font-family: 'ElmaTrio-Medium'; // FW-500
-  src: url('../fonts/elma-font-family/ElmaTrio-Medium.woff2') format('woff2');
-}*/
-@font-face {
-  font-family: "ElmaTrio-SemiBold";
-  src: url("../fonts/elma-font-family/ElmaTrio-SemiBold.woff2") format("woff2");
+  font-family: "Montserrat-Regular";
+  src: url("../fonts/Montserrat/static/Montserrat-Regular.ttf") format("ttf");
 }
 @font-face {
-  font-family: "ElmaTrio-Bold";
-  src: url("../fonts/elma-font-family/ElmaTrio-Bold.woff2") format("woff2");
+  font-family: "Montserrat-Medium";
+  src: url("../fonts/Montserrat/static/Montserrat-Medium.ttf") format("ttf");
 }
 @font-face {
-  font-family: "ElmaTrio-ExtraBold";
-  src: url("../fonts/elma-font-family/ElmaTrio-ExtraBold.woff2") format("woff2");
+  font-family: "Montserrat-SemiBold";
+  src: url("../fonts/Montserrat/static/Montserrat-SemiBold.ttf") format("ttf");
 }
 @font-face {
-  font-family: "ElmaTrio-Black";
-  src: url("../fonts/elma-font-family/ElmaTrio-Black.woff2") format("woff2");
+  font-family: "Montserrat-Bold";
+  src: url("../fonts/Montserrat/static/Montserrat-Bold.ttf") format("ttf");
 }
 @font-face {
-  font-family: "Garnett-Regular";
-  src: url("../fonts/garnett-font-family/Garnett-Regular.woff") format("woff"), url("../fonts/garnett-font-family/Garnett-Regular.woff2") format("woff2");
+  font-family: "Montserrat-ExtraBold";
+  src: url("../fonts/Montserrat/static/Montserrat-ExtraBold.ttf") format("ttf");
 }
 @font-face {
-  font-family: "Garnett-Medium";
-  src: url("../fonts/garnett-font-family/Garnett-Medium.woff") format("woff"), url("../fonts/garnett-font-family/Garnett-Medium.woff2") format("woff2");
+  font-family: "Montserrat-Black";
+  src: url("../fonts/Montserrat/static/Montserrat-Black.ttf") format("ttf");
 }
 @font-face {
-  font-family: "Garnett-SemiBold";
-  src: url("../fonts/garnett-font-family/Garnett-SemiBold.woff") format("woff"), url("../fonts/garnett-font-family/Garnett-SemiBold.woff2") format("woff2");
+  font-family: "Playfair-Regular";
+  src: url("../fonts/Playfair_Display/static/PlayfairDisplay-Regular.ttf") format("ttf");
 }
 @font-face {
-  font-family: "Garnett-Bold";
-  src: url("../fonts/garnett-font-family/Garnett-Bold.woff") format("woff"), url("../fonts/garnett-font-family/Garnett-Bold.woff2") format("woff2");
+  font-family: "Playfair-Medium";
+  src: url("../fonts/Playfair_Display/static/PlayfairDisplay-Medium.ttf") format("ttf");
 }
 @font-face {
-  font-family: "Garnett-ExtraBold";
-  src: url("../fonts/garnett-font-family/Garnett-ExtraBold.woff") format("woff"), url("../fonts/garnett-font-family/Garnett-ExtraBold.woff2") format("woff2");
+  font-family: "Playfair-SemiBold";
+  src: url("../fonts/Playfair_Display/static/PlayfairDisplay-SemiBold.ttf") format("ttf");
 }
 @font-face {
-  font-family: "Garnett-Black";
-  src: url("../fonts/garnett-font-family/Garnett-Black.woff") format("woff"), url("../fonts/garnett-font-family/Garnett-Black.woff2") format("woff2");
+  font-family: "Playfair-Bold";
+  src: url("../fonts/Playfair_Display/static/PlayfairDisplay-Bold.ttf") format("ttf");
+}
+@font-face {
+  font-family: "Playfair-ExtraBold";
+  src: url("../fonts/Playfair_Display/static/PlayfairDisplay-ExtraBold.ttf") format("ttf");
+}
+@font-face {
+  font-family: "Playfair-Black";
+  src: url("../fonts/Playfair_Display/static/PlayfairDisplay-Black.ttf") format("ttf");
 }
 /**
  * --------------------------------------------------------------------------------------------------------------
  *                                                  DEDICATED FUNCTIONS 
 /**/
-/* Font Size Function to create classes 
+/* Font Size Function to create classes
 ex :
 .font-size-10 {
   font-size: 1rem;
@@ -110,7 +110,7 @@ ex :
 
 /**
  * --------------------------------------------------------------------------------------------------------------
- *                                                  DEDICATED CLASSES 
+ *                                                  DEDICATED CLASSES
 /**/
 /**
  * --------------------------------------------------------------------------------------------------------------
@@ -121,7 +121,7 @@ h2,
 h3,
 h4,
 h5 {
-  font-family: "ElmaTrio-Bold";
+  font-family: "Montserrat-Bold";
 }
 @supports (-moz-appearance: none) {
   h1,
@@ -135,16 +135,16 @@ h5 {
 
 h4,
 h5 {
-  font-family: "ElmaTrio-Regular";
+  font-family: "Montserrat-Regular";
 }
 
 h1,
 h2 {
-  font-family: "Garnett-Bold";
+  font-family: "Playfair-Bold";
 }
 
 .site-navigation a {
-  font-family: "Garnett-Regular";
+  font-family: "Playfair-Regular";
 }
 
 /**
@@ -152,8 +152,8 @@ h2 {
  *                                                  FONT-SIZES BY ELEMENTS
 /**/
 h1 {
-  font-size: 90px;
-  line-height: 108px;
+  font-size: 80px;
+  line-height: 80px;
 }
 @media all and (max-width: 1024px) {
   h1 {
@@ -163,8 +163,8 @@ h1 {
 }
 
 h2 {
-  font-size: 45px;
-  line-height: 54px;
+  font-size: 40px;
+  line-height: 45px;
 }
 @media all and (max-width: 1024px) {
   h2 {
@@ -174,7 +174,7 @@ h2 {
 }
 
 h3 {
-  font-size: 30px;
+  font-size: 20px;
   line-height: 36px;
 }
 @media all and (max-width: 1024px) {
@@ -185,7 +185,7 @@ h3 {
 }
 
 h4 {
-  font-size: 18px;
+  font-size: 14px;
   line-height: 21px;
 }
 @media all and (max-width: 1024px) {
@@ -196,7 +196,7 @@ h4 {
 }
 
 h5 {
-  font-size: 14px !important;
+  font-size: 12px !important;
   line-height: 16px !important;
 }
 @media all and (max-width: 1024px) {
@@ -229,7 +229,7 @@ footer .site-navigation a {
 }
 
 p {
-  font-size: 20px;
+  font-size: 16px;
   line-height: 24px;
 }
 @media all and (max-width: 1024px) {
@@ -253,11 +253,11 @@ p {
  *                                                  DEDICATED CLASSES 
 /**/
 .white {
-  color: #FFF5F5;
+  color: #ffffff;
 }
 
 .black {
-  color: #1C1C1C;
+  color: #000000;
 }
 
 .blue {
@@ -269,15 +269,15 @@ p {
 }
 
 .bkg-white {
-  background-color: #FFF5F5;
+  background-color: #ffffff;
 }
 
 .bkg-black {
-  background-color: #1C1C1C;
+  background-color: #000000;
 }
 
-.bkg-blue {
-  background-color: #0080EC;
+.bkg-grey {
+  background-color: #FAFAFA;
 }
 
 /**
@@ -349,7 +349,7 @@ p {
 /**/
 /* LIENS A HREF */
 a[href] {
-  color: #1C1C1C;
+  color: #000000;
 }
 a[href]:not(.std-link) {
   text-decoration: none;
@@ -390,10 +390,10 @@ header {
   top: 0;
   left: 0;
   right: 0;
-  border-bottom: 1px solid #1C1C1C;
+  border-bottom: 1px solid #FAFAFA;
 }
 header:not(.top-reached) {
-  background-color: #FFF5F5 !important;
+  background-color: #ffffff !important;
 }
 @media (max-width: 767px) {
   header {
@@ -454,19 +454,6 @@ header .site-branding a {
 @media all and (min-width: 1025px) {
   header .site-branding a {
     padding-right: 60px;
-  }
-}
-header .site-branding:after {
-  content: "";
-  position: absolute;
-  height: 100%;
-}
-header .site-branding:after {
-  right: 0;
-}
-@media all and (min-width: 1501px) {
-  header .site-branding:after {
-    border-right: 1px solid #1C1C1C;
   }
 }
 
@@ -587,7 +574,7 @@ header .site-branding:after {
   display: -ms-flexbox;
   display: flex;
   text-align: left;
-  color: #1C1C1C;
+  color: #000000;
   text-decoration: none;
 }
 @media (max-width: 767px) {
@@ -597,12 +584,12 @@ header .site-branding:after {
 }
 @media all and (min-width: 768px) {
   .site-navigation ul:not(.sub-menu) > li > a {
-    padding: 24px 60px;
+    padding: 24px 25px;
   }
 }
 @media all and (min-width: 1501px) {
   .site-navigation ul:not(.sub-menu) > li > a {
-    padding: 24px 60px;
+    padding: 24px 25px;
   }
 }
 
@@ -620,7 +607,7 @@ header .site-branding:after {
 }
 @media all and (min-width: 1025px) and (min-width: 1501px) {
   header .navigation.navigation-one .wrap:after {
-    border-right: 1px solid #1C1C1C;
+    border-right: 1px solid #000000;
   }
 }
 /**
@@ -663,23 +650,23 @@ li.has-children ul.sub-menu:hover {
 }
 @media all and (min-width: 1501px) {
   li.has-children ul.sub-menu li {
-    border-left: 1px solid #1C1C1C;
-    border-right: 1px solid #1C1C1C;
-    border-bottom: 1px solid #1C1C1C;
+    border-left: 1px solid #000000;
+    border-right: 1px solid #000000;
+    border-bottom: 1px solid #000000;
   }
 }
 @media all and (max-width: 1500px) {
   li.has-children ul.sub-menu li:first-child {
-    border-top: 1px solid #FFF5F5;
+    border-top: 1px solid #ffffff;
   }
 }
 @media all and (min-width: 1501px) {
   li.has-children ul.sub-menu li:first-child {
-    border-top: 1px solid #1C1C1C;
+    border-top: 1px solid #000000;
   }
 }
 li.has-children ul.sub-menu li a {
-  color: #1C1C1C;
+  color: #000000;
   text-decoration: none;
   width: -webkit-fill-available;
   display: -webkit-box;
@@ -760,7 +747,7 @@ footer .has-children > a {
   top: 0;
   left: 0;
   z-index: 999;
-  background-color: #FFF5F5;
+  background-color: #ffffff;
 }
 .burger-menu.open {
   position: fixed;
@@ -829,14 +816,14 @@ footer .has-children > a {
 }
 .burger-header .menu {
   cursor: pointer;
-  color: #1C1C1C;
+  color: #000000;
   font-size: 14px;
 }
 .burger-header .menu span {
   display: block;
   height: 2px;
   border-radius: 2px;
-  background-color: #1C1C1C;
+  background-color: #000000;
 }
 .burger-header .menu span.long-line {
   width: 40px;
@@ -856,7 +843,7 @@ footer .has-children > a {
 }
 @media all and (min-width: 1501px) {
   .burger-header .logo .wrap a {
-    border-right: 1px solid #1C1C1C;
+    border-right: 1px solid #000000;
   }
 }
 .burger-header .logo .wrap.open {
@@ -865,10 +852,10 @@ footer .has-children > a {
 }
 
 .burger li {
-  border-bottom: 1px solid #FFF5F5;
+  border-bottom: 1px solid #ffffff;
 }
 .burger li a {
-  color: #FFF5F5 !important;
+  color: #ffffff !important;
 }
 .burger li.has-children > a:after {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='9.803' height='6.31' viewBox='0 0 9.803 6.31'%3E%3Cpath id='Tracé_20809' data-name='Tracé 20809' d='M0,4.9,4.529,0,8.838,4.9' transform='translate(9.326 5.34) rotate(180)' fill='none' stroke='%23fff' stroke-width='1.3'/%3E%3C/svg%3E%0A");
@@ -910,22 +897,22 @@ footer .has-children > a {
 @media (max-width: 767px) {
   .burger .burger-menu .burger-menu-wrapper .principal-menu-burger {
     margin-top: 70px;
-    border-top: 1px solid #FFF5F5;
+    border-top: 1px solid #ffffff;
   }
 }
 @media (min-width: 768px) {
   .burger .burger-menu .burger-menu-wrapper .principal-menu-burger {
-    border-top: 1px solid #FFF5F5;
+    border-top: 1px solid #ffffff;
   }
 }
 @media (min-width: 1501px) {
   .burger .burger-menu .burger-menu-wrapper .principal-menu-burger {
-    border-top: 1px solid #1C1C1C;
+    border-top: 1px solid #000000;
   }
 }
 .burger .burger-menu .burger-menu-wrapper .secondary-menu-burger,
 .burger .burger-menu .burger-menu-wrapper .social-media-menu {
-  background-color: #00A95B;
+  background-color: #1ED356;
   width: -webkit-fill-available;
 }
 .burger .burger-menu .burger-menu-wrapper .secondary-menu-burger {
@@ -947,10 +934,10 @@ footer .has-children > a {
   padding: 0 25px;
 }
 .burger .burger-menu .burger-menu-wrapper .secondary-menu-burger ul li a {
-  font-family: "ElmaTrio-Regular";
+  font-family: "Montserrat-Regular";
   font-size: 18px;
   line-height: 18px;
-  color: #1C1C1C;
+  color: #000000;
   text-decoration: none;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -990,10 +977,10 @@ footer .has-children > a {
   margin: 12px 0;
 }
 .burger .burger-menu .burger-menu-wrapper .social-media-menu .wrap ul#menu-social li a {
-  font-family: "ElmaTrio-Regular";
+  font-family: "Montserrat-Regular";
   font-size: 18px;
   line-height: 18px;
-  color: #1C1C1C;
+  color: #000000;
   text-decoration: none;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1029,21 +1016,6 @@ footer .has-children > a {
   padding-bottom: 3px;
 }
 
-@media (max-width: 767px) {
-  header + section:first-of-type,
-header + script + section:first-of-type,
-header + h1 + section:first-of-type {
-    margin-top: 110px;
-  }
-}
-@media all and (min-width: 768px) {
-  header + section:first-of-type,
-header + script + section:first-of-type,
-header + h1 + section:first-of-type {
-    margin-top: 100px;
-  }
-}
-
 @media all and (min-width: 1501px) {
   #overlay-header > .wrap.burger {
     display: none !important;
@@ -1066,10 +1038,10 @@ header + h1 + section:first-of-type {
 /**/
 /* Changes on scroll event */
 header:not(.top-reached) .sub-menu {
-  background-color: #FFF5F5 !important;
+  background-color: #ffffff !important;
 }
 header.top-reached a {
-  color: #FFF5F5 !important;
+  color: #ffffff !important;
 }
 header.top-reached .has-children > a:after {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='9.803' height='6.31' viewBox='0 0 9.803 6.31'%3E%3Cpath id='Tracé_20809' data-name='Tracé 20809' d='M0,4.9,4.529,0,8.838,4.9' transform='translate(9.326 5.34) rotate(180)' fill='none' stroke='%23fff' stroke-width='1.3'/%3E%3C/svg%3E%0A");
@@ -1077,10 +1049,10 @@ header.top-reached .has-children > a:after {
   background-position: center;
 }
 header.top-reached .close line {
-  stroke: #FFF5F5;
+  stroke: #ffffff;
 }
 header.top-reached .menu > span {
-  background-color: #FFF5F5;
+  background-color: #ffffff;
 }
 @media (max-width: 1500px) {
   header a:not(.custom-logo-link) {
@@ -1090,7 +1062,99 @@ header.top-reached .menu > span {
 
 /* Changes on burger event */
 .burger-header.open .close line {
-  stroke: #FFF5F5;
+  stroke: #ffffff;
+}
+
+/**
+ * --------------------------------------------------------------------------------------------------------------
+ *                                                  MENUS DÉROULANTS
+ * --------------------------------------------------------------------------------------------------------------
+ */
+/**/
+.menu-item-has-children > a {
+  /*&.c1 { background: yellow; }
+  &.c2:after { background: red; }*/
+  position: relative;
+}
+.menu-item-has-children > a::after {
+  display: inline-block;
+  content: url("/wp-content/uploads/2023/04/chevron-down.svg");
+  margin-left: 10px;
+}
+.menu-item-has-children ul.sub-menu {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  display: none;
+  z-index: 2;
+}
+.menu-item-has-children ul.sub-menu.panel li:last-child {
+  border-bottom: 0;
+}
+.menu-item-has-children ul.sub-menu:not(.panel) {
+  position: absolute;
+  padding: 30.8px 0 0 0;
+}
+.menu-item-has-children ul.sub-menu:hover {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+@media all and (min-width: 1501px) {
+  .menu-item-has-children ul.sub-menu li {
+    border-left: 1px solid #000000;
+    border-right: 1px solid #000000;
+    border-bottom: 1px solid #000000;
+  }
+}
+.menu-item-has-children ul.sub-menu li a {
+  color: #000000;
+  text-decoration: none;
+  width: -webkit-fill-available;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+@media all and (min-width: 1025px) {
+  .menu-item-has-children ul.sub-menu li a {
+    padding: 10px 20px 10px 40px;
+  }
+}
+@media (max-width: 1024px) {
+  .menu-item-has-children ul.sub-menu li a {
+    padding: 10px 25px 10px 50px;
+  }
+}
+.menu-item-has-children ul.sub-menu li a::after {
+  display: inline-block;
+  content: url("/wp-content/uploads/2023/03/send-arrow.svg");
+  margin-left: 10px;
+  visibility: hidden;
+}
+.menu-item-has-children ul.sub-menu li a:hover {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.menu-item-has-children ul.sub-menu li a:hover::after {
+  visibility: visible;
+}
+.menu-item-has-children ul.sub-menu li:first-child {
+  border-top: 1px solid #000000;
+}
+
+.has-children > a.sub-menu-openned::after {
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+}
+.has-children > a.sub-menu-openned + ul.sub-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 /**
@@ -1237,7 +1301,7 @@ footer section.coordonnees {
 }
 footer section.coordonnees p, footer section.coordonnees a[href] {
   text-align: center;
-  color: #f5f7fc;
+  color: #FAFAFA;
 }
 @media all and (min-width: 1025px) {
   footer section.coordonnees p {
@@ -1246,7 +1310,7 @@ footer section.coordonnees p, footer section.coordonnees a[href] {
 }
 footer section.coordonnees a[href]:hover {
   text-decoration: underline;
-  color: #f5f7fc;
+  color: #FAFAFA;
 }
 footer section.legals {
   display: -webkit-box;
@@ -1266,7 +1330,7 @@ footer section.legals a {
 }
 footer section.legals a:hover {
   text-decoration: underline;
-  color: #f5f7fc;
+  color: #FAFAFA;
 }
 
 /**

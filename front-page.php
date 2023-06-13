@@ -9,12 +9,14 @@ if ($header_color) {
 	get_header();
 }
 
+$img_bkg = wp_get_attachment_image_src(21352, 'full')[0];
+
 $header_section_slug = 'home-page-header';
 
 $title_page = 'ACCUEIL';
 ?>
 
-<section class="section-single nom-de-la-section bkg-white">
+<section class="section-single nom-de-la-section" style="background-image: url('<?php echo $img_bkg; ?>');" role="img" aria-label="Image illustrative de la section landing de la page catalogue." style="width: 100%;">
 	<?php
 	if(!isMobile()){ ?>
 		<div class="section-title">
@@ -32,6 +34,8 @@ $title_page = 'ACCUEIL';
         <div class="left-container">
       		<a href="thrive_wp/read-me" class="block text-center">README</a>
 		</div>
+		<h4>salut</h4>
+
     </div>
 </section>
 

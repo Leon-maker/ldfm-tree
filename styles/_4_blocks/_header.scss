@@ -22,7 +22,7 @@ $header-top-reached-font-color: $color-white; // Fonts + border + icons
 
 // Colors On scroll
 $header-on-scroll-bkg-color: $color-white; // Header Background
-$header-on-scroll-font-color: $color-black; // Fonts + border + icons
+$header-on-scroll-font-color: $color-black; // Fonts + icons
 $burger-color-on-scroll: $color-black; // burger lines
 
 // -------------- * Header dimensions * --------------
@@ -47,7 +47,7 @@ header {
     &:not(.top-reached) {
         background-color: $header-on-scroll-bkg-color !important;
     }
-    border-bottom: 1px solid $header-on-scroll-font-color;
+    border-bottom: 1px solid $color-grey;
     @media (max-width: $layout-breakpoint-end-smartphone) {
         padding: 0;
         justify-content: space-between;
@@ -93,17 +93,6 @@ header .site-branding {
             padding-right: 60px;
         }
         display: flex;
-    }
-    &:after {
-        content : "";
-        position: absolute;
-        height: 100%;
-    }
-    &:after {
-        right: 0;
-        @media all and (min-width: $layout-breakpoint-start-noburger) {
-            border-right: 1px solid $header-on-scroll-font-color;
-        }
     }
 }
 
@@ -190,10 +179,10 @@ header .site-branding {
                         padding: 24px 25px;
                     }
                     @media all and (min-width: $layout-breakpoint-start-tablette) {
-                        padding: 24px 60px;
+                        padding: 24px 25px;
                     }
                     @media all and (min-width: $layout-breakpoint-start-noburger) {
-                        padding: 24px 60px;
+                        padding: 24px 25px;
                     }
                 }
             }
@@ -601,16 +590,16 @@ footer {
     }
 }
 
-header + section:first-of-type,
-header + script + section:first-of-type,
-header + h1 + section:first-of-type {
-    @media (max-width: $layout-breakpoint-end-smartphone) {
-        margin-top: calc( $header-inside-height + (2 * $header-padding-y-end-smartphone) );
-    }
-    @media all and (min-width: $layout-breakpoint-start-tablette) {
-        margin-top: calc( $header-inside-height + (2 * $header-padding-y-start-tablette) );
-    }
-}
+// header + section:first-of-type,
+// header + script + section:first-of-type,
+// header + h1 + section:first-of-type {
+//     @media (max-width: $layout-breakpoint-end-smartphone) {
+//         margin-top: calc( $header-inside-height + (2 * $header-padding-y-end-smartphone) );
+//     }
+//     @media all and (min-width: $layout-breakpoint-start-tablette) {
+//         margin-top: calc( $header-inside-height + (2 * $header-padding-y-start-tablette) );
+//     }
+// }
 
 @media all and (min-width: $layout-breakpoint-start-noburger) {
     #overlay-header > .wrap.burger  {
@@ -672,3 +661,92 @@ header {
         stroke: $header-top-reached-font-color;
     }
 }
+
+/**
+ * --------------------------------------------------------------------------------------------------------------
+ *                                                  MENUS DÉROULANTS
+ * --------------------------------------------------------------------------------------------------------------
+ */
+/**/
+
+.menu-item-has-children {
+    > a {
+      /*&.c1 { background: yellow; }
+      &.c2:after { background: red; }*/
+      position: relative;
+      &::after {
+        display: inline-block;
+        content: url('/wp-content/uploads/2023/04/chevron-down.svg');
+        //@extend %transition;
+        margin-left: 10px;
+      }
+    }
+    ul.sub-menu {
+      &.panel{
+        li:last-child {
+          border-bottom: 0;
+        }
+      }
+      &:not(.panel){
+        position: absolute;
+        padding: 30.8px 0 0 0;
+        //border-left: 1px solid $color-black;
+        li:last-child {
+          //border-bottom: 0;
+        }
+      }
+      flex-direction: column;
+      display: none;
+      z-index: 2;
+      //background-color: $color-pink;
+      &:hover {
+        display: flex;
+      }
+      li {
+        @media all and (min-width: 1501px) {
+          border-left: 1px solid $color-black;
+          border-right: 1px solid $color-black;
+          border-bottom: 1px solid $color-black;
+        }
+        a {
+          //font-family: "ElmaTrio-Regular";
+          color: $color-black;
+          text-decoration: none;
+          width: -webkit-fill-available;
+          display: flex;
+          justify-content: space-between;
+          @media all and (min-width: $layout-breakpoint-start-desktop) {
+            padding: 10px 20px 10px 40px;
+          }
+          @media (max-width: $layout-breakpoint-end-tablette) {
+            padding: 10px 25px 10px 50px;
+          }
+          &::after {
+            display: inline-block;
+            content: url('/wp-content/uploads/2023/03/send-arrow.svg');
+            margin-left: 10px;
+            visibility: hidden;
+          }
+          &:hover {
+            display: flex;
+            &::after {
+              //@extend %transition-in;
+              visibility: visible;
+            }
+          }
+        }
+        &:first-child {
+          border-top: 1px solid $color-black;
+        }
+      }
+    }
+  }
+  
+  .has-children > a.sub-menu-openned {
+    &::after {
+      transform: rotate(-90deg);
+    }
+    + ul.sub-menu {
+      display: flex;
+    }
+  }
