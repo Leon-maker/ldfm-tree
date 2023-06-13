@@ -94,17 +94,6 @@ header .site-branding {
         }
         display: flex;
     }
-    &:after {
-        content : "";
-        position: absolute;
-        height: 100%;
-    }
-    &:after {
-        right: 0;
-        @media all and (min-width: $layout-breakpoint-start-noburger) {
-            border-right: 1px solid $header-on-scroll-font-color;
-        }
-    }
 }
 
 /**
