@@ -293,15 +293,37 @@ window.addEventListener('resize', widthResizer)*/
 
 jQuery(function ($) {
     var subMenuChevron = $(".site-header>.wrap>.site-navigation ul>li.menu-item-has-children>a");
+    var headerSubMenuOpen = $(".site-header");
     subMenuChevron.each(function() {
         $(this).mouseenter(
             function() {
                 $(this).addClass( "sub-menu-openned" );
+                var subMenuHeight = subMenuChevron.find(".sub-menu").height();
+                console.log("La hauteur du sous-menu est : " + subMenuHeight + " pixels.");
+                headerSubMenuOpen.css({
+                    "padding": "15px 60px 90px 60px",
+                    "text-decoration": "none",
+                    "background-image": "linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1))",
+                    "background-size": "100% 1px",
+                    "background-position": "0 50%",
+                    "background-repeat": "no-repeat",
+                    "transition": "background-size 2s linear",
+                });
             }
         );
         $(this).mouseleave(
             function() {
                 $(this).removeClass( "sub-menu-openned" );
+                headerSubMenuOpen.css({
+                    "padding": "15px 60px",
+                    "color": "",
+                    "text-decoration": "",
+                    "background-image": "",
+                    "background-size": "",
+                    "background-position": "",
+                    "background-repeat": "",
+                    "transition": "",
+            }   );
             }
         );
     });
