@@ -26,8 +26,6 @@ if (empty($header_color)) {
 }
 ?>
 
-
-
 <!--<div class="top-header">
 	Placez ici votre top header si besoin 
 </div>-->
@@ -75,4 +73,28 @@ if (empty($header_color)) {
 	
 </header>
 
+<?php
+$image_url_black = wp_get_attachment_image_src(21399, 'full')[0];
+$image_url_white = wp_get_attachment_image_src(21398, 'full')[0];
+?>
 
+<script>
+	jQuery(window).scroll(example);
+        function example() {
+			var tempScrollTop = jQuery(window).scrollTop();
+			const elements = document.querySelectorAll('header .wrap .custom-logo');
+
+            if (tempScrollTop == 0) {
+				const imageUrl = "<?php echo $image_url_white; ?>";
+				elements.forEach(element => {
+					element.src = imageUrl;
+				});
+                	
+            } else {
+                const imageUrl = "<?php echo $image_url_black; ?>";
+				elements.forEach(element => {
+					element.src = imageUrl;
+				});
+            }
+        };
+</script>

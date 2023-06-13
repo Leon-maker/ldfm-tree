@@ -1071,6 +1071,82 @@ header.top-reached .menu > span {
  * --------------------------------------------------------------------------------------------------------------
  */
 /**/
+header .menu-item-has-children > a {
+  /*&.c1 { background: yellow; }
+  &.c2:after { background: red; }*/
+  position: relative;
+}
+header .menu-item-has-children > a::after {
+  display: inline-block;
+  content: url("/wp-content/uploads/2023/04/chevron-down.svg");
+  margin-left: 10px;
+}
+header .menu-item-has-children ul.sub-menu {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  display: none;
+  z-index: 2;
+}
+header .menu-item-has-children ul.sub-menu.panel li:last-child {
+  border-bottom: 0;
+}
+header .menu-item-has-children ul.sub-menu:not(.panel) {
+  position: absolute;
+  padding: 83px 0 0 0;
+}
+header .menu-item-has-children ul.sub-menu:hover {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+@media all and (min-width: 1501px) {
+  header .menu-item-has-children ul.sub-menu li {
+    border-left: 1px solid #000000;
+    border-right: 1px solid #000000;
+    border-bottom: 1px solid #000000;
+  }
+}
+header .menu-item-has-children ul.sub-menu li a {
+  color: #000000;
+  text-decoration: none;
+  width: -webkit-fill-available;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+@media all and (min-width: 1025px) {
+  header .menu-item-has-children ul.sub-menu li a {
+    padding: 10px 20px 10px 25px;
+  }
+}
+@media (max-width: 1024px) {
+  header .menu-item-has-children ul.sub-menu li a {
+    padding: 10px 25px 10px 25px;
+  }
+}
+header .menu-item-has-children ul.sub-menu li a::after {
+  display: inline-block;
+  content: url("/wp-content/uploads/2023/03/send-arrow.svg");
+  margin-left: 10px;
+  visibility: hidden;
+}
+header .menu-item-has-children ul.sub-menu li a:hover {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+header .menu-item-has-children ul.sub-menu li a:hover::after {
+  visibility: visible;
+}
+header .menu-item-has-children ul.sub-menu li:first-child {
+  border-top: 1px solid #000000;
+}
+
 /**
  * --------------------------------------------------------------------------------------------------------------
  *                                                  DEDICATED VARIABLES 
