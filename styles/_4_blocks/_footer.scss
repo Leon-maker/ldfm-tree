@@ -23,6 +23,9 @@ footer  {
     max-width: none !important;
     background-color: $color-grey ;
     height: 700px;
+    & .site-navigation{
+        justify-content: flex-start !important;
+    }
 
     & .site-branding{
         width: 100%;
@@ -75,18 +78,46 @@ footer  {
 
             & .wrap-legal{
                 display: flex;
-                justify-content: flex-start;
+                margin-top:100px;
+                justify-content: space-between;
+                border-top: solid rgba(0, 0, 0, 0.100) 1px;
+                & p{
+
+                    opacity: 0.4;
+                    color : $color-black;
+                }
                 & #menu-two{
-                    & a,p{margin: 0px;}
                     display: flex;
+                    color: $color-black;
+                    opacity: 0.4;
+                    padding-left: 0px !important;
+
+                    & a,p{margin: 0px;}
+                   & #menu-item-21244{
+                       margin-right: 20px;
+                       display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                       &::after{
+                        content: " ";
+                        width: 5px;
+                        height: 5px;
+                        display: block;
+                        border-radius: 50%;
+                        background-color: rgba(0, 0, 0, 0.8);
+                        margin-left: 20px;
+                       }
+                   }
                     &>li{
                         padding: 0px !important;
+                        max-width: none !important;
                     }
                 }
             }
         }
         &.nav {
             margin-top: 80px;
+            padding-bottom:0px !important;
             @media all and (max-width: $layout-breakpoint-end-tablette) {
                 margin-top: 0px;
                 margin-bottom: 20px;
