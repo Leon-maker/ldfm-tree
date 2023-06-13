@@ -298,14 +298,16 @@ jQuery(function ($) {
         $(this).mouseenter(
             function() {
                 $(this).addClass( "sub-menu-openned" );
-                var subMenuHeight = subMenuChevron.find(".sub-menu").height();
+                var subMenu = $(this).next(".sub-menu");
+                var subMenuHeight = subMenu.height() + 20;
+                console.log((subMenu));
                 console.log("La hauteur du sous-menu est : " + subMenuHeight + " pixels.");
                 headerSubMenuOpen.css({
-                    "padding": "15px 60px 90px 60px",
+                    "padding": "15px 60px " + subMenuHeight + "px 60px",
                     "text-decoration": "none",
                     "background-image": "linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1))",
                     "background-size": "100% 1px",
-                    "background-position": "0 50%",
+                    "background-position": "0 100px",
                     "background-repeat": "no-repeat",
                     "transition": "background-size 2s linear",
                 });

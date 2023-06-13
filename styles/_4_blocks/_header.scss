@@ -652,6 +652,11 @@ header{
                 }
               }
             ul.sub-menu {
+                &:not(.panel){
+                    position: absolute;
+                    padding: 0;
+                    margin: 18px auto;
+                }
               &.panel{
                 li:last-child {
                   border-bottom: 0;

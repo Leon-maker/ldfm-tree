@@ -1098,6 +1098,11 @@ header .menu-principal-container .menu-item-has-children ul.sub-menu {
   display: none;
   z-index: 2;
 }
+header .menu-principal-container .menu-item-has-children ul.sub-menu:not(.panel) {
+  position: absolute;
+  padding: 0;
+  margin: 18px auto;
+}
 header .menu-principal-container .menu-item-has-children ul.sub-menu.panel li:last-child {
   border-bottom: 0;
 }
