@@ -1530,6 +1530,30 @@ section.section-half .columns-wrapper .right-container {
  * --------------------------------------------------------------------------------------------------------------
  *                                                  LEGAL PAGES 
 /**/
+.legal-section .columns-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.legal-section .terms_content {
+  max-width: 70%;
+}
+.legal-section .terms_content h2 {
+  font-size: 20px;
+  font-weight: 600 !important;
+  line-height: 23px;
+  color: black;
+  margin-bottom: 35px;
+  margin-top: 50px;
+}
+.legal-section .terms_content .main-title {
+  text-align: left !important;
+  text-transform: uppercase;
+}
+
 /**
  * --------------------------------------------------------------------------------------------------------------
  *                                                  DEDICATED VARIABLES 

@@ -7,3 +7,25 @@
  * --------------------------------------------------------------------------------------------------------------
  *                                                  LEGAL PAGES 
 /**/
+
+.legal-section{
+    & .columns-wrapper{
+        display: flex;
+        justify-content: center;
+    }
+    & .terms_content{
+        & h2{
+            font-size: 20px;
+            font-weight: 600 !important;
+            line-height: 23px;
+            color: black;
+            margin-bottom: 35px;
+            margin-top: 50px;
+        }
+        max-width: 70%;
+        & .main-title{
+            text-align: left !important;
+            text-transform: uppercase;
+        }
+    }
+}
