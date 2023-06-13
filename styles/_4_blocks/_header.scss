@@ -22,7 +22,7 @@ $header-top-reached-font-color: $color-white; // Fonts + border + icons
 
 // Colors On scroll
 $header-on-scroll-bkg-color: $color-white; // Header Background
-$header-on-scroll-font-color: $color-black; // Fonts + border + icons
+$header-on-scroll-font-color: $color-black; // Fonts + icons
 $burger-color-on-scroll: $color-black; // burger lines
 
 // -------------- * Header dimensions * --------------
@@ -47,7 +47,7 @@ header {
     &:not(.top-reached) {
         background-color: $header-on-scroll-bkg-color !important;
     }
-    border-bottom: 1px solid $header-on-scroll-font-color;
+    border-bottom: 1px solid $color-grey;
     @media (max-width: $layout-breakpoint-end-smartphone) {
         padding: 0;
         justify-content: space-between;
