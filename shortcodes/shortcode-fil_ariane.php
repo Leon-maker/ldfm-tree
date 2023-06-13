@@ -47,7 +47,7 @@ function SHORTCODE_FilAriane($arguments)
                         // Si ce n'est pas le dernier élément du fil d'ariane, on affiche la flèche
                         if ($i !== $nb_filled_arguments) {
                             ?>
-                            <img src="<?php echo $arrow_svg; ?>" alt="Pictogramme d'une flèche pointant vers la droite." class="fil-ariane-arrow">
+                            <p class="dot-filariane"></p>
                             <?php
                         }
                         ?>

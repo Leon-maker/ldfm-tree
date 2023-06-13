@@ -355,6 +355,47 @@ a[href]:not(.std-link) {
   text-decoration: none;
 }
 
+.breadcrumb-container .fil-ariane-wrapper .fil-ariane-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.breadcrumb-container .fil-ariane-wrapper .fil-ariane-container li {
+  list-style-type: none;
+  font-size: 14px;
+  color: #000000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-family: "Montserrat-Regular";
+}
+.breadcrumb-container .fil-ariane-wrapper .fil-ariane-container li a {
+  opacity: 0.4;
+}
+.breadcrumb-container .fil-ariane-wrapper .fil-ariane-container li:last-child a {
+  opacity: 1;
+}
+.breadcrumb-container .fil-ariane-wrapper .fil-ariane-container li:nth-last-child(2) .dot-filariane {
+  opacity: 1 !important;
+}
+.breadcrumb-container .fil-ariane-wrapper .fil-ariane-container .dot-filariane {
+  content: "";
+  width: 5px;
+  height: 5px;
+  background-color: #000000;
+  display: block;
+  border-radius: 50%;
+  opacity: 0.4;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
 /**
  * --------------------------------------------------------------------------------------------------------------
  *                                                  3 : CARDS
