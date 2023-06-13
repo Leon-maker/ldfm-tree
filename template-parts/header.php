@@ -22,7 +22,7 @@ $arguments_array = shortcode_atts( array(
 $header_color = $args['header-color']; 
 // Else define its main color
 if (empty($header_color)) {
-    $header_color = '#000000';
+    $header_color = 'transparent';
 }
 ?>
 
@@ -32,7 +32,7 @@ if (empty($header_color)) {
 	Placez ici votre top header si besoin 
 </div>-->
 
-<header id="overlay-header" class="site-header top-reached" role="banner" style="background-color: <?php echo $header_color; ?>">
+<header id="overlay-header" class="site-header top-reached" role="banner" style="background-color: transparent">
 	<style>
 	header .sub-menu {
 		background-color: <?php echo $header_color; ?>
