@@ -1165,6 +1165,11 @@ footer {
   background-color: #FAFAFA;
   height: 700px;
 }
+footer .site-navigation {
+  -webkit-box-pack: start !important;
+      -ms-flex-pack: start !important;
+          justify-content: flex-start !important;
+}
 footer .site-branding {
   width: 100%;
   display: -webkit-box;
@@ -1233,23 +1238,56 @@ footer section .footer-navigation .wrap-legal {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  margin-top: 100px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-top: solid rgba(0, 0, 0, 0.1) 1px;
+}
+footer section .footer-navigation .wrap-legal p {
+  opacity: 0.4;
+  color: #000000;
 }
 footer section .footer-navigation .wrap-legal #menu-two {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  color: #000000;
+  opacity: 0.4;
+  padding-left: 0px !important;
 }
 footer section .footer-navigation .wrap-legal #menu-two a, footer section .footer-navigation .wrap-legal #menu-two p {
   margin: 0px;
 }
+footer section .footer-navigation .wrap-legal #menu-two #menu-item-21244 {
+  margin-right: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+footer section .footer-navigation .wrap-legal #menu-two #menu-item-21244::after {
+  content: " ";
+  width: 5px;
+  height: 5px;
+  display: block;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.8);
+  margin-left: 20px;
+}
 footer section .footer-navigation .wrap-legal #menu-two > li {
   padding: 0px !important;
+  max-width: none !important;
 }
 footer section.nav {
   margin-top: 80px;
+  padding-bottom: 0px !important;
 }
 @media all and (max-width: 1024px) {
   footer section.nav {
@@ -1449,4 +1487,3 @@ section.section-half .columns-wrapper .right-container {
  *                                                  ISOLATED CODE FOR PARTIAL RELEASE
  *                                                         TO BE REMOVED NEXT
 /**/
-/*# sourceMappingURL=main.css.map */
