@@ -1071,92 +1071,6 @@ header.top-reached .menu > span {
  * --------------------------------------------------------------------------------------------------------------
  */
 /**/
-.menu-item-has-children > a {
-  /*&.c1 { background: yellow; }
-  &.c2:after { background: red; }*/
-  position: relative;
-}
-.menu-item-has-children > a::after {
-  display: inline-block;
-  content: url("/wp-content/uploads/2023/04/chevron-down.svg");
-  margin-left: 10px;
-}
-.menu-item-has-children ul.sub-menu {
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  display: none;
-  z-index: 2;
-}
-.menu-item-has-children ul.sub-menu.panel li:last-child {
-  border-bottom: 0;
-}
-.menu-item-has-children ul.sub-menu:not(.panel) {
-  position: absolute;
-  padding: 30.8px 0 0 0;
-}
-.menu-item-has-children ul.sub-menu:hover {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-@media all and (min-width: 1501px) {
-  .menu-item-has-children ul.sub-menu li {
-    border-left: 1px solid #000000;
-    border-right: 1px solid #000000;
-    border-bottom: 1px solid #000000;
-  }
-}
-.menu-item-has-children ul.sub-menu li a {
-  color: #000000;
-  text-decoration: none;
-  width: -webkit-fill-available;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-@media all and (min-width: 1025px) {
-  .menu-item-has-children ul.sub-menu li a {
-    padding: 10px 20px 10px 40px;
-  }
-}
-@media (max-width: 1024px) {
-  .menu-item-has-children ul.sub-menu li a {
-    padding: 10px 25px 10px 50px;
-  }
-}
-.menu-item-has-children ul.sub-menu li a::after {
-  display: inline-block;
-  content: url("/wp-content/uploads/2023/03/send-arrow.svg");
-  margin-left: 10px;
-  visibility: hidden;
-}
-.menu-item-has-children ul.sub-menu li a:hover {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-.menu-item-has-children ul.sub-menu li a:hover::after {
-  visibility: visible;
-}
-.menu-item-has-children ul.sub-menu li:first-child {
-  border-top: 1px solid #000000;
-}
-
-.has-children > a.sub-menu-openned::after {
-  -webkit-transform: rotate(-90deg);
-          transform: rotate(-90deg);
-}
-.has-children > a.sub-menu-openned + ul.sub-menu {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
 /**
  * --------------------------------------------------------------------------------------------------------------
  *                                                  DEDICATED VARIABLES 
@@ -1178,7 +1092,7 @@ footer .site-navigation a {
 /* */
 footer {
   max-width: none !important;
-  background-color: #fafafa;
+  background-color: #FAFAFA;
   height: 700px;
 }
 footer .site-branding {
