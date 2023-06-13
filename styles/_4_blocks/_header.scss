@@ -645,6 +645,7 @@ header{
         margin-right: 25px;
         .menu-item-has-children {
             > a {
+                
                 position: relative;
                 &::after {
                   display: inline-block;
