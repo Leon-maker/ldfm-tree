@@ -1278,11 +1278,21 @@ footer section .footer-navigation #menu-two > li {
           justify-content: flex-start;
   max-width: 150px !important;
 }
+@media all and (max-width: 1501px) {
+  footer section .footer-navigation #menu-two > li {
+    margin-bottom: 50px;
+  }
+}
 footer section .footer-navigation #menu-two > li > a {
   padding: 0px !important;
   opacity: 0.8;
   color: #000000;
   margin-bottom: 29px;
+}
+@media all and (max-width: 1501px) {
+  footer section .footer-navigation #menu-two > li > a {
+    margin-bottom: 20px;
+  }
 }
 footer section .footer-navigation #menu-two > li ul > li {
   padding: 0px;
