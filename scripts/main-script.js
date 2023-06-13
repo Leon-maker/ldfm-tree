@@ -292,7 +292,7 @@ window.addEventListener('resize', widthResizer)*/
 /**/
 
 jQuery(function ($) {
-    var subMenuChevron = $(".site-header>.wrap>.site-navigation nav.main-navigation ul>li.menu-item-has-children>a");
+    var subMenuChevron = $(".site-header>.wrap>.site-navigation ul>li.menu-item-has-children>a");
     subMenuChevron.each(function() {
         $(this).mouseenter(
             function() {

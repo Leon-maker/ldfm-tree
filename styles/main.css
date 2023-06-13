@@ -316,7 +316,7 @@ p {
  * --------------------------------------------------------------------------------------------------------------
  *                                                  DEDICATED FUNCTIONS 
 /**/
-.burger-menu.open, .burger-menu, li.has-children ul.sub-menu li a:hover::after, .site-navigation ul, header {
+.burger-menu.open, .burger-menu, header li.menu-item-has-children ul.sub-menu li a:hover::after, .site-navigation ul, header {
   -webkit-transition: -webkit-all 0.4s ease-in-out 0s;
   -webkit-transition: all 0.4s ease-in-out 0s;
   transition: all 0.4s ease-in-out 0s;
@@ -614,15 +614,15 @@ header .site-branding a {
  * --------------------------------------------------------------------------------------------------------------
  *                                                  SUB-MENU NAVIGATION
 /**/
-li.has-children > a {
+header li.menu-item-has-children > a {
   position: relative;
 }
-li.has-children > a::after {
+header li.menu-item-has-children > a::after {
   content: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5LjgwMyIgaGVpZ2h0PSI2LjMxIiB2aWV3Qm94PSIwIDAgOS44MDMgNi4zMSI+ICA8cGF0aCBpZD0iVHJhY8OpXzIwODA5IiBkYXRhLW5hbWU9IlRyYWPDqSAyMDgwOSIgZD0iTTAsNC45LDQuNTI5LDAsOC44MzgsNC45IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSg5LjMyNiA1LjM0KSByb3RhdGUoMTgwKSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMWMxYzFjIiBzdHJva2Utd2lkdGg9IjEuMyIvPjwvc3ZnPg==");
   display: inline-block;
   margin-left: 10px;
 }
-li.has-children ul.sub-menu {
+header li.menu-item-has-children ul.sub-menu {
   top: 68px;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -631,41 +631,41 @@ li.has-children ul.sub-menu {
   display: none;
   z-index: 2;
 }
-li.has-children ul.sub-menu.panel li:last-child {
+header li.menu-item-has-children ul.sub-menu.panel li:last-child {
   border-bottom: 0;
 }
-li.has-children ul.sub-menu:not(.panel) {
+header li.menu-item-has-children ul.sub-menu:not(.panel) {
   position: absolute;
   padding: 17px 0 0 0;
 }
-li.has-children ul.sub-menu:hover {
+header li.menu-item-has-children ul.sub-menu:hover {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 @media all and (max-width: 1500px) {
-  li.has-children ul.sub-menu li {
+  header li.menu-item-has-children ul.sub-menu li {
     width: -webkit-fill-available;
   }
 }
 @media all and (min-width: 1501px) {
-  li.has-children ul.sub-menu li {
+  header li.menu-item-has-children ul.sub-menu li {
     border-left: 1px solid #000000;
     border-right: 1px solid #000000;
     border-bottom: 1px solid #000000;
   }
 }
 @media all and (max-width: 1500px) {
-  li.has-children ul.sub-menu li:first-child {
+  header li.menu-item-has-children ul.sub-menu li:first-child {
     border-top: 1px solid #ffffff;
   }
 }
 @media all and (min-width: 1501px) {
-  li.has-children ul.sub-menu li:first-child {
+  header li.menu-item-has-children ul.sub-menu li:first-child {
     border-top: 1px solid #000000;
   }
 }
-li.has-children ul.sub-menu li a {
+header li.menu-item-has-children ul.sub-menu li a {
   color: #000000;
   text-decoration: none;
   width: -webkit-fill-available;
@@ -677,40 +677,39 @@ li.has-children ul.sub-menu li a {
           justify-content: space-between;
 }
 @media (max-width: 767px) {
-  li.has-children ul.sub-menu li a {
+  header li.menu-item-has-children ul.sub-menu li a {
     padding: 24px 25px 24px 50px;
   }
 }
 @media all and (min-width: 768px) {
-  li.has-children ul.sub-menu li a {
+  header li.menu-item-has-children ul.sub-menu li a {
     padding: 24px 60px 24px 120px;
   }
 }
 @media all and (min-width: 1501px) {
-  li.has-children ul.sub-menu li a {
+  header li.menu-item-has-children ul.sub-menu li a {
     padding: 10px 20px 10px 40px;
   }
 }
-li.has-children ul.sub-menu li a::after {
+header li.menu-item-has-children ul.sub-menu li a::after {
   display: inline-block;
   content: url("/thrive_wp/wp-content/uploads/2023/06/send-arrow.svg");
   margin-left: 10px;
   visibility: hidden;
 }
-li.has-children ul.sub-menu li a:hover {
+header li.menu-item-has-children ul.sub-menu li a:hover {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
-li.has-children ul.sub-menu li a:hover::after {
+header li.menu-item-has-children ul.sub-menu li a:hover::after {
   visibility: visible;
 }
-
-.has-children > a.sub-menu-openned::after {
+header .menu-item-has-children > a.sub-menu-openned::after {
   -webkit-transform: rotate(-90deg);
           transform: rotate(-90deg);
 }
-.has-children > a.sub-menu-openned + ul.sub-menu {
+header .menu-item-has-children > a.sub-menu-openned + ul.sub-menu {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1075,11 +1074,6 @@ header .menu-item-has-children > a {
   /*&.c1 { background: yellow; }
   &.c2:after { background: red; }*/
   position: relative;
-}
-header .menu-item-has-children > a::after {
-  display: inline-block;
-  content: url("/wp-content/uploads/2023/04/chevron-down.svg");
-  margin-left: 10px;
 }
 header .menu-item-has-children ul.sub-menu {
   -webkit-box-orient: vertical;

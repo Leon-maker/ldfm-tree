@@ -228,93 +228,96 @@ header .navigation {
 /**/
 
 // Parent
-li.has-children {
-    > a {
-      position: relative;
-      &::after {
-        content:url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5LjgwMyIgaGVpZ2h0PSI2LjMxIiB2aWV3Qm94PSIwIDAgOS44MDMgNi4zMSI+ICA8cGF0aCBpZD0iVHJhY8OpXzIwODA5IiBkYXRhLW5hbWU9IlRyYWPDqSAyMDgwOSIgZD0iTTAsNC45LDQuNTI5LDAsOC44MzgsNC45IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSg5LjMyNiA1LjM0KSByb3RhdGUoMTgwKSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMWMxYzFjIiBzdHJva2Utd2lkdGg9IjEuMyIvPjwvc3ZnPg==');
-        display: inline-block;
-        margin-left: 10px;      
-      }
-    }
-
-    // Sous-menu
-    ul.sub-menu {
-        top: calc($header-inside-height - 2px);
-        &.panel{
-            li:last-child {
-            border-bottom: 0;
-            }
+header{
+    li.menu-item-has-children {
+        > a {
+          position: relative;
+          &::after {
+            content:url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5LjgwMyIgaGVpZ2h0PSI2LjMxIiB2aWV3Qm94PSIwIDAgOS44MDMgNi4zMSI+ICA8cGF0aCBpZD0iVHJhY8OpXzIwODA5IiBkYXRhLW5hbWU9IlRyYWPDqSAyMDgwOSIgZD0iTTAsNC45LDQuNTI5LDAsOC44MzgsNC45IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSg5LjMyNiA1LjM0KSByb3RhdGUoMTgwKSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMWMxYzFjIiBzdHJva2Utd2lkdGg9IjEuMyIvPjwvc3ZnPg==');
+            display: inline-block;
+            margin-left: 10px;      
+          }
         }
-        &:not(.panel){
-            position: absolute;
-            padding: calc(20px - 3px) 0 0 0;
-        }
-        flex-direction: column;
-        display: none;
-        z-index: 2;
-        &:hover {
-            display: flex;
-        }
-        li {
-            @media all and (max-width: $layout-breakpoint-end-burger) {
-                width: -webkit-fill-available;
-            }
-            @media all and (min-width: 1501px) {
-                border-left: 1px solid $header-on-scroll-font-color;
-                border-right: 1px solid $header-on-scroll-font-color;
-                border-bottom: 1px solid $header-on-scroll-font-color;
-            }
-            &:first-child {
-                @media all and (max-width: $layout-breakpoint-end-burger) {
-                    border-top: 1px solid $header-top-reached-font-color;
-                }
-                @media all and (min-width: $layout-breakpoint-start-noburger) {
-                    border-top: 1px solid $header-on-scroll-font-color;
+    
+        // Sous-menu
+        ul.sub-menu {
+            top: calc($header-inside-height - 2px);
+            &.panel{
+                li:last-child {
+                border-bottom: 0;
                 }
             }
-            a {
-                color: $header-on-scroll-font-color;
-                text-decoration: none;
-                width: -webkit-fill-available;
+            &:not(.panel){
+                position: absolute;
+                padding: calc(20px - 3px) 0 0 0;
+            }
+            flex-direction: column;
+            display: none;
+            z-index: 2;
+            &:hover {
                 display: flex;
-                justify-content: space-between;
-                @media (max-width: $layout-breakpoint-end-smartphone) {
-                    padding: 24px 25px 24px 50px;
+            }
+            li {
+                @media all and (max-width: $layout-breakpoint-end-burger) {
+                    width: -webkit-fill-available;
                 }
-                @media all and (min-width: $layout-breakpoint-start-tablette) {
-                    padding: 24px 60px 24px 120px;
+                @media all and (min-width: 1501px) {
+                    border-left: 1px solid $header-on-scroll-font-color;
+                    border-right: 1px solid $header-on-scroll-font-color;
+                    border-bottom: 1px solid $header-on-scroll-font-color;
                 }
-                @media all and (min-width: $layout-breakpoint-start-noburger) {
-                    padding: 10px 20px 10px 40px;
+                &:first-child {
+                    @media all and (max-width: $layout-breakpoint-end-burger) {
+                        border-top: 1px solid $header-top-reached-font-color;
+                    }
+                    @media all and (min-width: $layout-breakpoint-start-noburger) {
+                        border-top: 1px solid $header-on-scroll-font-color;
+                    }
                 }
-                &::after {
-                    display: inline-block;
-                    content: url('/thrive_wp/wp-content/uploads/2023/06/send-arrow.svg');
-                    margin-left: 10px;
-                    visibility: hidden;
-                }
-                &:hover {
+                a {
+                    color: $header-on-scroll-font-color;
+                    text-decoration: none;
+                    width: -webkit-fill-available;
                     display: flex;
+                    justify-content: space-between;
+                    @media (max-width: $layout-breakpoint-end-smartphone) {
+                        padding: 24px 25px 24px 50px;
+                    }
+                    @media all and (min-width: $layout-breakpoint-start-tablette) {
+                        padding: 24px 60px 24px 120px;
+                    }
+                    @media all and (min-width: $layout-breakpoint-start-noburger) {
+                        padding: 10px 20px 10px 40px;
+                    }
                     &::after {
-                    @extend %transition;
-                    visibility: visible;
+                        display: inline-block;
+                        content: url('/thrive_wp/wp-content/uploads/2023/06/send-arrow.svg');
+                        margin-left: 10px;
+                        visibility: hidden;
+                    }
+                    &:hover {
+                        display: flex;
+                        &::after {
+                        @extend %transition;
+                        visibility: visible;
+                        }
                     }
                 }
             }
         }
     }
-}
-  
-// Transformation quand sous-menu déplié
-.has-children > a.sub-menu-openned {
-    &::after {
-      transform: rotate(-90deg);
+      
+    // Transformation quand sous-menu déplié
+    .menu-item-has-children > a.sub-menu-openned {
+        &::after {
+          transform: rotate(-90deg);
+        }
+        + ul.sub-menu {
+          display: flex;
+        }
     }
-    + ul.sub-menu {
-      display: flex;
-    }
 }
+
   
 .principal-menu-burger,
 footer {
@@ -674,12 +677,6 @@ header{
           /*&.c1 { background: yellow; }
           &.c2:after { background: red; }*/
           position: relative;
-          &::after {
-            display: inline-block;
-            content: url('/wp-content/uploads/2023/04/chevron-down.svg');
-            //@extend %transition;
-            margin-left: 10px;
-          }
         }
         ul.sub-menu {
           &.panel{
