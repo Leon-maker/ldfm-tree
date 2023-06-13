@@ -33,7 +33,7 @@ if (empty($header_color)) {
 <header id="overlay-header" class="site-header top-reached" role="banner" style="background-color: transparent">
 	<style>
 	header .sub-menu {
-		background-color: <?php echo $header_color; ?>
+		background-color: <?php echo $transparent; ?>
 	}
 	</style>
 
