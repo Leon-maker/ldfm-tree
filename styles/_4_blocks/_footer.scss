@@ -20,9 +20,9 @@ footer .site-navigation a {
 /* */
 
 footer  {
+    
     max-width: none !important;
     background-color: $color-grey ;
-    height: 700px;
     & .site-navigation{
         justify-content: flex-start !important;
     }
@@ -43,6 +43,11 @@ footer  {
     section {
         margin: auto;
         & .footer-navigation{
+            width: 100% !important;
+            
+            & .menu-footermenu-container{
+                width: 100%;
+            }
             #menu-item-21354{
                 padding-left:0px !important;
             }
@@ -51,17 +56,26 @@ footer  {
                 padding:0px;
                 flex-direction: column;
             }
+            & #menu-two{
+                justify-content: space-between;
+            }
             & #menu-two>li{
-                padding:24px 60px;
                 display: flex;
                 flex-direction: column;
                 justify-content: flex-start;
                 max-width: 150px !important;
+                @media all and (max-width: $layout-breakpoint-start-noburger) {
+                    margin-bottom: 50px;
+                }
+
                 & >a{
                     padding:0px !important;
                     opacity: 0.8;
                     color :$color-black;
                     margin-bottom:29px;
+                    @media all and (max-width: $layout-breakpoint-start-noburger) {
+                        margin-bottom: 20px;
+                    }
                 }
                 & ul>li{
                     padding:0px;

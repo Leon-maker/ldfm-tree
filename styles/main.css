@@ -355,6 +355,57 @@ a[href]:not(.std-link) {
   text-decoration: none;
 }
 
+.breadcrumb-container .whited-filariane .dot-filariane {
+  background: white !important;
+}
+.breadcrumb-container .whited-filariane li:last-child {
+  color: white !important;
+}
+.breadcrumb-container .whited-filariane li:last-child a {
+  opacity: 1 !important;
+  color: white !important;
+}
+.breadcrumb-container .fil-ariane-wrapper .fil-ariane-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.breadcrumb-container .fil-ariane-wrapper .fil-ariane-container li {
+  list-style-type: none;
+  font-size: 14px;
+  color: #000000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-family: "Montserrat-Regular";
+}
+.breadcrumb-container .fil-ariane-wrapper .fil-ariane-container li a {
+  opacity: 0.4;
+}
+.breadcrumb-container .fil-ariane-wrapper .fil-ariane-container li:last-child a {
+  opacity: 1;
+}
+.breadcrumb-container .fil-ariane-wrapper .fil-ariane-container li:nth-last-child(2) .dot-filariane {
+  opacity: 1;
+}
+.breadcrumb-container .fil-ariane-wrapper .fil-ariane-container .dot-filariane {
+  content: "";
+  width: 5px;
+  height: 5px;
+  background-color: #000000;
+  display: block;
+  border-radius: 50%;
+  opacity: 0.4;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
 /**
  * --------------------------------------------------------------------------------------------------------------
  *                                                  3 : CARDS
@@ -1103,7 +1154,6 @@ footer .site-navigation a {
 footer {
   max-width: none !important;
   background-color: #FAFAFA;
-  height: 700px;
 }
 footer .site-navigation {
   -webkit-box-pack: start !important;
@@ -1131,6 +1181,12 @@ footer .site-branding img {
 footer section {
   margin: auto;
 }
+footer section .footer-navigation {
+  width: 100% !important;
+}
+footer section .footer-navigation .menu-footermenu-container {
+  width: 100%;
+}
 footer section .footer-navigation #menu-item-21354 {
   padding-left: 0px !important;
 }
@@ -1144,8 +1200,12 @@ footer section .footer-navigation .sub-menu {
       -ms-flex-direction: column;
           flex-direction: column;
 }
+footer section .footer-navigation #menu-two {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
 footer section .footer-navigation #menu-two > li {
-  padding: 24px 60px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1158,11 +1218,21 @@ footer section .footer-navigation #menu-two > li {
           justify-content: flex-start;
   max-width: 150px !important;
 }
+@media all and (max-width: 1501px) {
+  footer section .footer-navigation #menu-two > li {
+    margin-bottom: 50px;
+  }
+}
 footer section .footer-navigation #menu-two > li > a {
   padding: 0px !important;
   opacity: 0.8;
   color: #000000;
   margin-bottom: 29px;
+}
+@media all and (max-width: 1501px) {
+  footer section .footer-navigation #menu-two > li > a {
+    margin-bottom: 20px;
+  }
 }
 footer section .footer-navigation #menu-two > li ul > li {
   padding: 0px;
@@ -1410,6 +1480,30 @@ section.section-half .columns-wrapper .right-container {
  * --------------------------------------------------------------------------------------------------------------
  *                                                  LEGAL PAGES 
 /**/
+.legal-section .columns-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.legal-section .terms_content {
+  max-width: 70%;
+}
+.legal-section .terms_content h2 {
+  font-size: 20px;
+  font-weight: 600 !important;
+  line-height: 23px;
+  color: black;
+  margin-bottom: 35px;
+  margin-top: 50px;
+}
+.legal-section .terms_content .main-title {
+  text-align: left !important;
+  text-transform: uppercase;
+}
+
 /**
  * --------------------------------------------------------------------------------------------------------------
  *                                                  DEDICATED VARIABLES 

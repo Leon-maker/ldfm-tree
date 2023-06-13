@@ -1,0 +1,49 @@
+.breadcrumb-container{
+    & .whited-filariane{
+        & .dot-filariane{
+           background: white !important;
+        }
+        & li:last-child{
+            color: white !important;
+            & a{
+                opacity: 1 !important;
+                color: white !important;
+            }
+        }
+
+    }
+    & .fil-ariane-wrapper{
+        & .fil-ariane-container{
+            display: flex;
+            & li{
+                list-style-type: none;
+                font-size: 14px;
+                color: $color-black;
+                display: flex;
+                align-items: center;
+                width: fit-content;
+                font-family: $font-main-400;
+                & a{
+                    opacity: 0.4;
+                }
+            }
+            & li:last-child a{
+                opacity: 1;
+            }
+            & li:nth-last-child(2) .dot-filariane {
+                opacity: 1 ;
+            }
+            & .dot-filariane{
+                content: "";
+                width: 5px;
+                height: 5px;
+                background-color: $color-black;
+                display: block;
+                border-radius: 50%;
+                opacity: 0.4;
+                margin-left: 10px;
+                margin-right: 10px;
+            }
+        }
+    }
+}
