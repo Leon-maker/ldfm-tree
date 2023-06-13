@@ -355,6 +355,16 @@ a[href]:not(.std-link) {
   text-decoration: none;
 }
 
+.breadcrumb-container .whited-filariane .dot-filariane {
+  background: white !important;
+}
+.breadcrumb-container .whited-filariane li:last-child {
+  color: white !important;
+}
+.breadcrumb-container .whited-filariane li:last-child a {
+  opacity: 1 !important;
+  color: white !important;
+}
 .breadcrumb-container .fil-ariane-wrapper .fil-ariane-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -382,7 +392,7 @@ a[href]:not(.std-link) {
   opacity: 1;
 }
 .breadcrumb-container .fil-ariane-wrapper .fil-ariane-container li:nth-last-child(2) .dot-filariane {
-  opacity: 1 !important;
+  opacity: 1;
 }
 .breadcrumb-container .fil-ariane-wrapper .fil-ariane-container .dot-filariane {
   content: "";

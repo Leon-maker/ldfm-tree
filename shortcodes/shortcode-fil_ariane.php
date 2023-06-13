@@ -4,6 +4,7 @@ function SHORTCODE_FilAriane($arguments)
     ob_start();
 
     $arguments_array = shortcode_atts( array(
+        "type" => "black",
         "title1" => "Accueil",
         "link1" => "/",
         "title2" => "",
@@ -15,10 +16,11 @@ function SHORTCODE_FilAriane($arguments)
     ), $arguments );
 
     $arrow_svg = wp_get_attachment_image_src(21228, 'full')[0];
-
+    $white_class="  ";
+    if($arguments_array['type'] === "white")$white_class="whited-filariane";
     ?>
 
-    <nav class="fil-ariane-wrapper">
+    <nav class="fil-ariane-wrapper <?= $white_class ?>">
         <ul class="fil-ariane-container list-in-row">
             <?php
             $nb_filled_arguments = 0;

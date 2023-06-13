@@ -1,4 +1,17 @@
 .breadcrumb-container{
+    & .whited-filariane{
+        & .dot-filariane{
+           background: white !important;
+        }
+        & li:last-child{
+            color: white !important;
+            & a{
+                opacity: 1 !important;
+                color: white !important;
+            }
+        }
+
+    }
     & .fil-ariane-wrapper{
         & .fil-ariane-container{
             display: flex;
@@ -18,7 +31,7 @@
                 opacity: 1;
             }
             & li:nth-last-child(2) .dot-filariane {
-                opacity: 1 !important;
+                opacity: 1 ;
             }
             & .dot-filariane{
                 content: "";
