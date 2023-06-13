@@ -1163,7 +1163,6 @@ footer .site-navigation a {
 footer {
   max-width: none !important;
   background-color: #FAFAFA;
-  height: 700px;
 }
 footer .site-navigation {
   -webkit-box-pack: start !important;
@@ -1191,6 +1190,12 @@ footer .site-branding img {
 footer section {
   margin: auto;
 }
+footer section .footer-navigation {
+  width: 100% !important;
+}
+footer section .footer-navigation .menu-footermenu-container {
+  width: 100%;
+}
 footer section .footer-navigation #menu-item-21354 {
   padding-left: 0px !important;
 }
@@ -1204,8 +1209,12 @@ footer section .footer-navigation .sub-menu {
       -ms-flex-direction: column;
           flex-direction: column;
 }
+footer section .footer-navigation #menu-two {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
 footer section .footer-navigation #menu-two > li {
-  padding: 24px 60px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
