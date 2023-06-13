@@ -288,3 +288,12 @@ function custom_excerpt_length_slider( $length ) {
     }
 }
 add_filter( 'excerpt_length', 'custom_excerpt_length_slider', 999 );
+
+
+function add_menu_link_class($atts, $item, $args) {
+    if(isset($args->link_class)) {
+        $atts['class'] = $args->link_class;
+    }
+    return $atts;
+}
+add_filter('nav_menu_link_attributes', 'add_menu_link_class', 10, 3);

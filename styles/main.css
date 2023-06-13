@@ -406,6 +406,21 @@ a[href]:not(.std-link) {
   margin-right: 10px;
 }
 
+.default-link-hover {
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  opacity: 0.4;
+  color: #000000;
+  font-size: 14px;
+  font-family: "Montserrat-Regular";
+  font-weight: normal;
+}
+.default-link-hover:hover {
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  opacity: 1 !important;
+}
+
 /**
  * --------------------------------------------------------------------------------------------------------------
  *                                                  3 : CARDS

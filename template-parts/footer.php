@@ -32,7 +32,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 						<div class="navigation navigation-two footer-navigation">
 							<div class="wrap">
 								<nav id="site-navigation-two" class="secondary-navigation" role="navigation">
-									<?php wp_nav_menu(array('theme_location' => 'bottom', 'menu_id' => 'menu-two')); ?>
+									<?php wp_nav_menu(array('theme_location' => 'bottom', 'menu_id' => 'menu-two' , 'link_class' => 'default-link-hover')); ?>
 								</nav>
 							</div>
 						</div>
@@ -42,7 +42,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 						<div class="footer-navigation ">
 							<div class="wrap-legal">
 								<nav id="site-navigation-two" class="secondary-navigation" role="navigation">
-									<?php wp_nav_menu(array('theme_location' => 'bottom-end', 'menu_id' => 'menu-two')); ?>
+									<?php wp_nav_menu(array('theme_location' => 'bottom-end', 'menu_id' => 'menu-two' , 'link_class' => 'default-link-hover')); ?>
 								</nav>
 								<p>@influencesbym2023</p>
 							</div>
