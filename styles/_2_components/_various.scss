@@ -15,6 +15,7 @@ a[href] {
     &:not(.std-link) {
       text-decoration: none;
     }
+    color: $color-black;
 }
 
 

@@ -117,12 +117,21 @@ $lateral-padding-width-mobile: 50px;
  * --------------------------------------------------------------------------------------------------------------
  *                                                  DEDICATED CLASSES 
 /**/
-.margin-top-header{
-  margin-top: 100px;
+.padding-top-header{
+  margin: 100px 0 0 0;
   padding: 0 0 70px 0;
+  
+  .header-button {
+    margin-top: 160px;
+  }
 }
 
 .little-lateral-margin {
   margin-left: 60px;
   margin-right: 60px;
+}
+
+.little-lateral-padding {
+  padding-left: 60px;
+  padding-right: 60px;
 }
