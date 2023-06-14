@@ -3,11 +3,13 @@
         & .dot-filariane{
            background: white !important;
         }
+        & li a{
+            color: $color-white !important;
+        }
         & li:hover{
             & a{
                 transition: all .4s ease-in-out;
                 opacity: 1 !important;
-                color: $color-white !important;
             }
         }
         & li:last-child{
