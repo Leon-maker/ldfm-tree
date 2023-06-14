@@ -253,7 +253,7 @@ p {
  *                                                  DEDICATED CLASSES 
 /**/
 .white {
-  color: #ffffff;
+  color: #ffffff !important;
 }
 
 .black {
