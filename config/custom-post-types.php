@@ -85,3 +85,33 @@ function thrive_register_post_types_INFLUENCE() {
 }
 add_action( 'init', 'thrive_register_post_types_INFLUENCE' );
 
+
+
+
+function thrive_register_post_types_REALISATION() {
+
+    $labels = array(
+        'name' => 'Realisation',
+        'all_items' => 'Toutes les réalisations',
+        'singular_name' => 'realisation',
+        'add_new_item' => 'Ajouter une réalisation',
+        'add_new' => 'Ajouter une réalisation',
+        'edit_item' => 'Modifier la réalisation',
+        'menu_name' => 'Réalisations'
+    );
+
+    $args = array(
+        'labels' => $labels,
+        'public' => true,
+        'show_in_rest' => true,
+        'has_archive' => true,
+        'supports' => array('title', 'custom-fields'),
+        'menu_position' => 5,
+        'menu_icon' => 'dashicons-admin-customizer',
+        'show_in_menu' => true
+    );
+    register_post_type('realisation', $args);
+
+}
+add_action( 'init', 'thrive_register_post_types_REALISATION' );
+
