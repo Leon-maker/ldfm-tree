@@ -292,11 +292,11 @@ p {
  * --------------------------------------------------------------------------------------------------------------
  *                                                  DEDICATED CLASSES 
 /**/
-.margin-top-header {
+.padding-top-header {
   margin: 100px 0 0 0;
   padding: 0 0 70px 0;
 }
-.margin-top-header .header-button {
+.padding-top-header .header-button {
   margin-top: 160px;
 }
 
