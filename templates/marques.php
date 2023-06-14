@@ -22,4 +22,6 @@
     endif; ?>
 </section>
 
+<?php echo do_shortcode('[shortcode-influence-section]'); ?>
+
 <?php get_footer(); ?>
