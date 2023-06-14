@@ -1,7 +1,6 @@
 .influence-section-container{
     display: flex;
     flex-direction: column;
-    padding-left: 40px;
     & .influence-section-header-title{
         display: flex;
         flex-direction: column;
@@ -17,8 +16,13 @@
             margin-top: 10px;
             text-transform: uppercase;
             color: $color-black;
-            font-weight: 600;
             font-family: $font-main-400;
+        }
+
+        & .influence-section-header-sub-content-container{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
     }
 

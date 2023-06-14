@@ -1718,7 +1718,6 @@ section.section-half .columns-wrapper .right-container {
   margin-top: 10px;
   text-transform: uppercase;
   color: #000000;
-  font-weight: 600;
   font-family: "Montserrat-Regular";
 }
 .contact-section-container .contact-section-card-wrapper {
@@ -1743,7 +1742,6 @@ section.section-half .columns-wrapper .right-container {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  padding-left: 40px;
 }
 .influence-section-container .influence-section-header-title {
   display: -webkit-box;
@@ -1767,8 +1765,18 @@ section.section-half .columns-wrapper .right-container {
   margin-top: 10px;
   text-transform: uppercase;
   color: #000000;
-  font-weight: 600;
   font-family: "Montserrat-Regular";
+}
+.influence-section-container .influence-section-header-title .influence-section-header-sub-content-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 .influence-section-container .influence-section-card-wrapper {
   display: -webkit-box;
@@ -1808,6 +1816,65 @@ section.section-half .columns-wrapper .right-container {
  * --------------------------------------------------------------------------------------------------------------
  *                                                  POST SINGLE 
 /**/
+.single-influence-main-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.single-influence-main-section .single-influence-content-container {
+  width: 60%;
+}
+.single-influence-main-section .single-influence-content-container img {
+  display: block;
+  width: 100% !important;
+  max-height: 500px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin: 60px 0px;
+}
+.single-influence-main-section .single-influence-content-container p {
+  font-family: "Montserrat-Regular";
+  text-align: left;
+  font-size: 16px;
+  color: #000000;
+}
+.single-influence-main-section .single-influence-content-container h1, .single-influence-main-section .single-influence-content-container h2, .single-influence-main-section .single-influence-content-container h3 {
+  font-family: "Montserrat-Medium";
+  text-align: left;
+  font-size: 20px;
+  color: #000000;
+}
+.single-influence-main-section .single-influence-end-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 60%;
+  margin-top: 50px;
+}
+.single-influence-main-section .single-influence-end-section span, .single-influence-main-section .single-influence-end-section p:last-child {
+  font-family: "Montserrat-SemiBold";
+  font-weight: bold;
+}
+
+.single-influence-separator {
+  padding: 0px 60px;
+  margin-top: 100px;
+}
+.single-influence-separator .single-influence-separator-line {
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
 /**
  * --------------------------------------------------------------------------------------------------------------
  *                                                  6 : PAGES
