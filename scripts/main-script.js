@@ -127,43 +127,43 @@ jQuery(function ($) {
     
     if (!isMobile.any()) {
 
-        $(window).scroll(example);
-        function example() {
-            var tempScrollTop = $(window).scrollTop();
-            //console.log("Scroll from Top: " + tempScrollTop.toString());
+        // $(window).scroll(example);
+        // function example() {
+        //     var tempScrollTop = $(window).scrollTop();
+        //     //console.log("Scroll from Top: " + tempScrollTop.toString());
 
-            if (tempScrollTop == 0) {
-                //header.classList.remove("header-fadeInDown");
-                //header.classList.remove("header-fadeOutUp");
-                header.classList.add("top-reached");
-            } else {
-                header.classList.remove("top-reached");
-                /*function checkScrollDirection(event) {
-                    if (checkScrollDirectionIsUp(event)) {
-                        timer = window.setTimeout(function() {
-                            header.classList.remove("header-fadeInDown");
-                            header.classList.add("header-fadeOutUp");
-                        }, 500); 
-                    } else {
-                        timer = window.setTimeout(function() {
-                            header.classList.remove("header-fadeOutUp");
-                            header.classList.add("header-fadeInDown");
-                        }, 500);
-                    }
-                }
+        //     if (tempScrollTop == 0) {
+        //         //header.classList.remove("header-fadeInDown");
+        //         //header.classList.remove("header-fadeOutUp");
+        //         header.classList.add("top-reached");
+        //     } else {
+        //         header.classList.remove("top-reached");
+        //         /*function checkScrollDirection(event) {
+        //             if (checkScrollDirectionIsUp(event)) {
+        //                 timer = window.setTimeout(function() {
+        //                     header.classList.remove("header-fadeInDown");
+        //                     header.classList.add("header-fadeOutUp");
+        //                 }, 500); 
+        //             } else {
+        //                 timer = window.setTimeout(function() {
+        //                     header.classList.remove("header-fadeOutUp");
+        //                     header.classList.add("header-fadeInDown");
+        //                 }, 500);
+        //             }
+        //         }
                 
-                function checkScrollDirectionIsUp(event) {
-                    if (event.wheelDelta) {
-                        return event.wheelDelta > 0;
-                    }
-                    return event.deltaY < 0;
-                }
+        //         function checkScrollDirectionIsUp(event) {
+        //             if (event.wheelDelta) {
+        //                 return event.wheelDelta > 0;
+        //             }
+        //             return event.deltaY < 0;
+        //         }
             
-                var scrollableElement = document.body; 
+        //         var scrollableElement = document.body; 
             
-                scrollableElement.addEventListener('wheel', checkScrollDirection);*/
-            }
-        };
+        //         scrollableElement.addEventListener('wheel', checkScrollDirection);*/
+        //     }
+        // };
 
     } else if (isMobile.any()) {
     
@@ -216,22 +216,6 @@ jQuery(function ($) {
     });*/
 
 
-});
-
-jQuery(function ($) {
-    var header = $(".site-header");
-    header.mouseenter(function () {
-        header.removeClass("top-reached");
-        // Code à exécuter lorsque la souris entre dans le header
-        console.log("La souris est sur le header.");
-        // Ajoutez ici le code que vous souhaitez exécuter lorsque la souris entre dans le header
-    });
-    header.mouseleave(function () {
-        header.addClass("top-reached");
-        // Code à exécuter lorsque la souris entre dans le header
-        console.log("La souris n'est plus sur le header.");
-        // Ajoutez ici le code que vous souhaitez exécuter lorsque la souris entre dans le header
-    });
 });
 
 
@@ -291,7 +275,6 @@ window.addEventListener('resize', widthResizer)*/
             burgerHeader.forEach(element => {
                 element.classList.remove('open');
             });
-            console.log("hey");
             jQuery(".accordion.active").trigger("click");
             jQuery("a.sub-menu-openned").trigger("click");
         }
@@ -308,16 +291,16 @@ window.addEventListener('resize', widthResizer)*/
 /**/
 
 jQuery(function ($) {
-    var subMenuChevron = $(".site-header>.wrap>.site-navigation ul>li.menu-item-has-children>a");
+    var menu = $(".site-header>.wrap>.site-navigation ul>li.menu-item-has-children");
     var headerSubMenuOpen = $(".site-header");
-    subMenuChevron.each(function() {
+    menu.each(function() {
+        var subMenuChevron = $(this).find("a");
         $(this).mouseenter(
             function() {
-                $(this).addClass( "sub-menu-openned" );
-                var subMenu = $(this).next(".sub-menu");
+                subMenuChevron.addClass( "sub-menu-openned" );
+                console.log(subMenuChevron);
+                var subMenu = subMenuChevron.next(".sub-menu");
                 var subMenuHeight = subMenu.height() + 20;
-                console.log((subMenu));
-                console.log("La hauteur du sous-menu est : " + subMenuHeight + " pixels.");
                 if (headerSubMenuOpen.hasClass("top-reached")) {
                     headerSubMenuOpen.css({
                         "background-image": "linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 1))"
@@ -339,7 +322,7 @@ jQuery(function ($) {
         );
         $(this).mouseleave(
             function() {
-                $(this).removeClass( "sub-menu-openned" );
+                subMenuChevron.removeClass( "sub-menu-openned" );
                 headerSubMenuOpen.css({
                     "padding": "15px 60px",
                     "color": "",
