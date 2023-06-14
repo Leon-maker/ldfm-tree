@@ -7,6 +7,9 @@
 // Configuration du thème
 require_once get_template_directory() . '/config/config.php';
 
+// Installation modules Javascript
+require_once get_template_directory() . '/config/javascript-modules-manager.php';
+
 // Custom posts
 require_once get_template_directory() . '/config/custom-post-types.php';
 
