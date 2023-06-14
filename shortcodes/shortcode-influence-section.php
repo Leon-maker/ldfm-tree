@@ -14,7 +14,11 @@ function SHORTCODE_Influence_section()
         <section class="influence-section-container">
             <div class="influence-section-header-title">
                 <p>Inspirations</p>
-                <h2>Nos influences</h2>
+                <div class="influence-section-header-sub-content-container">
+                    <h2>Nos influences</h2> 
+                    <a href="" class="cta-secondary">Toutes nos influences</a>
+                </div>
+                
             </div>
             <div class="influence-section-card-wrapper">
                 <?php 
