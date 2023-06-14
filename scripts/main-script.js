@@ -3,17 +3,52 @@
 
 // Import des managers
 /*import HomePageManager from "./managers/HomePageManager";
-import SwiperManager from "./managers/SwiperManager";
 import BlogPageManager from "./managers/BlogPageManager";*/
+import SwiperManager from "./managers/SwiperManager";
 
 // Initialisation des variables
 const homePage = document.querySelector('.home');
+const headerSlider = document.querySelector('.header-slider');
 
 window.onload = () => {
     if (homePage) {
         //const homePageManager = new HomePageManager();
         // Console log with style the gsap lib
         //console.log('%c GSAP version: ' + gsap.version, 'background: #222; color: #bada55');
+    }
+    if (headerSlider) {
+        const SwiperHeaderSlider = new SwiperManager(headerSlider, {
+            loop: false,
+            autoplay: {
+                //delay: 3000,
+                disableOnInteraction: false
+            },
+            slidesPerGroup: 1,
+            slidesPerView: 1, // total number of slides must be >= slidesPerView * 2
+            speed: 3000,
+            mousewheelControl: true,
+            keyboardControl: true,
+        });
+
+        SwiperHeaderSlider.addEventListener('onMomentumScrollEnd', (e, state, context) => {
+            if(state.index > this.currentIndex && this.currentIndex > 0) {
+                this._swiper.scrollBy(-1)
+            }
+            this.currentIndex = state.index;
+        });
+
+        SwiperHeaderSlider.addEventListener('slideChange', () => {
+            document.querySelector('.header-slider .swiper-button-prev').classList.remove('disabled');
+            document.querySelector('.header-slider .swiper-button-next').classList.remove('disabled');
+            const index_currentSlide = SwiperHeaderSlider.realIndex;
+            //const currentSlide = SwiperHeaderSlider.slides[index_currentSlide];
+            console.log("slide change to " + index_currentSlide);
+        });
+
+        SwiperHeaderSlider.addEventListener('reachEnd', () => {
+            console.log("reach to End");
+            document.querySelector('.header-slider .swiper-button-next').classList.add('disabled');
+        });
     }
 }
 
