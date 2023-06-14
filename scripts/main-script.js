@@ -218,6 +218,22 @@ jQuery(function ($) {
 
 });
 
+jQuery(function ($) {
+    var header = $(".site-header");
+    header.mouseenter(function () {
+        header.removeClass("top-reached");
+        // Code à exécuter lorsque la souris entre dans le header
+        console.log("La souris est sur le header.");
+        // Ajoutez ici le code que vous souhaitez exécuter lorsque la souris entre dans le header
+    });
+    header.mouseleave(function () {
+        header.addClass("top-reached");
+        // Code à exécuter lorsque la souris entre dans le header
+        console.log("La souris n'est plus sur le header.");
+        // Ajoutez ici le code que vous souhaitez exécuter lorsque la souris entre dans le header
+    });
+});
+
 
 
 /*-----------------------------------------------*/
@@ -302,10 +318,18 @@ jQuery(function ($) {
                 var subMenuHeight = subMenu.height() + 20;
                 console.log((subMenu));
                 console.log("La hauteur du sous-menu est : " + subMenuHeight + " pixels.");
+                if (headerSubMenuOpen.hasClass("top-reached")) {
+                    headerSubMenuOpen.css({
+                        "background-image": "linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 1))"
+                    });
+                } else {
+                    headerSubMenuOpen.css({
+                        "background-image": "linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1))",
+                    });
+                }
                 headerSubMenuOpen.css({
                     "padding": "15px 60px " + subMenuHeight + "px 60px",
                     "text-decoration": "none",
-                    "background-image": "linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1))",
                     "background-size": "100% 1px",
                     "background-position": "0 100px",
                     "background-repeat": "no-repeat",
@@ -330,6 +354,7 @@ jQuery(function ($) {
         );
     });
 });
+
 
 /**
  * --------------------------------------------------------------------------------------------------------------
