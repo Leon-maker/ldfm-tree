@@ -3,11 +3,18 @@
         & .dot-filariane{
            background: white !important;
         }
+        & li:hover{
+            & a{
+                transition: all .4s ease-in-out;
+                opacity: 1 !important;
+                color: $color-white !important;
+            }
+        }
         & li:last-child{
-            color: white !important;
+            color: $color-white !important;
             & a{
                 opacity: 1 !important;
-                color: white !important;
+                color: $color-white !important;
             }
         }
 
@@ -25,6 +32,13 @@
                 font-family: $font-main-400;
                 & a{
                     opacity: 0.4;
+                }
+                &:hover{
+                    & a{
+                        transition: all .4s ease-in-out;
+                        opacity: 1 ;
+                        color: $color-black ;
+                    }
                 }
             }
             & li:last-child a{

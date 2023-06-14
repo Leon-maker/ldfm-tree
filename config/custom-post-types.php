@@ -56,3 +56,32 @@ function thrive_register_post_types_MARQUE() {
 }
 add_action( 'init', 'thrive_register_post_types_MARQUE' );
 
+
+
+function thrive_register_post_types_INFLUENCE() {
+
+    $labels = array(
+        'name' => 'Influence',
+        'all_items' => 'Toutes les influences',
+        'singular_name' => 'influence',
+        'add_new_item' => 'Ajouter une influence',
+        'add_new' => 'Ajouter une influence',
+        'edit_item' => 'Modifier l\'influence',
+        'menu_name' => 'Influences'
+    );
+
+    $args = array(
+        'labels' => $labels,
+        'public' => true,
+        'show_in_rest' => true,
+        'has_archive' => true,
+        'supports' => array('title', 'custom-fields'),
+        'menu_position' => 5,
+        'menu_icon' => 'dashicons-admin-customizer',
+        'show_in_menu' => true
+    );
+    register_post_type('influence', $args);
+
+}
+add_action( 'init', 'thrive_register_post_types_INFLUENCE' );
+
