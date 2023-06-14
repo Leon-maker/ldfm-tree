@@ -1740,5 +1740,6 @@ section.section-half .columns-wrapper .right-container {
   display: grid;
   -ms-grid-columns: 1fr 20px 1fr 20px 1fr;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 20px;
+  grid-column-gap: 20px;
+  grid-row-gap: 70px;
 }
