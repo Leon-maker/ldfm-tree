@@ -9,7 +9,7 @@ if ($header_color) {
 	get_header();
 }
 
-$img_bkg = wp_get_attachment_image_src(21352, 'full')[0];
+$img_bkg = wp_get_attachment_image_src(21412, 'full')[0];
 $title_page = 'Boutique';
 $description_page = "Découvrez l’ensemble de nos produits.";
 $button1_page = "Catalogue indoor";

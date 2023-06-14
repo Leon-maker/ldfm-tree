@@ -293,8 +293,13 @@ p {
  *                                                  DEDICATED CLASSES 
 /**/
 .padding-top-header {
-  margin: 100px 0 0 0;
-  padding: 0 0 70px 0;
+  padding: 80px 0 70px 0;
+}
+.padding-top-header h1 {
+  margin-bottom: 0px;
+}
+.padding-top-header h3 {
+  margin-top: 10px;
 }
 .padding-top-header .header-button {
   margin-top: 160px;
@@ -1667,6 +1672,16 @@ section.section-half .columns-wrapper .right-container {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+/**
+ * --------------------------------------------------------------------------------------------------------------
+ *                                                  SECTIONS HEADER
+/**/
+.padding-top-header {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 .contact-section-container {

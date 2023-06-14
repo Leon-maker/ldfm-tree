@@ -118,9 +118,15 @@ $lateral-padding-width-mobile: 50px;
  *                                                  DEDICATED CLASSES 
 /**/
 .padding-top-header{
-  margin: 100px 0 0 0;
-  padding: 0 0 70px 0;
-  
+  padding: 80px 0 70px 0;
+
+  h1{
+    margin-bottom: 0px;
+  }
+  h3{
+    margin-top: 10px;
+  }
+
   .header-button {
     margin-top: 160px;
   }

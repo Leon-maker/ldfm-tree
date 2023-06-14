@@ -23,8 +23,8 @@ function SHORTCODE_SectionHeader($arguments)
 
     ?>
 
-    <section class="padding-top-header little-lateral-padding" style="background-image: url('<?php echo $img_bkg; ?>');" role="img" aria-label="Image d'illustration 1 de la première section de la page." class="illustration illu1" style="width: 100%;">
-        <?php echo do_shortcode('[shortcode-fil_ariane title2="Boutique"]'); ?>
+    <section class="padding-top-header" style="background-image: url('<?php echo $img_bkg; ?>');" role="img" aria-label="Image d'illustration 1 de la première section de la page." class="illustration illu1" style="width: 100%;">
+        <?php echo do_shortcode('[shortcode-fil_ariane type="white" title2="Boutique"]'); ?>
         <div class="text-center white">
             <h1>
                 <?php echo $title; ?>
