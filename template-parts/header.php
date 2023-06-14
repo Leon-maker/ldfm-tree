@@ -79,22 +79,34 @@ $image_url_white = wp_get_attachment_image_src(21398, 'full')[0];
 ?>
 
 <script>
-	jQuery(window).scroll(example);
-        function example() {
-			var tempScrollTop = jQuery(window).scrollTop();
-			const elements = document.querySelectorAll('header .wrap .custom-logo');
+var tempScrollTop = 0;
 
-            if (tempScrollTop == 0) {
-				const imageUrl = "<?php echo $image_url_white; ?>";
-				elements.forEach(element => {
-					element.src = imageUrl;
-				});
-                	
-            } else {
-                const imageUrl = "<?php echo $image_url_black; ?>";
-				elements.forEach(element => {
-					element.src = imageUrl;
-				});
-            }
-        };
+jQuery(window).scroll(example);
+function example() {
+    tempScrollTop = jQuery(window).scrollTop();
+}
+
+jQuery(".site-header").mouseenter(function () {
+    const elements = document.querySelectorAll('header .wrap .custom-logo');
+    const imageUrl = "<?php echo $image_url_black; ?>";
+    elements.forEach(element => {
+        element.src = imageUrl;
+    });
+});
+
+jQuery(".site-header").mouseleave(function () {
+    const elements = document.querySelectorAll('header .wrap .custom-logo');
+    if (tempScrollTop == 0) {
+        const imageUrl = "<?php echo $image_url_white; ?>";
+        elements.forEach(element => {
+            element.src = imageUrl;
+        });
+    } else {
+        const imageUrl = "<?php echo $image_url_black; ?>";
+        elements.forEach(element => {
+            element.src = imageUrl;
+        });
+    }
+});
+
 </script>

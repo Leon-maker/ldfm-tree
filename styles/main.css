@@ -175,7 +175,7 @@ h2 {
 
 h3 {
   font-size: 20px;
-  line-height: 36px;
+  line-height: 23px;
 }
 @media all and (max-width: 1024px) {
   h3 {
@@ -186,7 +186,7 @@ h3 {
 
 h4 {
   font-size: 14px;
-  line-height: 21px;
+  line-height: 17px;
 }
 @media all and (max-width: 1024px) {
   h4 {
@@ -197,7 +197,7 @@ h4 {
 
 h5 {
   font-size: 12px !important;
-  line-height: 16px !important;
+  line-height: 14px !important;
 }
 @media all and (max-width: 1024px) {
   h5 {
@@ -230,7 +230,7 @@ footer .site-navigation a {
 
 p {
   font-size: 16px;
-  line-height: 24px;
+  line-height: 21px;
 }
 @media all and (max-width: 1024px) {
   p {
@@ -708,21 +708,7 @@ header .site-branding a {
   text-align: left;
   color: #000000;
   text-decoration: none;
-}
-@media (max-width: 767px) {
-  .site-navigation ul:not(.sub-menu) > li > a {
-    padding: 24px 25px;
-  }
-}
-@media all and (min-width: 768px) {
-  .site-navigation ul:not(.sub-menu) > li > a {
-    padding: 24px 25px;
-  }
-}
-@media all and (min-width: 1501px) {
-  .site-navigation ul:not(.sub-menu) > li > a {
-    padding: 24px 25px;
-  }
+  padding: 50px 25px;
 }
 
 /**

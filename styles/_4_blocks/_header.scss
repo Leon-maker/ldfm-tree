@@ -175,15 +175,7 @@ header .site-branding {
                     text-align: left;
                     color: $header-on-scroll-font-color;
                     text-decoration: none;
-                    @media (max-width: $layout-breakpoint-end-smartphone) {
-                        padding: 24px 25px;
-                    }
-                    @media all and (min-width: $layout-breakpoint-start-tablette) {
-                        padding: 24px 25px;
-                    }
-                    @media all and (min-width: $layout-breakpoint-start-noburger) {
-                        padding: 24px 25px;
-                    }
+                    padding: 50px 25px;
                 }
             }
         }
@@ -645,7 +637,7 @@ header{
         margin-right: 25px;
         .menu-item-has-children {
             > a {
-                
+
                 position: relative;
                 &::after {
                   display: inline-block;
