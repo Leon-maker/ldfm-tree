@@ -27,3 +27,32 @@
 //
 //}
 //add_action( 'init', 'thrive_register_post_types_<NOM DU CPT>' );
+
+
+function thrive_register_post_types_MARQUE() {
+
+    $labels = array(
+        'name' => 'Marque',
+        'all_items' => 'Toutes les marques',
+        'singular_name' => 'marque',
+        'add_new_item' => 'Ajouter une marque',
+        'add_new' => 'Ajouter une marque',
+        'edit_item' => 'Modifier la marque',
+        'menu_name' => 'Marques'
+    );
+
+    $args = array(
+        'labels' => $labels,
+        'public' => true,
+        'show_in_rest' => true,
+        'has_archive' => true,
+        'supports' => array('title', 'custom-fields'),
+        'menu_position' => 5,
+        'menu_icon' => 'dashicons-admin-customizer',
+        'show_in_menu' => true
+    );
+    register_post_type('marque', $args);
+
+}
+add_action( 'init', 'thrive_register_post_types_MARQUE' );
+
