@@ -292,14 +292,27 @@ p {
  * --------------------------------------------------------------------------------------------------------------
  *                                                  DEDICATED CLASSES 
 /**/
-.margin-top-header {
-  margin-top: 100px;
-  padding: 0 0 70px 0;
+.padding-top-header {
+  padding: 80px 0 70px 0;
+}
+.padding-top-header h1 {
+  margin-bottom: 0px;
+}
+.padding-top-header h3 {
+  margin-top: 10px;
+}
+.padding-top-header .header-button {
+  margin-top: 160px;
 }
 
 .little-lateral-margin {
   margin-left: 60px;
   margin-right: 60px;
+}
+
+.little-lateral-padding {
+  padding-left: 60px;
+  padding-right: 60px;
 }
 
 /**
@@ -358,6 +371,9 @@ p {
  *                                                  VARIOUS COMPONENTS 
 /**/
 /* LIENS A HREF */
+a[href] {
+  color: #000000;
+}
 a[href]:not(.std-link) {
   text-decoration: none;
 }
@@ -471,7 +487,7 @@ a[href]:not(.std-link) {
 }
 
 .cta-third {
-  color: #ffffff;
+  color: #ffffff !important;
   padding-bottom: 2px;
   text-decoration: none;
   background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(250, 250, 250, 0.5019607843)), to(rgba(250, 250, 250, 0.5019607843))), -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#ffffff));
@@ -1659,6 +1675,16 @@ section.section-half .columns-wrapper .right-container {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+/**
+ * --------------------------------------------------------------------------------------------------------------
+ *                                                  SECTIONS HEADER
+/**/
+.padding-top-header {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 .contact-section-container {
