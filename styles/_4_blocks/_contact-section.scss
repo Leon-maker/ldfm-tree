@@ -1,7 +1,6 @@
 .contact-section-container{
     display: flex;
     flex-direction: column;
-    margin: 0px $lateral-margin-width-desktop ;
 
     & .contact-section-header-title{
         display: flex;
@@ -12,12 +11,21 @@
             opacity: 0.5;
             color: $color-black;
             text-transform: uppercase;
+            font-family: $font-main-400;
         }
         & >h2{
             margin-top: 10px;
             text-transform: uppercase;
             color: $color-black;
             font-weight: 600;
+            font-family: $font-main-400;
         }
+    }
+
+    & .contact-section-card-wrapper{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-top: 20px;
     }
 }
