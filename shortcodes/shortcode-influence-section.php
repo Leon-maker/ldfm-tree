@@ -4,7 +4,7 @@ function SHORTCODE_Influence_section()
     ob_start();
     $args = array(
         'post_type' => 'influence',
-        'posts_per_page' => -1,
+        'posts_per_page' => 3,
         'orderby' => 'title',
         'order' => 'ASC'
     );
