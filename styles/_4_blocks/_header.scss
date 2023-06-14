@@ -37,17 +37,19 @@ $header-padding-y-start-tablette : 15px; // padding y others
 /**/
 
 header {
-
     z-index: 999;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
+    &.top-reached{
+        border-bottom: 1px solid rgb(255, 255, 255, 0.1);
+    }
     @extend %transition;
     &:not(.top-reached) {
         background-color: $header-on-scroll-bkg-color !important;
+        border-bottom: 1px solid rgb(0, 0, 0, 0.1);
     }
-    border-bottom: 1px solid $color-grey;
     @media (max-width: $layout-breakpoint-end-smartphone) {
         padding: 0;
         justify-content: space-between;
