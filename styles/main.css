@@ -651,6 +651,68 @@ a[href]:not(.std-link) {
   background-size: 0 2px, 100% 2px !important;
 }
 
+/** Realisation card **/
+.realisation-card {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: ()[1];
+  grid-template-rows: repeat(1);
+  -ms-grid-columns: (1fr)[2];
+  grid-template-columns: repeat(2, 1fr);
+}
+.realisation-card > *:nth-child(1) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+}
+.realisation-card > *:nth-child(2) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+}
+.realisation-card .realisation-card-img {
+  width: 100%;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.realisation-card .realisation-card-content-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.realisation-card .realisation-card-content-container .realisation-card-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.realisation-card .realisation-card-content-container .realisation-card-link {
+  font-size: 14px;
+  background-size: 10% 2px, 0 2px;
+}
+.realisation-card .realisation-card-content-container .realisation-card-link:hover {
+  background-size: 0 2px, 100% 2px !important;
+}
+
 /**
  * --------------------------------------------------------------------------------------------------------------
  *                                                  4 : BLOCKS
@@ -1957,27 +2019,4 @@ section.section-half .columns-wrapper .right-container {
       -ms-flex-direction: column;
           flex-direction: column;
   padding: 0px !important;
-}
-.section-archive-all-realisations .realisation-card {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-rows: (100px)[1];
-  grid-template-rows: repeat(1, 100px);
-  -ms-grid-columns: (1fr)[2];
-  grid-template-columns: repeat(2, 1fr);
-}
-.section-archive-all-realisations .realisation-card > *:nth-child(1) {
-  -ms-grid-row: 1;
-  -ms-grid-column: 1;
-}
-.section-archive-all-realisations .realisation-card > *:nth-child(2) {
-  -ms-grid-row: 1;
-  -ms-grid-column: 2;
-}
-.section-archive-all-realisations .realisation-card .realisation-card-img {
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
 }
