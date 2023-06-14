@@ -29,12 +29,18 @@ function SHORTCODE_SectionHeader($arguments)
             <h1>
                 <?php echo $title; ?>
             </h1>
-            <h3>
-                <?php echo $description; ?> 
-            </h3>
+            <?php if (!empty($description)) { ?>
+                <h3>
+                    <?php echo $description; ?> 
+                </h3>
+            <?php } ?>
             <div class="header-button">
-                <a class="cta-third" href=""><?php echo $button1; ?></a>
-                <a class="cta-third" href=""><?php echo $button2; ?></a>
+                <?php if (!empty($button1)) { ?>
+                    <a class="cta-third" href=""><?php echo $button1; ?></a>
+                <?php } ?>
+                <?php if (!empty($button2)) { ?>
+                    <a class="cta-third" href=""><?php echo $button2; ?></a>
+                <?php } ?>
             </div>
         </div>
     </section>

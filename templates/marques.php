@@ -6,6 +6,15 @@
 
 <?php get_header(); ?>
 
+<?php 
+$img_bkg = wp_get_attachment_image_src(21434, 'full')[0];
+$title_page = 'Nos Marques';
+$description_page = "Lorem ipsum dolor sit amet.";
+
+echo do_shortcode('[shortcode-header-section img-bkg="' . $img_bkg . '" title="' . $title_page . '" description="'. $description_page .'"]'); 
+
+?>
+
 <section class="section-archive-all-marque">
     <?php
     $args = array(
