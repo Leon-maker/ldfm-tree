@@ -368,12 +368,18 @@ a[href]:not(.std-link) {
 .breadcrumb-container .whited-filariane .dot-filariane {
   background: white !important;
 }
+.breadcrumb-container .whited-filariane li:hover a {
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  opacity: 1 !important;
+  color: #ffffff !important;
+}
 .breadcrumb-container .whited-filariane li:last-child {
-  color: white !important;
+  color: #ffffff !important;
 }
 .breadcrumb-container .whited-filariane li:last-child a {
   opacity: 1 !important;
-  color: white !important;
+  color: #ffffff !important;
 }
 .breadcrumb-container .fil-ariane-wrapper .fil-ariane-container {
   display: -webkit-box;
@@ -397,6 +403,12 @@ a[href]:not(.std-link) {
 }
 .breadcrumb-container .fil-ariane-wrapper .fil-ariane-container li a {
   opacity: 0.4;
+}
+.breadcrumb-container .fil-ariane-wrapper .fil-ariane-container li:hover a {
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  opacity: 1;
+  color: #000000;
 }
 .breadcrumb-container .fil-ariane-wrapper .fil-ariane-container li:last-child a {
   opacity: 1;

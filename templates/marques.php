@@ -20,6 +20,7 @@
             $img_marque = wp_get_attachment_image_src(get_field('image_principale'), 'full')[0]; 
 
     ?>
+    
     <div class="marque-card">
         <img class="marque-card-img" src="<?= $img_marque ?>" alt="Image d'illustration marque"/>
         <div class="marque-card-content-container">

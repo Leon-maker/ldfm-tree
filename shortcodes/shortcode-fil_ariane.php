@@ -19,7 +19,7 @@ function SHORTCODE_FilAriane($arguments)
     $white_class="  ";
     if($arguments_array['type'] === "white")$white_class="whited-filariane";
     ?>
-
+ <div class="breadcrumb-container">
     <nav class="fil-ariane-wrapper <?= $white_class ?>">
         <ul class="fil-ariane-container list-in-row">
             <?php
@@ -60,7 +60,7 @@ function SHORTCODE_FilAriane($arguments)
             ?>
         </ul>
     </nav>
-
+</div>
     <?php
     return ob_get_clean();
 }
