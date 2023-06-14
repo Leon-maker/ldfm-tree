@@ -10,16 +10,17 @@ if ($header_color) {
 }
 
 $img_bkg = wp_get_attachment_image_src(21352, 'full')[0];
+$title_page = 'Boutique';
+$description_page = "Découvrez l’ensemble de nos produits.";
+$button1_page = "Catalogue indoor";
+$button2_page = "Catalogue indoor";
+
 
 $header_section_slug = 'home-page-header';
 
-$title_page = 'ACCUEIL';
 ?>
 
-<?php echo do_shortcode('[shortcode-header-section]'); ?>
-
-<?php echo do_shortcode("[shortcode-contact-section]"); ?>
-
+<?php echo do_shortcode('[shortcode-header-section img-bkg="' . $img_bkg . '" title="' . $title_page . '" description="'. $description_page .'" button1="'. $button1_page .'" button2="'. $button2_page .'"]'); ?>
 
 <?php get_footer() ?>
 

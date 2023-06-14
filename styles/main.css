@@ -294,7 +294,7 @@ p {
 /**/
 .margin-top-header {
   margin-top: 100px;
-  padding: 0;
+  padding: 0 0 70px 0;
 }
 
 .little-lateral-margin {
@@ -358,9 +358,6 @@ p {
  *                                                  VARIOUS COMPONENTS 
 /**/
 /* LIENS A HREF */
-a[href] {
-  color: #000000;
-}
 a[href]:not(.std-link) {
   text-decoration: none;
 }
@@ -455,7 +452,6 @@ a[href]:not(.std-link) {
   -webkit-transition: background-size 0.5s linear;
   transition: background-size 0.5s linear;
 }
-
 .cta-primary:hover {
   background-size: 0 2px, 100% 2px;
 }
@@ -468,9 +464,23 @@ a[href]:not(.std-link) {
   color: black;
   border-radius: 25px;
 }
-
 .cta-secondary:hover {
   border: 2px solid;
+}
+
+.cta-third {
+  color: #ffffff;
+  padding-bottom: 2px;
+  text-decoration: none;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(250, 250, 250, 0.5019607843)), to(rgba(250, 250, 250, 0.5019607843))), -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#ffffff));
+  background-image: linear-gradient(rgba(250, 250, 250, 0.5019607843), rgba(250, 250, 250, 0.5019607843)), linear-gradient(#ffffff, #ffffff);
+  background-size: 100% 1px, 0 1px;
+  background-position: 0 100%, 0 100%;
+  background-repeat: no-repeat;
+  margin: 25px;
+}
+.cta-third:hover {
+  background-size: 0 1px, 100% 1px;
 }
 
 /**
