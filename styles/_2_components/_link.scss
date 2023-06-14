@@ -12,19 +12,19 @@
 }
   
 .cta-primary {
-color: black;
-padding-bottom: 2px;
-text-decoration: none;
-background-image: linear-gradient(black, black),
-    linear-gradient(black, black);
-background-size: 0% 2px, 0 2px;
-background-position: 0 100%, 0 100%;
-background-repeat: no-repeat;
-transition: background-size 0.5s linear;
-}
+    color: black;
+    padding-bottom: 2px;
+    text-decoration: none;
+    background-image: linear-gradient(black, black),
+        linear-gradient(black, black);
+    background-size: 0% 2px, 0 2px;
+    background-position: 0 100%, 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 0.5s linear;
 
-.cta-primary:hover {
-background-size: 0 2px, 100% 2px;
+    &:hover {
+        background-size: 0 2px, 100% 2px;
+    }
 }
 
 .cta-secondary {
@@ -36,8 +36,22 @@ background-size: 0 2px, 100% 2px;
     -webkit-border-radius: 25px;
     -moz-border-radius: 25px;
     border-radius: 25px;
+    &:hover {
+        border: 2px solid
+    }
 }
 
-.cta-secondary:hover {
-border: 2px solid
+.cta-third {
+    color: $color-white;
+    padding-bottom: 2px;
+    text-decoration: none;
+    background-image: linear-gradient(#fafafa80, #fafafa80),
+        linear-gradient($color-white, $color-white);
+    background-size: 100% 1px, 0 1px;
+    background-position: 0 100%, 0 100%;
+    background-repeat: no-repeat;
+    margin: 25px;
+    &:hover {
+        background-size: 0 1px, 100% 1px;
+    }
 }
