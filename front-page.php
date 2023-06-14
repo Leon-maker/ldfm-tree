@@ -9,13 +9,6 @@ if ($header_color) {
 	get_header();
 }
 
-$img_bkg = wp_get_attachment_image_src(21412, 'full')[0];
-$title_page = 'Boutique';
-$description_page = "Découvrez l’ensemble de nos produits.";
-$button1_page = "Catalogue indoor";
-$button2_page = "Catalogue indoor";
-
-
 $header_section_slug = 'home-page-header';
 $args = array(
   'post_type'   => 'sections',
@@ -41,27 +34,30 @@ if ($query->have_posts()) {
 
 ?>
 
-<?php echo do_shortcode('[shortcode-header-section img-bkg="' . $img_bkg . '" title="' . $title_page . '" description="'. $description_page .'" button1="'. $button1_page .'" button2="'. $button2_page .'"]'); ?>
-
 <section class="header-bkg header-slider no-margin-top no-margin-bottom">
     <div class="header-wrapper">
         <div class="swiper-container">
             <div class="swiper-wrapper">
                 <?php
                 foreach ($slide_repeater as $slide) {
-                    ?>
-                    <!--<div class="swiper-slide img-container product-image" style="background-image: url('<?php //echo $slide['slide_image']; ?>');" role="img" aria-label="Image d'illustration d'accueil du site web <?php //the_title(); ?>" style="width: 100%;">-->
-                    <div class="swiper-slide img-container product-image">
-                        <img class="img-container product-image cover" src="<?php echo $slide['image_de_la_slide']; ?>" alt="Image d'illustration d'accueil du site web <?php the_title(); ?>" style="width: 100%;"/>
-                        <div class="left-container">
-                            <div class="title-and-slogan">
-                                <h2 class="large">
-                                    <?php echo $slide['titre_de_la_slide']; ?>
-                                </h2>
-                                <p class="description"><?php echo $slide['sous-titre_de_la_slide']; ?></p>
+                    ?> 
+                    <section class="padding-top-header swiper-slide" style="background-image: url('<?php echo $slide['image_de_la_slide']; ?>');" role="img" aria-label="Image d'illustration 1 de la première section de la page." class="illustration illu1" style="width: 100%;">
+                        <div class="text-center white">
+                            <h1>
+                                <?php echo $slide['titre_de_la_slide']; ?>
+                            </h1>
+                            <?php if (!empty($slide['sous-titre_de_la_slide'])) { ?>
+                                <h3>
+                                    <?php echo $slide['sous-titre_de_la_slide']; ?> 
+                                </h3>
+                            <?php } ?>
+                            <div class="header-button">
+                                <?php if (!empty($slide['bouton'])) { ?>
+                                    <a class="cta-secondary white" href="echo $slide['bouton']['lien_bouton']"><?php echo $slide['bouton']['titre_bouton']; ?></a>
+                                <?php } ?>
                             </div>
                         </div>
-                    </div>
+                    </section>
                 <?php } ?>
             </div>
             <div class="swiper-button-container left">
@@ -74,3 +70,13 @@ if ($query->have_posts()) {
 
 <?php get_footer() ?>
 
+
+<!-- <?php
+// $img_bkg = wp_get_attachment_image_src(21412, 'full')[0];
+// $title_page = 'Boutique';
+// $description_page = "Découvrez l’ensemble de nos produits.";
+// $button1_page = "Catalogue indoor";
+// $button2_page = "Catalogue indoor";
+
+// echo do_shortcode('[shortcode-header-section img-bkg="' . $img_bkg . '" title="' . $title_page . '" description="'. $description_page .'" button1="'. $button1_page .'" button2="'. $button2_page .'"]'); 
+?> -->
