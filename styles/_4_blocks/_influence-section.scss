@@ -1,7 +1,7 @@
 .influence-section-container{
     display: flex;
     flex-direction: column;
-
+    padding-left: 40px;
     & .influence-section-header-title{
         display: flex;
         flex-direction: column;
@@ -25,7 +25,11 @@
     & .influence-section-card-wrapper{
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: flex-start;
         margin-top: 20px;
+
+        & .influence-card{
+            margin-right: 40px;
+        }
     }
 }

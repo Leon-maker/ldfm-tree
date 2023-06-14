@@ -383,11 +383,13 @@ a[href]:not(.std-link) {
 .breadcrumb-container .whited-filariane .dot-filariane {
   background: white !important;
 }
+.breadcrumb-container .whited-filariane li a {
+  color: #ffffff !important;
+}
 .breadcrumb-container .whited-filariane li:hover a {
   -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
   opacity: 1 !important;
-  color: #ffffff !important;
 }
 .breadcrumb-container .whited-filariane li:last-child {
   color: #ffffff !important;
@@ -569,6 +571,7 @@ a[href]:not(.std-link) {
   padding: 20px;
   margin-bottom: 0px !important;
   font-family: "Montserrat-Regular";
+  padding: 90px 50px;
 }
 .marque-card:hover .marque-card-title {
   -webkit-transition: opacity 0.4s ease-in-out;
@@ -1742,6 +1745,7 @@ section.section-half .columns-wrapper .right-container {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  padding-left: 40px;
 }
 .influence-section-container .influence-section-header-title {
   display: -webkit-box;
@@ -1776,10 +1780,13 @@ section.section-half .columns-wrapper .right-container {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   margin-top: 20px;
+}
+.influence-section-container .influence-section-card-wrapper .influence-card {
+  margin-right: 40px;
 }
 
 /**
@@ -1859,10 +1866,16 @@ section.section-half .columns-wrapper .right-container {
  *                                                         TO BE REMOVED NEXT
 /**/
 .section-archive-all-marque {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr 20px 1fr 20px 1fr;
-  grid-template-columns: repeat(3, 1fr);
-  grid-column-gap: 20px;
-  grid-row-gap: 70px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding-left: 40px;
+}
+.section-archive-all-marque .marque-card {
+  margin: 40px 20px;
 }

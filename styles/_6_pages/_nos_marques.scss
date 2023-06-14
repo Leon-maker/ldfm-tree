@@ -1,6 +1,9 @@
 .section-archive-all-marque{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-column-gap: 20px;
-    grid-row-gap: 70px;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    padding-left:40px;
+    & .marque-card{
+        margin: 40px 20px;
+    }
 }
