@@ -470,9 +470,6 @@ a[href]:not(.std-link) {
   position: relative;
 }
 
-.section-contact .right-contact .gform_wrapper .gfield--type-consent .ginput_container_consent.active label {
-  font-family: "Font Awesome";
-}
 .section-contact .right-contact .gform_wrapper .gfield--type-consent .ginput_container_consent.active label::before {
   content: "\f00c";
   width: 15px;
