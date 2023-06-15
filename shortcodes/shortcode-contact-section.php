@@ -2,8 +2,8 @@
 function SHORTCODE_contact_section()
 {
     ob_start();
-    $img_showroom = wp_get_attachment_image_src(21352, 'full')[0];
-    $img_bureau_etudes = wp_get_attachment_image_src(21352, 'full')[0];
+    $img_showroom = wp_get_attachment_image_src(21538, 'full')[0];
+    $img_bureau_etudes = wp_get_attachment_image_src(21548, 'full')[0];
     ?>
 
     <section class="contact-section-container">

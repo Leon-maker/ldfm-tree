@@ -518,7 +518,7 @@ a[href]:not(.std-link) {
 }
 .contact-section-card .contact-section-card-img {
   width: 100%;
-  max-height: 380px;
+  max-height: 300px;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -694,9 +694,6 @@ a[href]:not(.std-link) {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
@@ -704,13 +701,23 @@ a[href]:not(.std-link) {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  width: 50%;
+}
+.realisation-card .realisation-card-content-container .realisation-card-content .realisation-card-description {
+  opacity: 0.7;
+  font-family: "Montserrat-Regular";
 }
 .realisation-card .realisation-card-content-container .realisation-card-link {
   font-size: 14px;
   background-size: 10% 2px, 0 2px;
+  width: -webkit-fit-content !important;
+  width: -moz-fit-content !important;
+  width: fit-content !important;
+  margin-top: 25px;
 }
 .realisation-card .realisation-card-content-container .realisation-card-link:hover {
   background-size: 0 2px, 100% 2px !important;
+  cursor: pointer;
 }
 
 /**

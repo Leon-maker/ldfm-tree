@@ -32,4 +32,9 @@ echo do_shortcode('[shortcode-header-section img-bkg="' . $img_bkg . '" title="'
     endif; ?>
 </section>
 
+<?php echo do_shortcode('[shortcode-contact-section]'); ?>
+
+
+
+
 <?php get_footer(); ?>
