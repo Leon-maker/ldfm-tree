@@ -11,16 +11,16 @@ function SHORTCODE_Influence_section()
     $query = new WP_Query($args);
     if ($query->have_posts()) :?>
 
-        <section class="influence-section-container">
-            <div class="influence-section-header-title">
+        <section class="cpt-section-container influence-section-container">
+            <div class="cpt-section-header-title">
                 <p>Inspirations</p>
-                <div class="influence-section-header-sub-content-container">
+                <div class="cpt-section-header-sub-content-container">
                     <h2>Nos influences</h2> 
                     <a href="" class="cta-secondary">Toutes nos influences</a>
                 </div>
                 
             </div>
-            <div class="influence-section-card-wrapper">
+            <div class="cpt-section-card-wrapper">
                 <?php 
                 while ($query->have_posts()) : $query->the_post(); 
                     echo do_shortcode('[shortcode-influence-card]');
