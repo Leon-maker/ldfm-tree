@@ -50,7 +50,11 @@
     padding: 0px !important;
     & .cpt-section-header-title{
         padding-left: 60px;
-        margin-bottom: 40px;
+
+        & h2{
+            margin-bottom: 40px !important;
+            text-transform: uppercase;
+        }
     }
     & .cpt-section-header-sub-content-container{
         flex-direction: column;
