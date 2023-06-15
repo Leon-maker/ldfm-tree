@@ -10,7 +10,7 @@ require_once get_template_directory() . '/shortcodes/shortcode-marque-card.php';
 require_once get_template_directory() . '/shortcodes/shortcode-influence-card.php';
 require_once get_template_directory() . '/shortcodes/shortcode-influence-section.php';
 require_once get_template_directory() . '/shortcodes/shortcode-realisation-card.php';
-
+require_once get_template_directory() . '/shortcodes/shortcode-realisation-section.php';
 
 
 

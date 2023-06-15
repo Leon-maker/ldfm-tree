@@ -34,6 +34,9 @@ echo do_shortcode('[shortcode-header-section img-bkg="' . $img_bkg . '" title="'
 
 <?php echo do_shortcode('[shortcode-contact-section]'); ?>
 
+<?php echo do_shortcode('[shortcode-realisation-section]'); ?>
+
+
 
 
 
