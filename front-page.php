@@ -34,7 +34,7 @@ if ($query->have_posts()) {
 
 ?>
 
-<section class="header-bkg header-slider no-margin-top no-margin-bottom">
+<section class="home-section header-bkg header-slider no-margin-top no-margin-bottom">
     <div class="header-wrapper">
         <div class="swiper-container">
             <div class="swiper-wrapper">
@@ -59,6 +59,7 @@ if ($query->have_posts()) {
                         </div>
                     </section>
                 <?php } ?>
+                <a class="cta-mouse white" href=""><?php echo $slide['bouton']['titre_bouton']; ?></a>
             </div>
             <div class="swiper-button-container left">
                 <div class="swiper-button-prev cta-primary"></div>
