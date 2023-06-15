@@ -294,6 +294,7 @@ p {
 /**/
 .padding-top-header {
   padding: 100px 0 70px 0;
+  min-height: 500px;
 }
 .padding-top-header .fil-ariane-container {
   margin: 20px 0 160px 0;
@@ -343,6 +344,13 @@ p {
   padding-right: 60px;
 }
 
+.section-contact .left-contact {
+  padding-right: 20px;
+}
+.section-contact .left-contact .head {
+  margin-right: 80px;
+}
+
 /**
  * --------------------------------------------------------------------------------------------------------------
  *                                                  DEDICATED VARIABLES 
@@ -361,6 +369,10 @@ p {
 
 .uppercase {
   text-transform: uppercase;
+}
+
+.full-width {
+  width: 100% !important;
 }
 
 /**
@@ -1875,6 +1887,13 @@ section.section-half .columns-wrapper .right-container {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+}
+
+.section-contact {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+  grid-template-columns: repeat(2, 1fr);
 }
 
 .contact-section-container {

@@ -40,7 +40,7 @@ function SHORTCODE_SectionHeader($arguments)
             return $key . '="' . $value . '"';
         }, array_keys($fil_ariane_arguments), $fil_ariane_arguments)) . ']');  ?>    
         <div class="text-center white">
-            <h1>
+            <h1 class="uppercase">
                 <?php echo $title; ?>
             </h1>
             <?php if (!empty($description)) { ?>

@@ -74,3 +74,9 @@ section {
   background-size: cover;
   background-position: center;
 }
+
+
+.section-contact {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
