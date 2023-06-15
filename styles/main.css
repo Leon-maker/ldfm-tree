@@ -307,7 +307,10 @@ p {
   margin-bottom: 160px;
 }
 
-.home-section h3 {
+.home-section .padding-top-header {
+  padding: 100px 0 270px 0;
+}
+.home-section .padding-top-header h3 {
   margin-bottom: 40px;
 }
 
@@ -507,14 +510,59 @@ a[href]:not(.std-link) {
   background-size: 0 1px, 100% 1px;
 }
 
-.cta-mouse {
+.mouse-div {
+  width: 100%;
+  position: absolute;
+  top: 550px;
+  z-index: 2;
+}
+.mouse-div .cta-mouse {
   border: 1px solid #ffffff;
-  width: 5px;
+  width: 25px;
   height: 45px;
   border-radius: 15px;
-  bottom: 35px;
+  margin: auto;
+  display: block;
+}
+.mouse-div .cta-mouse .arrow {
+  content: ">";
+  display: block;
+  margin: auto;
+  height: 6px;
+  width: 3px;
+  border-radius: 45%;
+  background-color: white;
+  animation: 3s ease infinite scroll-indicator;
+  -webkit-animation: 3s ease infinite scroll-indicator;
+  -moz-animation: 3s ease infinite scroll-indicator;
 }
 
+@keyframes scroll-indicator {
+  0% {
+    margin-top: 30px;
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    margin-top: 2px;
+    opacity: 0;
+  }
+}
+@-webkit-keyframes scroll-indicator {
+  0% {
+    margin-top: 30px;
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    margin-top: 2px;
+    opacity: 0;
+  }
+}
 /**
  * --------------------------------------------------------------------------------------------------------------
  *                                                  3 : CARDS

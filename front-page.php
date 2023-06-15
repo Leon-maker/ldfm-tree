@@ -59,12 +59,17 @@ if ($query->have_posts()) {
                         </div>
                     </section>
                 <?php } ?>
-                <a class="cta-mouse white" href=""><?php echo $slide['bouton']['titre_bouton']; ?></a>
             </div>
             <div class="swiper-button-container left">
                 <div class="swiper-button-prev cta-primary"></div>
                 <div class="swiper-button-next cta-primary"></div>
             </div>
+            <div class="mouse-div">
+                <a class="cta-mouse white" href="">
+                    <span class="arrow">
+                    </span>
+                </a>
+            </div>   
         </div>
     </div>
 </section>
