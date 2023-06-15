@@ -43,7 +43,7 @@ function SHORTCODE_HomeSection()
                         ?> 
                         <section class="padding-top-header swiper-slide" style="background-image: url('<?php echo $slide['image_de_la_slide']; ?>');" role="img" aria-label="Image d'illustration 1 de la première section de la page." class="illustration illu1" style="width: 100%;">
                             <div class="text-center white">
-                                <h1>
+                                <h1 class="uppercase">
                                     <?php echo $slide['titre_de_la_slide']; ?>
                                 </h1>
                                 <?php if (!empty($slide['sous-titre_de_la_slide'])) { ?>

@@ -7,6 +7,8 @@
 
 echo do_shortcode('[shortcode-home-section]'); 
 
+echo do_shortcode('[shortcode-histoire-section]'); 
+
 
 get_footer() ?>
 

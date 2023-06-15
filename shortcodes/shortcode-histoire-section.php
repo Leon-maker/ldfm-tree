@@ -2,26 +2,21 @@
 function SHORTCODE_HistoireSection()
 {
     ob_start();
+
+    $img_bkg = wp_get_attachment_image_src(21496, 'full')[0];
+
     ?>
 
-    <section class="padding-top-header" style="background-image: url('<?php echo $img_bkg; ?>');" role="img" aria-label="Image d'illustration 1 de la première section de la page." class="illustration illu1" style="width: 100%;">
-        <?php echo do_shortcode('[shortcode-fil_ariane type="white" title2="Boutique"]'); ?>
+    <section class="padding-histoire" style="background-image: url('<?php echo $img_bkg; ?>');" role="img" aria-label="Image d'illustration 1 de la première section de la page." class="illustration illu1" style="width: 100%;">
         <div class="text-center white">
-            <h2>
+            <h2 class="uppercase">
                 Notre histoire
             </h2>
-            <?php if (!empty($description)) { ?>
-                <h3>
-                    <?php echo $description; ?> 
-                </h3>
-            <?php } ?>
+            <h3>
+                Le mariage de deux univers.
+            </h3>
             <div class="header-button">
-                <?php if (!empty($button1)) { ?>
-                    <a class="cta-third" href=""><?php echo $button1; ?></a>
-                <?php } ?>
-                <?php if (!empty($button2)) { ?>
-                    <a class="cta-third" href=""><?php echo $button2; ?></a>
-                <?php } ?>
+                <a class="cta-secondary white" href="">En savoir plus</a>
             </div>
         </div>
     </section>
