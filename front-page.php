@@ -53,7 +53,7 @@ if ($query->have_posts()) {
                             <?php } ?>
                             <div class="header-button">
                                 <?php if (!empty($slide['bouton'])) { ?>
-                                    <a class="cta-secondary white" href="echo $slide['bouton']['lien_bouton']"><?php echo $slide['bouton']['titre_bouton']; ?></a>
+                                    <a class="cta-secondary white" href="<?php echo $slide['bouton']['lien_bouton']; ?>"><?php echo $slide['bouton']['titre_bouton']; ?></a>
                                 <?php } ?>
                             </div>
                         </div>
