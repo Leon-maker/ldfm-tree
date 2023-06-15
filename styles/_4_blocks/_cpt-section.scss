@@ -56,3 +56,9 @@
         flex-direction: column;
     }
 }
+
+.influence-section-container{
+    & .cpt-section-card-wrapper .influence-card{
+        margin-right: 20px ;
+    }
+}
