@@ -48,18 +48,21 @@ a[href] {
 
 // checkbox with fa checked
 %checkbox-black-white {
-  .fa-check:before {
-    content: "\f00c";
-    width: 15px;
-    height: 15px;
-    border: 1px solid black;
-    font-size: 15px;
-    cursor: pointer;
-    margin-right: 5px;
-    color: white;
-    background-color: #000;
-    position: relative;
-  }   
+  label{
+
+    &::before {
+      content: "\f00c";
+      width: 15px;
+      height: 15px;
+      border: 1px solid black;
+      font-size: 15px;
+      cursor: pointer;
+      margin-right: 5px;
+      color: white;
+      background-color: #000;
+      position: relative;
+    }   
+  }
 }
 
 

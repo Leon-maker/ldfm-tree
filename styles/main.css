@@ -470,6 +470,22 @@ a[href]:not(.std-link) {
   position: relative;
 }
 
+.section-contact .right-contact .gform_wrapper .gfield--type-consent .ginput_container_consent.active label {
+  font-family: "Font Awesome";
+}
+.section-contact .right-contact .gform_wrapper .gfield--type-consent .ginput_container_consent.active label::before {
+  content: "\f00c";
+  width: 15px;
+  height: 15px;
+  border: 1px solid black;
+  font-size: 15px;
+  cursor: pointer;
+  margin-right: 5px;
+  color: white;
+  background-color: #000;
+  position: relative;
+}
+
 .breadcrumb-container .whited-filariane .dot-filariane {
   background: white !important;
 }
@@ -1977,13 +1993,28 @@ section.section-half .columns-wrapper .right-container {
 }
 .section-contact .right-contact .gform_wrapper .gfield--type-consent {
   font-size: 12px;
+  margin-top: 30px;
+  width: 70%;
   border: none;
+  padding: 0;
 }
 .section-contact .right-contact .gform_wrapper .gfield--type-consent .gfield_label {
   display: none;
 }
 .section-contact .right-contact .gform_wrapper .gfield--type-honeypot {
   display: none;
+}
+.section-contact .right-contact .gform_wrapper .gform_footer {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  bottom: 20px;
+  position: relative;
+  left: 85%;
+}
+.section-contact .right-contact .gform_wrapper .gform_footer input {
+  background-color: transparent;
+  padding: 15px 23px;
 }
 
 .contact-section-container {

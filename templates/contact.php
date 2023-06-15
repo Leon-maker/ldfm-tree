@@ -96,6 +96,31 @@ echo do_shortcode('[shortcode-header-section img-bkg="' . $img_bkg . '" title="'
 	
 </section>
 
+<script>
+    // Fonction pour cocher ou décocher la case à cocher
+    function toggleCheckbox() {
+        var checkbox = document.getElementById('input_1_52_1');
+        var container = document.querySelector('.ginput_container_consent');
+        
+        if (checkbox && container) {
+            checkbox.checked = !checkbox.checked;
+            
+            if (checkbox.checked) {
+                container.classList.add('active');
+            } else {
+                container.classList.remove('active');
+            }
+        }
+    }
+
+    // Ajout d'un gestionnaire d'événement sur l'élément HTML
+    var element = document.querySelector('.ginput_container_consent');
+    if (element) {
+        element.addEventListener('click', toggleCheckbox);
+    }
+</script>
+
+
 
 
 <?php
