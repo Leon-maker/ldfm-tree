@@ -61,8 +61,8 @@ if ($query->have_posts()) {
                 <?php } ?>
             </div>
             <div class="swiper-button-container left">
-                <div class="swiper-button-prev cta-primary"></div>
-                <div class="swiper-button-next cta-primary"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
             </div>
             <div class="mouse-div">
                 <a class="cta-mouse white" href="">
