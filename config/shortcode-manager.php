@@ -1,5 +1,7 @@
 <?php
 /****** Shortcode manager ******/
+require_once get_template_directory() . '/shortcodes/shortcode-home-section.php';
+require_once get_template_directory() . '/shortcodes/shortcode-histoire-section.php';
 require_once get_template_directory() . '/shortcodes/shortcode-header-section.php';
 require_once get_template_directory() . '/shortcodes/shortcode-example.php';
 require_once get_template_directory() . '/shortcodes/shortcode-cta_primary.php';
