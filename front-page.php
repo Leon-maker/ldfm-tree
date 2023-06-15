@@ -9,6 +9,9 @@ echo do_shortcode('[shortcode-home-section]');
 
 echo do_shortcode('[shortcode-histoire-section]'); 
 
+echo do_shortcode('[shortcode-influence-section]'); 
+
+echo do_shortcode('[shortcode-contact-section]'); 
 
 get_footer() ?>
 
