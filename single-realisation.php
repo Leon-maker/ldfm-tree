@@ -25,10 +25,20 @@ echo do_shortcode('[shortcode-header-section img-bkg="' . $img_bkg . '" title="'
             <p class="single-realisation-side-description"> <?= get_field('details_realisation')['description_2'] ?></p>
         </div>
     </div>
-
-    <div class="single-realisation-img-container">
-       <?php foreach ($images as $img) {?>
-        <div class="test">
+    <?php 
+        $nbImg = count($images);
+        $images = array_filter($images, function($img) {
+            if (isset($img["image"]) && $img["image"] === false) {
+                return false;
+            }
+            else return true;
+        });
+       ?>
+    <div class="single-realisation-img-container single-realisation-img-container-<?=count($images);?>  ">
+       <?php 
+       $counter=0;
+       foreach ($images as $img) { $counter++?>
+        <div class="test nb-image-<?php if($counter === count($images)) echo $counter ?>">
             <img src="<?= $img["image"]["url"] ?>" alt="<?= $img["image"]["alt"] ?>">
         </div>
        <?php } ?>
