@@ -15,13 +15,18 @@
                 display: flex;
                 justify-content: flex-start;
                 opacity: 0.7;
-
             }
         }
 
     }
 
     & .single-realisation-img-container {
+        &-4{grid-template-rows: 600px 600px 200px !important;}
+        &-3{grid-template-rows: 600px 600px 200px !important;}
+        &-5{grid-template-rows: 600px 600px 200px !important;}
+
+        &-2{grid-template-rows: 600px !important;}
+        margin-top: 100px;
         display: grid;
         grid-template-columns: repeat(6, 1fr);
         grid-gap: 27px;
@@ -60,6 +65,15 @@
             grid-row: span 1;
         }
 
+        .nb-image-1, .nb-image-3, .nb-image-6{
+            grid-column: span 6 !important;
+        }
+        & .nb-image-2,.nb-image-7{
+            grid-column: span 4 !important;
+        }
+        & .nb-image-4{
+            grid-row: span 2 !important;
+        }
       }
     
 }
