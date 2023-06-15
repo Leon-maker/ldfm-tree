@@ -26,12 +26,7 @@ function SHORTCODE_HomeSection()
         $slider = get_field('slider');
         $slide_repeater = $slider['slide'];
     }
-
-    if ($header_color) {
-        get_header( '', array( 'header-color' => $header_color) ); 
-    } else {
-        get_header();
-    }
+    get_header();
     ?>
 
     <section class="home-section header-bkg header-slider no-margin-top no-margin-bottom">

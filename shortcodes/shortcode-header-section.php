@@ -32,12 +32,7 @@ function SHORTCODE_SectionHeader($arguments)
         'title4' => $arguments_array['title3'],
         'link4' => $arguments_array['link3']
     );
-
-    if ($header_color) {
-        get_header( '', array( 'header-color' => $header_color) ); 
-    } else {
         get_header();
-    }
     ?>
 
     <section class="padding-top-header" style="background-image: url('<?php echo $img_bkg; ?>');" role="img" aria-label="Image d'illustration 1 de la première section de la page." class="illustration illu1" style="width: 100%;">
