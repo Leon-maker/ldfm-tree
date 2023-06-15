@@ -21,6 +21,11 @@ function SHORTCODE_SectionHeader($arguments)
     $button1 = $arguments_array['button1']; // Récupération de la valeur du bouton
     $button2 = $arguments_array['button2']; // Récupération de la valeur du bouton
 
+    if ($header_color) {
+        get_header( '', array( 'header-color' => $header_color) ); 
+    } else {
+        get_header();
+    }
     ?>
 
     <section class="padding-top-header" style="background-image: url('<?php echo $img_bkg; ?>');" role="img" aria-label="Image d'illustration 1 de la première section de la page." class="illustration illu1" style="width: 100%;">

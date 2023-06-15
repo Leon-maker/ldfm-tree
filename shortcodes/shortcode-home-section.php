@@ -1,4 +1,34 @@
 <?php
+
+if ($header_color) {
+	get_header( '', array( 'header-color' => $header_color) ); 
+} else {
+	get_header();
+}
+
+$header_section_slug = 'home-page-header';
+$args = array(
+  'post_type'   => 'sections',
+  'name'        => $header_section_slug,
+  'post_status' => 'publish',
+  'numberposts' => 1
+);
+
+$query = new WP_Query($args);
+
+if ($query->have_posts()) {
+    $query->the_post();
+    // Variables
+    $title = get_the_title();
+    $section_id = get_the_ID();
+    if (has_post_thumbnail()) {
+        $thumbnail_data = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'full');
+        $thumbnail_url = $thumbnail_data[0]; 
+    }
+    $slider = get_field('slider');
+    $slide_repeater = $slider['slide'];
+}
+
 function SHORTCODE_HistoireSection()
 {
     ob_start();
