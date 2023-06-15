@@ -9,10 +9,12 @@ function SHORTCODE_SectionHeader($arguments)
         "description" => "",
         "button1" => "",
         "button2" => "",
+        "title1" => "",
+        "link1" => "",
+        "title2" => "",
+        "link2" => "",
         "title3" => "",
         "link3" => "",
-        "title4" => "",
-        "link4" => "",
     ), $arguments );
 
     $img_bkg = $arguments_array['img-bkg']; // Récupération de la valeur de l'image
@@ -20,6 +22,16 @@ function SHORTCODE_SectionHeader($arguments)
     $description = $arguments_array['description']; // Récupération de la valeur de la description
     $button1 = $arguments_array['button1']; // Récupération de la valeur du bouton
     $button2 = $arguments_array['button2']; // Récupération de la valeur du bouton
+
+    // Nouvel argument pour stocker les valeurs de arianeTitle1, link1, arianeTitle2, link2, arianeTitle3 et link3
+    $fil_ariane_arguments = array(
+        'title2' => $arguments_array['title1'],
+        'link2' => $arguments_array['link1'],
+        'title3' => $arguments_array['title2'],
+        'link3' => $arguments_array['link2'],
+        'title4' => $arguments_array['title3'],
+        'link4' => $arguments_array['link3']
+    );
 
     if ($header_color) {
         get_header( '', array( 'header-color' => $header_color) ); 
@@ -29,7 +41,9 @@ function SHORTCODE_SectionHeader($arguments)
     ?>
 
     <section class="padding-top-header" style="background-image: url('<?php echo $img_bkg; ?>');" role="img" aria-label="Image d'illustration 1 de la première section de la page." class="illustration illu1" style="width: 100%;">
-        <?php echo do_shortcode('[shortcode-fil_ariane type="white" title2="Boutique"]'); ?>
+        <?php echo do_shortcode('[shortcode-fil_ariane type="white" ' . implode(' ', array_map(function ($key, $value) {
+            return $key . '="' . $value . '"';
+        }, array_keys($fil_ariane_arguments), $fil_ariane_arguments)) . ']');  ?>    
         <div class="text-center white">
             <h1>
                 <?php echo $title; ?>
