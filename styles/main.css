@@ -344,11 +344,30 @@ p {
   padding-right: 60px;
 }
 
+.section-contact {
+  padding: 0;
+  margin-right: 0;
+}
 .section-contact .left-contact {
-  padding-right: 20px;
+  padding: 90px 20px 0 0;
 }
 .section-contact .left-contact .head {
   margin-right: 80px;
+}
+.section-contact .left-contact .informations-pratiques ul {
+  padding: 0;
+}
+.section-contact .left-contact .informations-pratiques ul .label {
+  width: 200px;
+}
+.section-contact .left-contact .informations-pratiques ul .value {
+  width: 60%;
+}
+.section-contact .right-contact {
+  padding-top: 90px;
+}
+.section-contact .right-contact .gform_wrapper {
+  margin: 0 150px;
 }
 
 /**
@@ -420,6 +439,35 @@ a[href] {
 }
 a[href]:not(.std-link) {
   text-decoration: none;
+}
+
+/**
+ * --------------------------------------------------------------------------------------------------------------
+ *                                                  CHECKBOXS
+ * --------------------------------------------------------------------------------------------------------------
+ */
+/**/
+.section-contact .right-contact .gform_wrapper .gfield--type-consent .ginput_container_consent input {
+  display: none;
+}
+.section-contact .right-contact .gform_wrapper .gfield--type-consent .ginput_container_consent label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.section-contact .right-contact .gform_wrapper .gfield--type-consent .ginput_container_consent label::before {
+  content: " ";
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 15px;
+  height: 15px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  margin-right: 5px;
+  position: relative;
 }
 
 .breadcrumb-container .whited-filariane .dot-filariane {
@@ -1894,6 +1942,48 @@ section.section-half .columns-wrapper .right-container {
   display: grid;
   -ms-grid-columns: (1fr)[2];
   grid-template-columns: repeat(2, 1fr);
+}
+.section-contact .informations-pratiques ul {
+  list-style-type: none;
+}
+.section-contact .informations-pratiques ul .infos {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+.section-contact .right-contact .gform_wrapper .gform_heading {
+  display: none;
+}
+.section-contact .right-contact .gform_wrapper .gfield_label {
+  font-size: 12px;
+}
+.section-contact .right-contact .gform_wrapper .gfield_label span {
+  margin-left: 2px;
+}
+.section-contact .right-contact .gform_wrapper .ginput_container {
+  margin-top: 5px;
+}
+.section-contact .right-contact .gform_wrapper .ginput_container input, .section-contact .right-contact .gform_wrapper .ginput_container textarea {
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+}
+.section-contact .right-contact .gform_wrapper .ginput_container input {
+  height: 40px;
+  margin-bottom: 20px;
+}
+.section-contact .right-contact .gform_wrapper .ginput_container textarea {
+  resize: none;
+}
+.section-contact .right-contact .gform_wrapper .gfield--type-consent {
+  font-size: 12px;
+  border: none;
+}
+.section-contact .right-contact .gform_wrapper .gfield--type-consent .gfield_label {
+  display: none;
+}
+.section-contact .right-contact .gform_wrapper .gfield--type-honeypot {
+  display: none;
 }
 
 .contact-section-container {

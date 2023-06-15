@@ -18,7 +18,49 @@ a[href] {
     color: $color-black;
 }
 
+/**
+ * --------------------------------------------------------------------------------------------------------------
+ *                                                  CHECKBOXS
+ * --------------------------------------------------------------------------------------------------------------
+ */
+/**/
 
+// checkbox with fa
+%checkbox-black {
+  input{
+    display: none;
+  }
+  label{
+    display: flex;
+    align-items: center;
+
+    &::before {
+      content: " ";
+      display: flex;
+      width: 15px;
+      height: 15px;
+      border: 1px solid rgba($color: $color-black, $alpha: 0.3);
+      margin-right: 5px;
+      position: relative;
+    }
+  }  
+}
+
+// checkbox with fa checked
+%checkbox-black-white {
+  .fa-check:before {
+    content: "\f00c";
+    width: 15px;
+    height: 15px;
+    border: 1px solid black;
+    font-size: 15px;
+    cursor: pointer;
+    margin-right: 5px;
+    color: white;
+    background-color: #000;
+    position: relative;
+  }   
+}
 
 
 

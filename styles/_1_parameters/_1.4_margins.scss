@@ -166,10 +166,29 @@ $lateral-padding-width-mobile: 50px;
 }
 
 .section-contact {
+  padding:0;
+  margin-right: 0;
   .left-contact{
-    padding-right: 20px;
+    padding: 90px 20px 0 0;
     .head {
       margin-right: 80px;
+    }
+    .informations-pratiques{
+      ul{
+        padding: 0;
+        .label{
+          width: 200px;
+        }
+        .value{
+          width: 60%;
+        }
+      }
+    }
+  }
+  .right-contact{
+    padding-top: 90px;
+    .gform_wrapper{
+      margin: 0 150px;
     }
   }
 }

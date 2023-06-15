@@ -79,4 +79,54 @@ section {
 .section-contact {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+
+  .informations-pratiques{
+    ul{
+      list-style-type: none;
+      .infos{
+        display: flex;
+        border-top: 1px solid rgba($color: $color-black, $alpha: 0.1);
+      }
+    }
+  }
+  .right-contact{
+    .gform_wrapper{
+      .gform_heading{
+        display: none;
+      }
+      .gfield_label{
+        font-size: 12px;
+        span{
+          margin-left: 2px;
+        }
+      }
+      .ginput_container{
+        margin-top: 5px;
+        input, textarea{
+          width: 100%;
+          border: 1px solid rgba($color: $color-black, $alpha: 0.3);
+        }
+        input {
+          height: 40px;
+          margin-bottom: 20px;
+        }
+        textarea {
+          resize: none;
+        }
+      }
+      .gfield--type-consent {
+        font-size: 12px;
+        border: none;
+        .gfield_label {
+          display: none;
+        }
+        .ginput_container_consent{
+          @extend %checkbox-black;
+        }
+      }
+      .gfield--type-honeypot{
+        display: none;
+      }
+    }
+  }
 }
