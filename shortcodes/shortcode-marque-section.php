@@ -1,9 +1,9 @@
 <?php
-function SHORTCODE_Influence_section()
+function SHORTCODE_Marque_section()
 {
     ob_start();
     $args = array(
-        'post_type' => 'influence',
+        'post_type' => 'marque',
         'posts_per_page' => 3,
         'orderby' => 'date',
         'order' => 'DESC'
@@ -11,19 +11,19 @@ function SHORTCODE_Influence_section()
     $query = new WP_Query($args);
     if ($query->have_posts()) :?>
 
-        <section class="cpt-section-container influence-section-container">
+        <section class="cpt-section-container marque-section-container">
             <div class="cpt-section-header-title">
-                <p>Inspirations</p>
+                <p>MARQUES</p>
                 <div class="cpt-section-header-sub-content-container">
-                    <h2>Nos influences</h2> 
-                    <a href="" class="cta-secondary">Toutes nos influences</a>
+                    <h2>Decouvrir nos marques</h2> 
+                    <a href="" class="cta-secondary">Toutes nos marques</a>
                 </div>
                 
             </div>
             <div class="cpt-section-card-wrapper">
                 <?php 
                 while ($query->have_posts()) : $query->the_post(); 
-                    echo do_shortcode('[shortcode-influence-card]');
+                    echo do_shortcode('[shortcode-marque-card]');
                 endwhile; ?>
             </div>
         </section>
@@ -32,4 +32,4 @@ function SHORTCODE_Influence_section()
     return ob_get_clean();
 }
 
-add_shortcode('shortcode-influence-section', 'SHORTCODE_Influence_section');
+add_shortcode('shortcode-marque-section', 'SHORTCODE_Marque_section');

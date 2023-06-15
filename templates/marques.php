@@ -7,7 +7,7 @@
 <?php get_header(); ?>
 
 <?php 
-$img_bkg = wp_get_attachment_image_src(21434, 'full')[0];
+$img_bkg = wp_get_attachment_image_src(21512, 'full')[0];
 $title_page = 'Nos Marques';
 $description_page = "Lorem ipsum dolor sit amet.";
 

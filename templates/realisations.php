@@ -7,7 +7,7 @@
 <?php get_header(); ?>
 
 <?php 
-$img_bkg = wp_get_attachment_image_src(21434, 'full')[0];
+$img_bkg = wp_get_attachment_image_src(21556, 'full')[0];
 $title_page = 'Nos Réalisations';
 $description_page = "Lorem ipsum dolor sit amet.";
 $alternate = false; 
@@ -33,11 +33,5 @@ echo do_shortcode('[shortcode-header-section img-bkg="' . $img_bkg . '" title="'
 </section>
 
 <?php echo do_shortcode('[shortcode-contact-section]'); ?>
-
-<?php echo do_shortcode('[shortcode-realisation-section]'); ?>
-
-
-
-
 
 <?php get_footer(); ?>

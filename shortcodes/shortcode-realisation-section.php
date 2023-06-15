@@ -5,8 +5,8 @@ function SHORTCODE_realisation_section()
     $args = array(
         'post_type' => 'realisation',
         'posts_per_page' => 3,
-        'orderby' => 'title',
-        'order' => 'ASC'
+        'orderby' => 'date',
+        'order' => 'DESC'
     );
     $query = new WP_Query($args);
     $alternate = false; 
