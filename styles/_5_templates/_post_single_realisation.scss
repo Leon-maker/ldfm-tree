@@ -1,0 +1,21 @@
+.single-realisation-main-section{
+    padding-top: 90px !important;
+    & .single-realisation-description-container{
+        display: grid;
+        grid-template-rows: repeat(1);
+        grid-template-columns: repeat(2, 1fr);
+
+        & .single-realisation-side-description-container{
+            display:flex;
+            justify-content: center;
+            align-items: flex-start;
+
+            & .single-realisation-side-description{
+                width: 50%;
+                display: flex;
+                justify-content: flex-start;
+            }
+        }
+    }
+    
+}

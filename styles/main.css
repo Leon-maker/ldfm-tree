@@ -628,7 +628,7 @@ a[href]:not(.std-link) {
 }
 .contact-section-card .contact-section-card-img-container {
   width: 100%;
-  max-height: 295px;
+  height: 295px;
   overflow: hidden;
 }
 .contact-section-card .contact-section-card-img-container img {
@@ -1997,7 +1997,10 @@ section.section-half .columns-wrapper .right-container {
 }
 .realisation-section-container .cpt-section-header-title {
   padding-left: 60px;
-  margin-bottom: 40px;
+}
+.realisation-section-container .cpt-section-header-title h2 {
+  margin-bottom: 40px !important;
+  text-transform: uppercase;
 }
 .realisation-section-container .cpt-section-header-sub-content-container {
   -webkit-box-orient: vertical;
@@ -2101,6 +2104,46 @@ section.section-half .columns-wrapper .right-container {
 .single-influence-separator .single-influence-separator-line {
   height: 1px;
   background-color: rgba(0, 0, 0, 0.1);
+}
+
+.single-realisation-main-section {
+  padding-top: 90px !important;
+}
+.single-realisation-main-section .single-realisation-description-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: ()[1];
+  grid-template-rows: repeat(1);
+  -ms-grid-columns: (1fr)[2];
+  grid-template-columns: repeat(2, 1fr);
+}
+.single-realisation-main-section .single-realisation-description-container > *:nth-child(1) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+}
+.single-realisation-main-section .single-realisation-description-container > *:nth-child(2) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+}
+.single-realisation-main-section .single-realisation-description-container .single-realisation-side-description-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+.single-realisation-main-section .single-realisation-description-container .single-realisation-side-description-container .single-realisation-side-description {
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
 }
 
 /**
