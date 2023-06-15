@@ -297,3 +297,21 @@ function add_menu_link_class($atts, $item, $args) {
     return $atts;
 }
 add_filter('nav_menu_link_attributes', 'add_menu_link_class', 10, 3);
+
+/**
+ * --------------------------------------------------------------------------------------------------------------
+ *                                                 Gravity Forms : Add French Phone Verification On All Forms
+ * --------------------------------------------------------------------------------------------------------------
+ */
+/**/
+add_filter( 'gform_phone_formats', 'fr_phone_format' );
+function fr_phone_format( $phone_formats ) {
+    $phone_formats['fr'] = array(
+        'label'       => 'France',
+        'mask'        => false,
+        'regex'       => '/^0[1-9](\d{2}){4}$/',
+        'instruction' => 'Introduisez les 10 chiffres sans espaces ni tirets.',
+    );
+ 
+    return $phone_formats;
+}

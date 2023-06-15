@@ -86,32 +86,37 @@ section {
       .infos{
         display: flex;
         border-top: 1px solid rgba($color: $color-black, $alpha: 0.1);
+        &:last-child {
+          border-bottom: 1px solid rgba($color: $color-black, $alpha: 0.1);
+        }
       }
     }
   }
   .right-contact{
     .gform_wrapper{
-      .gform_heading{
-        display: none;
-      }
-      .gfield_label{
-        font-size: 12px;
-        span{
-          margin-left: 2px;
+      .gfield {
+        margin-bottom: 20px;
+        .gform_heading{
+          display: none;
         }
-      }
-      .ginput_container{
-        margin-top: 5px;
-        input, textarea{
-          width: 100%;
-          border: 1px solid rgba($color: $color-black, $alpha: 0.3);
+        .gfield_label{
+          font-size: 12px;
+          span{
+            margin-left: 2px;
+          }
         }
-        input {
-          height: 40px;
-          margin-bottom: 20px;
-        }
-        textarea {
-          resize: none;
+        .ginput_container{
+          margin-top: 5px;
+          input, textarea{
+            width: 100%;
+            border: 1px solid rgba($color: $color-black, $alpha: 0.3);
+          }
+          input {
+            height: 40px;
+          }
+          textarea {
+            resize: none;
+          }
         }
       }
       .gfield--type-consent {
@@ -138,12 +143,20 @@ section {
         width: fit-content;
         bottom: 20px;
         position: relative;
-        left: 85%;
+        float: right;
 
         input {
           background-color: transparent;
           padding: 15px 23px;
+          border-radius: 25px;
         }
+      }
+      .validation_message{
+        color: #c02b0a !important;
+        font-size: 12px;
+      }
+      .gform_required_legend, .gform_validation_errors{
+        display: none;
       }
     }
   }

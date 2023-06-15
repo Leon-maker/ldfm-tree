@@ -354,8 +354,12 @@ p {
 .section-contact .left-contact .head {
   margin-right: 80px;
 }
+.section-contact .left-contact .informations-pratiques {
+  margin-top: 50px;
+}
 .section-contact .left-contact .informations-pratiques ul {
   padding: 0;
+  margin-bottom: 50px;
 }
 .section-contact .left-contact .informations-pratiques ul .label {
   width: 200px;
@@ -1965,27 +1969,32 @@ section.section-half .columns-wrapper .right-container {
   display: flex;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
-.section-contact .right-contact .gform_wrapper .gform_heading {
+.section-contact .informations-pratiques ul .infos:last-child {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.section-contact .right-contact .gform_wrapper .gfield {
+  margin-bottom: 20px;
+}
+.section-contact .right-contact .gform_wrapper .gfield .gform_heading {
   display: none;
 }
-.section-contact .right-contact .gform_wrapper .gfield_label {
+.section-contact .right-contact .gform_wrapper .gfield .gfield_label {
   font-size: 12px;
 }
-.section-contact .right-contact .gform_wrapper .gfield_label span {
+.section-contact .right-contact .gform_wrapper .gfield .gfield_label span {
   margin-left: 2px;
 }
-.section-contact .right-contact .gform_wrapper .ginput_container {
+.section-contact .right-contact .gform_wrapper .gfield .ginput_container {
   margin-top: 5px;
 }
-.section-contact .right-contact .gform_wrapper .ginput_container input, .section-contact .right-contact .gform_wrapper .ginput_container textarea {
+.section-contact .right-contact .gform_wrapper .gfield .ginput_container input, .section-contact .right-contact .gform_wrapper .gfield .ginput_container textarea {
   width: 100%;
   border: 1px solid rgba(0, 0, 0, 0.3);
 }
-.section-contact .right-contact .gform_wrapper .ginput_container input {
+.section-contact .right-contact .gform_wrapper .gfield .ginput_container input {
   height: 40px;
-  margin-bottom: 20px;
 }
-.section-contact .right-contact .gform_wrapper .ginput_container textarea {
+.section-contact .right-contact .gform_wrapper .gfield .ginput_container textarea {
   resize: none;
 }
 .section-contact .right-contact .gform_wrapper .gfield--type-consent {
@@ -2007,11 +2016,19 @@ section.section-half .columns-wrapper .right-container {
   width: fit-content;
   bottom: 20px;
   position: relative;
-  left: 85%;
+  float: right;
 }
 .section-contact .right-contact .gform_wrapper .gform_footer input {
   background-color: transparent;
   padding: 15px 23px;
+  border-radius: 25px;
+}
+.section-contact .right-contact .gform_wrapper .validation_message {
+  color: #c02b0a !important;
+  font-size: 12px;
+}
+.section-contact .right-contact .gform_wrapper .gform_required_legend, .section-contact .right-contact .gform_wrapper .gform_validation_errors {
+  display: none;
 }
 
 .contact-section-container {
