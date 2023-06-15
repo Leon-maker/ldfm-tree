@@ -317,7 +317,19 @@ p {
   margin-bottom: 40px;
 }
 
-.padding-histoire h3 {
+.padding-histoire {
+  min-height: 600px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.padding-histoire .text-center {
+  margin: auto;
+}
+.padding-histoire .text-center h3 {
   margin-bottom: 40px;
 }
 
@@ -499,7 +511,6 @@ a[href]:not(.std-link) {
   border-color: black;
   border: 1px solid;
   text-decoration: none;
-  color: black;
   border-radius: 25px;
 }
 .cta-secondary:hover {
@@ -1860,14 +1871,10 @@ section.section-half .columns-wrapper .right-container {
  * --------------------------------------------------------------------------------------------------------------
  *                                                  SECTIONS HEADER
 /**/
-.padding-top-header {
+.padding-top-header, .padding-histoire {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-}
-
-.home-section {
-  padding: 0;
 }
 
 .contact-section-container {
