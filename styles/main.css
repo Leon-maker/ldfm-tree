@@ -307,6 +307,9 @@ p {
   margin-bottom: 160px;
 }
 
+.home-section {
+  padding: 0;
+}
 .home-section .padding-top-header {
   padding: 100px 0 270px 0;
 }
