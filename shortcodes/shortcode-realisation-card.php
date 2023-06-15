@@ -15,6 +15,7 @@ function SHORTCODE_realisation_card($atts)
             <div class="realisation-card-content-container">
                 <div class="realisation-card-content">
                     <h3><?= get_the_title(); ?></h3>
+                    <p class="realisation-card-description"> <?= wp_trim_words(get_field('details_realisation')['description_1'] , 25, '...');?></p>
                     <a class="cta-primary realisation-card-link">En savoir plus</a>
                 </div>
             </div>
@@ -24,6 +25,7 @@ function SHORTCODE_realisation_card($atts)
                 <div class="realisation-card-content-container">
                     <div class="realisation-card-content">
                         <h3><?= get_the_title(); ?></h3>
+                        <p class="realisation-card-description"> <?= wp_trim_words(get_field('details_realisation')['description_1'] , 25, '...');?></p>
                         <a class="cta-primary realisation-card-link">En savoir plus</a>
                     </div>
                 </div>

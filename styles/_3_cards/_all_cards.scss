@@ -5,7 +5,7 @@
     background: $color-grey;
     & .contact-section-card-img{
         width: 100%;
-        max-height: 380px;
+        max-height: 300px;
         object-fit: cover;
     }
     & .contact-section-card-content{
@@ -167,19 +167,28 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        
 
         & .realisation-card-content{
             display: flex;
-            width:fit-content;
             justify-content: flex-start;
             flex-direction: column;
+            width: 50%;
+
+            & .realisation-card-description{
+                opacity: .7;
+                font-family: $font-main-400;
+            }
         }
 
         & .realisation-card-link{
             font-size:14px;
             background-size: 10% 2px, 0 2px ;
+            width: fit-content !important;
+            margin-top: 25px;
             &:hover{
                 background-size: 0 2px, 100% 2px !important;
+                cursor: pointer;
             }
         }
     }
