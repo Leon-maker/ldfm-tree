@@ -146,3 +146,41 @@
         }
     }
 }
+
+
+/** Realisation card **/
+
+.realisation-card{
+    display: grid;
+    grid-template-rows: repeat(1);
+    grid-template-columns: repeat(2, 1fr);
+
+    & .realisation-card-img{
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
+    & .realisation-card-content-container{
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        & .realisation-card-content{
+            display: flex;
+            width:fit-content;
+            justify-content: flex-start;
+            flex-direction: column;
+        }
+
+        & .realisation-card-link{
+            font-size:14px;
+            background-size: 10% 2px, 0 2px ;
+            &:hover{
+                background-size: 0 2px, 100% 2px !important;
+            }
+        }
+    }
+}

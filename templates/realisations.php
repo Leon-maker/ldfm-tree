@@ -10,7 +10,7 @@
 $img_bkg = wp_get_attachment_image_src(21434, 'full')[0];
 $title_page = 'Nos Réalisations';
 $description_page = "Lorem ipsum dolor sit amet.";
-
+$alternate = false; 
 echo do_shortcode('[shortcode-header-section img-bkg="' . $img_bkg . '" title="' . $title_page . '" description="'. $description_page .'"]'); 
 
 ?>
@@ -26,7 +26,8 @@ echo do_shortcode('[shortcode-header-section img-bkg="' . $img_bkg . '" title="'
     $query = new WP_Query($args);
     if ($query->have_posts()) :
         while ($query->have_posts()) : $query->the_post(); 
-            echo do_shortcode('[shortcode-realisation-card]');
+            $alternate = !$alternate;
+            echo do_shortcode('[shortcode-realisation-card alternate="' . $alternate . '"]');
         endwhile; 
     endif; ?>
 </section>
