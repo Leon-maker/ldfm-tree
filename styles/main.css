@@ -2215,6 +2215,11 @@ section.section-half .columns-wrapper .right-container {
   padding-top: 150px;
   padding-bottom: 150px;
 }
+@media (max-width: 1024px) {
+  .contact-section-container {
+    padding: 30px;
+  }
+}
 .contact-section-container .contact-section-header-title {
   display: -webkit-box;
   display: -ms-flexbox;
