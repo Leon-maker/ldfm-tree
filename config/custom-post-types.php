@@ -172,3 +172,31 @@ function thrive_register_post_types_PRODUIT() {
 
 }
 add_action( 'init', 'thrive_register_post_types_PRODUIT' );
+
+// CPT des prestations du site
+function thrive_register_post_types_Prestations() {
+
+    $labels = array(
+        'name' => 'Prestation',
+        'all_items' => 'Toutes les prestations',
+        'singular_name' => 'Prestation',
+        'add_new_item' => 'Ajouter une prestation',
+        'add_new' => 'Ajouter une prestation',
+        'edit_item' => 'Modifier une prestation',
+        'menu_name' => 'Prestations',
+    );
+
+    $args = array(
+        'labels' => $labels,
+        'public' => true,
+        'show_in_rest' => true,
+        'has_archive' => true,
+        'supports' => array('title', 'custom-fields'),
+        'menu_position' => 5,
+        'menu_icon' => 'dashicons-admin-customizer',
+        'show_in_menu' => true
+    );
+    register_post_type('prestation', $args);
+
+}
+add_action( 'init', 'thrive_register_post_types_Prestations' );
