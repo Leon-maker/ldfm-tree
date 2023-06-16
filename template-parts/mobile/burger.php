@@ -5,7 +5,7 @@ $header_id    = $args['header-id'];
 
 <div class="wrap burger">
 
-    <div id="burger-menu<?php echo '-' . $header_id; ?>" class="burger-menu" style="background-color: <?php echo $header_color; ?>">
+    <div id="burger-menu<?php echo '-' . $header_id; ?>" class="burger-menu">
         <div class="burger-menu-wrapper">
             <div class="principal-menu-burger">
                 <?php get_template_part( 'template-parts/navigation/nav'); ?>

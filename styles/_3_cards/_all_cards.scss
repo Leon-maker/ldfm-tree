@@ -186,18 +186,20 @@
             & .realisation-card-description{
                 opacity: .7;
             }
-            ol {
+            ol, ul {
                 list-style-position: inside;
                 padding-left: 0;
                 font-size: 16px;
                 font-family: $font-main-500;
-                li {
-                    padding: 12px 0;
-                    border-top: 1px solid rgba($color: $color-black, $alpha: 0.1);
-                    &:last-child {
-                      border-bottom: 1px solid rgba($color: $color-black, $alpha: 0.1);
+                &ol{
+                    li {
+                        padding: 12px 0;
+                        border-top: 1px solid rgba($color: $color-black, $alpha: 0.1);
+                        &:last-child {
+                          border-bottom: 1px solid rgba($color: $color-black, $alpha: 0.1);
+                        }
                     }
-                }
+                } 
             }
         }
 
@@ -291,5 +293,32 @@
     &:hover{
         background-size: 0 2px, 100% 2px !important;
         cursor: pointer;
+    }
+}
+
+
+/** RESPONSIVE **/
+
+.card-mobile-1{
+    @media (max-width: 1024px) {
+        display: flex;
+        flex-direction: column;
+
+        & .realisation-card-content{
+            margin: 50px 0px;
+            width: 90% !important;
+        }
+    }
+
+}
+.card-mobile-0{
+    @media (max-width: 1024px) {
+        display: flex;
+        flex-direction: column-reverse;
+
+        & .realisation-card-content{
+            margin: 50px 0px;
+            width: 90% !important;
+        }
     }
 }

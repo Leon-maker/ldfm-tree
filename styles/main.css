@@ -913,17 +913,17 @@ a[href]:not(.std-link) {
 .realisation-card .realisation-card-content-container .realisation-card-content .realisation-card-description {
   opacity: 0.7;
 }
-.realisation-card .realisation-card-content-container .realisation-card-content ol {
+.realisation-card .realisation-card-content-container .realisation-card-content ol, .realisation-card .realisation-card-content-container .realisation-card-content ul {
   list-style-position: inside;
   padding-left: 0;
   font-size: 16px;
   font-family: "Montserrat-Medium";
 }
-.realisation-card .realisation-card-content-container .realisation-card-content ol li {
+.realisation-card .realisation-card-content-container .realisation-card-content olol li, .realisation-card .realisation-card-content-container .realisation-card-content ulol li {
   padding: 12px 0;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
-.realisation-card .realisation-card-content-container .realisation-card-content ol li:last-child {
+.realisation-card .realisation-card-content-container .realisation-card-content olol li:last-child, .realisation-card .realisation-card-content-container .realisation-card-content ulol li:last-child {
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 .realisation-card .realisation-card-content-container .realisation-card-link {
@@ -1015,6 +1015,39 @@ a[href]:not(.std-link) {
 .all-card-link:hover {
   background-size: 0 2px, 100% 2px !important;
   cursor: pointer;
+}
+
+/** RESPONSIVE **/
+@media (max-width: 1024px) {
+  .card-mobile-1 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .card-mobile-1 .realisation-card-content {
+    margin: 50px 0px;
+    width: 90% !important;
+  }
+}
+
+@media (max-width: 1024px) {
+  .card-mobile-0 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+  .card-mobile-0 .realisation-card-content {
+    margin: 50px 0px;
+    width: 90% !important;
+  }
 }
 
 /**
@@ -2218,6 +2251,18 @@ section.section-half .columns-wrapper .right-container {
           justify-content: space-between;
   margin-top: 20px;
 }
+@media (max-width: 1024px) {
+  .contact-section-container .contact-section-card-wrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .contact-section-container .contact-section-card-wrapper .contact-section-card {
+    width: 100% !important;
+    margin-bottom: 40px;
+  }
+}
 
 /** Structure principale des sections Nos influences / Nos réalisations **/
 .cpt-section-container {
@@ -2764,6 +2809,7 @@ section.section-half .columns-wrapper .right-container {
 
 .agence-main-section {
   padding-top: 90px !important;
+  padding-bottom: 100px;
 }
 .agence-main-section .agence-description-container {
   display: -ms-grid;
