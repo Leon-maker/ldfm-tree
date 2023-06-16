@@ -22,6 +22,10 @@ function SHORTCODE_Produit_Realisation_section()
                 </div>
             </div>
             <div class="swiper-container ">
+                <div class="swiper-button-container">
+                    <div class="cta-swiper-first swiper-button-prev"></div>
+                    <div class=" cta-swiper-first swiper-button-next"></div>
+                </div>
                 <div class="cpt-section-card-wrapper swiper-wrapper">
                     <?php 
                     while ($query->have_posts()) : $query->the_post(); ?>
@@ -29,10 +33,6 @@ function SHORTCODE_Produit_Realisation_section()
                             <?php echo do_shortcode('[shortcode-produit-card]');?>
                         </div>
                     <?php endwhile; ?>
-                </div>
-                <div class="swiper-button-container">
-                    <div class="swiper-button-prev"></div>
-                    <div class="swiper-button-next"></div>
                 </div>
             </div>
         </section>
