@@ -334,14 +334,30 @@ p {
   margin-bottom: 40px;
 }
 
-.little-lateral-margin {
-  margin-left: 60px;
-  margin-right: 60px;
+@media (min-width: 1025px) {
+  .little-lateral-margin {
+    margin-left: 60px;
+    margin-right: 60px;
+  }
+}
+@media (max-width: 1025px) {
+  .little-lateral-margin {
+    margin-left: 25px;
+    margin-right: 25px;
+  }
 }
 
-.little-lateral-padding {
-  padding-left: 60px;
-  padding-right: 60px;
+@media (min-width: 1025px) {
+  .little-lateral-padding {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+}
+@media (max-width: 1025px) {
+  .little-lateral-padding {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
 }
 
 .section-contact {
@@ -896,6 +912,19 @@ a[href]:not(.std-link) {
 }
 .realisation-card .realisation-card-content-container .realisation-card-content .realisation-card-description {
   opacity: 0.7;
+}
+.realisation-card .realisation-card-content-container .realisation-card-content ol {
+  list-style-position: inside;
+  padding-left: 0;
+  font-size: 16px;
+  font-family: "Montserrat-Medium";
+}
+.realisation-card .realisation-card-content-container .realisation-card-content ol li {
+  padding: 12px 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+.realisation-card .realisation-card-content-container .realisation-card-content ol li:last-child {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 .realisation-card .realisation-card-content-container .realisation-card-link {
   font-size: 14px;
@@ -2044,6 +2073,11 @@ section.section-half .columns-wrapper .right-container {
 .section-contact .informations-pratiques ul .infos:last-child {
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
+.section-contact .right-contact .gform_wrapper h3, .section-contact .right-contact .gform_wrapper label {
+  margin: 0;
+  font-size: 12px;
+  font-family: "Montserrat-Regular";
+}
 .section-contact .right-contact .gform_wrapper .gfield--width-full {
   width: 100%;
 }
@@ -2055,9 +2089,6 @@ section.section-half .columns-wrapper .right-container {
 }
 .section-contact .right-contact .gform_wrapper .gfield .gform_heading {
   display: none;
-}
-.section-contact .right-contact .gform_wrapper .gfield .gfield_label {
-  font-size: 12px;
 }
 .section-contact .right-contact .gform_wrapper .gfield .gfield_label span {
   margin-left: 2px;
@@ -2084,7 +2115,13 @@ section.section-half .columns-wrapper .right-container {
 .section-contact .right-contact .gform_wrapper .gfield--type-consent .gfield_label {
   display: none;
 }
-.section-contact .right-contact .gform_wrapper .gfield--type-date, .section-contact .right-contact .gform_wrapper .gfield--type-time {
+.section-contact .right-contact .gform_wrapper .gfield--type-consent .ginput_container_consent .gfield_required_asterisk {
+  display: contents;
+}
+.section-contact .right-contact .gform_wrapper .gfield--type-section {
+  margin-bottom: 0;
+}
+.section-contact .right-contact .gform_wrapper .gfield--type-date.gfield--type-date, .section-contact .right-contact .gform_wrapper .gfield--type-time.gfield--type-date {
   width: 50%;
 }
 .section-contact .right-contact .gform_wrapper .gfield--type-date .gfield_label, .section-contact .right-contact .gform_wrapper .gfield--type-time .gfield_label {
@@ -2142,6 +2179,8 @@ section.section-half .columns-wrapper .right-container {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  padding-top: 150px;
+  padding-bottom: 150px;
 }
 .contact-section-container .contact-section-header-title {
   display: -webkit-box;

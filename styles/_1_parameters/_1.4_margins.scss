@@ -154,15 +154,26 @@ $lateral-padding-width-mobile: 50px;
     }
   }
 }
-
 .little-lateral-margin {
-  margin-left: 60px;
-  margin-right: 60px;
+  @media (min-width: $layout-breakpoint-start-desktop) {
+    margin-left: $lateral-margin-width-desktop;
+    margin-right: $lateral-margin-width-desktop;
+  }
+  @media (max-width: $layout-breakpoint-start-desktop) {
+    margin-left: $lateral-margin-width-mobile;
+    margin-right: $lateral-margin-width-mobile;
+  }
 }
 
 .little-lateral-padding {
-  padding-left: 60px;
-  padding-right: 60px;
+  @media (min-width: $layout-breakpoint-start-desktop) {
+    padding-left: $lateral-margin-width-desktop;
+    padding-right: $lateral-margin-width-desktop;
+  }
+  @media (max-width: $layout-breakpoint-start-desktop) {
+    padding-left: $lateral-margin-width-mobile;
+    padding-right: $lateral-margin-width-mobile;
+  }
 }
 
 .section-contact {

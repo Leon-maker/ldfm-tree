@@ -22,7 +22,7 @@ $args = array(
 $query = new WP_Query($args);
 $alternate = false; 
 if ($query->have_posts()) { ?>
-    <div class="cpt-section-card-wrapper">
+    <section class="section-archive-all-realisations">
     <?php 
     while ($query->have_posts()) : $query->the_post(); 
         $alternate = !$alternate;
@@ -35,5 +35,10 @@ if ($query->have_posts()) { ?>
         $link = $prestation['lien_bouton'];
         echo do_shortcode('[shortcode-description-contact image_id="'.$image_id.'" title="'.$title.'" description="'.$description.'" alternate="'.$alternate.'" button_title="'.$button_title.'" link="'.$link.'"]');
     endwhile; ?>
-    </div> <?php
+    </section> <?php
 }
+
+echo do_shortcode('[shortcode-contact-section]'); 
+
+get_footer();
+

@@ -94,6 +94,11 @@ section {
   }
   .right-contact{
     .gform_wrapper{
+      h3, label{
+        margin: 0;
+        font-size: 12px;
+        font-family: $font-main-400;
+      }
       .gfield--width-full{
         width: 100%;
         textarea, input {
@@ -106,7 +111,6 @@ section {
           display: none;
         }
         .gfield_label{
-          font-size: 12px;
           span{
             margin-left: 2px;
           }
@@ -139,10 +143,18 @@ section {
           &.active, &:hover{
             @extend %checkbox-black-white;
           }
+          .gfield_required_asterisk{
+            display: contents;
+          }
         }
       }
+      .gfield--type-section{
+        margin-bottom: 0;
+      }
       .gfield--type-date, .gfield--type-time {
-        width: 50%;
+        &.gfield--type-date {
+          width: 50%;
+        }
         .gfield_label {
           display: none;
         }
