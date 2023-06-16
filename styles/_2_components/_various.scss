@@ -49,9 +49,8 @@ a[href] {
 // checkbox with fa checked
 %checkbox-black-white {
   label{
-
     &::before {
-      content: "\f00c";
+      content: " ";
       width: 15px;
       height: 15px;
       border: 1px solid black;
