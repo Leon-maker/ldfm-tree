@@ -22,6 +22,14 @@
     }
 
     & .contact-section-card-wrapper{
+        @media (max-width: 1024px) {
+            flex-direction: column;
+
+            & .contact-section-card{
+                width: 100% !important;
+                margin-bottom: 40px;
+            }
+        }
         display: flex;
         flex-direction: row;
         justify-content: space-between;

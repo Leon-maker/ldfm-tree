@@ -280,3 +280,30 @@
         cursor: pointer;
     }
 }
+
+
+/** RESPONSIVE **/
+
+.card-mobile-1{
+    @media (max-width: 1024px) {
+        display: flex;
+        flex-direction: column;
+
+        & .realisation-card-content{
+            margin: 50px 0px;
+            width: 90% !important;
+        }
+    }
+
+}
+.card-mobile-0{
+    @media (max-width: 1024px) {
+        display: flex;
+        flex-direction: column-reverse;
+
+        & .realisation-card-content{
+            margin: 50px 0px;
+            width: 90% !important;
+        }
+    }
+}

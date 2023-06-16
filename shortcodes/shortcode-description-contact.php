@@ -13,7 +13,7 @@ function SHORTCODE_descriptionContact($atts)
 
     ob_start();
     ?>
-    <div class="realisation-card">
+    <div class="realisation-card card-mobile-<?= $atts["alternate"]==="1" ? "1" : "0" ?>">
     <?php if($atts["alternate"]!==null && $atts["alternate"]==="1"){ ?>
             <img class="realisation-card-img" src="<?= wp_get_attachment_image_src($atts['image_id'], 'full')[0];  ?>" alt="Image d'illustration contact"/>
             <div class="realisation-card-content-container">
