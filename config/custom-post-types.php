@@ -200,3 +200,30 @@ function thrive_register_post_types_Prestations() {
 
 }
 add_action( 'init', 'thrive_register_post_types_Prestations' );
+
+function thrive_register_post_types_EQUIPE() {
+
+    $labels = array(
+        'name' => 'Equipe',
+        'all_items' => 'Toutes les équipes',
+        'singular_name' => 'equipe',
+        'add_new_item' => 'Ajouter une equipe',
+        'add_new' => 'Ajouter une equipe',
+        'edit_item' => 'Modifier l\'equipe',
+        'menu_name' => 'Equipe'
+    );
+
+    $args = array(
+        'labels' => $labels,
+        'public' => true,
+        'show_in_rest' => true,
+        'has_archive' => true,
+        'supports' => array('title', 'custom-fields'),
+        'menu_position' => 5,
+        'menu_icon' => 'dashicons-admin-customizer',
+        'show_in_menu' => true
+    );
+    register_post_type('equipe', $args);
+
+}
+add_action( 'init', 'thrive_register_post_types_EQUIPE' );

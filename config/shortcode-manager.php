@@ -19,6 +19,9 @@ require_once get_template_directory() . '/shortcodes/shortcode-boutique-section.
 require_once get_template_directory() . '/shortcodes/shortcode-produit-card.php';
 require_once get_template_directory() . '/shortcodes/shortcode-produit-realisation-section.php';
 require_once get_template_directory() . '/shortcodes/shortcode-description-contact.php';
+require_once get_template_directory() . '/shortcodes/shortcode-equipe-section.php';
+require_once get_template_directory() . '/shortcodes/shortcode-equipe-card.php';
+
 
 
 
