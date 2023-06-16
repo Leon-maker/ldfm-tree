@@ -315,3 +315,16 @@ function fr_phone_format( $phone_formats ) {
  
     return $phone_formats;
 }
+
+/**
+ * --------------------------------------------------------------------------------------------------------------
+ *                                                 Google Maps API
+ * --------------------------------------------------------------------------------------------------------------
+ */
+/**/
+function my_acf_init() {
+
+    acf_update_setting('google_api_key', 'AIzaSyAcA6CXpoKHHzEgbu00TfHBv1FP7WiW-YY');
+}
+
+add_action('acf/init', 'my_acf_init');

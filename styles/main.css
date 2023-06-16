@@ -363,6 +363,7 @@ p {
 }
 .section-contact .left-contact .informations-pratiques ul .label {
   width: 200px;
+  margin: auto 0;
 }
 .section-contact .left-contact .informations-pratiques ul .value {
   width: 60%;

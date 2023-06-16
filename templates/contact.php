@@ -14,17 +14,29 @@ echo do_shortcode('[shortcode-header-section img-bkg="' . $img_bkg . '" title="'
 
 ?>
 
+<?php
+$subtitle = "Envoyez nous un message";
+$description = get_the_excerpt();
+$info_pratiques = get_field('informations_pratiques');
+$coordonees = $info_pratiques['coordonnees'];
+$telephone = $coordonees['telephone'];
+$horaire_douverture = $coordonees['horaire_douverture'];
+$acces = $info_pratiques['acces'];
+$voiture = $acces['voiture'];
+$bus = $acces['bus'];
+$tramway = $acces['tramway'];
+$id_form = 1;
+
+?>
+
 <section class="section-contact little-lateral-margin">
   <div class="left-contact">
     <div class="head">
       <h2 class="uppercase">
-        Envoyez nous un message
+        <?php echo $subtitle; ?>
       </h2>
       <p>
-      Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
-      sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, 
-      sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. 
-      Stet clita kasd gubergren, no sea takimata sanctus.
+        <?php echo $description; ?>
       </p>
     </div>
     <div class="informations-pratiques full-width">
@@ -45,7 +57,7 @@ echo do_shortcode('[shortcode-header-section img-bkg="' . $img_bkg . '" title="'
             Nous contacter
           </p>
           <p class="value boldy">
-            06 80 76 69 27
+            <?php echo $telephone; ?>
           </p>
         </li>
         <li class="infos">
@@ -53,7 +65,14 @@ echo do_shortcode('[shortcode-header-section img-bkg="' . $img_bkg . '" title="'
             Horaires d’ouverture
           </p>
           <p class="value boldy">
-            Du lundi au dimanche : 10h00 - 13h00, 14h00 - 19h00
+            <?php 
+            foreach ($horaire_douverture as $horaires) {
+              foreach ($horaires as $horaire) {
+                echo $horaire;
+                ?></br><?php
+              }
+            }
+            ?>
           </p>
         </li>
       </ul>
@@ -66,8 +85,7 @@ echo do_shortcode('[shortcode-header-section img-bkg="' . $img_bkg . '" title="'
             Voiture
           </p>
           <p class="value boldy">
-            Sortie 10 Rocade, remonter l’avenue Jean Perrin 
-            direction Chemin Long
+            <?php echo $voiture; ?>
           </p>
         </li>
         <li class="infos">
@@ -75,8 +93,7 @@ echo do_shortcode('[shortcode-header-section img-bkg="' . $img_bkg . '" title="'
             Bus
           </p>
           <p class="value boldy">
-            Bas ligne 1 lianes, direction Mérignac 
-            Aéroport, arrêt Kennedy
+            <?php echo $bus; ?>
           </p>
         </li>
         <li class="infos">
@@ -84,14 +101,14 @@ echo do_shortcode('[shortcode-header-section img-bkg="' . $img_bkg . '" title="'
             Tramway
           </p>
           <p class="value boldy">
-            Prochainement
+            <?php echo $tramway; ?>
           </p>
         </li>
       </ul>
   </div>
   </div>
   <div class="right-contact bkg-grey ">
-  <?php echo do_shortcode('[gravityform id="1" title="false"]'); ?>
+  <?php echo do_shortcode('[gravityform id="'.$id_form.'" title="false"]'); ?>
   </div>
 </section>
 
