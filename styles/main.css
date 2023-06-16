@@ -475,7 +475,7 @@ a[href]:not(.std-link) {
   position: relative;
 }
 
-.section-contact .right-contact .gform_wrapper .gfield--type-consent .ginput_container_consent.active label::before {
+.section-contact .right-contact .gform_wrapper .gfield--type-consent .ginput_container_consent.active label::before, .section-contact .right-contact .gform_wrapper .gfield--type-consent .ginput_container_consent:hover label::before {
   content: " ";
   width: 15px;
   height: 15px;
@@ -663,7 +663,7 @@ a[href]:not(.std-link) {
     opacity: 0;
   }
 }
-.swiper-button-next, .swiper-button-prev {
+.cta-swiper-first {
   border: 1px solid #ffffff;
   color: #ffffff !important;
   padding: 15px;
@@ -672,7 +672,7 @@ a[href]:not(.std-link) {
   border-radius: 100%;
   margin: 60px;
 }
-.swiper-button-next::after, .swiper-button-prev::after {
+.cta-swiper-first::after {
   font-size: 10px !important;
   padding: 20px;
   width: 20px !important;
@@ -2016,7 +2016,6 @@ section.section-half .columns-wrapper .right-container {
 }
 .section-contact .right-contact .gform_wrapper .gfield .ginput_container textarea {
   resize: none;
-  width: 100%;
 }
 .section-contact .right-contact .gform_wrapper .gfield--type-consent {
   font-size: 12px;
@@ -2061,7 +2060,7 @@ section.section-half .columns-wrapper .right-container {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  bottom: 20px;
+  bottom: 35px;
   position: relative;
   float: right;
 }

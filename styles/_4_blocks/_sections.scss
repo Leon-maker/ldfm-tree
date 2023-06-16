@@ -121,7 +121,6 @@ section {
           }
           textarea {
             resize: none;
-            width: 100%;  
           }
         }
       }
@@ -137,7 +136,7 @@ section {
         .ginput_container_consent{
           @extend %checkbox-black;
 
-          &.active{
+          &.active, &:hover{
             @extend %checkbox-black-white;
           }
         }
@@ -171,7 +170,7 @@ section {
       }
       .gform_footer {
         width: fit-content;
-        bottom: 20px;
+        bottom: 35px;
         position: relative;
         float: right;
 
