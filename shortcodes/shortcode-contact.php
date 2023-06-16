@@ -108,15 +108,6 @@ function SHORTCODE_contact($atts)
       </div>
     </section>
 
-    <div class="localisation full-width">
-      <h2>
-          Localisation
-      </h2>
-      <div class="localisation-map-container">
-          <div class="localisation-map borders" id="localisation-map" data-lat="<?php echo $gmap_adresse_depart['lat']; ?>" data-lng="<?php echo $gmap_adresse_depart['lng']; ?>"></div>
-      </div>
-    </div>
-
     <script>
         // Fonction pour cocher ou décocher la case à cocher
         function toggleCheckbox() {

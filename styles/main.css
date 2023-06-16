@@ -840,10 +840,6 @@ a[href]:not(.std-link) {
 }
 .influence-card .influence-section-card-link {
   font-size: 14px;
-  background-size: 10% 2px, 0 2px;
-}
-.influence-card .influence-section-card-link:hover {
-  background-size: 0 2px, 100% 2px !important;
 }
 
 /** Realisation card **/
@@ -903,13 +899,34 @@ a[href]:not(.std-link) {
 }
 .realisation-card .realisation-card-content-container .realisation-card-link {
   font-size: 14px;
-  background-size: 10% 2px, 0 2px;
   width: -webkit-fit-content !important;
   width: -moz-fit-content !important;
   width: fit-content !important;
   margin-top: 25px;
 }
-.realisation-card .realisation-card-content-container .realisation-card-link:hover {
+
+/** Produit card**/
+.produit-card {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.produit-card img {
+  width: 100%;
+  height: 550px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+/** link pour card**/
+.all-card-link {
+  background-size: 10% 2px, 0 2px;
+}
+.all-card-link:hover {
   background-size: 0 2px, 100% 2px !important;
   cursor: pointer;
 }
@@ -2173,6 +2190,39 @@ section.section-half .columns-wrapper .right-container {
 
 .marque-section-container .cpt-section-card-wrapper .marque-card {
   margin-right: 20px;
+}
+
+.boutique-section-container .cpt-section-card-wrapper {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: auto 80px auto;
+  grid-template-rows: auto auto; /* Deux lignes de hauteur automatique */
+  -ms-grid-columns: auto 20px auto;
+  grid-template-columns: auto auto; /* Deux colonnes de largeur automatique */
+  gap: 80px 20px; /* Espacement entre les éléments de la grille */
+  -webkit-box-pack: unset !important;
+      -ms-flex-pack: unset !important;
+          justify-content: unset !important;
+}
+
+.boutique-section-container .cpt-section-card-wrapper > *:nth-child(1) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+}
+
+.boutique-section-container .cpt-section-card-wrapper > *:nth-child(2) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+}
+
+.boutique-section-container .cpt-section-card-wrapper > *:nth-child(3) {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+}
+
+.boutique-section-container .cpt-section-card-wrapper > *:nth-child(4) {
+  -ms-grid-row: 3;
+  -ms-grid-column: 3;
 }
 
 /**
