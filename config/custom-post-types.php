@@ -142,3 +142,33 @@ function thrive_register_post_types_Sections() {
 
 }
 add_action( 'init', 'thrive_register_post_types_Sections' );
+
+
+
+
+function thrive_register_post_types_PRODUIT() {
+
+    $labels = array(
+        'name' => 'Produit',
+        'all_items' => 'Tous les produits',
+        'singular_name' => 'produit',
+        'add_new_item' => 'Ajouter un produit',
+        'add_new' => 'Ajouter un produit',
+        'edit_item' => 'Modifier le produit',
+        'menu_name' => 'Produits'
+    );
+
+    $args = array(
+        'labels' => $labels,
+        'public' => true,
+        'show_in_rest' => true,
+        'has_archive' => true,
+        'supports' => array('title', 'custom-fields'),
+        'menu_position' => 5,
+        'menu_icon' => 'dashicons-admin-customizer',
+        'show_in_menu' => true
+    );
+    register_post_type('produit', $args);
+
+}
+add_action( 'init', 'thrive_register_post_types_PRODUIT' );

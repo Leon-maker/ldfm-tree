@@ -72,7 +72,6 @@
             color: $color-white;
             padding: 20px;
             margin-bottom: 0px !important;
-            font-family: $font-main-400;
             padding: 90px 50px;
         }
     }
@@ -117,8 +116,6 @@
             position: absolute;
             z-index: 1;
             margin-bottom: 0px !important;
-            font-family: $font-main-500;
-            
         }
     }
     
@@ -192,7 +189,6 @@
 
             & .realisation-card-description{
                 opacity: .7;
-                font-family: $font-main-400;
             }
         }
 
