@@ -87,6 +87,17 @@
   
 }
 
+.equipe-section-container{
+    & .equipe-card{
+        margin:35px;
+    }
+
+    & .cpt-section-card-wrapper{
+        flex-wrap: wrap;
+        margin-left: -35px;
+    }
+}
+
 .produit-realisation-section-container{
     position: relative;
     & .cpt-section-header-sub-content-container{

@@ -1,0 +1,22 @@
+.agence-main-section{
+    padding-top: 90px !important;
+    & .agence-description-container{
+        display: grid;
+        grid-template-rows: repeat(1);
+        grid-template-columns: repeat(2, 1fr);
+
+        & .agence-side-description-container{
+            display:flex;
+            justify-content: center;
+            align-items: flex-start;
+
+            & .agence-side-description{
+                width: 50%;
+                display: flex;
+                justify-content: flex-start;
+                opacity: 0.7;
+            }
+        }
+
+    }
+}
