@@ -6,6 +6,7 @@ function SHORTCODE_descriptionContact($atts)
         'image_id' => '', // ID de l'image
         'title' => '', // Titre
         'description' => '', // Description
+        'button_title' => '', // Description
         'link' => '', // Description
         'alternate' => null,
     ), $atts);
@@ -13,14 +14,14 @@ function SHORTCODE_descriptionContact($atts)
     ob_start();
     ?>
     <div class="realisation-card">
-        <?php if($atts["alternate"]!==null && $atts["alternate"]==="1"){ ?>
+    <?php if($atts["alternate"]!==null && $atts["alternate"]==="1"){ ?>
             <img class="realisation-card-img" src="<?= wp_get_attachment_image_src($atts['image_id'], 'full')[0];  ?>" alt="Image d'illustration contact"/>
             <div class="realisation-card-content-container">
                 <div class="realisation-card-content">
                     <h2><?= $atts['title']; ?></h2>
                     <p class="realisation-card-description"><?= $atts['description']; ?></p>
-                    <?php if (!empty($atts['link'])) { ?>
-                        <a href="<?= $atts['link']; ?>" class="cta-primary all-card-link realisation-card-link">Prendre rendez-vous</a> <?php
+                    <?php if (!empty($atts['button_title'])) { ?>
+                        <a href="<?php echo $atts['link']; ?>" class="cta-secondary all-card-link realisation-card-link"><?php echo $atts['button_title']; ?></a> <?php
                     } ?>
                 </div>
             </div>
@@ -29,8 +30,8 @@ function SHORTCODE_descriptionContact($atts)
                 <div class="realisation-card-content">
                     <h2><?= $atts['title']; ?></h2>
                     <p class="realisation-card-description"><?= $atts['description']; ?></p>
-                    <?php if (!empty($atts['link'])) { ?>
-                        <a href="<?= $atts['link']; ?>" class="cta-primary all-card-link realisation-card-link">Prendre rendez-vous</a> <?php
+                    <?php if (!empty($atts['button_title'])) { ?>
+                        <a href="<?php echo $atts['link']; ?>" class="cta-secondary all-card-link realisation-card-link"><?php echo $atts['button_title']; ?></a> <?php
                     } ?>
                 </div>            
             </div>
@@ -42,3 +43,7 @@ function SHORTCODE_descriptionContact($atts)
 }
 
 add_shortcode('shortcode-description-contact', 'SHORTCODE_descriptionContact');
+
+/*
+
+*/

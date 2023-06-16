@@ -42,7 +42,7 @@ function SHORTCODE_FilAriane($arguments)
                 if ($title !== "") {
                     ?>
                     <li class="fil-ariane-item">
-                        <a href="<?php echo $link; ?>" class="fil-ariane-link uppercase">
+                        <a href="<?php echo $link; ?>" class="fil-ariane-link">
                             <?php echo $title; ?>
                         </a>
                         <?php
