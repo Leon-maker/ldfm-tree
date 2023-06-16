@@ -1987,6 +1987,12 @@ section.section-half .columns-wrapper .right-container {
 .section-contact .informations-pratiques ul .infos:last-child {
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
+.section-contact .right-contact .gform_wrapper .gfield--width-full {
+  width: 100%;
+}
+.section-contact .right-contact .gform_wrapper .gfield--width-full input {
+  width: 100%;
+}
 .section-contact .right-contact .gform_wrapper .gfield {
   margin-bottom: 20px;
 }
@@ -2003,7 +2009,6 @@ section.section-half .columns-wrapper .right-container {
   margin-top: 5px;
 }
 .section-contact .right-contact .gform_wrapper .gfield .ginput_container input, .section-contact .right-contact .gform_wrapper .gfield .ginput_container textarea {
-  width: 100%;
   border: 1px solid rgba(0, 0, 0, 0.3);
 }
 .section-contact .right-contact .gform_wrapper .gfield .ginput_container input {
@@ -2021,6 +2026,32 @@ section.section-half .columns-wrapper .right-container {
 }
 .section-contact .right-contact .gform_wrapper .gfield--type-consent .gfield_label {
   display: none;
+}
+.section-contact .right-contact .gform_wrapper .gfield--type-date, .section-contact .right-contact .gform_wrapper .gfield--type-time {
+  width: 50%;
+}
+.section-contact .right-contact .gform_wrapper .gfield--type-date .gfield_label, .section-contact .right-contact .gform_wrapper .gfield--type-time .gfield_label {
+  display: none;
+}
+.section-contact .right-contact .gform_wrapper .gfield--type-date .ginput_container, .section-contact .right-contact .gform_wrapper .gfield--type-time .ginput_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.section-contact .right-contact .gform_wrapper .gfield--type-date.gfield--type-time, .section-contact .right-contact .gform_wrapper .gfield--type-time.gfield--type-time {
+  border: none;
+  position: relative;
+  bottom: 80px;
+  float: right;
+}
+.section-contact .right-contact .gform_wrapper .gfield--type-date.gfield--type-time legend, .section-contact .right-contact .gform_wrapper .gfield--type-time.gfield--type-time legend {
+  display: none;
+}
+.section-contact .right-contact .gform_wrapper .gfield--type-date.gfield--type-time .ginput_container, .section-contact .right-contact .gform_wrapper .gfield--type-time.gfield--type-time .ginput_container {
+  float: right;
+}
+.section-contact .right-contact .gform_wrapper .gfield--type-date.gfield--type-time .ginput_container .below, .section-contact .right-contact .gform_wrapper .gfield--type-time.gfield--type-time .ginput_container .below {
+  margin: auto 5px;
 }
 .section-contact .right-contact .gform_wrapper .gfield--type-honeypot {
   display: none;

@@ -94,6 +94,12 @@ section {
   }
   .right-contact{
     .gform_wrapper{
+      .gfield--width-full{
+        width: 100%;
+        input {
+          width: 100%;
+        }
+      }
       .gfield {
         margin-bottom: 20px;
         .gform_heading{
@@ -108,7 +114,6 @@ section {
         .ginput_container{
           margin-top: 5px;
           input, textarea{
-            width: 100%;
             border: 1px solid rgba($color: $color-black, $alpha: 0.3);
           }
           input {
@@ -133,6 +138,30 @@ section {
 
           &.active{
             @extend %checkbox-black-white;
+          }
+        }
+      }
+      .gfield--type-date, .gfield--type-time {
+        width: 50%;
+        .gfield_label {
+          display: none;
+        }
+        .ginput_container {
+          display: flex;
+        }
+        &.gfield--type-time {
+          border: none;
+          position: relative;
+          bottom: 80px;
+          float: right;
+          legend {
+            display: none;
+          }
+          .ginput_container {
+            float: right;
+            .below {
+              margin: auto 5px;
+            }
           }
         }
       }

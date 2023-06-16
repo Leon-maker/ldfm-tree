@@ -56,8 +56,8 @@ function SHORTCODE_HomeSection()
                     <?php } ?>
                 </div>
                 <div class="swiper-button-container left">
-                    <div class="swiper-button-prev"></div>
-                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev cta-swiper-first"></div>
+                    <div class="swiper-button-next cta-swiper-first"></div>
                 </div>
                 <div class="mouse-div">
                     <a class="cta-mouse white" href="">
