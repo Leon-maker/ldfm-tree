@@ -93,8 +93,16 @@ echo do_shortcode('[shortcode-header-section img-bkg="' . $img_bkg . '" title="'
   <div class="right-contact bkg-grey ">
   <?php echo do_shortcode('[gravityform id="1" title="false"]'); ?>
   </div>
-	
 </section>
+
+<div class="localisation full-width">
+  <h2>
+      Localisation
+  </h2>
+  <div class="localisation-map-container">
+      <div class="localisation-map borders" id="localisation-map" data-lat="<?php echo $gmap_adresse_depart['lat']; ?>" data-lng="<?php echo $gmap_adresse_depart['lng']; ?>"></div>
+  </div>
+</div>
 
 <script>
     // Fonction pour cocher ou décocher la case à cocher
