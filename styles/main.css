@@ -29,51 +29,51 @@
 /**/
 @font-face {
   font-family: "Montserrat-Regular";
-  src: url("/fonts/Montserrat/Montserrat-Regular.otf") format("otf");
+  src: url("/wp-content/themes/thrive-custom-theme/fonts/Montserrat/Montserrat-Regular.otf") format("opentype");
 }
 @font-face {
   font-family: "Montserrat-Medium";
-  src: url("/fonts/Montserrat/Montserrat-Medium.otf") format("otf");
+  src: url("/wp-content/themes/thrive-custom-theme/fonts/Montserrat/Montserrat-Medium.otf") format("opentype");
 }
 @font-face {
   font-family: "Montserrat-SemiBold";
-  src: url("/fonts/Montserrat/Montserrat-SemiBold.otf") format("otf");
+  src: url("/wp-content/themes/thrive-custom-theme/fonts/Montserrat/Montserrat-SemiBold.otf") format("opentype");
 }
 @font-face {
   font-family: "Montserrat-Bold";
-  src: url("/fonts/Montserrat/Montserrat-Bold.otf") format("otf");
+  src: url("/wp-content/themes/thrive-custom-theme/fonts/Montserrat/Montserrat-Bold.otf") format("opentype");
 }
 @font-face {
   font-family: "Montserrat-ExtraBold";
-  src: url("/fonts/Montserrat/Montserrat-ExtraBold.otf") format("otf");
+  src: url("/wp-content/themes/thrive-custom-theme/fonts/Montserrat/Montserrat-ExtraBold.otf") format("opentype");
 }
 @font-face {
   font-family: "Montserrat-Black";
-  src: url("/fonts/Montserrat/Montserrat-Black.otf") format("otf");
+  src: url("/wp-content/themes/thrive-custom-theme/fonts/Montserrat/Montserrat-Black.otf") format("opentype");
 }
 @font-face {
   font-family: "PlayfairDisplay-Regular";
-  src: url("/fonts/Playfair_Display/static/PlayfairDisplay-Regular.ttf") format("ttf");
+  src: url("/wp-content/themes/thrive-custom-theme/fonts/Playfair_Display/static/PlayfairDisplay-Regular.ttf") format("truetype");
 }
 @font-face {
   font-family: "PlayfairDisplay-Medium";
-  src: url("/fonts/Playfair_Display/static/PlayfairDisplay-Medium.ttf") format("ttf");
+  src: url("/wp-content/themes/thrive-custom-theme/fonts/Playfair_Display/static/PlayfairDisplay-Medium.ttf") format("truetype");
 }
 @font-face {
   font-family: "PlayfairDisplay-SemiBold";
-  src: url("/fonts/Playfair_Display/static/PlayfairDisplay-SemiBold.ttf") format("ttf");
+  src: url("/wp-content/themes/thrive-custom-theme/fonts/Playfair_Display/static/PlayfairDisplay-SemiBold.ttf") format("truetype");
 }
 @font-face {
   font-family: "PlayfairDisplay-Bold";
-  src: url("/fonts/Playfair_Display/static/PlayfairDisplay-Bold.ttf") format("ttf");
+  src: url("/wp-content/themes/thrive-custom-theme/fonts/Playfair_Display/static/PlayfairDisplay-Bold.ttf") format("truetype");
 }
 @font-face {
   font-family: "PlayfairDisplay-ExtraBold";
-  src: url("/fonts/Playfair_Display/static/PlayfairDisplay-ExtraBold.ttf") format("ttf");
+  src: url("/wp-content/themes/thrive-custom-theme/fonts/Playfair_Display/static/PlayfairDisplay-ExtraBold.ttf") format("truetype");
 }
 @font-face {
   font-family: "PlayfairDisplay-Black";
-  src: url("/fonts/Playfair_Display/static/PlayfairDisplay-Black.ttf") format("ttf");
+  src: url("/wp-content/themes/thrive-custom-theme/fonts/Playfair_Display/static/PlayfairDisplay-Black.ttf") format("truetype");
 }
 /**
  * --------------------------------------------------------------------------------------------------------------
@@ -766,7 +766,6 @@ a[href]:not(.std-link) {
   color: #ffffff;
   padding: 20px;
   margin-bottom: 0px !important;
-  font-family: "Montserrat-Regular";
   padding: 90px 50px;
 }
 .marque-card:hover .marque-card-title {
@@ -807,7 +806,6 @@ a[href]:not(.std-link) {
   position: absolute;
   z-index: 1;
   margin-bottom: 0px !important;
-  font-family: "Montserrat-Medium";
 }
 
 /** influence card **/
@@ -901,7 +899,6 @@ a[href]:not(.std-link) {
 }
 .realisation-card .realisation-card-content-container .realisation-card-content .realisation-card-description {
   opacity: 0.7;
-  font-family: "Montserrat-Regular";
 }
 .realisation-card .realisation-card-content-container .realisation-card-link {
   font-size: 14px;
@@ -2057,13 +2054,11 @@ section.section-half .columns-wrapper .right-container {
   color: #000000;
   margin: 0px;
   text-transform: uppercase;
-  font-family: "Montserrat-Regular";
 }
 .contact-section-container .contact-section-header-title > h2 {
   margin-top: 10px;
   text-transform: uppercase;
   color: #000000;
-  font-family: "Montserrat-Regular";
 }
 .contact-section-container .contact-section-card-wrapper {
   display: -webkit-box;
@@ -2105,13 +2100,11 @@ section.section-half .columns-wrapper .right-container {
   opacity: 0.5;
   color: #000000;
   text-transform: uppercase;
-  font-family: "Montserrat-Regular";
 }
 .cpt-section-container .cpt-section-header-title > h2 {
   margin-top: 10px;
-  text-transform: uppercase;
+  text-transform: uppercase !important;
   color: #000000;
-  font-family: "Montserrat-Regular";
 }
 .cpt-section-container .cpt-section-header-title .cpt-section-header-sub-content-container {
   display: -webkit-box;
@@ -2127,6 +2120,7 @@ section.section-half .columns-wrapper .right-container {
 }
 .cpt-section-container .cpt-section-header-title .cpt-section-header-sub-content-container h2 {
   margin: 0px;
+  text-transform: uppercase !important;
 }
 .cpt-section-container .cpt-section-card-wrapper {
   display: -webkit-box;
