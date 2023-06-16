@@ -9,6 +9,8 @@ import SwiperManager from "./managers/SwiperManager";
 // Initialisation des variables
 const homePage = document.querySelector('.home');
 const headerSlider = document.querySelector('.header-slider');
+const detailRealisationSlider = document.querySelector('.detail-realisation-slider');
+
 
 window.onload = () => {
     if (homePage) {
@@ -49,6 +51,30 @@ window.onload = () => {
             console.log("reach to End");
             document.querySelector('.header-slider .swiper-button-next').classList.add('disabled');
         });
+    }
+
+    // slider page detail realisation "produit utilisés pour ce projet"
+    if (detailRealisationSlider) {
+        const SwiperdetailRealisationSlider = new SwiperManager(detailRealisationSlider, {
+            loop: false,
+            autoplay: {
+                //delay: 3000,
+                disableOnInteraction: false
+            },
+            spaceBetween: 22,
+            slidesPerView: 3, // total number of slides must be >= slidesPerView * 2
+            speed: 3000,
+            mousewheelControl: true,
+            keyboardControl: true,
+        });
+
+        SwiperdetailRealisationSlider.addEventListener('onMomentumScrollEnd', (e, state, context) => {
+            if(state.index > this.currentIndex && this.currentIndex > 0) {
+                this._swiper.scrollBy(-1)
+            }
+            this.currentIndex = state.index;
+        });
+
     }
 }
 

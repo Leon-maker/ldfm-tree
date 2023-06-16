@@ -17,7 +17,7 @@ require_once get_template_directory() . '/shortcodes/shortcode-realisation-card.
 require_once get_template_directory() . '/shortcodes/shortcode-realisation-section.php';
 require_once get_template_directory() . '/shortcodes/shortcode-boutique-section.php';
 require_once get_template_directory() . '/shortcodes/shortcode-produit-card.php';
-
+require_once get_template_directory() . '/shortcodes/shortcode-produit-realisation-section.php';
 
 
 
