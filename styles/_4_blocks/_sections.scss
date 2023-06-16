@@ -96,7 +96,7 @@ section {
     .gform_wrapper{
       .gfield--width-full{
         width: 100%;
-        input {
+        textarea, input {
           width: 100%;
         }
       }
@@ -121,6 +121,7 @@ section {
           }
           textarea {
             resize: none;
+            width: 100%;  
           }
         }
       }

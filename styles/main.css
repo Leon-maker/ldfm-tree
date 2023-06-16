@@ -1990,7 +1990,7 @@ section.section-half .columns-wrapper .right-container {
 .section-contact .right-contact .gform_wrapper .gfield--width-full {
   width: 100%;
 }
-.section-contact .right-contact .gform_wrapper .gfield--width-full input {
+.section-contact .right-contact .gform_wrapper .gfield--width-full textarea, .section-contact .right-contact .gform_wrapper .gfield--width-full input {
   width: 100%;
 }
 .section-contact .right-contact .gform_wrapper .gfield {
@@ -2016,6 +2016,7 @@ section.section-half .columns-wrapper .right-container {
 }
 .section-contact .right-contact .gform_wrapper .gfield .ginput_container textarea {
   resize: none;
+  width: 100%;
 }
 .section-contact .right-contact .gform_wrapper .gfield--type-consent {
   font-size: 12px;
