@@ -2256,6 +2256,9 @@ section.section-half .columns-wrapper .right-container {
   -ms-grid-column: 3;
 }
 
+.produit-realisation-section-container {
+  position: relative;
+}
 .produit-realisation-section-container .cpt-section-header-sub-content-container {
   -webkit-box-pack: start !important;
       -ms-flex-pack: start !important;
@@ -2264,9 +2267,18 @@ section.section-half .columns-wrapper .right-container {
 .produit-realisation-section-container .cta-secondary {
   margin-left: 20px;
 }
-.produit-realisation-section-container .swiper-container {
-  position: relative;
+.produit-realisation-section-container .swiper-container .swiper-button-container div {
+  color: black !important;
+  border: solid 1px black !important;
+  left: unset;
+  margin-top: 100px;
+  right: 0px;
+  top: 0 !important;
 }
+.produit-realisation-section-container .swiper-container .swiper-button-container .swiper-button-prev {
+  right: 60px;
+}
+
 /**
  * --------------------------------------------------------------------------------------------------------------
  *                                                  5 : MODELS

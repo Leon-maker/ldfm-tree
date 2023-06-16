@@ -88,6 +88,7 @@
 }
 
 .produit-realisation-section-container{
+    position: relative;
     & .cpt-section-header-sub-content-container{
         justify-content: flex-start !important;
     }
@@ -95,10 +96,20 @@
         margin-left: 20px;
     }
     & .swiper-container{
-        position: relative;
-
         & .swiper-button-container{
-            
+            & div{
+                color: black !important;
+                border: solid 1px black !important;
+                left: unset;
+                margin-top: 100px;
+                right: 0px;
+                top: 0 !important;
+            }
+
+            & .swiper-button-prev{
+                right: 60px;
+            }
+
         }
     }
 }
