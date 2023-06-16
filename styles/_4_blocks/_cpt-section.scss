@@ -11,13 +11,11 @@
             opacity: 0.5;
             color: $color-black;
             text-transform: uppercase;
-            font-family: $font-main-400;
         }
         & >h2{
             margin-top: 10px;
-            text-transform: uppercase;
+            text-transform: uppercase !important;
             color: $color-black;
-            font-family: $font-main-400;
         }
 
         & .cpt-section-header-sub-content-container{
@@ -28,6 +26,7 @@
             
             & h2{
                 margin: 0px;
+                text-transform: uppercase !important;
             }
         }
     }
