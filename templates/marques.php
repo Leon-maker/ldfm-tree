@@ -9,7 +9,7 @@ $img_bkg = wp_get_attachment_image_src(21512, 'full')[0];
 $title_page = 'Nos Marques';
 $description_page = "Lorem ipsum dolor sit amet.";
 $ArianeTitle = "Nos Marques";
-$ArianeLink1 = "https://influence-by-m.thrive-production.fr/nos-marques/";
+$ArianeLink1 = get_the_permalink();
 
 echo do_shortcode('[shortcode-header-section img-bkg="' . $img_bkg . '" title="' . $title_page . '" description="'. $description_page .'" link1="'. $ArianeLink1 .'" title1="'.$ArianeTitle.'"]'); 
 

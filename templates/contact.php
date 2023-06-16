@@ -8,7 +8,7 @@ $title_page = get_the_title(); ?>
 $img_bkg = wp_get_attachment_image_src(21533, 'full')[0];
 $title_page = 'Contactez-nous';
 $ArianeTitle = "Contact";
-$ArianeLink1 = "https://influence-by-m.thrive-production.fr/contact/";
+$ArianeLink1 = get_the_permalink()  ;
 
 echo do_shortcode('[shortcode-header-section img-bkg="' . $img_bkg . '" title="' . $title_page . '" link1="'. $ArianeLink1 .'" title1="'.$ArianeTitle.'"]'); 
 
