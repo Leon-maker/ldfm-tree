@@ -2142,6 +2142,7 @@ section.section-half .columns-wrapper .right-container {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  padding: 60Px !important;
 }
 .contact-section-container .contact-section-header-title {
   display: -webkit-box;
