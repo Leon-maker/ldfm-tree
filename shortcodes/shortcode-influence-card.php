@@ -10,7 +10,7 @@ function SHORTCODE_Influence_card()
         <div class="influence-card-content">
             <h3 class="influence-card-title"><?= get_the_title()?></h3>
             <p class="influence-card-text"><?= wp_trim_words(get_field('contenu'), 20, '...'); ?> </p>
-            <a href="<?=  get_permalink(); ?>" class="influence-section-card-link cta-primary ">En savoir plus</a>
+            <a href="<?=  get_permalink(); ?>" class=" all-card-link influence-section-card-link cta-primary ">En savoir plus</a>
         </div>
     </div>
 

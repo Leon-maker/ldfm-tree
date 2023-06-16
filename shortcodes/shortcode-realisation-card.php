@@ -16,7 +16,7 @@ function SHORTCODE_realisation_card($atts)
                 <div class="realisation-card-content">
                     <h3><?= get_the_title(); ?></h3>
                     <p class="realisation-card-description"> <?= wp_trim_words(get_field('details_realisation')['description_1'] , 25, '...');?></p>
-                    <a href="<?= get_permalink(); ?>" class="cta-primary realisation-card-link">En savoir plus</a>
+                    <a href="<?= get_permalink(); ?>" class="cta-primary all-card-link realisation-card-link">En savoir plus</a>
                 </div>
             </div>
 
@@ -26,7 +26,7 @@ function SHORTCODE_realisation_card($atts)
                     <div class="realisation-card-content">
                         <h3><?= get_the_title(); ?></h3>
                         <p class="realisation-card-description"> <?= wp_trim_words(get_field('details_realisation')['description_1'] , 25, '...');?></p>
-                        <a href="<?= get_permalink(); ?>" class="cta-primary realisation-card-link">En savoir plus</a>
+                        <a href="<?= get_permalink(); ?>" class="cta-primary all-card-link realisation-card-link">En savoir plus</a>
                     </div>
                 </div>
                 <img class="realisation-card-img" src="<?= wp_get_attachment_image_src(get_field('image_principale') , 'full')[0];  ?>" alt="Image d'illustration réalisation"/>

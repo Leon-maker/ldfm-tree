@@ -152,10 +152,6 @@
 
     & .influence-section-card-link{
         font-size:14px;
-        background-size: 10% 2px, 0 2px ;
-        &:hover{
-            background-size: 0 2px, 100% 2px !important;
-        }
     }
 }
 
@@ -194,13 +190,35 @@
 
         & .realisation-card-link{
             font-size:14px;
-            background-size: 10% 2px, 0 2px ;
             width: fit-content !important;
             margin-top: 25px;
-            &:hover{
-                background-size: 0 2px, 100% 2px !important;
-                cursor: pointer;
-            }
+            
         }
+    }
+}
+
+/** Produit card**/
+
+.produit-card{
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    & img{
+        width:100%;
+        height: 550px;
+        object-fit: cover;
+    }
+    & .produit-card-content{
+
+    }
+}
+
+/** link pour card**/
+
+.all-card-link{
+    background-size: 10% 2px, 0 2px ;
+    &:hover{
+        background-size: 0 2px, 100% 2px !important;
+        cursor: pointer;
     }
 }

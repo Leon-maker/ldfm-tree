@@ -75,3 +75,14 @@
         margin-right: 20px ;
     }
 }
+
+.boutique-section-container{
+   & .cpt-section-card-wrapper{
+    display: grid;
+    grid-template-rows: auto auto; /* Deux lignes de hauteur automatique */
+    grid-template-columns: auto auto; /* Deux colonnes de largeur automatique */
+    gap: 80px 20px; /* Espacement entre les éléments de la grille */
+    justify-content: unset !important;
+   }
+  
+}
