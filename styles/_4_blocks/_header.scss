@@ -3,17 +3,6 @@
  *                                                  DEDICATED VARIABLES 
 /**/
 
-// -------------- * Size Header Fonts * --------------
-
-header .site-navigation a {
-    font-size: pixelsCalc(15);
-    line-height: pixelsCalc(18);
-    @media all and (max-width: $layout-breakpoint-end-tablette) {
-      font-size: pixelsCalc(20);
-      line-height: pixelsCalc(24);
-    }
-} 
-
 // -------------- * Header Colors * --------------
 
 // Colors Reached Top 
@@ -50,22 +39,27 @@ header {
         background-color: $header-on-scroll-bkg-color !important;
         border-bottom: 1px solid rgb(0, 0, 0, 0.1);
     }
-    @media (max-width: $layout-breakpoint-end-smartphone) {
+    @media (max-width: $layout-breakpoint-end-tablette) {
         padding: 0;
         justify-content: space-between;
-    }
-    @media all and (min-width: $layout-breakpoint-start-tablette) {
-        padding: $header-padding-y-start-tablette 60px;
     }
 
     .wrap {
         display: flex;
         justify-content: space-between;
         margin: auto;
-        @media all and (max-width: $layout-breakpoint-end-smartphone) {
+        @media all and (min-width: $layout-breakpoint-end-tablette) {
+            height: 100px;
+        }
+        @media all and (max-width: $layout-breakpoint-end-tablette) {
             &.burger {
                 .burger-header{
-                    padding: $header-padding-y-end-smartphone;
+                    @media(min-width: $layout-breakpoint-start-tablette) {
+                        padding: $header-padding-y-end-smartphone 60px;
+                    }
+                    @media(max-width: $layout-breakpoint-end-smartphone) {
+                        padding: $header-padding-y-end-smartphone;
+                    }
                 }
                 &.menu-clicked{
                     .burger-header{
@@ -75,9 +69,9 @@ header {
                 }
             }
         }
-        @media all and (min-width: $layout-breakpoint-start-tablette) {
-            height: $header-inside-height;
-        }
+        // @media all and (min-width: $layout-breakpoint-start-tablette) {
+        //     height: $header-inside-height;
+        // }
     }
 
 }
@@ -90,7 +84,7 @@ header {
 // Tous les logos
 header img {
     width: auto;
-    height: 100%;
+    //height: 100%;
 }
 
 header {
@@ -99,7 +93,7 @@ header {
         display: flex;
         a {
             @media all and (min-width: $layout-breakpoint-start-desktop) {
-                padding-right: 60px;
+                padding-left: 60px;
             }
             display: flex;
         }
@@ -137,6 +131,9 @@ header {
 
     .navigation {
         position: relative;
+        @media (min-width: $layout-breakpoint-end-tablette) {
+            margin-right: 60px;
+        }
         @media (max-width: $layout-breakpoint-end-burger) {
             width: 100%;
             nav {
@@ -198,14 +195,22 @@ header {
                     text-align: left;
                     color: $header-on-scroll-font-color;
                     text-decoration: none;
-                    @media (min-width: $layout-breakpoint-end-burger) {
-                        padding: 50px 25px;
-                    }
-                    @media (max-width: $layout-breakpoint-end-burger) {
-                        padding: 30px 25px;
-                        @media (min-width: $layout-breakpoint-end-tablette) {
-                          padding: 30px 60px;
-                        }
+                }
+            }
+        }
+    }
+}
+header {
+    .site-navigation{
+        .menu {
+            >li {
+                @media (min-width: $layout-breakpoint-end-burger) {
+                    padding: 50px 25px;
+                }
+                @media (max-width: $layout-breakpoint-end-burger) {
+                    padding: 20px 25px;
+                    @media (min-width: $layout-breakpoint-start-tablette) {
+                      padding: 20px 60px;
                     }
                 }
             }
@@ -358,7 +363,7 @@ footer {
     .burger-menu-wrapper {
         max-width: 1800px;
         width: 100%;
-        height: 100%;
+        //height: 100%;
         margin: auto;
         display: flex;
         flex-direction: column;
@@ -382,7 +387,38 @@ footer {
     }
 }
 header {
-    .menu-item{
+    .menu-item-has-children{
+        @media (min-width: $layout-breakpoint-end-burger) {
+            >a {
+                text-decoration: none;
+                padding-bottom: 2px;
+                background-image: linear-gradient(black, black),
+                    linear-gradient(black, black);
+                background-size: 0% 0px, 0% 2px;
+                background-position: 0 0, 0% 100%;
+                background-repeat: no-repeat;
+                transition: background-size 0.2s linear;
+            }
+            &:hover{
+                >a{
+                    background-size: 0 2px, 100% 2px;
+                }
+            }
+            ul{
+                a {
+                    &:hover{
+                        color: rgba($color: $color-black, $alpha: 1) !important;
+                    }
+                }
+            }
+        }
+        ul {
+            li {
+                a {
+                    color: rgba($color: $color-black, $alpha: 0.4) !important;              
+                }
+            }
+        }
         @media (max-width: $layout-breakpoint-end-burger) {
             @media (max-width: $layout-breakpoint-start-tablette) {
                 padding: 20px 25px;
@@ -390,18 +426,13 @@ header {
             padding: 20px 60px;
             a{
                 padding: 0 !important;
-                font-size: 18px;
             }
             ul {
-                font-size: 14px;
                 li:first-child{
                     padding: 15px 0 10px 0 !important;
                 }
                 li{
                     padding: 0 0 10px 0 !important;
-                    a {
-                        color: rgba($color: $color-black, $alpha: 0.4) !important;
-                    }
                 }
             }
             @media (min-width: $layout-breakpoint-end-tablette) {
@@ -424,6 +455,9 @@ header {
     @media all and (min-width: $layout-breakpoint-start-noburger) {
         border-bottom: 1px solid;
     }
+    @media (max-width: $layout-breakpoint-start-noburger) {
+        padding: 15px 60px;;
+    }
     .menu{
         cursor: pointer;
         color: $header-on-scroll-font-color;
@@ -440,11 +474,6 @@ header {
                 width: 25px;
                 margin: 10px 0;
             }
-        }
-    }
-    .close, .menu{
-        @media all and (max-width: $layout-breakpoint-end-smartphone) {
-            //margin-right: 20px;
         }
     }
     .logo{
@@ -531,58 +560,6 @@ header {
             }
             .social-media-menu {
                 width: 100%;
-            }
-            .social-media-menu {
-                height: 100%;
-                display: flex;
-                justify-content: center;
-                padding-bottom: 50px;
-                .wrap {
-                    width: 100%;
-                    margin: 0;
-                    ul#menu-social {
-                        display: flex;
-                        li {
-                            a{
-                                font-family: $font-main-400;
-                                font-size: pixelsCalc(18);
-                                line-height: pixelsCalc(18);
-                                color: $header-on-scroll-font-color;
-                                text-decoration: none;
-                                display: flex;
-                                align-items: center;
-                                justify-content: space-between;
-                                padding: 0 10px;
-                                svg{
-                                    margin-left: 10px;
-                                }
-                            }
-                            &.facebook {
-                                span {
-                                    padding-bottom: 20px;
-                                    transform: scale(1.1);
-                                }
-                            }
-                            &.instagram {
-                                span {
-                                    transform: scale(1.3);
-                                    padding-bottom: 5px;
-                                }
-                            }
-                            &.linkedin {
-                                span {
-                                    transform: scale(1.2);
-                                }
-                            }
-                            &.youtube {
-                                span {
-                                    transform: scale(1.5);
-                                    padding-bottom: 3px;
-                                }
-                            }
-                        }
-                    }
-                }
             }
         }
     }
@@ -697,9 +674,8 @@ header{
                 }
                 li {
                     a {
-                        //font-family: "ElmaTrio-Regular";
                         color: $color-black;
-                        padding: 10px 20px;
+                        padding: 10px 0;
                         text-decoration: none;
                         width: -webkit-fill-available;
                         display: flex;

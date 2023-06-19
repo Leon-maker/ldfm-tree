@@ -372,7 +372,7 @@ jQuery(function ($) {
                     });
                 }
                 headerSubMenuOpen.css({
-                    "padding": "15px 60px " + subMenuHeight + "px 60px",
+                    "padding": "0 0 " + subMenuHeight + "px 0",
                     "text-decoration": "none",
                     "background-size": "100% 1px",
                     "background-position": "0 100px",
@@ -385,7 +385,7 @@ jQuery(function ($) {
             function() {
                 subMenuChevron.removeClass( "sub-menu-openned" );
                 headerSubMenuOpen.css({
-                    "padding": "15px 60px",
+                    "padding": "0 0",
                     "color": "",
                     "text-decoration": "",
                     "background-image": "",
