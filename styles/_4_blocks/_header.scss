@@ -86,15 +86,24 @@ header img {
     height: -webkit-fill-available;
 }
 
-// Le logo desktop seulement
-header .site-branding {
-    position: relative;
-    display: flex;
-    a {
-        @media all and (min-width: $layout-breakpoint-start-desktop) {
-            padding-right: 60px;
-        }
+header {
+    .site-branding {
+        position: relative;
         display: flex;
+        a {
+            @media all and (min-width: $layout-breakpoint-start-desktop) {
+                padding-right: 60px;
+            }
+            display: flex;
+        }
+    }
+    .burger {
+        .logo{
+            a {
+                display: grid;
+                align-items: center;
+            }
+        }
     }
 }
 
@@ -318,6 +327,9 @@ footer {
         position: fixed;
         transform: translateX(0);
         @extend %transition;
+        a {
+            color: $color-black !important;
+        }
     }
     .burger-menu-wrapper {
         max-width: 1800px;
@@ -366,7 +378,7 @@ footer {
         span {
             display: block;
             height: 2px;
-            border-radius: 2px;
+            border-radius: 20px;
             background-color: $burger-color-on-scroll;
             &.long-line{
                 width: 40px;
@@ -429,11 +441,11 @@ footer {
         .menu{
             font-size: 10px;
             .long-line{
-                width: 30px;
+                width: 25px;
             }
             .short-line{
-                width: 24px;
-                margin: 9px 0;
+                width: 14px;
+                margin: 9px 0 9px auto;
             }
         }
     }
@@ -608,7 +620,7 @@ header {
             background-position: center;
         }
         .close line {
-            stroke: $header-top-reached-font-color;
+            stroke: $color-black !important;
         }
         .menu > span {
             background-color: $header-on-scroll-bkg-color;
