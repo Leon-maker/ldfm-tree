@@ -1111,11 +1111,12 @@ header .wrap {
   margin: auto;
 }
 @media all and (max-width: 767px) {
-  header .wrap {
-    height: 30px;
-  }
-  header .wrap.burger {
+  header .wrap.burger .burger-header {
     padding: 20px;
+  }
+  header .wrap.burger.menu-clicked .burger-header {
+    background-color: #ffffff;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   }
 }
 @media all and (min-width: 768px) {
@@ -1264,10 +1265,17 @@ header .burger .logo a {
   display: -ms-flexbox;
   display: flex;
 }
-.site-navigation ul:not(.sub-menu) > li {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+@media (min-width: 1500px) {
+  .site-navigation ul:not(.sub-menu) > li {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+@media (min-width: 1500px) {
+  .site-navigation ul:not(.sub-menu) > li {
+    display: inline;
+  }
 }
 .site-navigation ul:not(.sub-menu) > li > a {
   display: -webkit-box;
@@ -1276,7 +1284,21 @@ header .burger .logo a {
   text-align: left;
   color: #000000;
   text-decoration: none;
-  padding: 50px 25px;
+}
+@media (min-width: 1500px) {
+  .site-navigation ul:not(.sub-menu) > li > a {
+    padding: 50px 25px;
+  }
+}
+@media (max-width: 1500px) {
+  .site-navigation ul:not(.sub-menu) > li > a {
+    padding: 30px 25px;
+  }
+}
+@media (max-width: 1500px) and (min-width: 1024px) {
+  .site-navigation ul:not(.sub-menu) > li > a {
+    padding: 30px 60px;
+  }
 }
 
 /**
@@ -1306,7 +1328,6 @@ header li.menu-item-has-children ul.sub-menu {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  display: none;
   z-index: 2;
 }
 header li.menu-item-has-children ul.sub-menu.panel li:last-child {
@@ -1315,6 +1336,11 @@ header li.menu-item-has-children ul.sub-menu.panel li:last-child {
 header li.menu-item-has-children ul.sub-menu:not(.panel) {
   position: absolute;
   padding: 17px 0 0 0;
+}
+@media (min-width: 1500px) {
+  header li.menu-item-has-children ul.sub-menu {
+    display: none;
+  }
 }
 header li.menu-item-has-children ul.sub-menu:hover {
   display: -webkit-box;
@@ -1541,9 +1567,9 @@ footer .has-children > a {
   margin-top: 100px;
   width: 100%;
 }
-@media (max-width: 767px) {
+@media (max-width: 1500px) {
   .burger .burger-menu .burger-menu-wrapper .principal-menu-burger {
-    margin-top: 70px;
+    margin-top: 100px;
     border-top: 1px solid #ffffff;
   }
 }
@@ -1707,11 +1733,6 @@ header.top-reached .menu > span {
   }
 }
 
-/* Changes on burger event */
-.burger-header.open .close line {
-  stroke: #ffffff;
-}
-
 /**
  * --------------------------------------------------------------------------------------------------------------
  *                                                  MENUS DÉROULANTS
@@ -1733,7 +1754,6 @@ header .menu-principal-container .menu-item-has-children ul.sub-menu {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  display: none;
   z-index: 2;
 }
 header .menu-principal-container .menu-item-has-children ul.sub-menu:not(.panel) {
@@ -1743,6 +1763,11 @@ header .menu-principal-container .menu-item-has-children ul.sub-menu:not(.panel)
 }
 header .menu-principal-container .menu-item-has-children ul.sub-menu.panel li:last-child {
   border-bottom: 0;
+}
+@media (min-width: 1500px) {
+  header .menu-principal-container .menu-item-has-children ul.sub-menu {
+    display: none;
+  }
 }
 header .menu-principal-container .menu-item-has-children ul.sub-menu:hover {
   display: -webkit-box;
