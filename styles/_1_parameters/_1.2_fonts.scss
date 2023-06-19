@@ -208,10 +208,10 @@ h5 {
 
 // FONTS :---------------------------------------- //  NAV LINKS
 header .site-navigation a {
-  font-size: pixelsCalc(15);
+  font-size: pixelsCalc(12);
   line-height: pixelsCalc(18);
   @media all and (max-width: $layout-breakpoint-end-tablette) {
-    font-size: pixelsCalc(20);
+    font-size: pixelsCalc(12);
     line-height: pixelsCalc(24);
   }
 }
