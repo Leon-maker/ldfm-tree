@@ -90,7 +90,7 @@ header {
 // Tous les logos
 header img {
     width: auto;
-    height: -webkit-fill-available;
+    height: 100%;
 }
 
 header {
@@ -187,10 +187,10 @@ header {
             padding: 0;
             display: flex;
             > li {
-                @media (min-width: 1500px) {
+                @media (min-width: $layout-breakpoint-end-burger) {
                     display: flex;
                 }
-                @media (min-width: 1500px) {
+                @media (min-width: $layout-breakpoint-end-burger) {
                     display: inline;
                 }
                 > a {
@@ -198,10 +198,10 @@ header {
                     text-align: left;
                     color: $header-on-scroll-font-color;
                     text-decoration: none;
-                    @media (min-width: 1500px) {
+                    @media (min-width: $layout-breakpoint-end-burger) {
                         padding: 50px 25px;
                     }
-                    @media (max-width: 1500px) {
+                    @media (max-width: $layout-breakpoint-end-burger) {
                         padding: 30px 25px;
                         @media (min-width: $layout-breakpoint-end-tablette) {
                           padding: 30px 60px;
@@ -267,7 +267,7 @@ header{
                 padding: calc(20px - 3px) 0 0 0;
             }
             flex-direction: column;
-            @media (min-width: 1500px) {
+            @media (min-width: $layout-breakpoint-end-burger) {
                 display: none;
             }
             z-index: 2;
@@ -486,7 +486,7 @@ footer {
             }
             .principal-menu-burger{
                 margin-top: calc( $header-inside-height + (2 * $header-padding-y-start-tablette) );
-                @media (max-width: 1500px) {
+                @media (max-width: $layout-breakpoint-end-burger) {
                     margin-top: 100px;
                     border-top: 1px solid $header-top-reached-font-color;
                 }
@@ -685,9 +685,10 @@ header{
                     }
                 }
                 flex-direction: column;
-                @media (min-width: 1500px) {
+                @media (min-width: $layout-breakpoint-end-burger) {
                     display: none;
-                }                z-index: 2;
+                }                
+                z-index: 2;
                 //background-color: $color-pink;
                 &:hover {
                     display: flex;
