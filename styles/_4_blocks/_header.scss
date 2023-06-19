@@ -263,7 +263,7 @@ header{
                 }
             }
             &:not(.panel){
-                position: absolute;
+                //position: absolute;
                 padding: calc(20px - 3px) 0 0 0;
             }
             flex-direction: column;
@@ -349,8 +349,10 @@ footer {
         position: fixed;
         transform: translateX(0);
         @extend %transition;
-        a {
-            color: $color-black !important;
+        .menu-item {
+            > a {
+                color: $color-black;
+            }
         }
     }
     .burger-menu-wrapper {
@@ -376,6 +378,35 @@ footer {
         ul{
             list-style: none;
             padding: 0;
+        }
+    }
+}
+header {
+    .menu-item{
+        @media (max-width: $layout-breakpoint-end-burger) {
+            @media (max-width: $layout-breakpoint-start-tablette) {
+                padding: 20px 25px;
+            }
+            padding: 20px 60px;
+            a{
+                padding: 0 !important;
+                font-size: 18px;
+            }
+            ul {
+                font-size: 14px;
+                li:first-child{
+                    padding: 15px 0 10px 0 !important;
+                }
+                li{
+                    padding: 0 0 10px 0 !important;
+                    a {
+                        color: rgba($color: $color-black, $alpha: 0.4) !important;
+                    }
+                }
+            }
+            @media (min-width: $layout-breakpoint-end-tablette) {
+              padding: 20px 60px;
+            }
         }
     }
 }
@@ -441,7 +472,7 @@ footer {
     li {
         border-bottom: 1px solid $header-top-reached-font-color;
         a {
-            color: $header-top-reached-font-color !important;
+            color: $header-top-reached-font-color;
         }
         &.has-children > a:after {
             background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='9.803' height='6.31' viewBox='0 0 9.803 6.31'%3E%3Cpath id='Tracé_20809' data-name='Tracé 20809' d='M0,4.9,4.529,0,8.838,4.9' transform='translate(9.326 5.34) rotate(180)' fill='none' stroke='%23fff' stroke-width='1.3'/%3E%3C/svg%3E%0A");
@@ -498,53 +529,20 @@ footer {
                 }
                 width: 100%;
             }
-            .secondary-menu-burger,
             .social-media-menu {
-                background-color: $color-green;
-                width: -webkit-fill-available;
-            }
-            .secondary-menu-burger {
-                padding-top: 30px;
-                ul{
-                    flex-direction: column;
-                    li{
-                        margin: 22px 0;
-                        &:nth-child(1){
-                            margin-top: 0;
-                        }
-                        h3 {
-                            padding: 0 25px;
-                        }
-                        a{
-                            font-family: $font-main-400;
-                            font-size: pixelsCalc(18);
-                            line-height: pixelsCalc(18);
-                            color: $header-on-scroll-font-color;
-                            text-decoration: none;
-                            display: flex;
-                            align-items: center;
-                            justify-content: space-between;
-                            padding: 0 25px;
-                            svg{
-                                margin-left: 10px;
-                            }
-                        }
-                    }
-                }
+                width: 100%;
             }
             .social-media-menu {
                 height: 100%;
                 display: flex;
                 justify-content: center;
                 padding-bottom: 50px;
-                padding-left: 25px;
                 .wrap {
                     width: 100%;
                     margin: 0;
                     ul#menu-social {
                         display: flex;
                         li {
-                            margin: 12px 0;
                             a{
                                 font-family: $font-main-400;
                                 font-size: pixelsCalc(18);
@@ -633,8 +631,12 @@ header {
         }
     }
     &.top-reached {
-        a {
-            color: $header-top-reached-font-color !important;
+        .wrap {
+            >.site-navigation{
+                a {
+                    color: $header-top-reached-font-color !important;
+                }
+            }
         }
         .has-children > a:after {
             background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='9.803' height='6.31' viewBox='0 0 9.803 6.31'%3E%3Cpath id='Tracé_20809' data-name='Tracé 20809' d='M0,4.9,4.529,0,8.838,4.9' transform='translate(9.326 5.34) rotate(180)' fill='none' stroke='%23fff' stroke-width='1.3'/%3E%3C/svg%3E%0A");

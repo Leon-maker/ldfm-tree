@@ -10,20 +10,6 @@ $header_id    = $args['header-id'];
             <div class="principal-menu-burger">
                 <?php get_template_part( 'template-parts/navigation/nav'); ?>
             </div>
-            <div class="secondary-menu-burger">
-                <ul>
-                    <li>
-                        <h3>COORDONNÉES</h3>
-                    </li>
-                    <li>
-                        <a href="tel:0611182430">06 07 08 09 10</a>
-                    </li>
-                    <li>
-                        <a href="mailto:hello@escapethecity.fr">wordpress@agencethrive.fr</a>
-                    </li>
-                </ul>
-            </div>
-
             <?php if ( has_nav_menu( 'burger-end' ) ) : ?>
                 <div class="social-media-menu">
                     <div class="wrap">
