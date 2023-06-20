@@ -82,6 +82,7 @@
             }
             & .marque-card-title{
                 bottom: 35px;
+                left: 35px;
             }
         }
     }
@@ -109,13 +110,26 @@
         }
     } 
 
+    @media (max-width: $layout-breakpoint-end-tablette) {
+        & .marque-card-container-paragraphe{
+            & .marque-card-paragraphe{
+                margin-top: 30px;
+            }
+        }
+        & .marque-card-img{
+            max-height: 350px;
+        }
+        & .marque-card-content-container{
+            & .marque-card-title{
+                top: 290px;
+                left: 25px;
+            }
+        }
+    }
     & .marque-card-img{
         width: 100%;
         height: 100%;
         object-fit: cover;
-        @media (max-width: $layout-breakpoint-end-tablette) {
-            max-height: 350px;
-        }
     }
     
     & .marque-card-content-container{
@@ -124,8 +138,6 @@
             transition: opacity .4s ease-in-out;
             opacity: 1;
             color: $color-white;
-            top: 280px;
-            left: 35px;
             position: absolute;
             z-index: 1;
             margin-bottom: 0px !important;

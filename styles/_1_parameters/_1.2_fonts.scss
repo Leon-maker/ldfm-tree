@@ -231,12 +231,16 @@ header {
   }
 }
 
-footer .site-navigation a {
-  font-size: pixelsCalc(25);
-  line-height: pixelsCalc(30);
-  @media all and (max-width: $layout-breakpoint-end-tablette) {
-    font-size: pixelsCalc(20);
-    line-height: pixelsCalc(24);
+footer {
+  .site-navigation{
+    .menu, .social-media-menu {
+      li {
+        a {
+          font-family: $font-main-400;
+          font-size: pixelsCalc(12);
+        }
+      }
+    }
   }
 }
 
@@ -249,3 +253,19 @@ p {
     line-height: pixelsCalc(21);
   }
 }
+
+.marque-card-content-container {
+  .marque-card-title {
+    font-family: $font-main-500;
+    font-size: pixelsCalc(20);
+    @media all and (max-width: $layout-breakpoint-end-tablette) {
+      font-size: pixelsCalc(18);
+    }
+  }
+  .marque-card-paragraphe{
+    font-family: $font-main-400;
+    font-size: pixelsCalc(16);
+    line-height: pixelsCalc(21);
+  }
+}
+
