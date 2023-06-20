@@ -83,7 +83,7 @@ header {
 
 // Tous les logos
 header img {
-    width: auto;
+    width: 100%;
     //height: 100%;
 }
 
@@ -387,23 +387,29 @@ footer {
     }
 }
 header {
+    .menu {
+        @media (min-width: $layout-breakpoint-end-burger) {
+            >.menu-item {
+                >a {
+                    text-decoration: none;
+                    padding-bottom: 2px;
+                    background-image: linear-gradient(black, black),
+                        linear-gradient(black, black);
+                    background-size: 0% 0px, 0% 2px;
+                    background-position: 0 0, 0% 100%;
+                    background-repeat: no-repeat;
+                    transition: background-size 0.2s linear;
+                }
+                &:hover{
+                    >a{
+                        background-size: 0 2px, 100% 2px;
+                    }
+                } 
+            }
+        }
+    }
     .menu-item-has-children{
         @media (min-width: $layout-breakpoint-end-burger) {
-            >a {
-                text-decoration: none;
-                padding-bottom: 2px;
-                background-image: linear-gradient(black, black),
-                    linear-gradient(black, black);
-                background-size: 0% 0px, 0% 2px;
-                background-position: 0 0, 0% 100%;
-                background-repeat: no-repeat;
-                transition: background-size 0.2s linear;
-            }
-            &:hover{
-                >a{
-                    background-size: 0 2px, 100% 2px;
-                }
-            }
             ul{
                 a {
                     &:hover{
@@ -656,7 +662,8 @@ header{
                 &:not(.panel){
                     position: absolute;
                     padding: 0;
-                    margin: 18px auto;
+                    padding: 40px 0 0 0;
+                    background-color: transparent !important;
                 }
                 &.panel{
                     li:last-child {
