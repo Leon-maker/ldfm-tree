@@ -2203,7 +2203,11 @@ footer section.nav {
   footer section.nav {
     margin-top: 0px;
     margin-bottom: 20px;
-    max-width: 440px;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1501px) {
+  footer section.nav {
+    max-width: 70%;
   }
 }
 @media all and (min-width: 1501px) {
