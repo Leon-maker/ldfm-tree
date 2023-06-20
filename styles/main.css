@@ -234,6 +234,34 @@ p {
   }
 }
 
+.padding-top-header h1 {
+  font-family: "PlayfairDisplay-Medium";
+  font-size: 80px;
+  line-height: 80px;
+}
+@media all and (max-width: 1024px) {
+  .padding-top-header h1 {
+    font-size: 45px;
+    line-height: 45px;
+  }
+}
+.padding-top-header h3 {
+  font-family: "Montserrat-Regular";
+  font-size: 20px;
+  line-height: 23px;
+}
+@media all and (max-width: 1024px) {
+  .padding-top-header h3 {
+    font-size: 18px;
+    line-height: 21px;
+  }
+}
+.padding-top-header .fil-ariane-link, .padding-top-header .fil-ariane-item {
+  font-family: "Montserrat-Regular";
+  font-size: 12px;
+  line-height: 14px;
+}
+
 .marque-card-content-container .marque-card-title {
   font-family: "Montserrat-Medium";
   font-size: 20px;
@@ -247,6 +275,45 @@ p {
   font-family: "Montserrat-Regular";
   font-size: 16px;
   line-height: 21px;
+}
+
+.cpt-section-container .cpt-section-header-title p {
+  font-family: "Montserrat-Regular";
+  font-size: 12px;
+}
+.cpt-section-container .cpt-section-header-title h2 {
+  font-family: "PlayfairDisplay-Medium";
+  font-size: 40px;
+}
+@media all and (max-width: 1024px) {
+  .cpt-section-container .cpt-section-header-title h2 {
+    font-size: 30px;
+  }
+}
+.cpt-section-container .cpt-section-header-title a {
+  font-family: "Montserrat-Medium";
+  font-size: 14px;
+}
+.cpt-section-container .cpt-section-card-wrapper .influence-card-categorie {
+  font-family: "Montserrat-SemiBold";
+  font-size: 12px;
+}
+.cpt-section-container .cpt-section-card-wrapper .influence-card-title {
+  font-family: "Montserrat-Medium";
+  font-size: 20px;
+}
+@media all and (max-width: 1024px) {
+  .cpt-section-container .cpt-section-card-wrapper .influence-card-title {
+    font-size: 18px;
+  }
+}
+.cpt-section-container .cpt-section-card-wrapper .influence-card-text {
+  font-family: "Montserrat-Regular";
+  font-size: 16px;
+}
+.cpt-section-container .cpt-section-card-wrapper a {
+  font-family: "Montserrat-Medium";
+  font-size: 14px;
 }
 
 /**
@@ -2009,6 +2076,7 @@ footer section.nav {
   footer section.nav {
     margin-top: 0px;
     margin-bottom: 20px;
+    max-width: 440px;
   }
 }
 @media all and (min-width: 1501px) {
@@ -2343,6 +2411,54 @@ section.section-half .columns-wrapper .right-container {
 }
 
 /** Structure principale des sections Nos influences / Nos réalisations **/
+@media (min-width: 1024px) {
+  .cpt-section-container .cpt-section-header-title .cpt-section-header-sub-content-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-bottom: 45px;
+  }
+  .cpt-section-container .cpt-section-header-title .cpt-section-header-sub-content-container h2 {
+    margin: 0px;
+  }
+  .cpt-section-container .cpt-section-card-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    margin-top: 20px;
+  }
+  .cpt-section-container .cpt-section-card-wrapper .cpt-card {
+    margin-right: 40px;
+  }
+  .influence-section-container .cpt-section-card-wrapper .influence-card {
+    margin-right: 20px;
+  }
+}
+@media (max-width: 1024px) {
+  .cpt-section-container {
+    max-width: 440px;
+    margin: auto;
+  }
+  .cpt-section-container .cpt-section-header-title p {
+    margin-bottom: 5px;
+  }
+  .cpt-section-container .cpt-section-header-title .cpt-section-header-sub-content-container {
+    margin-bottom: 65px;
+  }
+  .cpt-section-container .cpt-section-header-title .cpt-section-header-sub-content-container h2 {
+    margin-top: 0px;
+  }
+  .cpt-section-container .cpt-section-card-wrapper .influence-card {
+    margin-bottom: 60px;
+  }
+}
 .cpt-section-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2375,36 +2491,12 @@ section.section-half .columns-wrapper .right-container {
   color: #000000;
 }
 .cpt-section-container .cpt-section-header-title .cpt-section-header-sub-content-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-bottom: 45px;
-}
-.cpt-section-container .cpt-section-header-title .cpt-section-header-sub-content-container h2 {
-  margin: 0px;
-  text-transform: uppercase !important;
-}
-.cpt-section-container .cpt-section-card-wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  margin-top: 20px;
-}
-.cpt-section-container .cpt-section-card-wrapper .cpt-card {
-  margin-right: 40px;
 }
 
 /** Adaptation si nécessaire **/
@@ -2432,10 +2524,6 @@ section.section-half .columns-wrapper .right-container {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-}
-
-.influence-section-container .cpt-section-card-wrapper .influence-card {
-  margin-right: 20px;
 }
 
 .marque-section-container .cpt-section-card-wrapper .marque-card {

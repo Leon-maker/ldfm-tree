@@ -253,7 +253,31 @@ p {
     line-height: pixelsCalc(21);
   }
 }
-
+.padding-top-header{
+  h1 {
+    font-family: $font-secondary-500;
+    font-size: pixelsCalc(80);
+    line-height: pixelsCalc(80);
+    @media all and (max-width: $layout-breakpoint-end-tablette) {
+      font-size: pixelsCalc(45);
+      line-height: pixelsCalc(45);
+    }
+  }
+  h3 {
+    font-family: $font-main-400;
+    font-size: pixelsCalc(20);
+    line-height: pixelsCalc(23);
+    @media all and (max-width: $layout-breakpoint-end-tablette) {
+      font-size: pixelsCalc(18);
+      line-height: pixelsCalc(21);
+    }
+  }
+  .fil-ariane-link, .fil-ariane-item{
+    font-family: $font-main-400;
+    font-size: pixelsCalc(12);
+    line-height: pixelsCalc(14);
+  }
+}
 .marque-card-content-container {
   .marque-card-title {
     font-family: $font-main-500;
@@ -266,6 +290,47 @@ p {
     font-family: $font-main-400;
     font-size: pixelsCalc(16);
     line-height: pixelsCalc(21);
+  }
+}
+
+.cpt-section-container{
+  .cpt-section-header-title{
+    p {
+      font-family: $font-main-400;
+      font-size: pixelsCalc(12);
+    }
+    h2 {
+      font-family: $font-secondary-500;
+      font-size: pixelsCalc(40);
+      @media all and (max-width: $layout-breakpoint-end-tablette) {
+        font-size: pixelsCalc(30);
+      }
+    }
+    a {
+      font-family: $font-main-500;
+      font-size: pixelsCalc(14);
+    }
+  }
+  .cpt-section-card-wrapper{
+    .influence-card-categorie{
+      font-family: $font-main-600;
+      font-size: pixelsCalc(12);
+    }
+    .influence-card-title{
+      font-family: $font-main-500;
+      font-size: pixelsCalc(20);
+      @media all and (max-width: $layout-breakpoint-end-tablette) {
+        font-size: pixelsCalc(18);
+      }
+    }
+    .influence-card-text{
+      font-family: $font-main-400;
+      font-size: pixelsCalc(16);
+    }
+    a {
+      font-family: $font-main-500;
+      font-size: pixelsCalc(14);
+    }
   }
 }
 

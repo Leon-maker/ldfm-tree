@@ -1,4 +1,54 @@
 /** Structure principale des sections Nos influences / Nos réalisations **/
+@media (min-width: $layout-breakpoint-end-tablette) {
+    .cpt-section-container{
+        & .cpt-section-header-title{
+            & .cpt-section-header-sub-content-container{
+                display: flex;
+                margin-bottom: 45px;
+                & h2{
+                    margin: 0px;
+                }
+            }
+        }
+        & .cpt-section-card-wrapper{
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            margin-top: 20px;
+    
+            & .cpt-card{
+                margin-right: 40px;
+            }
+        }
+    }
+    .influence-section-container{
+        & .cpt-section-card-wrapper .influence-card{
+            margin-right: 20px ;
+        }
+    }
+}
+@media (max-width: $layout-breakpoint-end-tablette) {
+    .cpt-section-container{
+        max-width: 440px;
+        margin: auto;
+        & .cpt-section-header-title{
+            p {
+                margin-bottom: 5px;
+            }
+            & .cpt-section-header-sub-content-container{
+                margin-bottom: 65px;
+                & h2{
+                    margin-top: 0px;
+                }
+            }
+        }
+        & .cpt-section-card-wrapper{
+            .influence-card{
+                margin-bottom: 60px;
+            }
+        }
+    }
+}
 .cpt-section-container{
     display: flex;
     flex-direction: column;
@@ -19,26 +69,8 @@
         }
 
         & .cpt-section-header-sub-content-container{
-            display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 45px;
-            
-            & h2{
-                margin: 0px;
-                text-transform: uppercase !important;
-            }
-        }
-    }
-
-    & .cpt-section-card-wrapper{
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-start;
-        margin-top: 20px;
-
-        & .cpt-card{
-            margin-right: 40px;
         }
     }
 }
@@ -62,12 +94,6 @@
     
     & .cpt-section-card-wrapper{
         flex-direction: column;
-    }
-}
-
-.influence-section-container{
-    & .cpt-section-card-wrapper .influence-card{
-        margin-right: 20px ;
     }
 }
 .marque-section-container{
