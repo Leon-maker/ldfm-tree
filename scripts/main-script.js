@@ -55,6 +55,13 @@ window.onload = () => {
 
     // slider page detail realisation "produit utilisés pour ce projet"
     if (detailRealisationSlider) {
+        let slidesPerView = 3; // Nombre d'éléments par page par défaut
+        if (window.innerWidth < 1024) {
+            slidesPerView = 1; // Passage à 1 élément par page pour les écrans plus petits
+        } else {
+            slidesPerView = 3; // Retour à 3 éléments par page pour les écrans plus larges
+        }
+
         const SwiperdetailRealisationSlider = new SwiperManager(detailRealisationSlider, {
             loop: false,
             autoplay: {
@@ -62,7 +69,7 @@ window.onload = () => {
                 disableOnInteraction: false
             },
             spaceBetween: 22,
-            slidesPerView: 3, // total number of slides must be >= slidesPerView * 2
+            slidesPerView: slidesPerView, // Utilisation de la variable pour définir le nombre d'éléments par page
             speed: 3000,
             mousewheelControl: true,
             keyboardControl: true,

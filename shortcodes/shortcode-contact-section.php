@@ -7,7 +7,7 @@ function SHORTCODE_contact_section()
     ?>
 
     <section class="contact-section-container">
-       <div class="contact-section-header-title">
+       <div class="contact-section-header-title uppercase">
             <p>Contact</p>
             <h2>Nous contacter</h2>
        </div>
