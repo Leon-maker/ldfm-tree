@@ -837,6 +837,20 @@ a[href]:not(.std-link) {
     bottom: 35px;
     left: 35px;
   }
+  .marque-card .marque-card-content-container:hover::after {
+    z-index: 10;
+  }
+  .marque-card .marque-card-content-container:hover .marque-card-title {
+    -webkit-transition: opacity 0.4s ease-in-out;
+    transition: opacity 0.4s ease-in-out;
+    opacity: 0;
+  }
+  .marque-card .marque-card-content-container:hover .marque-card-container-paragraphe {
+    -webkit-transition: opacity 0.4s ease-in-out;
+    transition: opacity 0.4s ease-in-out;
+    opacity: 1;
+    z-index: 10;
+  }
 }
 .marque-card .marque-card-container-paragraphe {
   -webkit-transition: opacity 0.4s ease-in-out;
@@ -849,17 +863,6 @@ a[href]:not(.std-link) {
 }
 .marque-card .marque-card-container-paragraphe .marque-card-paragraphe {
   margin-bottom: 0px !important;
-}
-.marque-card:hover .marque-card-title {
-  -webkit-transition: opacity 0.4s ease-in-out;
-  transition: opacity 0.4s ease-in-out;
-  opacity: 0;
-}
-.marque-card:hover .marque-card-container-paragraphe {
-  -webkit-transition: opacity 0.4s ease-in-out;
-  transition: opacity 0.4s ease-in-out;
-  opacity: 1;
-  z-index: 10;
 }
 @media (max-width: 1024px) {
   .marque-card .marque-card-container-paragraphe .marque-card-paragraphe {

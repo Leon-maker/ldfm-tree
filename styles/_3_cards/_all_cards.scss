@@ -84,6 +84,20 @@
                 bottom: 35px;
                 left: 35px;
             }
+            &:hover {
+                &::after{
+                    z-index: 10;
+                }
+                & .marque-card-title{
+                    transition: opacity .4s ease-in-out;
+                    opacity: 0;
+                }
+                & .marque-card-container-paragraphe{
+                    transition: opacity .4s ease-in-out;
+                    opacity: 1;
+                    z-index: 10;
+                }
+            } 
         }
     }
     & .marque-card-container-paragraphe{
@@ -97,18 +111,6 @@
             margin-bottom: 0px !important;
         }
     }
-
-    &:hover {
-        & .marque-card-title{
-            transition: opacity .4s ease-in-out;
-            opacity: 0;
-        }
-        & .marque-card-container-paragraphe{
-            transition: opacity .4s ease-in-out;
-            opacity: 1;
-            z-index: 10;
-        }
-    } 
 
     @media (max-width: $layout-breakpoint-end-tablette) {
         & .marque-card-container-paragraphe{
