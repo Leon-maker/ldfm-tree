@@ -12,7 +12,12 @@
 
     & .contact-section-card-img-container{
         width: 100%;
-        height: 295px;
+        @media (min-width: $layout-breakpoint-end-tablette) {
+            height: 295px;
+        }
+        @media (max-width: $layout-breakpoint-end-tablette) {
+            height: 155px;
+        }
         overflow: hidden;
 
         & img{
@@ -41,7 +46,6 @@
         & .contact-section-card-title{
             margin-top: 0px !important;
             color: $color-black;
-            font-size: 20px;
         }
 
         & .contact-section-card-link{
@@ -249,7 +253,7 @@
 @media (min-width: $layout-breakpoint-end-tablette) {
     .produit-card{
         & img{
-            height: 550px;
+            height: 650px;
         }
     }
 }

@@ -55,11 +55,11 @@ window.onload = () => {
 
     // slider page detail realisation "produit utilisés pour ce projet"
     if (detailRealisationSlider) {
-        let slidesPerView = 3; // Nombre d'éléments par page par défaut
+        let slidesPerView = 2; // Nombre d'éléments par page par défaut
         if (window.innerWidth < 1024) {
             slidesPerView = 1; // Passage à 1 élément par page pour les écrans plus petits
         } else {
-            slidesPerView = 3; // Retour à 3 éléments par page pour les écrans plus larges
+            slidesPerView = 2; // Retour à 3 éléments par page pour les écrans plus larges
         }
 
         const SwiperdetailRealisationSlider = new SwiperManager(detailRealisationSlider, {

@@ -316,6 +316,64 @@ p {
   font-size: 14px;
 }
 
+.single-realisation-side-description {
+  font-family: "Montserrat-Regular";
+  font-size: 16px;
+}
+
+.realisation-card-content h3 {
+  font-family: "Montserrat-Medium";
+  font-size: 20px;
+}
+@media all and (max-width: 1024px) {
+  .realisation-card-content h3 {
+    font-size: 18px;
+  }
+}
+.realisation-card-content p {
+  font-family: "Montserrat-Regular";
+  font-size: 16px;
+}
+.realisation-card-content a {
+  font-family: "Montserrat-Medium";
+  font-size: 14px;
+}
+
+.contact-section-container .contact-section-header-title h2 {
+  margin-top: 10px;
+  font-family: "PlayfairDisplay-Medium";
+}
+.contact-section-container .contact-section-header-title p {
+  font-family: "Montserrat-Regular";
+  font-size: 12px;
+}
+.contact-section-container .contact-section-card-wrapper h3 {
+  font-family: "Montserrat-Medium";
+  font-size: 20px;
+}
+@media all and (max-width: 1024px) {
+  .contact-section-container .contact-section-card-wrapper h3 {
+    font-size: 18px;
+  }
+}
+.contact-section-container .contact-section-card-wrapper p {
+  font-family: "Montserrat-Regular";
+  font-size: 16px;
+}
+.contact-section-container .contact-section-card-wrapper a {
+  font-family: "Montserrat-Medium";
+}
+
+.prduit-card-content h3 {
+  font-family: "Montserrat-Medium";
+  font-size: 20px;
+}
+@media all and (max-width: 1024px) {
+  .prduit-card-content h3 {
+    font-size: 18px;
+  }
+}
+
 /**
  * --------------------------------------------------------------------------------------------------------------
  *                                                  DEDICATED VARIABLES 
@@ -498,6 +556,10 @@ p {
   .section-archive-all-marque .marque-card {
     margin: 30px auto;
   }
+}
+
+.prduit-card-content h3 {
+  margin-bottom: 15px;
 }
 
 /**
@@ -831,8 +893,17 @@ a[href]:not(.std-link) {
 }
 .contact-section-card .contact-section-card-img-container {
   width: 100%;
-  height: 295px;
   overflow: hidden;
+}
+@media (min-width: 1024px) {
+  .contact-section-card .contact-section-card-img-container {
+    height: 295px;
+  }
+}
+@media (max-width: 1024px) {
+  .contact-section-card .contact-section-card-img-container {
+    height: 155px;
+  }
 }
 .contact-section-card .contact-section-card-img-container img {
   width: 100%;
@@ -865,7 +936,6 @@ a[href]:not(.std-link) {
 .contact-section-card .contact-section-card-content .contact-section-card-title {
   margin-top: 0px !important;
   color: #000000;
-  font-size: 20px;
 }
 .contact-section-card .contact-section-card-content .contact-section-card-link {
   font-size: 14px;
@@ -1084,7 +1154,7 @@ a[href]:not(.std-link) {
 /** Produit card**/
 @media (min-width: 1024px) {
   .produit-card img {
-    height: 550px;
+    height: 650px;
   }
 }
 @media (max-width: 1024px) {
@@ -2486,6 +2556,9 @@ section.section-half .columns-wrapper .right-container {
   .influence-section-container .cpt-section-card-wrapper .influence-card {
     margin-right: 20px;
   }
+  .realisation-section-container {
+    padding: 100px 0 0 0 !important;
+  }
   .realisation-section-container .cpt-section-header-title {
     padding-left: 60px;
   }
@@ -2506,6 +2579,9 @@ section.section-half .columns-wrapper .right-container {
   }
   .cpt-section-container .cpt-section-card-wrapper .influence-card, .contact-section-container .cpt-section-card-wrapper .influence-card {
     margin-bottom: 60px;
+  }
+  .realisation-section-container {
+    padding: 0px !important;
   }
   .realisation-section-container .cpt-section-header-title {
     padding-left: 0;
@@ -2557,9 +2633,6 @@ section.section-half .columns-wrapper .right-container {
 }
 
 /** Adaptation si nécessaire **/
-.realisation-section-container {
-  padding: 0px !important;
-}
 .realisation-section-container .cpt-section-header-title h2 {
   margin-bottom: 40px !important;
   text-transform: uppercase;
@@ -2634,8 +2707,10 @@ section.section-half .columns-wrapper .right-container {
       -ms-flex-pack: start !important;
           justify-content: flex-start !important;
 }
-.produit-realisation-section-container .cta-secondary {
-  margin-left: 20px;
+@media (min-width: 1024px) {
+  .produit-realisation-section-container .cta-secondary {
+    margin-left: 20px;
+  }
 }
 .produit-realisation-section-container .swiper-container .swiper-button-container div {
   color: black !important;
@@ -2761,6 +2836,7 @@ section.section-half .columns-wrapper .right-container {
     grid-template-rows: repeat(1);
     -ms-grid-columns: (1fr)[2];
     grid-template-columns: repeat(2, 1fr);
+    margin: 0 80px;
   }
   .single-realisation-main-section .single-realisation-description-container > *:nth-child(1) {
     -ms-grid-row: 1;
@@ -2770,8 +2846,8 @@ section.section-half .columns-wrapper .right-container {
     -ms-grid-row: 1;
     -ms-grid-column: 2;
   }
-  .single-realisation-main-section .single-realisation-description-container .single-realisation-side-description-container .single-realisation-side-description {
-    width: 50%;
+  .single-realisation-main-section .single-realisation-description-container .single-realisation-side-description-container {
+    margin: 0 30px;
   }
   .single-realisation-main-section .single-realisation-img-container {
     margin-top: 100px;
