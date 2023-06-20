@@ -1144,7 +1144,7 @@ a[href]:not(.std-link) {
 
 /** link pour card**/
 .all-card-link {
-  background-size: 10% 2px, 0 2px;
+  background-size: 20% 2px, 0 2px;
 }
 .all-card-link:hover {
   background-size: 0 2px, 100% 2px !important;
