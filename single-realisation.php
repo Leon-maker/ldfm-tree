@@ -11,7 +11,7 @@ $img_bkg = wp_get_attachment_image_src(get_field("image_principale"), 'full')[0]
 $title_page = get_the_title();
 $images = get_field('details_realisation')["selection_dimages"]; 
 
-echo do_shortcode('[shortcode-header-section img-bkg="' . $img_bkg . '" title="' . $title_page . '"]'); 
+echo do_shortcode('[shortcode-header-section img-bkg="' . $img_bkg . '" title="' . $title_page . '" link1="'. $ArianeLink1 .'" title1="'.$ArianeTitle.'"]'); 
 
 ?>
 
@@ -26,6 +26,7 @@ echo do_shortcode('[shortcode-header-section img-bkg="' . $img_bkg . '" title="'
         </div>
     </div>
     <?php 
+    if (!empty($images)){
         $nbImg = count($images);
         $images = array_filter($images, function($img) {
             if (isset($img["image"]) && $img["image"] === false) {
@@ -33,7 +34,7 @@ echo do_shortcode('[shortcode-header-section img-bkg="' . $img_bkg . '" title="'
             }
             else return true;
         });
-       ?>
+     ?>
     <div class="single-realisation-img-container single-realisation-img-container-<?=count($images);?>  ">
        <?php 
        $counter=0;
@@ -43,7 +44,9 @@ echo do_shortcode('[shortcode-header-section img-bkg="' . $img_bkg . '" title="'
         </div>
        <?php } ?>
     </div>
-
+    <?php
+    }
+       ?>
 </section>
 
 
