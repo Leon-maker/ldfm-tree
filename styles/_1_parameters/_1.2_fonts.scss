@@ -391,3 +391,18 @@ p {
     }
   }
 }
+.terms_content {
+  h2, h3 {
+    font-family: $font-main-500;
+    font-size: pixelsCalc(20);
+    line-height: pixelsCalc(23);
+    @media all and (max-width: $layout-breakpoint-end-tablette) {
+      font-size: pixelsCalc(18);
+      line-height: pixelsCalc(21);
+    }
+  }
+  p, ul {
+    font-family: $font-main-400;
+    font-size: pixelsCalc(16);
+  }
+}

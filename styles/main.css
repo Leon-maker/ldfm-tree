@@ -374,6 +374,22 @@ p {
   }
 }
 
+.terms_content h2, .terms_content h3 {
+  font-family: "Montserrat-Medium";
+  font-size: 20px;
+  line-height: 23px;
+}
+@media all and (max-width: 1024px) {
+  .terms_content h2, .terms_content h3 {
+    font-size: 18px;
+    line-height: 21px;
+  }
+}
+.terms_content p, .terms_content ul {
+  font-family: "Montserrat-Regular";
+  font-size: 16px;
+}
+
 /**
  * --------------------------------------------------------------------------------------------------------------
  *                                                  DEDICATED VARIABLES 
@@ -3088,7 +3104,44 @@ section.section-half .columns-wrapper .right-container {
  * --------------------------------------------------------------------------------------------------------------
  *                                                  LEGAL PAGES 
 /**/
-.legal-section .columns-wrapper {
+@media (min-width: 1025px) {
+  .page-template-legals .bkg-wrapper {
+    padding: 120px 60px 0 60px;
+  }
+  .page-template-legals .legal-section {
+    padding: 60px 0 160px 0;
+  }
+  .page-template-legals .legal-section .terms_content {
+    max-width: 70%;
+  }
+}
+@media (min-width: 768px) and (max-width: 1025px) {
+  .page-template-legals .bkg-wrapper {
+    padding: 120px 60px 0 60px;
+  }
+  .page-template-legals .legal-section {
+    padding: 50px 0 120px 0;
+  }
+  .page-template-legals .legal-section .terms_content {
+    padding: 0 60px;
+  }
+  .page-template-legals footer .nav {
+    max-width: none;
+    padding: 50px 60px;
+  }
+}
+@media (max-width: 768px) {
+  .page-template-legals .bkg-wrapper {
+    padding: 100px 25px 0 25px;
+  }
+  .page-template-legals .legal-section {
+    padding: 50px 25px 120px 25px;
+  }
+}
+.page-template-legals .bkg-wrapper ul {
+  padding: 0;
+}
+.page-template-legals .legal-section .columns-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -3096,18 +3149,15 @@ section.section-half .columns-wrapper .right-container {
       -ms-flex-pack: center;
           justify-content: center;
 }
-.legal-section .terms_content {
-  max-width: 70%;
+.page-template-legals .legal-section .terms_content h1 {
+  margin-top: 0;
 }
-.legal-section .terms_content h2 {
-  font-size: 20px;
-  font-weight: 600 !important;
-  line-height: 23px;
+.page-template-legals .legal-section .terms_content h2 {
   color: black;
-  margin-bottom: 35px;
+  margin-bottom: 30px;
   margin-top: 50px;
 }
-.legal-section .terms_content .main-title {
+.page-template-legals .legal-section .terms_content .main-title {
   text-align: left !important;
   text-transform: uppercase;
 }
