@@ -243,27 +243,27 @@ jQuery(function ($) {
      */
     /**/
     
-        var lastScrollTop = 0;
+        // var lastScrollTop = 0;
 
-        // element should be replaced with the actual target element on which you have applied scroll, use window in case of no target element.
-        window.addEventListener("scroll", function(){ // or window.addEventListener("scroll"....
-            var st = window.pageYOffset || document.documentElement.scrollTop; // Credits: "https://github.com/qeremy/so/blob/master/so.dom.js#L426"
-            if (st == 0) {
-                //header.classList.remove("header-fadeInDown");
-                //header.classList.remove("header-fadeOutUp");
-                header.classList.add("top-reached");
-            } else if (st > lastScrollTop){
-                /*timer = window.setTimeout(function() {
-                    header.classList.remove("top-reached");
-                }, 100);*/
-                header.classList.remove("top-reached");
-            } /*else {
-                timer = window.setTimeout(function() {
-                    header.classList.remove("top-reached");
-                }, 500); 
-            }*/
-            lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
-        }, false);
+        // // element should be replaced with the actual target element on which you have applied scroll, use window in case of no target element.
+        // window.addEventListener("scroll", function(){ // or window.addEventListener("scroll"....
+        //     var st = window.pageYOffset || document.documentElement.scrollTop; // Credits: "https://github.com/qeremy/so/blob/master/so.dom.js#L426"
+        //     if (st == 0) {
+        //         //header.classList.remove("header-fadeInDown");
+        //         //header.classList.remove("header-fadeOutUp");
+        //         header.classList.add("top-reached");
+        //     } else if (st > lastScrollTop){
+        //         /*timer = window.setTimeout(function() {
+        //             header.classList.remove("top-reached");
+        //         }, 100);*/
+        //         header.classList.remove("top-reached");
+        //     } /*else {
+        //         timer = window.setTimeout(function() {
+        //             header.classList.remove("top-reached");
+        //         }, 500); 
+        //     }*/
+        //     lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
+        // }, false);
 
     }
 

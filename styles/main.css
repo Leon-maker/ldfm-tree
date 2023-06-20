@@ -2203,11 +2203,7 @@ footer section.nav {
   footer section.nav {
     margin-top: 0px;
     margin-bottom: 20px;
-  }
-}
-@media (min-width: 1024px) and (max-width: 1501px) {
-  footer section.nav {
-    max-width: 70%;
+    max-width: 440px;
   }
 }
 @media all and (min-width: 1501px) {
@@ -3111,6 +3107,16 @@ section.section-half .columns-wrapper .right-container {
  * --------------------------------------------------------------------------------------------------------------
  *                                                  LEGAL PAGES 
 /**/
+@media (max-width: 1501px) and (min-width: 1024px) {
+  .page-template-legals footer .nav {
+    max-width: 70%;
+  }
+}
+@media (max-width: 1024px) {
+  .page-template-legals footer .nav {
+    max-width: none;
+  }
+}
 @media (min-width: 1025px) {
   .page-template-legals .bkg-wrapper {
     padding: 120px 60px 0 60px;
@@ -3134,7 +3140,6 @@ section.section-half .columns-wrapper .right-container {
     padding: 0 60px;
   }
   .page-template-legals footer .nav {
-    max-width: none;
     padding: 50px 60px;
   }
 }

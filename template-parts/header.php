@@ -90,6 +90,7 @@ if (classPage.contains(classPageRecherche)) {
     elements.forEach(element => {
         element.src = imageUrl;
     });
+	conso
 } else {
 	jQuery(".site-header").mouseenter(function () {
 		const elements = document.querySelectorAll('header .custom-logo');

@@ -150,10 +150,8 @@ footer  {
             @media all and (max-width: $layout-breakpoint-end-tablette) {
                 margin-top: 0px;
                 margin-bottom: 20px;
-            }     
-            @media (min-width: $layout-breakpoint-end-tablette) and (max-width: $layout-breakpoint-end-burger) {
-                max-width: 70%;
-            }
+                max-width: 440px;
+            }               
             .site-navigation {
                 @media all and (min-width: $layout-breakpoint-start-noburger) {
                     justify-content: center;

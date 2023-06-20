@@ -8,6 +8,20 @@
  *                                                  LEGAL PAGES 
 /**/
 .page-template-legals{
+    @media (max-width: $layout-breakpoint-end-burger) and (min-width: $layout-breakpoint-end-tablette){
+        footer{
+            .nav{
+                max-width: 70%;
+            }
+        }
+    }
+    @media (max-width: $layout-breakpoint-end-tablette){
+        footer{
+            .nav{
+                max-width: none;
+            }
+        }
+    }
     @media (min-width: $layout-breakpoint-start-desktop) {
         .bkg-wrapper{
             padding: 120px $lateral-margin-width-desktop 0 $lateral-margin-width-desktop;
@@ -33,9 +47,7 @@
         }
         footer {
             .nav {
-                max-width: none;
                 padding: 50px $lateral-margin-width-desktop;
-
             }
         }
     }
