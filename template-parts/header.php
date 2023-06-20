@@ -31,11 +31,6 @@ if (empty($header_color)) {
 </div>-->
 
 <header id="overlay-header" class="site-header top-reached" role="banner" style="background-color: transparent">
-	<style>
-	header .sub-menu {
-		background-color: <?php echo $transparent; ?>
-	}
-	</style>
 
 	<div class="wrap">
 		<?php //if (!isMobile()) { ?>
@@ -85,50 +80,62 @@ jQuery(window).scroll(example);
 function example() {
     tempScrollTop = jQuery(window).scrollTop();
 }
+var classPageRecherche = "page-template-legals";
+var classPage = document.activeElement.classList
 
-jQuery(".site-header").mouseenter(function () {
-    const elements = document.querySelectorAll('header .custom-logo');
-    const imageUrl = "<?php echo $image_url_black; ?>";
-    jQuery(".site-header").removeClass("top-reached"); // Utilisation de jQuery pour supprimer la classe
+if (classPage.contains(classPageRecherche)) {
+	const elements = document.querySelectorAll('header .custom-logo');
+	const imageUrl = "<?php echo $image_url_black; ?>";
+	jQuery(".site-header").removeClass("top-reached"); // Utilisation de jQuery pour supprimer la classe
     elements.forEach(element => {
         element.src = imageUrl;
     });
-});
+} else {
+	jQuery(".site-header").mouseenter(function () {
+		const elements = document.querySelectorAll('header .custom-logo');
+		const imageUrl = "<?php echo $image_url_black; ?>";
+		jQuery(".site-header").removeClass("top-reached"); // Utilisation de jQuery pour supprimer la classe
+		elements.forEach(element => {
+			element.src = imageUrl;
+		});
+	});
 
-jQuery(".site-header").mouseleave(function () {
-    const elements = document.querySelectorAll('header .custom-logo');
-    if (tempScrollTop == 0) {
-        const imageUrl = "<?php echo $image_url_white; ?>";
-        jQuery(".site-header").addClass("top-reached"); // Utilisation de jQuery pour ajouter la classe
-        elements.forEach(element => {
-            element.src = imageUrl;
-        });
-    } else {
-        const imageUrl = "<?php echo $image_url_black; ?>";
-        elements.forEach(element => {
-            element.src = imageUrl;
-        });
-    }
-});
+	jQuery(".site-header").mouseleave(function () {
+		const elements = document.querySelectorAll('header .custom-logo');
+		if (tempScrollTop == 0) {
+			const imageUrl = "<?php echo $image_url_white; ?>";
+			jQuery(".site-header").addClass("top-reached"); // Utilisation de jQuery pour ajouter la classe
+			elements.forEach(element => {
+				element.src = imageUrl;
+			});
+		} else {
+			const imageUrl = "<?php echo $image_url_black; ?>";
+			elements.forEach(element => {
+				element.src = imageUrl;
+			});
+		}
+	});
 
-jQuery(window).scroll(function () {
-    var st = jQuery(window).scrollTop();
-    if (st == 0) {
-        jQuery(".site-header").addClass("top-reached");
-        const imageUrl = "<?php echo $image_url_white; ?>";
-        const elements = document.querySelectorAll('header .custom-logo');
-        elements.forEach(element => {
-            element.src = imageUrl;
-        });
-    } else {
-        jQuery(".site-header").removeClass("top-reached");
-        const imageUrl = "<?php echo $image_url_black; ?>";
-        const elements = document.querySelectorAll('header .custom-logo');
-        elements.forEach(element => {
-            element.src = imageUrl;
-        });
-    }
-});
+	jQuery(window).scroll(function () {
+		var st = jQuery(window).scrollTop();
+		if (st == 0) {
+			jQuery(".site-header").addClass("top-reached");
+			const imageUrl = "<?php echo $image_url_white; ?>";
+			const elements = document.querySelectorAll('header .custom-logo');
+			elements.forEach(element => {
+				element.src = imageUrl;
+			});
+		} else {
+			jQuery(".site-header").removeClass("top-reached");
+			const imageUrl = "<?php echo $image_url_black; ?>";
+			const elements = document.querySelectorAll('header .custom-logo');
+			elements.forEach(element => {
+				element.src = imageUrl;
+			});
+		}
+	});
+}
+
 
 
 </script>
