@@ -19,7 +19,7 @@ function SHORTCODE_descriptionContact($atts)
             <div class="realisation-card-content-container">
                 <div class="realisation-card-content">
                     <h2><?= $atts['title']; ?></h2>
-                    <p class="realisation-card-description"><?= $atts['description']; ?></p>
+                    <?php echo $atts['description']; ?>
                     <?php if (!empty($atts['button_title'])) { ?>
                         <a href="<?php echo $atts['link']; ?>" class="cta-secondary all-card-link realisation-card-link"><?php echo $atts['button_title']; ?></a> <?php
                     } ?>

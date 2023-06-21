@@ -203,6 +203,7 @@
         width: 100%;
         height: auto;
         object-fit: cover;
+        max-height: 740px;
     }
 
     & .realisation-card-content-container{
@@ -220,7 +221,7 @@
             @media (min-width: $layout-breakpoint-end-tablette) {
                 width: 50%;
             }
-            & .realisation-card-description{
+            & p{
                 opacity: .7;
             }
             ol, ul {
@@ -365,6 +366,8 @@
                 margin: 0 !important;
             }
         }
+        max-width: 440px;
+        margin: auto;
     }
 
 }
@@ -385,5 +388,7 @@
                 margin: 0 !important;
             }
         }
+        max-width: 440px;
+        margin: auto;
     }
 }

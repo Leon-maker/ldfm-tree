@@ -1109,6 +1109,7 @@ a[href]:not(.std-link) {
   height: auto;
   -o-object-fit: cover;
      object-fit: cover;
+  max-height: 740px;
 }
 .realisation-card .realisation-card-content-container {
   display: -webkit-box;
@@ -1143,7 +1144,7 @@ a[href]:not(.std-link) {
     width: 50%;
   }
 }
-.realisation-card .realisation-card-content-container .realisation-card-content .realisation-card-description {
+.realisation-card .realisation-card-content-container .realisation-card-content p {
   opacity: 0.7;
 }
 .realisation-card .realisation-card-content-container .realisation-card-content ol, .realisation-card .realisation-card-content-container .realisation-card-content ul {
@@ -1269,6 +1270,8 @@ a[href]:not(.std-link) {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    max-width: 440px;
+    margin: auto;
   }
   .card-mobile-1 .realisation-card-content {
     margin: 40px 25px 60px 25px;
@@ -1293,6 +1296,8 @@ a[href]:not(.std-link) {
     -webkit-box-direction: reverse;
         -ms-flex-direction: column-reverse;
             flex-direction: column-reverse;
+    max-width: 440px;
+    margin: auto;
   }
   .card-mobile-0 .realisation-card-content {
     margin: 40px 25px 60px 25px;
@@ -3206,17 +3211,77 @@ section.section-half .columns-wrapper .right-container {
       flex-wrap: wrap;
 }
 
-.section-archive-all-realisations {
+.page-template-prestations .section-archive-all-realisations {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-top: 150px;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
   padding: 0px !important;
+}
+@media (min-width: 1024px) {
+  .page-template-prestations .section-archive-all-realisations {
+    margin-top: 150px;
+  }
+}
+@media (max-width: 1024px) {
+  .page-template-prestations .section-archive-all-realisations {
+    margin-top: 50px;
+  }
+  .page-template-prestations .section-archive-all-realisations a {
+    margin-top: 30px !important;
+  }
+  .page-template-prestations .section-archive-all-realisations .realisation-card:last-child .realisation-card-content {
+    margin-bottom: 0;
+  }
+}
+.page-template-prestations .section-archive-all-realisations h2 {
+  margin-bottom: 30px;
+}
+.page-template-prestations .section-archive-all-realisations p {
+  margin: 0 !important;
+}
+.page-template-prestations .section-archive-all-realisations ol {
+  margin-top: 30px;
+  list-style-type: none; /* Masquer les marqueurs par défaut */
+}
+.page-template-prestations .section-archive-all-realisations ol li {
+  padding: 13.5px 0;
+  position: relative; /* Positionnement relatif pour li */
+  padding-left: 25px; /* Espacement entre le marqueur et le contenu, ajustez si nécessaire */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.page-template-prestations .section-archive-all-realisations ol li:first-child {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+.page-template-prestations .section-archive-all-realisations ol li::before {
+  content: counter(list-item) ". "; /* Ajouter le marqueur en utilisant le compteur */
+  position: absolute; /* Positionnement absolu pour ::before */
+  padding: 12.5px 0;
+  left: 0; /* Aligner le marqueur à gauche */
+  top: 0; /* Aligner le marqueur en haut */
+  padding-right: 5px; /* Espacement entre le marqueur et le contenu, ajustez si nécessaire */
+}
+.page-template-prestations .section-archive-all-realisations ul {
+  margin: 0;
+}
+.page-template-prestations .section-archive-all-realisations ul li {
+  opacity: 0.7;
+  margin-bottom: 20px;
+  padding-left: 10px;
+  text-indent: -10px;
+}
+.page-template-prestations .section-archive-all-realisations ul li::marker {
+  font-size: 10px;
+}
+.page-template-prestations .section-archive-all-realisations ul li:first-child {
+  margin-top: 30px;
+}
+.page-template-prestations .section-archive-all-realisations ul li:last-child {
+  margin-bottom: 0;
 }
 
 .agence-main-section {
