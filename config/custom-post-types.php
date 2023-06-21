@@ -133,7 +133,7 @@ function thrive_register_post_types_Sections() {
         'public' => true,
         'show_in_rest' => true,
         'has_archive' => true,
-        'supports' => array ( 'title', 'editor', 'revisions', 'author', 'page-attributes', 'thumbnail', 'custom-fields', 'post-formats' ),
+        'supports' => array ( 'title', 'revisions', 'author', 'page-attributes', 'thumbnail', 'custom-fields', 'post-formats' ),
         'menu_position' => 5,
         'menu_icon' => 'dashicons-admin-customizer',
         'show_in_menu' => true

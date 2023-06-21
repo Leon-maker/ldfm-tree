@@ -62,8 +62,9 @@ function SHORTCODE_FilAriane($arguments)
                 // Ajouter le dernier lien s'il existe
                 if (!empty($lastLink)) {
                     ?>
+                    <p class="dot-filariane"></p>
                     <li class="fil-ariane-item">
-                        <a href="<?php echo $lastLink; ?>" class="fil-ariane-link">
+                        <a href="<?php echo get_the_permalink(); ?>" class="fil-ariane-link">
                             <?php echo get_the_title(); ?>
                         </a>
                     </li>

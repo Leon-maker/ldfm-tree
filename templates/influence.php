@@ -10,8 +10,6 @@
 $img_bkg = wp_get_attachment_image_src(21556, 'full')[0];
 $title_page = 'Nos Influences';
 $description_page = "Lorem ipsum dolor sit amet.";
-$ArianeTitle = "Nos Influences";
-$ArianeLink1 = "/nos-influences/";
 $alternate = false; 
 echo do_shortcode('[shortcode-header-section img-bkg="' . $img_bkg . '" title="' . $title_page . '" description="'. $description_page .'" link1="'. $ArianeLink1 .'" title1="'.$ArianeTitle.'"]'); 
 
