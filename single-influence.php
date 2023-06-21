@@ -17,8 +17,8 @@ echo do_shortcode('[shortcode-header-section img-bkg="' . $img_bkg . '" title="'
 <section class="single-influence-main-section">    
     <div class="single-influence-content-container"> <?= get_field('contenu');?></div>
     <div class="single-influence-end-section">
-        <p>Auteur : <span><?=get_field('auteur'); ?> </span></p>
-        <p> <?= get_the_date('d.m.y');?></p>
+        <p class="auteur">Auteur : <span><?=get_field('auteur'); ?> </span></p>
+        <p class="date"> <?= get_the_date('d.m.y');?></p>
     </div>
 </section>
 <div class="single-influence-separator">

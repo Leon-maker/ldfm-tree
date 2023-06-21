@@ -395,3 +395,15 @@ footer {
     font-size: 16px;
   }
 }
+.single-influence-end-section{
+  p{
+    font-family: $font-main-400;
+    font-size: pixelsCalc(16);
+    span {
+      font-family: $font-main-500;
+    }
+  }
+  .date{
+    font-family: $font-main-500;
+  }
+}

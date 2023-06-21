@@ -37,19 +37,21 @@ function SHORTCODE_HomeSection()
                     foreach ($slide_repeater as $slide) {
                         ?> 
                         <section class="padding-top-header swiper-slide" style="background-image: url('<?php echo $slide['image_de_la_slide']; ?>');" role="img" aria-label="Image d'illustration 1 de la première section de la page." class="illustration illu1" style="width: 100%;">
-                            <div class="text-center white">
-                                <h1 class="uppercase">
-                                    <?php echo $slide['titre_de_la_slide']; ?>
-                                </h1>
-                                <?php if (!empty($slide['sous-titre_de_la_slide'])) { ?>
-                                    <h3>
-                                        <?php echo $slide['sous-titre_de_la_slide']; ?> 
-                                    </h3>
-                                <?php } ?>
-                                <div class="header-button">
-                                    <?php if (!empty($slide['bouton'])) { ?>
-                                        <a class="cta-secondary white" href="<?php echo $slide['bouton']['lien_bouton']; ?>"><?php echo $slide['bouton']['titre_bouton']; ?></a>
+                            <div class="bkg-filter">
+                                <div class="text-center white">
+                                    <h1 class="uppercase">
+                                        <?php echo $slide['titre_de_la_slide']; ?>
+                                    </h1>
+                                    <?php if (!empty($slide['sous-titre_de_la_slide'])) { ?>
+                                        <h3>
+                                            <?php echo $slide['sous-titre_de_la_slide']; ?> 
+                                        </h3>
                                     <?php } ?>
+                                    <div class="header-button">
+                                        <?php if (!empty($slide['bouton'])) { ?>
+                                            <a class="cta-secondary white" href="<?php echo $slide['bouton']['lien_bouton']; ?>"><?php echo $slide['bouton']['titre_bouton']; ?></a>
+                                        <?php } ?>
+                                    </div>
                                 </div>
                             </div>
                         </section>

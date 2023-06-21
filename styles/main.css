@@ -371,6 +371,17 @@ footer .site-navigation .menu li a, footer .site-navigation .social-media-menu l
   font-size: 16px;
 }
 
+.single-influence-end-section p {
+  font-family: "Montserrat-Regular";
+  font-size: 16px;
+}
+.single-influence-end-section p span {
+  font-family: "Montserrat-Medium";
+}
+.single-influence-end-section .date {
+  font-family: "Montserrat-Medium";
+}
+
 /**
  * --------------------------------------------------------------------------------------------------------------
  *                                                  DEDICATED VARIABLES 
@@ -425,13 +436,7 @@ footer .site-navigation .menu li a, footer .site-navigation .social-media-menu l
  *                                                  DEDICATED CLASSES 
 /**/
 .padding-top-header {
-  padding: 100px 0 70px 0;
-  min-height: 500px;
-}
-@media (max-width: 1024px) {
-  .padding-top-header {
-    padding: 85px 0 70px 0;
-  }
+  padding: 0;
 }
 .padding-top-header .fil-ariane-container {
   margin: 20px 0 160px 0;
@@ -442,8 +447,11 @@ footer .site-navigation .menu li a, footer .site-navigation .social-media-menu l
     padding-left: 25px;
   }
 }
-.padding-top-header .text-center {
-  margin: 0 60px;
+@media (min-width: 1024px) {
+  .padding-top-header .text-center {
+    margin: 0 auto;
+    width: 60%;
+  }
 }
 @media (max-width: 1024px) {
   .padding-top-header .text-center {
@@ -461,10 +469,7 @@ footer .site-navigation .menu li a, footer .site-navigation .social-media-menu l
 .home-section {
   padding: 0;
 }
-.home-section .padding-top-header {
-  padding: 100px 0 70px 0;
-}
-.home-section .padding-top-header h3 {
+.home-section h3 {
   margin-bottom: 40px;
 }
 
@@ -557,6 +562,17 @@ footer .site-navigation .menu li a, footer .site-navigation .social-media-menu l
 
 .prduit-card-content h3 {
   margin-bottom: 15px;
+}
+
+.bkg-filter {
+  padding: 100px 0 70px 0;
+  min-height: 500px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+@media (max-width: 1024px) {
+  .bkg-filter {
+    padding: 85px 0 70px 0;
+  }
 }
 
 /**
@@ -2192,7 +2208,6 @@ footer section .footer-navigation .wrap-legal #menu-two > li {
   max-width: none !important;
 }
 footer section.nav {
-  margin-top: 80px;
   padding-bottom: 0px !important;
 }
 @media all and (max-width: 1024px) {
@@ -2757,6 +2772,17 @@ section.section-half .columns-wrapper .right-container {
   }
 }
 
+.influence-section-container .cpt-section-header-title p {
+  margin: 0;
+  margin-top: 10px;
+}
+.influence-section-container .cpt-section-header-title h2 {
+  margin-top: 10px;
+}
+.influence-section-container .cpt-section-card-wrapper {
+  margin: 0;
+}
+
 /**
  * --------------------------------------------------------------------------------------------------------------
  *                                                  5 : MODELS
@@ -2790,8 +2816,13 @@ section.section-half .columns-wrapper .right-container {
       -ms-flex-align: center;
           align-items: center;
 }
-.single-influence-main-section .single-influence-content-container {
-  width: 60%;
+@media (min-width: 1024px) {
+  .single-influence-main-section {
+    margin-top: 40px;
+  }
+  .single-influence-main-section .single-influence-content-container {
+    width: 70%;
+  }
 }
 .single-influence-main-section .single-influence-content-container img {
   display: block;
@@ -2799,7 +2830,7 @@ section.section-half .columns-wrapper .right-container {
   max-height: 500px;
   -o-object-fit: cover;
      object-fit: cover;
-  margin: 60px 0px;
+  margin: 60px 0px 0 0;
 }
 .single-influence-main-section .single-influence-content-container p {
   font-family: "Montserrat-Regular";
@@ -2820,7 +2851,7 @@ section.section-half .columns-wrapper .right-container {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  width: 60%;
+  width: 70%;
   margin-top: 50px;
 }
 .single-influence-main-section .single-influence-end-section span, .single-influence-main-section .single-influence-end-section p:last-child {
@@ -2828,9 +2859,23 @@ section.section-half .columns-wrapper .right-container {
   font-weight: bold;
 }
 
+@media (max-width: 1024px) {
+  .single-influence-main-section, .single-influence-separator {
+    max-width: 440px;
+    margin: auto;
+  }
+  .single-influence-main-section .single-influence-end-section, .single-influence-separator .single-influence-end-section {
+    width: 100%;
+    margin-bottom: 40px;
+  }
+}
+@media (min-width: 1024px) {
+  .single-influence-separator {
+    margin-top: 100px;
+  }
+}
 .single-influence-separator {
   padding: 0px 60px;
-  margin-top: 100px;
 }
 .single-influence-separator .single-influence-separator-line {
   height: 1px;
