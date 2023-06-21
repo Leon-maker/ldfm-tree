@@ -219,7 +219,7 @@ $lateral-padding-width-mobile: 50px;
 }
 .section-archive-all-marque{
   @media (min-width: $layout-breakpoint-start-desktop) {
-    padding-left:40px;
+    padding-top: 100px;
   }
   & .marque-card{
     margin: 40px 20px;

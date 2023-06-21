@@ -562,7 +562,7 @@ p {
 
 @media (min-width: 1025px) {
   .section-archive-all-marque {
-    padding-left: 40px;
+    padding-top: 100px;
   }
 }
 .section-archive-all-marque .marque-card {
