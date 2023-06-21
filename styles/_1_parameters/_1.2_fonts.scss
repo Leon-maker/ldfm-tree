@@ -125,8 +125,6 @@ ex :
 
 // MAIN FONT :-------------------------------- //
 
-h1,
-h2,
 h3,
 h4,
 h5 {
@@ -179,8 +177,8 @@ h3 {
   font-size: pixelsCalc(20);
   line-height: pixelsCalc(23);
   @media all and (max-width: $layout-breakpoint-end-tablette) {
-    font-size: pixelsCalc(25);
-    line-height: pixelsCalc(30);
+    font-size: pixelsCalc(18);
+    line-height: pixelsCalc(21);
   }
 }
 
@@ -189,8 +187,8 @@ h4 {
   font-size: pixelsCalc(14);
   line-height: pixelsCalc(17);
   @media all and (max-width: $layout-breakpoint-end-tablette) {
-    font-size: pixelsCalc(16);
-    line-height: pixelsCalc(18);
+    font-size: pixelsCalc(12);
+    line-height: pixelsCalc(15);
   }
 }
 
@@ -201,6 +199,16 @@ h5 {
   @media all and (max-width: $layout-breakpoint-end-tablette) {
     font-size: pixelsCalc(12) !important;
     line-height: pixelsCalc(14) !important;
+  }
+}
+
+// FONTS :---------------------------------------- //  P
+p {
+  font-size: pixelsCalc(16);
+  line-height: pixelsCalc(21);
+  @media all and (max-width: $layout-breakpoint-end-tablette) {
+    font-size: pixelsCalc(18);
+    line-height: pixelsCalc(21);
   }
 }
 
@@ -244,15 +252,6 @@ footer {
   }
 }
 
-// FONTS :---------------------------------------- //  P
-p {
-  font-size: pixelsCalc(16);
-  line-height: pixelsCalc(21);
-  @media all and (max-width: $layout-breakpoint-end-tablette) {
-    font-size: pixelsCalc(18);
-    line-height: pixelsCalc(21);
-  }
-}
 .padding-top-header{
   h1 {
     font-family: $font-secondary-500;

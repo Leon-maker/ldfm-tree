@@ -116,17 +116,13 @@ ex :
  * --------------------------------------------------------------------------------------------------------------
  *                                                  FONT-FAMILIES BY ELEMENTS
 /**/
-h1,
-h2,
 h3,
 h4,
 h5 {
   font-family: "Montserrat-Bold";
 }
 @supports (-moz-appearance: none) {
-  h1,
-h2,
-h3,
+  h3,
 h4,
 h5 {
     font-weight: 500;
@@ -175,8 +171,8 @@ h3 {
 }
 @media all and (max-width: 1024px) {
   h3 {
-    font-size: 25px;
-    line-height: 30px;
+    font-size: 18px;
+    line-height: 21px;
   }
 }
 
@@ -186,8 +182,8 @@ h4 {
 }
 @media all and (max-width: 1024px) {
   h4 {
-    font-size: 16px;
-    line-height: 18px;
+    font-size: 12px;
+    line-height: 15px;
   }
 }
 
@@ -199,6 +195,17 @@ h5 {
   h5 {
     font-size: 12px !important;
     line-height: 14px !important;
+  }
+}
+
+p {
+  font-size: 16px;
+  line-height: 21px;
+}
+@media all and (max-width: 1024px) {
+  p {
+    font-size: 18px;
+    line-height: 21px;
   }
 }
 
@@ -221,17 +228,6 @@ header .site-navigation a, header .social-media-menu a {
 footer .site-navigation .menu li a, footer .site-navigation .social-media-menu li a {
   font-family: "Montserrat-Regular";
   font-size: 12px;
-}
-
-p {
-  font-size: 16px;
-  line-height: 21px;
-}
-@media all and (max-width: 1024px) {
-  p {
-    font-size: 18px;
-    line-height: 21px;
-  }
 }
 
 .padding-top-header h1 {
