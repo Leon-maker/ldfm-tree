@@ -144,7 +144,7 @@ h5 {
 
 h1,
 h2 {
-  font-family: $font-secondary-700; // Playfair
+  font-family: $font-secondary-500;; // Playfair
 }
 
 
@@ -169,8 +169,8 @@ h2 {
   font-size: pixelsCalc(40);
   line-height: pixelsCalc(45);
   @media all and (max-width: $layout-breakpoint-end-tablette) {
-    font-size: pixelsCalc(35);
-    line-height: pixelsCalc(42);
+    font-size: pixelsCalc(30);
+    line-height: pixelsCalc(35);
   }
 }
 
@@ -299,13 +299,6 @@ p {
       font-family: $font-main-400;
       font-size: pixelsCalc(12);
     }
-    h2 {
-      font-family: $font-secondary-500;
-      font-size: pixelsCalc(40);
-      @media all and (max-width: $layout-breakpoint-end-tablette) {
-        font-size: pixelsCalc(30);
-      }
-    }
     a {
       font-family: $font-main-500;
       font-size: pixelsCalc(14);
@@ -404,5 +397,11 @@ p {
   p, ul {
     font-family: $font-main-400;
     font-size: pixelsCalc(16);
+  }
+}
+.section-archive-all-realisations{
+  ul, ol {
+    font-family: $font-main-400;
+    font-size: 16px;
   }
 }

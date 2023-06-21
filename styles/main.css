@@ -140,7 +140,7 @@ h5 {
 
 h1,
 h2 {
-  font-family: "PlayfairDisplay-Bold";
+  font-family: "PlayfairDisplay-Medium";
 }
 
 /**
@@ -164,8 +164,8 @@ h2 {
 }
 @media all and (max-width: 1024px) {
   h2 {
-    font-size: 35px;
-    line-height: 42px;
+    font-size: 30px;
+    line-height: 35px;
   }
 }
 
@@ -281,15 +281,6 @@ p {
   font-family: "Montserrat-Regular";
   font-size: 12px;
 }
-.cpt-section-container .cpt-section-header-title h2 {
-  font-family: "PlayfairDisplay-Medium";
-  font-size: 40px;
-}
-@media all and (max-width: 1024px) {
-  .cpt-section-container .cpt-section-header-title h2 {
-    font-size: 30px;
-  }
-}
 .cpt-section-container .cpt-section-header-title a {
   font-family: "Montserrat-Medium";
   font-size: 14px;
@@ -386,6 +377,11 @@ p {
   }
 }
 .terms_content p, .terms_content ul {
+  font-family: "Montserrat-Regular";
+  font-size: 16px;
+}
+
+.section-archive-all-realisations ul, .section-archive-all-realisations ol {
   font-family: "Montserrat-Regular";
   font-size: 16px;
 }
@@ -1150,8 +1146,6 @@ a[href]:not(.std-link) {
 .realisation-card .realisation-card-content-container .realisation-card-content ol, .realisation-card .realisation-card-content-container .realisation-card-content ul {
   list-style-position: inside;
   padding-left: 0;
-  font-size: 16px;
-  font-family: "Montserrat-Medium";
 }
 .realisation-card .realisation-card-content-container .realisation-card-content olol li, .realisation-card .realisation-card-content-container .realisation-card-content ulol li {
   padding: 12px 0;
@@ -3232,20 +3226,20 @@ section.section-half .columns-wrapper .right-container {
     margin-top: 50px;
   }
   .page-template-prestations .section-archive-all-realisations a {
-    margin-top: 30px !important;
+    margin-top: 25px !important;
   }
   .page-template-prestations .section-archive-all-realisations .realisation-card:last-child .realisation-card-content {
     margin-bottom: 0;
   }
 }
 .page-template-prestations .section-archive-all-realisations h2 {
-  margin-bottom: 30px;
+  margin-bottom: 25px;
 }
 .page-template-prestations .section-archive-all-realisations p {
   margin: 0 !important;
 }
 .page-template-prestations .section-archive-all-realisations ol {
-  margin-top: 30px;
+  margin-top: 25px;
   list-style-type: none; /* Masquer les marqueurs par défaut */
 }
 .page-template-prestations .section-archive-all-realisations ol li {
@@ -3278,7 +3272,7 @@ section.section-half .columns-wrapper .right-container {
   font-size: 10px;
 }
 .page-template-prestations .section-archive-all-realisations ul li:first-child {
-  margin-top: 30px;
+  margin-top: 25px;
 }
 .page-template-prestations .section-archive-all-realisations ul li:last-child {
   margin-bottom: 0;
