@@ -123,8 +123,8 @@ h5 {
 }
 @supports (-moz-appearance: none) {
   h3,
-h4,
-h5 {
+  h4,
+  h5 {
     font-weight: 500;
   }
 }
@@ -463,10 +463,13 @@ footer .site-navigation .menu li a, footer .site-navigation .social-media-menu l
 }
 .padding-top-header .text-center h3 {
   margin-top: 10px;
-  margin-bottom: 160px;
+}
+.padding-top-header .text-center .cta-primary {
+  margin-top: 160px;
 }
 
 .home-section {
+  position: relative;
   padding: 0;
 }
 .home-section h3 {
@@ -1768,8 +1771,6 @@ header .menu-item-has-children ul li a {
   header .menu-item-has-children a {
     padding: 0 !important;
   }
-}
-@media (max-width: 1200px) {
   header .menu-item-has-children ul li:first-child {
     padding: 15px 0 10px 0 !important;
   }

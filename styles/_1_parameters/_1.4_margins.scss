@@ -140,11 +140,14 @@ $lateral-padding-width-mobile: 50px;
     }
     h3{
       margin-top: 10px;
-      margin-bottom: 160px;
+    }
+    .cta-primary{
+      margin-top: 160px;
     }
   }
 }
 .home-section {
+  position: relative;
   padding: 0;
   h3{
     margin-bottom: 40px;
