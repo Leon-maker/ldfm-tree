@@ -150,7 +150,7 @@ h1 {
 @media all and (max-width: 1024px) {
   h1 {
     font-size: 45px;
-    line-height: 54px;
+    line-height: 45px;
   }
 }
 
@@ -214,7 +214,7 @@ header .site-navigation a, header .social-media-menu a {
   line-height: 18px;
   font-family: "Montserrat-Regular";
 }
-@media all and (max-width: 1501px) {
+@media all and (max-width: 1200px) {
   header .site-navigation .menu > li > a, header .social-media-menu .menu > li > a {
     font-size: 18px;
     font-family: "Montserrat-Medium";
@@ -230,17 +230,6 @@ footer .site-navigation .menu li a, footer .site-navigation .social-media-menu l
   font-size: 12px;
 }
 
-.padding-top-header h1 {
-  font-family: "PlayfairDisplay-Medium";
-  font-size: 80px;
-  line-height: 80px;
-}
-@media all and (max-width: 1024px) {
-  .padding-top-header h1 {
-    font-size: 45px;
-    line-height: 45px;
-  }
-}
 .padding-top-header h3 {
   font-family: "Montserrat-Regular";
   font-size: 20px;
@@ -894,6 +883,7 @@ a[href]:not(.std-link) {
   height: -moz-fit-content;
   height: fit-content;
   background: #FAFAFA;
+  max-width: 670px;
 }
 .contact-section-card:hover .contact-section-card-img {
   -webkit-transform: scale(1.2);
@@ -903,12 +893,12 @@ a[href]:not(.std-link) {
   width: 100%;
   overflow: hidden;
 }
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
   .contact-section-card .contact-section-card-img-container {
     height: 295px;
   }
 }
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
   .contact-section-card .contact-section-card-img-container {
     height: 155px;
   }
@@ -951,6 +941,12 @@ a[href]:not(.std-link) {
 }
 .contact-section-card .contact-section-card-content .contact-section-card-link:hover {
   background-size: 0 2px, 100% 2px !important;
+}
+
+@media (min-width: 1024px) {
+  .bureau-etude-card {
+    margin-left: 22px;
+  }
 }
 
 /** Marque Card **/
@@ -1411,12 +1407,12 @@ header .burger .logo a {
       -ms-flex-positive: initial;
           flex-grow: initial;
 }
-@media all and (min-width: 1501px) {
+@media all and (min-width: 1200px) {
   .site-navigation {
     width: calc(100vw - 40px - 123px);
   }
 }
-@media all and (min-width: 1501px) {
+@media all and (min-width: 1200px) {
   .site-navigation {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1445,7 +1441,7 @@ header .burger .logo a {
     margin-right: 60px;
   }
 }
-@media (max-width: 1501px) {
+@media (max-width: 1200px) {
   .site-navigation .navigation {
     width: 100%;
   }
@@ -1458,7 +1454,7 @@ header .burger .logo a {
     margin: 0;
   }
 }
-@media (max-width: 1501px) {
+@media (max-width: 1200px) {
   .site-navigation .navigation .wrap {
     height: 100%;
   }
@@ -1471,7 +1467,7 @@ header .burger .logo a {
       -ms-flex-align: center;
           align-items: center;
 }
-@media (max-width: 1501px) {
+@media (max-width: 1200px) {
   .site-navigation .navigation .wrap nav {
     width: 100%;
     height: -webkit-max-content;
@@ -1488,7 +1484,7 @@ header .burger .logo a {
             flex-direction: column;
   }
 }
-@media (max-width: 1501px) {
+@media (max-width: 1200px) {
   .site-navigation .navigation .menu {
     margin: 0;
   }
@@ -1513,14 +1509,14 @@ header .burger .logo a {
   display: -ms-flexbox;
   display: flex;
 }
-@media (min-width: 1501px) {
+@media (min-width: 1200px) {
   .site-navigation ul:not(.sub-menu) > li {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
   }
 }
-@media (min-width: 1501px) {
+@media (min-width: 1200px) {
   .site-navigation ul:not(.sub-menu) > li {
     display: inline;
   }
@@ -1534,17 +1530,17 @@ header .burger .logo a {
   text-decoration: none;
 }
 
-@media (min-width: 1501px) {
+@media (min-width: 1200px) {
   header .site-navigation .menu > li {
     padding: 50px 25px;
   }
 }
-@media (max-width: 1501px) {
+@media (max-width: 1200px) {
   header .site-navigation .menu > li {
     padding: 20px 25px;
   }
 }
-@media (max-width: 1501px) and (min-width: 768px) {
+@media (max-width: 1200px) and (min-width: 768px) {
   header .site-navigation .menu > li {
     padding: 20px 60px;
   }
@@ -1562,7 +1558,7 @@ header .burger .logo a {
     right: 0;
   }
 }
-@media all and (min-width: 1025px) and (min-width: 1501px) {
+@media all and (min-width: 1025px) and (min-width: 1200px) {
   header .navigation.navigation-one .wrap:after {
     border-right: 1px solid #000000;
   }
@@ -1585,7 +1581,7 @@ header li.menu-item-has-children ul.sub-menu.panel li:last-child {
 header li.menu-item-has-children ul.sub-menu:not(.panel) {
   padding: 17px 0 0 0;
 }
-@media (min-width: 1501px) {
+@media (min-width: 1200px) {
   header li.menu-item-has-children ul.sub-menu {
     display: none;
   }
@@ -1713,7 +1709,7 @@ footer .has-children > a {
   padding: 0;
 }
 
-@media (min-width: 1501px) {
+@media (min-width: 1200px) {
   header .menu > .menu-item > a {
     text-decoration: none;
     padding-bottom: 2px;
@@ -1729,7 +1725,7 @@ footer .has-children > a {
     background-size: 0 2px, 100% 2px;
   }
 }
-@media (min-width: 1501px) {
+@media (min-width: 1200px) {
   header .menu-item-has-children ul a:hover {
     color: black !important;
   }
@@ -1737,22 +1733,22 @@ footer .has-children > a {
 header .menu-item-has-children ul li a {
   color: rgba(0, 0, 0, 0.4) !important;
 }
-@media (max-width: 1501px) {
+@media (max-width: 1200px) {
   header .menu-item-has-children {
     padding: 20px 60px;
   }
 }
-@media (max-width: 1501px) and (max-width: 768px) {
+@media (max-width: 1200px) and (max-width: 768px) {
   header .menu-item-has-children {
     padding: 20px 25px;
   }
 }
-@media (max-width: 1501px) {
+@media (max-width: 1200px) {
   header .menu-item-has-children a {
     padding: 0 !important;
   }
 }
-@media (max-width: 1501px) {
+@media (max-width: 1200px) {
   header .menu-item-has-children ul li:first-child {
     padding: 15px 0 10px 0 !important;
   }
@@ -1760,7 +1756,7 @@ header .menu-item-has-children ul li a {
     padding: 0 0 10px 0 !important;
   }
 }
-@media (max-width: 1501px) and (min-width: 1024px) {
+@media (max-width: 1200px) and (min-width: 1024px) {
   header .menu-item-has-children {
     padding: 20px 60px;
   }
@@ -1782,12 +1778,12 @@ header .menu-item-has-children ul li a {
           align-items: center;
   z-index: 999;
 }
-@media all and (min-width: 1501px) {
+@media all and (min-width: 1200px) {
   .burger-header {
     border-bottom: 1px solid;
   }
 }
-@media (max-width: 1501px) {
+@media (max-width: 1200px) {
   .burger-header {
     padding: 15px 60px;
   }
@@ -1814,12 +1810,12 @@ header .menu-item-has-children ul li a {
   z-index: 1000;
   position: relative;
 }
-@media all and (min-width: 1501px) {
+@media all and (min-width: 1200px) {
   .burger-header .logo {
     top: 75px;
   }
 }
-@media all and (min-width: 1501px) {
+@media all and (min-width: 1200px) {
   .burger-header .logo .wrap a {
     border-right: 1px solid #000000;
   }
@@ -1872,7 +1868,7 @@ header .menu-item-has-children ul li a {
   margin-top: 100px;
   width: 100%;
 }
-@media (max-width: 1501px) {
+@media (max-width: 1200px) {
   .burger .burger-menu .burger-menu-wrapper .principal-menu-burger {
     margin-top: 100px;
     border-top: 1px solid #ffffff;
@@ -1883,7 +1879,7 @@ header .menu-item-has-children ul li a {
     border-top: 1px solid #ffffff;
   }
 }
-@media (min-width: 1501px) {
+@media (min-width: 1200px) {
   .burger .burger-menu .burger-menu-wrapper .principal-menu-burger {
     border-top: 1px solid #000000;
   }
@@ -1892,12 +1888,12 @@ header .menu-item-has-children ul li a {
   width: 100%;
 }
 
-@media all and (min-width: 1501px) {
+@media all and (min-width: 1200px) {
   #overlay-header > .wrap.burger {
     display: none !important;
   }
 }
-@media all and (max-width: 1501px) {
+@media all and (max-width: 1200px) {
   #overlay-header > .wrap:not(.burger) {
     display: none !important;
   }
@@ -1930,7 +1926,7 @@ header.top-reached .close line {
 header.top-reached .menu > span {
   background-color: #ffffff;
 }
-@media (max-width: 1501px) {
+@media (max-width: 1200px) {
   header a:not(.custom-logo-link) {
     width: -webkit-fill-available;
   }
@@ -1968,7 +1964,7 @@ header .menu-principal-container .menu-item-has-children ul.sub-menu:not(.panel)
 header .menu-principal-container .menu-item-has-children ul.sub-menu.panel li:last-child {
   border-bottom: 0;
 }
-@media (min-width: 1501px) {
+@media (min-width: 1200px) {
   header .menu-principal-container .menu-item-has-children ul.sub-menu {
     display: none;
   }
@@ -2043,7 +2039,7 @@ footer .site-branding {
   margin: 0px !important;
   margin-bottom: 60px !important;
 }
-@media (min-width: 1501px) {
+@media (min-width: 1200px) {
   footer .site-branding {
     margin-top: 30px !important;
   }
@@ -2093,12 +2089,12 @@ footer section .footer-navigation #menu-two > li {
       -ms-flex-pack: start;
           justify-content: flex-start;
 }
-@media all and (min-width: 1501px) {
+@media all and (min-width: 1200px) {
   footer section .footer-navigation #menu-two > li {
     max-width: 200px !important;
   }
 }
-@media all and (max-width: 1501px) {
+@media all and (max-width: 1200px) {
   footer section .footer-navigation #menu-two > li {
     margin-bottom: 50px;
   }
@@ -2109,7 +2105,7 @@ footer section .footer-navigation #menu-two > li > a {
   color: #000000;
   margin-bottom: 29px;
 }
-@media all and (max-width: 1501px) {
+@media all and (max-width: 1200px) {
   footer section .footer-navigation #menu-two > li > a {
     margin-bottom: 15px;
   }
@@ -2127,7 +2123,7 @@ footer section .footer-navigation #menu-two > li ul > li > a {
 footer section .footer-navigation .wrap-legal {
   border-top: solid rgba(0, 0, 0, 0.1) 1px;
 }
-@media (min-width: 1501px) {
+@media (min-width: 1200px) {
   footer section .footer-navigation .wrap-legal {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -2143,7 +2139,7 @@ footer section .footer-navigation .wrap-legal {
     display: flex;
   }
 }
-@media (max-width: 1501px) {
+@media (max-width: 1200px) {
   footer section .footer-navigation .wrap-legal {
     display: block;
     margin-top: 50px;
@@ -2175,7 +2171,7 @@ footer section .footer-navigation .wrap-legal #menu-two #menu-item-21244 {
       -ms-flex-align: center;
           align-items: center;
 }
-@media (min-width: 1501px) {
+@media (min-width: 1200px) {
   footer section .footer-navigation .wrap-legal #menu-two #menu-item-21244::after {
     content: " ";
     width: 5px;
@@ -2201,7 +2197,7 @@ footer section.nav {
     max-width: 440px;
   }
 }
-@media all and (min-width: 1501px) {
+@media all and (min-width: 1200px) {
   footer section.nav .site-navigation {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
@@ -2516,9 +2512,6 @@ section.section-half .columns-wrapper .right-container {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
 }
 @media (max-width: 1024px) {
   .contact-section-container .contact-section-card-wrapper {
@@ -3102,7 +3095,7 @@ section.section-half .columns-wrapper .right-container {
  * --------------------------------------------------------------------------------------------------------------
  *                                                  LEGAL PAGES 
 /**/
-@media (max-width: 1501px) and (min-width: 1024px) {
+@media (max-width: 1200px) and (min-width: 1024px) {
   .page-template-legals footer .nav {
     max-width: 70%;
   }

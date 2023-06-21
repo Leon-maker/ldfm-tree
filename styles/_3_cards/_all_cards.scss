@@ -3,6 +3,7 @@
     width: 49%;
     height: fit-content;
     background: $color-grey;
+    max-width: 670px;
 
     &:hover{
         & .contact-section-card-img{
@@ -12,10 +13,10 @@
 
     & .contact-section-card-img-container{
         width: 100%;
-        @media (min-width: $layout-breakpoint-end-tablette) {
+        @media (min-width: $layout-breakpoint-start-tablette) {
             height: 295px;
         }
-        @media (max-width: $layout-breakpoint-end-tablette) {
+        @media (max-width: $layout-breakpoint-start-tablette) {
             height: 155px;
         }
         overflow: hidden;
@@ -55,6 +56,12 @@
                 background-size: 0 2px, 100% 2px !important;
             }
         }
+    }
+}
+
+.bureau-etude-card{
+    @media (min-width: $layout-breakpoint-end-tablette) {
+        margin-left: 22px;
     }
 }
 
