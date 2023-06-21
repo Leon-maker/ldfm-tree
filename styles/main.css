@@ -602,6 +602,31 @@ footer .site-navigation .menu li a, footer .site-navigation .social-media-menu l
   width: 100% !important;
 }
 
+.pagination-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  top: -30px;
+}
+
+.pagination-bullet {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.3);
+  z-index: 23;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.pagination-bullet.active {
+  background-color: #ffffff;
+}
+
 /**
  * --------------------------------------------------------------------------------------------------------------
  *                                                  DEDICATED VARIABLES 

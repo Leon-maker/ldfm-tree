@@ -66,7 +66,8 @@ function SHORTCODE_HomeSection()
                         <span class="arrow">
                         </span>
                     </a>
-                </div>   
+                </div> 
+                <div class="pagination-container"></div>
             </div>
         </div>
     </section>

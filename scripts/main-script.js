@@ -10,6 +10,10 @@ import SwiperManager from "./managers/SwiperManager";
 const homePage = document.querySelector('.home');
 const headerSlider = document.querySelector('.header-slider');
 const detailRealisationSlider = document.querySelector('.detail-realisation-slider');
+const paginationBullets = document.querySelectorAll('.pagination-bullet');
+const swiperContainer = document.querySelector('.swiper-container');
+let currentIndex = 0; // Variable pour stocker l'index courant
+
 
 
 window.onload = () => {
@@ -33,18 +37,34 @@ window.onload = () => {
         });
 
         SwiperHeaderSlider.addEventListener('onMomentumScrollEnd', (e, state, context) => {
-            if(state.index > this.currentIndex && this.currentIndex > 0) {
-                this._swiper.scrollBy(-1)
-            }
-            this.currentIndex = state.index;
+            if (state.index > currentIndex && currentIndex > 0) {
+                SwiperHeaderSlider.scrollBy(-1);
+              }
+            currentIndex = state.realIndex;
+            console.log(currentIndex);
         });
 
-        SwiperHeaderSlider.addEventListener('slideChange', () => {
+        SwiperHeaderSlider.addEventListener('transitionEnd', () => {
             document.querySelector('.header-slider .swiper-button-prev').classList.remove('disabled');
             document.querySelector('.header-slider .swiper-button-next').classList.remove('disabled');
-            const index_currentSlide = SwiperHeaderSlider.realIndex;
             //const currentSlide = SwiperHeaderSlider.slides[index_currentSlide];
-            console.log("slide change to " + index_currentSlide);
+            const activeSlide = swiperContainer.querySelector('.swiper-slide.swiper-slide-active');
+            const activeSlideIndex = Array.from(swiperContainer.querySelectorAll('.swiper-slide')).indexOf(activeSlide);
+            console.log(activeSlide);
+            if (paginationBullets) {
+                // Parcourez toutes les bulles de pagination
+                paginationBullets.forEach((bullet, index) => {
+                    // Vérifiez si la slide correspond à l'index de la bulle
+                    console.log(activeSlideIndex)
+                    if ((index - 1) === (activeSlideIndex)) {
+                    // Appliquez un style différent à la bulle de la slide active
+                    bullet.classList.add('active');
+                    } else {
+                    // Supprimez le style de la bulle des autres slides
+                    bullet.classList.remove('active');
+                    }
+                });
+            }
         });
 
         SwiperHeaderSlider.addEventListener('reachEnd', () => {

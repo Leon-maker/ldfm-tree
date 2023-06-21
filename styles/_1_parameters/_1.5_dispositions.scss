@@ -40,3 +40,25 @@
 .full-width {
   width: 100% !important;
 }
+
+//pagination
+.pagination-container {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  top: -30px;
+}
+
+.pagination-bullet {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: rgba($color: $color-white, $alpha: 0.3);
+  z-index: 23;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.pagination-bullet.active {
+background-color: $color-white;
+}
