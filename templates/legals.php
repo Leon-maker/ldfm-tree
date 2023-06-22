@@ -13,7 +13,7 @@ if ($header_color) {
 ?>
 
 <section class="bkg-wrapper breadcrumb-container bkg-white">
-    <?php echo do_shortcode('[shortcode-fil_ariane title2="' . get_the_title() . '"]'); ?>
+    <?php echo do_shortcode('[shortcode-fil-ariane title2="' . get_the_title() . '"]'); ?>
 </section>
 
 <section class="legal-section lateral-margin">

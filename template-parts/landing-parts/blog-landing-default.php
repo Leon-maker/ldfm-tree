@@ -40,7 +40,7 @@ if ($query->have_posts()) {
 <section class="catalogue-header section-third-bkg no-margin-top no-margin-bottom">
     <?php if($header_choice=="illustration"){ ?>
         <section class="bkg-wrapper breadcrumb-container" style="background-color: <?php echo($header_color)?>">
-        <?php echo do_shortcode('[shortcode-fil_ariane title2="Blog"]'); ?>
+        <?php echo do_shortcode('[shortcode-fil-ariane title2="Blog"]'); ?>
         </section>
         <div class="columns-wrapper bkg-wrapper" style="background-color: <?php echo($header_color)?>">
             <div class="bkg-container left-container" style="background-image: url('<?php echo $img_ghost1; ?>');" role="img" aria-label="Image d'illustration 1 de la première section de la page." class="illustration illu1" style="width: 100%;"></div>
@@ -58,7 +58,7 @@ if ($query->have_posts()) {
     } else if($header_choice=="photo"){ ?>
         <section class="bkg-image" style="background-image: url('<?php echo $img_header; ?>');  background-size: cover; background-position: center; background-repeat: no-repeat;" role="img" aria-label="Image d'illustration 1 de la première section de la page." class="illustration illu1" style="width: 100%;">
             <section class="bkg-wrapper breadcrumb-container">
-            <?php echo do_shortcode('[shortcode-fil_ariane title2="Blog"]'); ?>
+            <?php echo do_shortcode('[shortcode-fil-ariane title2="Blog"]'); ?>
             </section>
             <div class="columns-wrapper bkg-wrapper">
                 <div class="content-container">

@@ -7,7 +7,7 @@ require_once get_template_directory() . '/shortcodes/shortcode-header-section.ph
 require_once get_template_directory() . '/shortcodes/shortcode-example.php';
 require_once get_template_directory() . '/shortcodes/shortcode-cta_primary.php';
 require_once get_template_directory() . '/shortcodes/shortcode-cta_secondary.php';
-require_once get_template_directory() . '/shortcodes/shortcode-fil_ariane.php';
+require_once get_template_directory() . '/shortcodes/shortcode-fil-ariane.php';
 require_once get_template_directory() . '/shortcodes/shortcode-contact-section.php';
 require_once get_template_directory() . '/shortcodes/shortcode-marque-card.php';
 require_once get_template_directory() . '/shortcodes/shortcode-marque-section.php';
