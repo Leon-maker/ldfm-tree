@@ -35,7 +35,7 @@ function SHORTCODE_descriptionContact($atts)
                     } ?>
                 </div>            
             </div>
-            <img class="realisation-card-img" src="<?= wp_get_attachment_image_src($atts['image_id'], 'full')[0];  ?>" alt="Image d'illustration contact"/>
+            <img class="realisation-card-img" src="<?= $atts['image_id'];  ?>" alt="Image d'illustration contact"/>
         <?php } ?>
     </div>
     <?php

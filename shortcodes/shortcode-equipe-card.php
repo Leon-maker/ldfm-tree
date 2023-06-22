@@ -22,14 +22,26 @@ function SHORTCODE_equipe_card($args)
     <div class="equipe-card">
         <div class="equipe-card-content-container">
             <img class="equipe-card-img" src="<?= $photo ?? " " ?>" alt="Image d'illustration marque"/>
+            <?php if (isMobile()) {?>
+                <div class="equipe-card-footer">
+                    <h3 class="equipe-card-title"><?= $prenom ?? " " ?> <span><?= $nom ?? " " ?></span></h3>
+                    <p class="equipe-card-metier"><?= $metier ?? " " ?></p>
+                </div><?php
+            }
+            ?>
             <div class="equipe-card-container-paragraphe">
                 <p class="equipe-card-paragraphe"><?= $description ?? " " ?></p>
             </div>
         </div>
-        <div class="equipe-card-footer">
+        <?php
+        if (!isMobile()) { ?>
+            <div class="equipe-card-footer">
             <h3 class="equipe-card-title"><?= $prenom ?? " " ?> <span><?= $nom ?? " " ?></span></h3>
             <p class="equipe-card-metier"><?= $metier ?? " " ?></p>
-        </div>
+            </div><?php
+        }
+        ?>
+        
     </div>
 
     <?php

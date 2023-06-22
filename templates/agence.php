@@ -26,10 +26,10 @@ if ($query->have_posts()) {
 <div class="agence-main-section">
     <div class="agence-description-container">
         <div class="agence-side-description-container">
-            <p class="agence-side-description"><?php echo $description1 ?><p>
+            <?php echo $description1 ?>
         </div>
         <div class="agence-side-description-container">
-        <p class="agence-side-description"><?php echo $description2 ?><p>
+            <?php echo $description2 ?>
         </div>
     </div>
 </div>
@@ -80,7 +80,6 @@ $button_title="Prendre-rendez-vous";
 $link="";
 
 echo do_shortcode('[shortcode-description-contact image_id="'.$image_bureau.'" title="'.$title_bureau.'" description="'.$description_bureau.'"  button_title="'.$button_title.'" link="'.$link.'" alternate="0"]');
-
 
 echo do_shortcode('[shortcode-equipe-section]'); 
 

@@ -1230,62 +1230,6 @@ a[href]:not(.std-link) {
      object-fit: cover;
 }
 /** **/
-.equipe-card .equipe-card-content-container {
-  max-width: 440px;
-  max-height: 480px;
-  position: relative;
-  -webkit-transition: background-color 0.4s ease-in-out;
-  transition: background-color 0.4s ease-in-out;
-}
-.equipe-card .equipe-card-container-paragraphe {
-  position: absolute;
-  -webkit-transition: opacity 0.4s ease-in-out;
-  transition: opacity 0.4s ease-in-out;
-  bottom: 4px;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.8);
-  opacity: 0;
-  overflow: hidden;
-  overflow-y: scroll;
-}
-.equipe-card .equipe-card-container-paragraphe .equipe-card-paragraphe {
-  color: #ffffff;
-  padding: 20px;
-  margin-bottom: 0px !important;
-  padding: 60px 50px;
-}
-.equipe-card .equipe-card-footer {
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-.equipe-card .equipe-card-footer .equipe-card-title {
-  margin-top: 24px;
-  margin-bottom: 10px;
-  text-transform: capitalize !important;
-}
-.equipe-card .equipe-card-footer .equipe-card-title span {
-  text-transform: uppercase;
-}
-.equipe-card .equipe-card-footer .equipe-card-metier {
-  margin: 0px;
-}
-.equipe-card:hover .equipe-card-container-paragraphe {
-  -webkit-transition: opacity 0.4s ease-in-out;
-  transition: opacity 0.4s ease-in-out;
-  opacity: 1;
-  z-index: 10;
-}
-
 /** link pour card**/
 .all-card-link {
   background-size: 20% 2px, 0 2px;
@@ -2743,15 +2687,6 @@ section.section-half .columns-wrapper .right-container {
   -ms-grid-column: 3;
 }
 
-.equipe-section-container .equipe-card {
-  margin: 35px;
-}
-.equipe-section-container .cpt-section-card-wrapper {
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  margin-left: -35px;
-}
-
 .produit-realisation-section-container {
   position: relative;
 }
@@ -3346,48 +3281,171 @@ section.section-half .columns-wrapper .right-container {
   margin-bottom: 0;
 }
 
-.agence-main-section {
-  padding: 120px 180px;
+@media (min-width: 1024px) {
+  .page-template-agence .agence-main-section {
+    padding: 120px 180px;
+  }
+  .page-template-agence .agence-main-section .agence-description-container {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-rows: ()[1];
+    grid-template-rows: repeat(1);
+    -ms-grid-columns: (1fr)[2];
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .page-template-agence .agence-main-section .agence-description-container > *:nth-child(1) {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+  }
+  .page-template-agence .agence-main-section .agence-description-container > *:nth-child(2) {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+  }
+  .page-template-agence .agence-main-section .agence-description-container .agence-side-description-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  .page-template-agence .agence-main-section .agence-description-container .agence-side-description-container:first-child {
+    margin-right: 30px;
+  }
+  .page-template-agence .agence-main-section .agence-description-container .agence-side-description-container:last-child {
+    margin-left: 30px;
+  }
+  .page-template-agence .agence-main-section .agence-description-container .agence-side-description-container p {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    opacity: 0.7;
+  }
+  .page-template-agence .equipe-section-container .equipe-card {
+    margin: 35px;
+  }
+  .page-template-agence .equipe-section-container .equipe-card .equipe-card-content-container {
+    max-width: 410px;
+    max-height: 410px;
+    position: relative;
+    -webkit-transition: background-color 0.4s ease-in-out;
+    transition: background-color 0.4s ease-in-out;
+  }
+  .page-template-agence .equipe-section-container .equipe-card .equipe-card-content-container::after {
+    content: "";
+    position: absolute;
+    bottom: 4px;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: -webkit-gradient(linear, left bottom, left top, from(black), to(rgba(255, 255, 255, 0)));
+    background: linear-gradient(to top, black, rgba(255, 255, 255, 0));
+    z-index: 10;
+    opacity: 0;
+  }
+  .page-template-agence .equipe-section-container .equipe-card .equipe-card-content-container:hover::after {
+    opacity: 1;
+  }
+  .page-template-agence .equipe-section-container .equipe-card .equipe-card-container-paragraphe {
+    position: absolute;
+    -webkit-transition: opacity 0.4s ease-in-out;
+    transition: opacity 0.4s ease-in-out;
+    bottom: 4px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    opacity: 0;
+    overflow: hidden;
+    overflow-y: scroll;
+  }
+  .page-template-agence .equipe-section-container .equipe-card .equipe-card-container-paragraphe .equipe-card-paragraphe {
+    color: #ffffff;
+    padding: 20px;
+    margin-bottom: 0px !important;
+    padding: 60px 50px;
+  }
+  .page-template-agence .equipe-section-container .equipe-card .equipe-card-footer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .page-template-agence .equipe-section-container .equipe-card .equipe-card-footer .equipe-card-title {
+    margin-top: 24px;
+    margin-bottom: 10px;
+    text-transform: capitalize !important;
+  }
+  .page-template-agence .equipe-section-container .equipe-card .equipe-card-footer .equipe-card-title span {
+    text-transform: uppercase;
+  }
+  .page-template-agence .equipe-section-container .equipe-card .equipe-card-footer .equipe-card-metier {
+    margin: 0px;
+  }
+  .page-template-agence .equipe-section-container .equipe-card:hover .equipe-card-container-paragraphe {
+    -webkit-transition: opacity 0.4s ease-in-out;
+    transition: opacity 0.4s ease-in-out;
+    opacity: 1;
+    z-index: 10;
+  }
+  .page-template-agence .equipe-section-container .cpt-section-card-wrapper {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    margin-left: -35px;
+  }
 }
-.agence-main-section .agence-description-container {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-rows: ()[1];
-  grid-template-rows: repeat(1);
-  -ms-grid-columns: (1fr)[2];
-  grid-template-columns: repeat(2, 1fr);
-}
-.agence-main-section .agence-description-container > *:nth-child(1) {
-  -ms-grid-row: 1;
-  -ms-grid-column: 1;
-}
-.agence-main-section .agence-description-container > *:nth-child(2) {
-  -ms-grid-row: 1;
-  -ms-grid-column: 2;
-}
-.agence-main-section .agence-description-container .agence-side-description-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-}
-.agence-main-section .agence-description-container .agence-side-description-container:first-child {
-  margin-right: 30px;
-}
-.agence-main-section .agence-description-container .agence-side-description-container:last-child {
-  margin-left: 30px;
-}
-.agence-main-section .agence-description-container .agence-side-description-container .agence-side-description {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  opacity: 0.7;
+@media (max-width: 1024px) {
+  .page-template-agence .agence-main-section {
+    padding: 60px 25px 120px 25px;
+    max-width: 440px;
+    margin: auto;
+  }
+  .page-template-agence .agence-main-section .agence-side-description-container:first-child {
+    margin-bottom: 20px;
+  }
+  .page-template-agence .realisation-card-content {
+    margin: 25px 25px 120px 25px;
+  }
+  .page-template-agence .realisation-card-content a {
+    margin-top: 30px !important;
+  }
+  .page-template-agence .equipe-section-container {
+    padding-bottom: 0px;
+  }
+  .page-template-agence .equipe-section-container a {
+    position: absolute;
+  }
+  .page-template-agence .equipe-section-container .cpt-section-card-wrapper {
+    margin-top: 30px;
+  }
+  .page-template-agence .equipe-section-container .cpt-section-card-wrapper .equipe-card-content-container .equipe-card-footer {
+    text-align: center;
+  }
+  .page-template-agence .equipe-section-container .cpt-section-card-wrapper .equipe-card-content-container .equipe-card-footer h3 {
+    margin-bottom: 10px;
+  }
+  .page-template-agence .equipe-section-container .cpt-section-card-wrapper .equipe-card-content-container .equipe-card-footer p {
+    margin-top: 0px;
+  }
+  .page-template-agence .equipe-section-container .cpt-section-card-wrapper .equipe-card-content-container .equipe-card-img {
+    width: 100%;
+  }
+  .page-template-agence .equipe-section-container .cpt-section-card-wrapper .equipe-card-content-container .equipe-card-paragraphe {
+    margin-bottom: 60px;
+  }
+  .page-template-agence .equipe-section-container .cpt-section-card-wrapper .equipe-card:last-child .equipe-card-paragraphe {
+    margin-bottom: 0;
+  }
 }
