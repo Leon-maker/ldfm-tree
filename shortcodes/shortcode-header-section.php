@@ -6,6 +6,7 @@ function SHORTCODE_SectionHeader($arguments)
     $arguments_array = shortcode_atts( array(
         "img-bkg" => "",
         "title" => "",
+        "slug-section" => "",
         "description" => "",
         "button1" => "",
         "button2" => "",
@@ -17,9 +18,32 @@ function SHORTCODE_SectionHeader($arguments)
         "link3" => "",
     ), $arguments );
 
-    $img_bkg = $arguments_array['img-bkg']; // Récupération de la valeur de l'image
-    $title = $arguments_array['title']; // Récupération de la valeur du titre
-    $description = $arguments_array['description']; // Récupération de la valeur de la description
+    $header_section_slug = $arguments_array['slug-section'];
+    
+    if (!empty($header_section_slug)) {
+        $args = array(
+            'post_type'   => 'page',
+            'name'        => $header_section_slug,
+            'post_status' => 'publish',
+            'numberposts' => 1
+            );
+        $query = new WP_Query($args);
+
+        if ($query->have_posts()) {
+            $query->the_post();
+            // Variables
+            $header = get_field('modifier_header');
+            $header_edit = $header['header'];
+            $title = $header_edit['titre'];
+            $description = $header_edit['description'];
+            $img_bkg = $header_edit['image_de_fond'];
+        }
+    } else {
+        $img_bkg = $arguments_array['img-bkg']; // Récupération de la valeur de l'image
+        $title = $arguments_array['title']; // Récupération de la valeur du titre
+        $description = $arguments_array['description']; // Récupération de la valeur de la description
+    }
+
     $button1 = $arguments_array['button1']; // Récupération de la valeur du bouton
     $button2 = $arguments_array['button2']; // Récupération de la valeur du bouton
 
@@ -35,7 +59,7 @@ function SHORTCODE_SectionHeader($arguments)
         get_header();
     ?>
 
-    <section class="padding-top-header-section" style="background-image: url('<?php echo $img_bkg; ?>');" role="img" aria-label="Image d'illustration 1 de la première section de la page." class="illustration illu1" style="width: 100%;">
+    <section class="padding-top-header" style="background-image: url('<?php echo $img_bkg; ?>');" role="img" aria-label="Image d'illustration 1 de la première section de la page." class="illustration illu1" style="width: 100%;">
         <div class="bkg-filter">
             <?php echo do_shortcode('[shortcode-fil-ariane type="white" ' . implode(' ', array_map(function ($key, $value) {
                 return $key . '="' . $value . '"';

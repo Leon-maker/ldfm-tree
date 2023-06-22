@@ -1,6 +1,5 @@
 .agence-main-section{
-    padding-top: 90px !important;
-    padding-bottom: 100px;
+    padding: 120px 180px;
     & .agence-description-container{
         display: grid;
         grid-template-rows: repeat(1);
@@ -11,8 +10,14 @@
             justify-content: center;
             align-items: flex-start;
 
+            &:first-child{
+                margin-right: 30px;
+            }
+            &:last-child{
+                margin-left: 30px;
+            }
+
             & .agence-side-description{
-                width: 50%;
                 display: flex;
                 justify-content: flex-start;
                 opacity: 0.7;

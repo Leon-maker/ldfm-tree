@@ -4,7 +4,7 @@ function SHORTCODE_fil_ariane($args)
     ob_start();
     
     $arguments_array = shortcode_atts( array(
-        "type" => "black",
+        "type" => "white",
         "title1" => "Accueil",
         "link1" => "/",
         "title2" => "",
@@ -73,9 +73,6 @@ function SHORTCODE_fil_ariane($args)
         </ul>
     </nav>
 </div>
-
-
-    ?>
 
     <?php
     return ob_get_clean();

@@ -328,3 +328,14 @@ function my_acf_init() {
 }
 
 add_action('acf/init', 'my_acf_init');
+
+/**
+ * --------------------------------------------------------------------------------------------------------------
+ *                                                 Remove Page Editor
+ * --------------------------------------------------------------------------------------------------------------
+ */
+/**/
+function remove_editor() {
+    remove_post_type_support('page', 'editor');
+  }
+  add_action('admin_init', 'remove_editor');
