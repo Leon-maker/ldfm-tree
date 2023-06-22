@@ -77,4 +77,9 @@ $color-blue-linkedIn : #0077b5;
     $bkg-color: $color-grey
   )
 }
-
+.agence-side-description-container, .realisation-card-content{
+  color: rgba($color: $color-black, $alpha: 0.7);
+  h2, a {
+    color: $color-black;
+  }
+}

@@ -382,6 +382,22 @@ footer .site-navigation .menu li a, footer .site-navigation .social-media-menu l
   font-family: "Montserrat-Medium";
 }
 
+.agence-side-description-container, .realisation-card-content {
+  font-family: "Montserrat-Regular";
+  font-size: 16px;
+}
+
+.equipe-card-footer h3 {
+  font-family: "Montserrat-Medium";
+}
+.equipe-card-footer p {
+  font-family: "Montserrat-Regular";
+}
+
+.equipe-card-container-paragraphe {
+  font-family: "Montserrat-Regular";
+}
+
 /**
  * --------------------------------------------------------------------------------------------------------------
  *                                                  DEDICATED VARIABLES 
@@ -421,6 +437,13 @@ footer .site-navigation .menu li a, footer .site-navigation .social-media-menu l
 
 .bkg-grey {
   background-color: #FAFAFA;
+}
+
+.agence-side-description-container, .realisation-card-content {
+  color: rgba(0, 0, 0, 0.7);
+}
+.agence-side-description-container h2, .agence-side-description-container a, .realisation-card-content h2, .realisation-card-content a {
+  color: #000000;
 }
 
 /**
@@ -1180,9 +1203,6 @@ a[href]:not(.std-link) {
   .realisation-card .realisation-card-content-container .realisation-card-content {
     width: 50%;
   }
-}
-.realisation-card .realisation-card-content-container .realisation-card-content p {
-  opacity: 0.7;
 }
 .realisation-card .realisation-card-content-container .realisation-card-content ol, .realisation-card .realisation-card-content-container .realisation-card-content ul {
   list-style-position: inside;
