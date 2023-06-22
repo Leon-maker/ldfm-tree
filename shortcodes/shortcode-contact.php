@@ -12,8 +12,8 @@ function SHORTCODE_contact($atts)
     $subtitle = $atts['subtitle'];
 
     // Récupérer les autres valeurs nécessaires
-    $description = get_the_excerpt();
     $info_pratiques = get_field('informations_pratiques');
+    $description = $info_pratiques['description'];
     $coordonees = $info_pratiques['coordonnees'];
     $telephone = $coordonees['telephone'];
     $horaire_douverture = $coordonees['horaire_douverture'];

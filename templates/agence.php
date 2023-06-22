@@ -33,33 +33,53 @@ if ($query->have_posts()) {
         </div>
     </div>
 </div>
+<?php
+$showroom_slug = "rdv-showroom";
+$args = array(
+    'post_type'   => 'page',
+    'name'        => $showroom_slug,
+    'post_status' => 'publish',
+    'numberposts' => 1
+    );
+$query = new WP_Query($args);
 
-
+if ($query->have_posts()) {
+    $query->the_post();
+    // Variables
+    $info_pratique_showroom = get_field('carte_contact');
+    $title_showroom = $info_pratique_showroom['titre'];
+    $description_showroom = $info_pratique_showroom['description'];
+    $image_showroom = $info_pratique_showroom['image'];
+}
+?>
 
 <?php
-$image_id = 21547;
-$title = "NOTRE SHOWROOM";
-$description = "Lorem ipsum dolor sit amet, 
-consetetur sadipscing elitr, sed diam nonumy eirmod tempor 
-invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. 
-At vero eos et accusam et justo duo dolores et ea rebum. duo dolores et ea rebum. 
-Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.";
 $button_title="Prendre-rendez-vous";
 $link="";
 
-echo do_shortcode('[shortcode-description-contact image_id="'.$image_id.'" title="'.$title.'" description="'.$description.'"  button_title="'.$button_title.'" link="'.$link.'" alternate="1"]');
+echo do_shortcode('[shortcode-description-contact image_id="'.$image_showroom.'" title="'.$title_showroom.'" description="'.$description_showroom.'"  button_title="'.$button_title.'" link="'.$link.'" alternate="1"]');
 
-$image_id = 21538;
-$title = "LE BUREAU D’ÉTUDES";
-$description = "Lorem ipsum dolor sit amet, 
-consetetur sadipscing elitr, sed diam nonumy eirmod tempor 
-invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. 
-At vero eos et accusam et justo duo dolores et ea rebum. duo dolores et ea rebum. 
-Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.";
+$bureau_slug = "rdv-bureau-detudes";
+$args = array(
+    'post_type'   => 'page',
+    'name'        => $bureau_slug,
+    'post_status' => 'publish',
+    'numberposts' => 1
+    );
+$query = new WP_Query($args);
+
+if ($query->have_posts()) {
+    $query->the_post();
+    // Variables
+    $info_pratique_bureau = get_field('carte_contact');
+    $title_bureau = $info_pratique_bureau['titre'];
+    $description_bureau = $info_pratique_bureau['description'];
+    $image_bureau = $info_pratique_bureau['image'];
+}
 $button_title="Prendre-rendez-vous";
 $link="";
 
-echo do_shortcode('[shortcode-description-contact image_id="'.$image_id.'" title="'.$title.'" description="'.$description.'"  button_title="'.$button_title.'" link="'.$link.'" alternate="0"]');
+echo do_shortcode('[shortcode-description-contact image_id="'.$image_bureau.'" title="'.$title_bureau.'" description="'.$description_bureau.'"  button_title="'.$button_title.'" link="'.$link.'" alternate="0"]');
 
 
 echo do_shortcode('[shortcode-equipe-section]'); 
