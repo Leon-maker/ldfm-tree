@@ -461,7 +461,10 @@ header {
     @media all and (min-width: $layout-breakpoint-start-noburger) {
         border-bottom: 1px solid;
     }
-    @media (max-width: $layout-breakpoint-start-noburger) {
+    @media (max-width: $layout-breakpoint-start-noburger) and (min-width: $layout-breakpoint-end-tablette) {
+        padding: 0 60px;;
+    }
+    @media (max-width: $layout-breakpoint-end-tablette) {
         padding: 15px 60px;;
     }
     .menu{

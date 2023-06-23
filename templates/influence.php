@@ -19,8 +19,7 @@ echo do_shortcode('[shortcode-header-section img-bkg="' . $img_bkg . '" title="'
     <?php
     $args = array(
         'post_type' => 'influence',
-        'posts_per_page' => 6,
-        'paged' => get_query_var('paged') ? get_query_var('paged') : 1,
+        'posts_per_page' => -1,
         'orderby' => 'date',
         'order' => 'DESC'
     );
@@ -58,32 +57,6 @@ echo do_shortcode('[shortcode-header-section img-bkg="' . $img_bkg . '" title="'
                 endwhile; ?>
             </div>
         </section>
-        <div class="pagination">
-            <?php if (get_previous_posts_link()) : ?>
-                <a class="pagination-link prev" href="<?php echo previous_posts(false); ?>"><i class="fas fa-chevron-left"></i></a>
-            <?php else : ?>
-                <span class="pagination-link prev disabled"><i class="fas fa-chevron-left"></i></span>
-            <?php endif; ?>
-
-            <span class="pagination-pages">
-                <?php
-                $current_page = max(1, get_query_var('paged'));
-                $total_pages = $query->max_num_pages;
-
-                for ($i = 1; $i <= $total_pages; $i++) {
-                    echo '<a class="pagination-page' . ($i == $current_page ? ' active' : '') . '" href="' . esc_url(get_pagenum_link($i)) . '">' . $i . '</a>';
-                }
-                ?>
-            </span>
-
-            <?php if ($current_page < $total_pages) : ?>
-                <a class="pagination-link next" href="<?php echo next_posts($query->max_num_pages, false); ?>"><i class="fas fa-chevron-right"></i></a>
-            <?php else : ?>
-                <span class="pagination-link next disabled"><i class="fas fa-chevron-right"></i></span>
-            <?php endif; ?>
-        </div>
-
-
     <?php endif; ?>
 </section>
 

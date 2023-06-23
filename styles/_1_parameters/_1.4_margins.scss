@@ -154,6 +154,17 @@ $lateral-padding-width-mobile: 50px;
   }
 }
 .padding-histoire{
+  @media (max-width: $layout-breakpoint-start-desktop) {
+    .text-center{
+      h2{
+        margin-bottom: 14px;
+      }
+      h3{
+        margin-top: 0;
+      }
+    }
+    margin-bottom: 120px;
+  }
   min-height: 600px;
   display: flex;
   align-items: center;
