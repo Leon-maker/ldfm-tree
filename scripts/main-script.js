@@ -50,13 +50,11 @@ window.onload = () => {
             //const currentSlide = SwiperHeaderSlider.slides[index_currentSlide];
             const activeSlide = swiperContainer.querySelector('.swiper-slide.swiper-slide-active');
             const activeSlideIndex = Array.from(swiperContainer.querySelectorAll('.swiper-slide')).indexOf(activeSlide);
-            console.log(activeSlide);
             if (paginationBullets) {
                 // Parcourez toutes les bulles de pagination
                 paginationBullets.forEach((bullet, index) => {
                     // Vérifiez si la slide correspond à l'index de la bulle
-                    console.log(activeSlideIndex)
-                    if ((index - 1) === (activeSlideIndex)) {
+                    if ((index) === (activeSlideIndex)) {
                     // Appliquez un style différent à la bulle de la slide active
                     bullet.classList.add('active');
                     } else {

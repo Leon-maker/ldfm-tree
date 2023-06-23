@@ -50,11 +50,12 @@ echo do_shortcode('[shortcode-header-section img-bkg="' . $img_bkg . '" title="'
 </section>
 
 
-<?php echo do_shortcode('[shortcode-produit-realisation-section]'); ?>
+<?php echo do_shortcode('[shortcode-produit-realisation-section]');
 
-<?php echo do_shortcode('[shortcode-realisation-section]'); ?>
+$realisation_title = "Voir aussi ces réalisations";
+echo do_shortcode('[shortcode-realisation-section titre="'.$realisation_title.'"]'); 
 
-<?php echo do_shortcode('[shortcode-contact-section]'); ?>
+echo do_shortcode('[shortcode-contact-section]'); ?>
 
 
 <?php

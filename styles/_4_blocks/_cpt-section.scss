@@ -182,3 +182,72 @@
         margin: 0;
     }
 }
+
+.home{
+    .cta-swiper-first {
+        top: var(--swiper-navigation-top-offset,40%);
+    }
+}
+
+.page-template-influence{
+    @media (min-width: $layout-breakpoint-end-tablette) {
+        .cpt-section-container{
+            padding: 0;
+            .cpt-section-card-wrapper{
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                grid-column-gap: 25px;
+                grid-row-gap: 75px;
+                .influence-card{
+                    margin: 0;
+                }
+            }
+        }
+        .influence-categories-section{
+            padding: 0;
+            ul {
+                display: flex;
+                justify-content: flex-start;
+                justify-content: flex-start;
+                list-style: none;
+                padding: 0;
+                margin-bottom: 50px;
+                li {
+                    margin-left: 35px;
+                    cursor: pointer;
+                    &:first-child{
+                        margin-left: 0;
+                    }
+                    padding-bottom: 2px;
+                    text-decoration: none;
+                    background-image: linear-gradient(#000000, #000000);
+                    background-size: 100% 1px;
+                    background-position: 0 100%;
+                    background-repeat: no-repeat;
+                    margin: 25px;
+                    opacity: 0.4;
+                    &.active {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+    .pagination {
+        display: flex;
+        justify-content: center;
+        margin-top: 70px;
+
+        .pagination-pages{
+            a{
+                margin-left: 30px;
+                &:first-child{
+                    margin-left: 0;
+                }
+            }
+        }
+        .pagination-link {
+            
+        }
+    }
+}

@@ -166,12 +166,14 @@ function thrive_register_post_types_PRODUIT() {
         'supports' => array('title', 'custom-fields'),
         'menu_position' => 5,
         'menu_icon' => 'dashicons-admin-customizer',
-        'show_in_menu' => true
+        'show_in_menu' => true,
+        'taxonomies' => array('category') // Ajout de cette ligne pour les catégories
     );
-    register_post_type('produit', $args);
 
+    register_post_type('produit', $args);
 }
 add_action( 'init', 'thrive_register_post_types_PRODUIT' );
+
 
 // CPT des prestations du site
 function thrive_register_post_types_Prestations() {

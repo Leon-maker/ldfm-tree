@@ -17,15 +17,25 @@ $id_form = 5;
 
 echo do_shortcode('[shortcode-contact id_form="'.$id_form.'" subtitle="'.$subtitle.'"]');
 
-$image_id = 21547;
-$title = "NOTRE SHOWROOM";
-$description = "Lorem ipsum dolor sit amet, 
-consetetur sadipscing elitr, sed diam nonumy eirmod tempor 
-invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. 
-At vero eos et accusam et justo duo dolores et ea rebum. duo dolores et ea rebum. 
-Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.";
+$bureau_slug = "rdv-bureau-detudes";
+$args = array(
+    'post_type'   => 'page',
+    'name'        => $bureau_slug,
+    'post_status' => 'publish',
+    'numberposts' => 1
+    );
+$query = new WP_Query($args);
 
-echo do_shortcode('[shortcode-description-contact image_id="'.$image_id.'" title="'.$title.'" description="'.$description.'" alternate="1"]');
+if ($query->have_posts()) {
+    $query->the_post();
+    // Variables
+    $info_pratique_bureau = get_field('carte_contact');
+    $title_bureau = $info_pratique_bureau['titre'];
+    $description_bureau = $info_pratique_bureau['description'];
+    $image_bureau = $info_pratique_bureau['image'];
+}
+
+echo do_shortcode('[shortcode-description-contact image_id="'.$image_bureau.'" title="'.$title_bureau.'" description="'.$description_bureau.'" alternate="1"]');
 
 get_footer();
 ?>

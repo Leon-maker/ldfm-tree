@@ -7,10 +7,12 @@
 
 echo do_shortcode('[shortcode-home-section]'); 
 
+echo do_shortcode('[shortcode-boutique-section]'); 
+
 echo do_shortcode('[shortcode-histoire-section]'); 
 
-
-echo do_shortcode('[shortcode-boutique-section]'); 
+$realisation_title = "Nos réalisations";
+echo do_shortcode('[shortcode-realisation-section titre="'.$realisation_title.'"]'); 
 
 echo do_shortcode('[shortcode-influence-section]'); 
 

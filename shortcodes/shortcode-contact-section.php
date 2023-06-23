@@ -14,7 +14,7 @@ function SHORTCODE_contact_section()
        <div class="contact-section-card-wrapper">
             <div class="contact-section-card showroom-card">
                 <div class="contact-section-card-img-container">
-                    <img class="contact-section-card-img" src=" <?= $img_showroom ?>" alt="Image d'illustration Showroom"/>
+                    <img class="contact-section-card-img" src="<?= $img_showroom ?>" alt="Image d'illustration Showroom"/>
                 </div>
                 <div class="contact-section-card-content">
                     <h3 class="contact-section-card-title">Prendre rendez-vous au showroom</h3>

@@ -29,11 +29,10 @@ if ($query->have_posts()) { ?>
         $title = get_the_title();
         $prestation = get_field('prestation');
         $image_url = $prestation['image'];
-        $image_id = attachment_url_to_postid($image_url);
         $description = $prestation['description'];
         $button_title = $prestation['titre_bouton'];
         $link = $prestation['lien_bouton'];
-        echo do_shortcode('[shortcode-description-contact image_id="'.$image_id.'" title="'.$title.'" description="'.$description.'" alternate="'.$alternate.'" button_title="'.$button_title.'" link="'.$link.'"]');
+        echo do_shortcode('[shortcode-description-contact image_id="'.$image_url.'" title="'.$title.'" description="'.$description.'" alternate="'.$alternate.'" button_title="'.$button_title.'" link="'.$link.'"]');
     endwhile; ?>
     </section> <?php
 }
