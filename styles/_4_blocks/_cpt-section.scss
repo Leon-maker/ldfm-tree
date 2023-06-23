@@ -232,6 +232,19 @@
             display: none; 
         }
     }
+    @media (min-width: $layout-breakpoint-end-tablette) {
+        .boutique-section-container{
+            padding-top: 150px;
+            padding-bottom: 150px;
+        }
+        .realisation-section-container{
+            padding-top: 150px !important;
+        }
+        .influence-section-container{
+            padding-top: 150px;
+            padding-bottom: 0;
+        }
+    }
 }
 
 .page-template-influence{
