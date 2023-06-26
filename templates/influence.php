@@ -14,9 +14,7 @@ $alternate = false;
 echo do_shortcode('[shortcode-header-section img-bkg="' . $img_bkg . '" title="' . $title_page . '" description="'. $description_page .'" link1="'. $ArianeLink1 .'" title1="'.$ArianeTitle.'"]'); 
 
 ?>
-
-<section class="section-archive-all-influences">
-    <?php
+<?php
     $args = array(
         'post_type' => 'influence',
         'posts_per_page' => -1,
@@ -30,34 +28,58 @@ echo do_shortcode('[shortcode-header-section img-bkg="' . $img_bkg . '" title="'
             'taxonomy' => 'influence-categorie',
             'hide_empty' => false,
         ));
-        ?>
-        <section class="influence-categories-section">
-            <?php if (isMobile()) : ?>
-                <select id="influence-categories-select">
-                    <option value="all">Tout voir</option>
-                    <?php foreach ($influence_categories as $category) : ?>
-                        <option class="influence-category-filter" value="<?php echo $category->term_id; ?>"><?php echo $category->name; ?></option>
-                    <?php endforeach; ?>
-                </select>
-            <?php else : ?>
-                <ul id="influence-categories-list">
-                    <li class="influence-category-filter all-influences active" data-category-id="all">Tout voir</li>
-                    <?php foreach ($influence_categories as $category) : ?>
-                        <li class="influence-category-filter" data-category-id="<?php echo $category->term_id; ?>"><?php echo $category->name; ?></li>
-                    <?php endforeach; ?>
-                </ul>
-            <?php endif; ?>
-        </section>
-        <div id="influence-container"></div>
-        <section class="cpt-section-container influence-section-container">
-            <div class="cpt-section-card-wrapper">
-                <?php 
-                while ($query->have_posts()) : $query->the_post(); 
-                    echo do_shortcode('[shortcode-influence-card influence-class="influence-category-' . $terms[0]->term_id . '"]');
-                endwhile; ?>
+    endif;
+?>
+
+<section class="blog-container lateral-margin no-margin-top">
+    <div class="heading-wrapper">
+        <section class="tab-filters" id="id-filters">
+            <div class="menu desktop-only ">
+                <div class="tabs tri_afficher-container filter-inline tab button-group filter-button-group champs">
+                    <button id="all-posts" class="subtitle afficher-select tab tablinks filters-select active" data-filter="*" data-sort-value="original-order">Tout voir</button>
+                    <?php
+                        foreach ($influence_categories as $category) { ?>
+                            <button class="subtitle afficher-select tab tablinks filters-select" data-filter="<?php echo '.' . $category->slug; ?>" data-sort-value="original-order"><?php echo $category->name; ?></button>
+                    <?php 
+                    } ?>
+                </div>
+            </div>
+            <div class="mobile-menu mobile-only">
+                <div id="filter-select" class="tab button-group sort-by-button-group container-button-filter">
+                    <select id="filters-list" class="filters-select uppercase subtitle" value="Tout">
+                        <option value="*" data-sort-value="original-order">Tout voir</option>
+                        <?php
+                        foreach ($influence_categories as $category) { ?>
+                            <option class="uppercase subtitle afficher-select tab tablinks filters-select" value="<?php echo '.' . $category->slug; ?>" data-sort-value="original-order"><?php echo $category->name; ?></option>
+                        <?php 
+                        } ?>
+                    </select>
+                </div>
             </div>
         </section>
-    <?php endif; ?>
+    </div>
+    <div class="columns-wrapper">
+        <div class="main-container">
+            <div class="wrapper-container blog-isotope">
+                <?php if ($query->have_posts()) {
+                    while ($query->have_posts()) {
+                        $query->the_post();
+                        $link = get_the_permalink();
+
+                        // Get Actualité custom fields
+                        $terms = get_the_terms(get_the_ID(), 'influence-categorie'); ?>
+                        <div class="card-item article-item-container isotope-item blog-item <?php echo $terms[0]->slug; ?>">
+                            <?php echo do_shortcode('[shortcode-influence-card influence-class="influence-category-' . $terms[0]->term_id . '"]');?>
+                        </div>
+                        <?php
+                    }
+                }
+                wp_reset_postdata();
+                ?>
+
+            </div>
+        </div>
+    </div>
 </section>
 
 
@@ -66,50 +88,44 @@ echo do_shortcode('[shortcode-header-section img-bkg="' . $img_bkg . '" title="'
 
 <?php get_footer(); ?>
 
+<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+
 <script>
-jQuery(function($) {
-    $('.influence-category-filter').click(function() {
-        var categoryID = $(this).data('category-id');
-
-        if (typeof categoryID !== 'undefined') {
-            if (categoryID === 'all') {
-                // Afficher toutes les influences
-                $('.influence').show();
-            } else {
-                // Masquer toutes les influences
-                $('.influence').hide();
-
-                // Afficher les influences de la catégorie sélectionnée
-                $('.influence-category-' + categoryID).show();
-            }
-
-            // Appliquer la classe "active" à l'élément sélectionné
-            $('.influence-category-filter').removeClass('active');
-            $(this).addClass('active');
-        }
-    });
-
-    $('#influence-categories-select').change(function() {
-        var categoryID = $(this).val();
-
-        if (typeof categoryID !== 'undefined') {
-            if (categoryID === 'all') {
-                // Afficher toutes les influences
-                $('.influence').show();
-            } else {
-                // Masquer toutes les influences
-                $('.influence').hide();
-
-                // Afficher les influences de la catégorie sélectionnée
-                $('.influence-category-' + categoryID).show();
-            }
-
-            // Appliquer la classe "active" à l'élément sélectionné
-            $('.influence-category-filter').removeClass('active');
-            $('.influence-category-filter[data-category-id="' + categoryID + '"]').addClass('active');
-        }
-    });
+// Version desktop
+const desktopButtons = document.querySelectorAll('.desktop-only .tablinks');
+desktopButtons.forEach(button => {
+  button.addEventListener('click', function() {
+    const mobileSelect = document.querySelector('.mobile-only #filters-list');
+    const selectedValue = this.getAttribute('data-filter');
+    mobileSelect.value = selectedValue;
+  });
 });
 
+// Version mobile
+const mobileSelect = document.querySelector('.mobile-only #filters-list');
+mobileSelect.addEventListener('change', function() {
+  const desktopButton = document.querySelector('.desktop-only .tablinks[data-filter="' + this.value + '"]');
+  desktopButton.click();
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Sélectionner tous les liens <a> à l'intérieur de la pagination
+  var paginationLinks = document.querySelectorAll('.isotope-pagination-container a');
+
+  // Parcourir les liens et ajouter un gestionnaire d'événements de clic
+  paginationLinks.forEach(function(link) {
+    link.addEventListener('click', function(event) {
+      event.preventDefault(); // Empêcher le comportement par défaut du lien
+
+      // Rediriger vers l'élément avec l'ID "id-filters"
+      window.location.href = '#id-filters';
+    });
+  });
+});
+
+
+
 </script>
+
+
 
