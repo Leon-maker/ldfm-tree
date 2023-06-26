@@ -35,13 +35,15 @@ a[href] {
     align-items: center;
 
     &::before {
-      content: " ";
+      content: "";
       display: flex;
       width: 15px;
       height: 15px;
       border: 1px solid rgba($color: $color-black, $alpha: 0.3);
       margin-right: 5px;
-      position: relative;
+      position: absolute;
+      left: 0;
+      top: 3px;
     }
   }  
 }
@@ -50,16 +52,20 @@ a[href] {
 %checkbox-black-white {
   label{
     &::before {
-      content: " ";
+      content: '\f00c';
+      font-weight: 900;
+      font-family: 'Font Awesome\ 5 Free';
       width: 15px;
+      align-items: center;
+      justify-content: center;
       height: 15px;
       border: 1px solid black;
-      font-size: 15px;
       cursor: pointer;
-      margin-right: 5px;
       color: white;
+      left: 0;
+      top: 3px;
       background-color: #000;
-      position: relative;
+      position: absolute;
     }   
   }
 }

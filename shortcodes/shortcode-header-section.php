@@ -61,9 +61,7 @@ function SHORTCODE_SectionHeader($arguments)
 
     <section class="padding-top-header" style="background-image: url('<?php echo $img_bkg; ?>');" role="img" aria-label="Image d'illustration 1 de la première section de la page." class="illustration illu1" style="width: 100%;">
         <div class="bkg-filter">
-            <?php echo do_shortcode('[shortcode-fil-ariane type="white" ' . implode(' ', array_map(function ($key, $value) {
-                return $key . '="' . $value . '"';
-            }, array_keys($fil_ariane_arguments), $fil_ariane_arguments)) . ']');  ?>    
+            <?php echo do_shortcode('[shortcode-fil-ariane]');  ?>    
             <div class="text-center white">
                 <h1 class="uppercase">
                     <?php echo $title; ?>

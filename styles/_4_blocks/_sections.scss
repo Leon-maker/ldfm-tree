@@ -77,8 +77,15 @@ section {
 
 
 .section-contact {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  @media (min-width: $layout-breakpoint-end-tablette) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (max-width: $layout-breakpoint-end-tablette) {
+    max-width: 440px;
+    margin: auto;
+  }
+  
 
   .informations-pratiques{
     ul{
@@ -101,8 +108,14 @@ section {
       }
       .gfield--width-full{
         width: 100%;
+        width: -moz-available;          /* WebKit-based browsers will ignore this. */
+        width: -webkit-fill-available;  /* Mozilla-based browsers will ignore this. */
+        width: fill-available;
         textarea, input {
           width: 100%;
+          width: -moz-available;          /* WebKit-based browsers will ignore this. */
+          width: -webkit-fill-available;  /* Mozilla-based browsers will ignore this. */
+          width: fill-available;
         }
       }
       .gfield {
@@ -122,6 +135,7 @@ section {
           }
           input {
             height: 40px;
+            text-indent: 10px;
           }
           textarea {
             resize: none;
@@ -139,9 +153,12 @@ section {
         }
         .ginput_container_consent{
           @extend %checkbox-black;
-
           &.active, &:hover{
             @extend %checkbox-black-white;
+          }
+          label{
+            padding-left: 20px;
+            position: relative;
           }
           .gfield_required_asterisk{
             display: contents;
@@ -152,9 +169,8 @@ section {
         margin-bottom: 0;
       }
       .gfield--type-date, .gfield--type-time {
-        &.gfield--type-date {
-          width: 50%;
-        }
+          width: 45%;
+          display: inline-block;
         .gfield_label {
           display: none;
         }
@@ -162,10 +178,15 @@ section {
           display: flex;
         }
         &.gfield--type-time {
+          .ginput_complex{
+            //width: 45%;
+            //display: flex;
+          }
           border: none;
           position: relative;
-          bottom: 80px;
           float: right;
+          padding: 0;
+          margin: 0;
           legend {
             display: none;
           }
@@ -173,6 +194,12 @@ section {
             float: right;
             .below {
               margin: auto 5px;
+            }
+            .ginput_container {
+              margin: 0;
+              input{
+                width: 50px;
+              }
             }
           }
         }
@@ -182,7 +209,7 @@ section {
       }
       .gform_footer {
         width: fit-content;
-        bottom: 35px;
+        bottom: 50px;
         position: relative;
         float: right;
 
@@ -190,6 +217,7 @@ section {
           background-color: transparent;
           padding: 15px 23px;
           border-radius: 25px;
+          border: 1px solid;
         }
       }
       .validation_message{
@@ -199,6 +227,14 @@ section {
       .gform_required_legend, .gform_validation_errors{
         display: none;
       }
+    }
+  }
+}
+
+.page-template-showroom, .page-template-bureau {
+  .card-mobile-1, .card-mobile-0 {
+    @media (max-width: $layout-breakpoint-end-tablette) {
+      display: inherit;
     }
   }
 }

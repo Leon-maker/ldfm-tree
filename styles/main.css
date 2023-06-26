@@ -591,11 +591,18 @@ footer .site-navigation .menu li a, footer .site-navigation .social-media-menu l
   padding: 0;
   margin-right: 0;
 }
-.section-contact .left-contact {
-  padding: 90px 20px 0 0;
+@media (max-width: 1024px) {
+  .section-contact .left-contact {
+    padding: 75px 25px 100px 25px;
+  }
 }
-.section-contact .left-contact .head {
-  margin-right: 80px;
+@media (min-width: 1024px) {
+  .section-contact .left-contact {
+    padding: 90px 20px 0 0;
+  }
+  .section-contact .left-contact .head {
+    margin-right: 80px;
+  }
 }
 .section-contact .left-contact .informations-pratiques {
   margin-top: 50px;
@@ -611,11 +618,18 @@ footer .site-navigation .menu li a, footer .site-navigation .social-media-menu l
 .section-contact .left-contact .informations-pratiques ul .value {
   width: 60%;
 }
-.section-contact .right-contact {
-  padding-top: 90px;
+@media (max-width: 1024px) {
+  .section-contact .right-contact {
+    padding: 60px 25px 40px 25px;
+  }
 }
-.section-contact .right-contact .gform_wrapper {
-  margin: 0 150px;
+@media (min-width: 1024px) {
+  .section-contact .right-contact {
+    padding-top: 90px;
+  }
+  .section-contact .right-contact .gform_wrapper {
+    margin: 0 150px;
+  }
 }
 
 @media (min-width: 1025px) {
@@ -680,7 +694,10 @@ html {
 }
 
 .full-width {
-  width: 100% !important;
+  width: 100%;
+  width: -moz-available; /* WebKit-based browsers will ignore this. */
+  width: -webkit-fill-available; /* Mozilla-based browsers will ignore this. */
+  width: fill-available;
 }
 
 .pagination-container {
@@ -773,7 +790,7 @@ a[href]:not(.std-link) {
           align-items: center;
 }
 .section-contact .right-contact .gform_wrapper .gfield--type-consent .ginput_container_consent label::before {
-  content: " ";
+  content: "";
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -781,20 +798,30 @@ a[href]:not(.std-link) {
   height: 15px;
   border: 1px solid rgba(0, 0, 0, 0.3);
   margin-right: 5px;
-  position: relative;
+  position: absolute;
+  left: 0;
+  top: 3px;
 }
 
 .section-contact .right-contact .gform_wrapper .gfield--type-consent .ginput_container_consent.active label::before, .section-contact .right-contact .gform_wrapper .gfield--type-consent .ginput_container_consent:hover label::before {
-  content: " ";
+  content: "\f00c";
+  font-weight: 900;
+  font-family: "Font Awesome 5 Free";
   width: 15px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   height: 15px;
   border: 1px solid black;
-  font-size: 15px;
   cursor: pointer;
-  margin-right: 5px;
   color: white;
+  left: 0;
+  top: 3px;
   background-color: #000;
-  position: relative;
+  position: absolute;
 }
 
 .breadcrumb-container .whited-filariane .dot-filariane {
@@ -1380,6 +1407,7 @@ a[href]:not(.std-link) {
             flex-direction: column;
     max-width: 440px;
     margin: auto;
+    width: 100%;
   }
   .card-mobile-1 .realisation-card-content {
     margin: 40px 25px 60px 25px;
@@ -1406,6 +1434,7 @@ a[href]:not(.std-link) {
             flex-direction: column-reverse;
     max-width: 440px;
     margin: auto;
+    width: 100%;
   }
   .card-mobile-0 .realisation-card-content {
     margin: 40px 25px 60px 25px;
@@ -2471,11 +2500,19 @@ section.section-half .columns-wrapper .right-container {
   background-position: center;
 }
 
-.section-contact {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (1fr)[2];
-  grid-template-columns: repeat(2, 1fr);
+@media (min-width: 1024px) {
+  .section-contact {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[2];
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 1024px) {
+  .section-contact {
+    max-width: 440px;
+    margin: auto;
+  }
 }
 .section-contact .informations-pratiques ul {
   list-style-type: none;
@@ -2496,9 +2533,15 @@ section.section-half .columns-wrapper .right-container {
 }
 .section-contact .right-contact .gform_wrapper .gfield--width-full {
   width: 100%;
+  width: -moz-available; /* WebKit-based browsers will ignore this. */
+  width: -webkit-fill-available; /* Mozilla-based browsers will ignore this. */
+  width: fill-available;
 }
 .section-contact .right-contact .gform_wrapper .gfield--width-full textarea, .section-contact .right-contact .gform_wrapper .gfield--width-full input {
   width: 100%;
+  width: -moz-available; /* WebKit-based browsers will ignore this. */
+  width: -webkit-fill-available; /* Mozilla-based browsers will ignore this. */
+  width: fill-available;
 }
 .section-contact .right-contact .gform_wrapper .gfield {
   margin-bottom: 20px;
@@ -2517,6 +2560,7 @@ section.section-half .columns-wrapper .right-container {
 }
 .section-contact .right-contact .gform_wrapper .gfield .ginput_container input {
   height: 40px;
+  text-indent: 10px;
 }
 .section-contact .right-contact .gform_wrapper .gfield .ginput_container textarea {
   resize: none;
@@ -2531,14 +2575,19 @@ section.section-half .columns-wrapper .right-container {
 .section-contact .right-contact .gform_wrapper .gfield--type-consent .gfield_label {
   display: none;
 }
+.section-contact .right-contact .gform_wrapper .gfield--type-consent .ginput_container_consent label {
+  padding-left: 20px;
+  position: relative;
+}
 .section-contact .right-contact .gform_wrapper .gfield--type-consent .ginput_container_consent .gfield_required_asterisk {
   display: contents;
 }
 .section-contact .right-contact .gform_wrapper .gfield--type-section {
   margin-bottom: 0;
 }
-.section-contact .right-contact .gform_wrapper .gfield--type-date.gfield--type-date, .section-contact .right-contact .gform_wrapper .gfield--type-time.gfield--type-date {
-  width: 50%;
+.section-contact .right-contact .gform_wrapper .gfield--type-date, .section-contact .right-contact .gform_wrapper .gfield--type-time {
+  width: 45%;
+  display: inline-block;
 }
 .section-contact .right-contact .gform_wrapper .gfield--type-date .gfield_label, .section-contact .right-contact .gform_wrapper .gfield--type-time .gfield_label {
   display: none;
@@ -2551,8 +2600,9 @@ section.section-half .columns-wrapper .right-container {
 .section-contact .right-contact .gform_wrapper .gfield--type-date.gfield--type-time, .section-contact .right-contact .gform_wrapper .gfield--type-time.gfield--type-time {
   border: none;
   position: relative;
-  bottom: 80px;
   float: right;
+  padding: 0;
+  margin: 0;
 }
 .section-contact .right-contact .gform_wrapper .gfield--type-date.gfield--type-time legend, .section-contact .right-contact .gform_wrapper .gfield--type-time.gfield--type-time legend {
   display: none;
@@ -2563,6 +2613,12 @@ section.section-half .columns-wrapper .right-container {
 .section-contact .right-contact .gform_wrapper .gfield--type-date.gfield--type-time .ginput_container .below, .section-contact .right-contact .gform_wrapper .gfield--type-time.gfield--type-time .ginput_container .below {
   margin: auto 5px;
 }
+.section-contact .right-contact .gform_wrapper .gfield--type-date.gfield--type-time .ginput_container .ginput_container, .section-contact .right-contact .gform_wrapper .gfield--type-time.gfield--type-time .ginput_container .ginput_container {
+  margin: 0;
+}
+.section-contact .right-contact .gform_wrapper .gfield--type-date.gfield--type-time .ginput_container .ginput_container input, .section-contact .right-contact .gform_wrapper .gfield--type-time.gfield--type-time .ginput_container .ginput_container input {
+  width: 50px;
+}
 .section-contact .right-contact .gform_wrapper .gfield--type-honeypot {
   display: none;
 }
@@ -2570,7 +2626,7 @@ section.section-half .columns-wrapper .right-container {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  bottom: 35px;
+  bottom: 50px;
   position: relative;
   float: right;
 }
@@ -2578,6 +2634,7 @@ section.section-half .columns-wrapper .right-container {
   background-color: transparent;
   padding: 15px 23px;
   border-radius: 25px;
+  border: 1px solid;
 }
 .section-contact .right-contact .gform_wrapper .validation_message {
   color: #c02b0a !important;
@@ -2585,6 +2642,12 @@ section.section-half .columns-wrapper .right-container {
 }
 .section-contact .right-contact .gform_wrapper .gform_required_legend, .section-contact .right-contact .gform_wrapper .gform_validation_errors {
   display: none;
+}
+
+@media (max-width: 1024px) {
+  .page-template-showroom .card-mobile-1, .page-template-showroom .card-mobile-0, .page-template-bureau .card-mobile-1, .page-template-bureau .card-mobile-0 {
+    display: inherit;
+  }
 }
 
 .contact-section-container {

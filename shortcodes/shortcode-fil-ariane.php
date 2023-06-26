@@ -1,79 +1,55 @@
 <?php
+
 function SHORTCODE_fil_ariane($args)
 {
     ob_start();
-    
+
     $arguments_array = shortcode_atts( array(
         "type" => "white",
-        "title1" => "Accueil",
-        "link1" => "/",
-        "title2" => "",
-        "link2" => "",
-        "title3" => "",
-        "link3" => ""
-    ), $arguments );
+    ), $args );
 
     $arrow_svg = wp_get_attachment_image_src(21228, 'full')[0];
     $white_class = "";
     if ($arguments_array['type'] === "white") $white_class = "whited-filariane";
+
+    $url = get_permalink();
+    $segments = explode('/', trim(parse_url($url, PHP_URL_PATH), '/'));
+
+    // Supprimer le premier segment "Accueil"
+    if (isset($segments[0]) && $segments[0] === "Accueil") {
+        array_shift($segments);
+    }
+
     ?>
     <div class="breadcrumb-container">
-    <nav class="fil-ariane-wrapper <?= $white_class ?>">
-        <ul class="fil-ariane-container list-in-row">
-            <?php
-            $nb_filled_arguments = 0;
-            $lastLink = '';
-
-            // On compte le nombre d'arguments remplis et on récupère le dernier lien
-            for ($i = 1; $i <= count($arguments_array) / 2; $i++) {
-                $title = $arguments_array['title' . $i];
-                $link = $arguments_array['link' . $i];
-
-                if ($title !== "") {
-                    $nb_filled_arguments++;
-                    $lastLink = $link;
-                }
-            }
-
-            for ($i = 1; $i <= count($arguments_array) / 2; $i++) {
-                $title = $arguments_array['title' . $i];
-                $link = $arguments_array['link' . $i];
-
-                if ($title !== "") {
+        <nav class="fil-ariane-wrapper <?= $white_class ?>">
+            <ul class="fil-ariane-container list-in-row">
+                <li class="fil-ariane-item">
+                    <a href="<?= home_url() ?>" class="fil-ariane-link">
+                        Accueil
+                    </a>
+                    <p class="dot-filariane"></p>
+                </li>
+                <?php
+                $current_url = home_url();
+                $segment_count = count($segments);
+                foreach ($segments as $key => $segment) {
+                    $current_url .= '/' . $segment;
                     ?>
                     <li class="fil-ariane-item">
-                        <a href="<?php echo $link; ?>" class="fil-ariane-link">
-                            <?php echo $title; ?>
+                        <a href="<?= $current_url ?>" class="fil-ariane-link">
+                            <?= ucfirst(str_replace('-', ' ', $segment)) ?>
                         </a>
-                        <?php
-                        // Si ce n'est pas le dernier élément du fil d'ariane, on affiche la flèche
-                        if ($i !== $nb_filled_arguments) {
-                            ?>
+                        <?php if ($key !== $segment_count - 1) { ?>
                             <p class="dot-filariane"></p>
-                            <?php
-                        }
-                        ?>
+                        <?php } ?>
                     </li>
                     <?php
                 }
-            }
-
-            // Ajouter le dernier lien s'il existe
-            if (!empty($lastLink)) {
                 ?>
-                <p class="dot-filariane"></p>
-                <li class="fil-ariane-item">
-                    <a href="<?php echo get_the_permalink(); ?>" class="fil-ariane-link">
-                        <?php echo get_the_title(); ?>
-                    </a>
-                </li>
-                <?php
-            }
-            ?>
-        </ul>
-    </nav>
-</div>
-
+            </ul>
+        </nav>
+    </div>
     <?php
     return ob_get_clean();
 }

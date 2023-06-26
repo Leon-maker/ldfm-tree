@@ -201,9 +201,14 @@ $lateral-padding-width-mobile: 50px;
   padding:0;
   margin-right: 0;
   .left-contact{
-    padding: 90px 20px 0 0;
-    .head {
-      margin-right: 80px;
+    @media (max-width: $layout-breakpoint-end-tablette) {
+      padding: 75px 25px 100px 25px;
+    }
+    @media (min-width: $layout-breakpoint-end-tablette) {
+      padding: 90px 20px 0 0;
+      .head {
+        margin-right: 80px;
+      }
     }
     .informations-pratiques{
       margin-top: 50px;
@@ -221,9 +226,14 @@ $lateral-padding-width-mobile: 50px;
     }
   }
   .right-contact{
-    padding-top: 90px;
-    .gform_wrapper{
-      margin: 0 150px;
+    @media (max-width: $layout-breakpoint-end-tablette) {
+      padding: 60px 25px 40px 25px;
+    }
+    @media (min-width: $layout-breakpoint-end-tablette) {
+      padding-top: 90px;
+      .gform_wrapper{
+        margin: 0 150px;
+      }
     }
   }
 }
