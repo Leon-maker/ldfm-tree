@@ -116,17 +116,8 @@ ex :
  * --------------------------------------------------------------------------------------------------------------
  *                                                  FONT-FAMILIES BY ELEMENTS
 /**/
-h3,
-h4,
-h5 {
-  font-family: "Montserrat-Bold";
-}
-@supports (-moz-appearance: none) {
-  h3,
-  h4,
-  h5 {
-    font-weight: 500;
-  }
+h3 {
+  font-family: "Montserrat-Medium";
 }
 
 h4,
@@ -403,6 +394,45 @@ footer .site-navigation .menu li a, footer .site-navigation .social-media-menu l
   font-family: "Montserrat-Medium";
 }
 
+.influence-card p {
+  font-family: "Montserrat-SemiBold";
+  font-size: 12px;
+}
+.influence-card .influence-card-text {
+  font-family: "Montserrat-Regular";
+  font-size: 16px;
+}
+.influence-card a {
+  font-family: "Montserrat-Medium";
+}
+.influence-card .influence-card-content h3 {
+  font-family: "Montserrat-Medium";
+}
+
+.tri_afficher-container button {
+  font-family: "Montserrat-Medium";
+  font-size: 14px;
+}
+
+.isotope-pagination-container {
+  font-family: "Montserrat-Regular";
+  font-size: 20px;
+}
+@media all and (max-width: 1024px) {
+  .isotope-pagination-container {
+    font-size: 18px;
+  }
+}
+
+.filters-select {
+  font-family: "Montserrat-Regular";
+  font-size: 14px;
+}
+.filters-select optgroup {
+  font-family: "Montserrat-Regular";
+  font-size: 14px;
+}
+
 /**
  * --------------------------------------------------------------------------------------------------------------
  *                                                  DEDICATED VARIABLES 
@@ -615,6 +645,14 @@ footer .site-navigation .menu li a, footer .site-navigation .social-media-menu l
   .bkg-filter {
     padding: 85px 0 70px 0;
   }
+}
+
+.influence-card-content h3 {
+  margin: 25px 0 15px 0;
+}
+
+.blog-container {
+  padding-bottom: 0;
 }
 
 /**
@@ -2933,7 +2971,7 @@ section.section-half .columns-wrapper .right-container {
     background-size: 100% 1px;
     background-position: 0 100%;
     background-repeat: no-repeat;
-    margin: 25px;
+    margin: 0 25px 50px 25px;
     opacity: 0.4;
   }
   .page-template-influence .tab-filters button:first-child {
@@ -2959,7 +2997,6 @@ section.section-half .columns-wrapper .right-container {
     padding: 10px;
     background-color: transparent;
     border: 1px solid;
-    border-radius: 25px;
     -webkit-appearance: none;
     -moz-appearance: none;
     text-indent: 1px;

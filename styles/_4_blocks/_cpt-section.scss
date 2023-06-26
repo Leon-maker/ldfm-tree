@@ -290,7 +290,7 @@
                 background-size: 100% 1px;
                 background-position: 0 100%;
                 background-repeat: no-repeat;
-                margin: 25px;
+                margin: 0 25px 50px 25px;
                 opacity: 0.4;
                 &.active {
                     opacity: 1;
@@ -313,7 +313,6 @@
                 padding: 10px;
                 background-color: transparent;
                 border: 1px solid;
-                border-radius: 25px;
                 -webkit-appearance: none;
                 -moz-appearance: none;
                 text-indent: 1px;

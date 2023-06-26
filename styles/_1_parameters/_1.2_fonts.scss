@@ -125,14 +125,10 @@ ex :
 
 // MAIN FONT :-------------------------------- //
 
-h3,
-h4,
-h5 {
-  font-family: $font-main-700; // Montserrat
-  @supports ( -moz-appearance:none ){
-    font-weight: 500;
-  }
+h3{
+  font-family: $font-main-500;
 }
+
 h4,
 h5 {
   font-family: $font-main-400; // Montserrat
@@ -392,7 +388,7 @@ footer {
 .section-archive-all-realisations{
   ul, ol {
     font-family: $font-main-400;
-    font-size: 16px;
+    font-size: pixelsCalc(16);
   }
 }
 .single-influence-end-section{
@@ -409,7 +405,7 @@ footer {
 }
 .agence-side-description-container, .realisation-card-content{
   font-family: $font-main-400;
-  font-size: 16px;
+  font-size: pixelsCalc(16);
 }
 .equipe-card-footer{
   h3{
@@ -424,7 +420,46 @@ footer {
 }
 .home {
   a{
-    font-size: 14px;
+    font-size: pixelsCalc(14);
     font-family: $font-main-500;
+  }
+}
+.influence-card{
+  p{
+    font-family: $font-main-600;
+    font-size: pixelsCalc(12);
+  }
+  .influence-card-text{
+    font-family: $font-main-400;
+    font-size: pixelsCalc(16);
+  }
+  a{
+    font-family: $font-main-500;
+  }
+  .influence-card-content{
+    h3{
+      font-family: $font-main-500;
+    }
+  }
+}
+.tri_afficher-container{
+  button{
+    font-family: $font-main-500;
+    font-size: pixelsCalc(14);
+  }
+}
+.isotope-pagination-container{
+  font-family: $font-main-400;
+  font-size: pixelsCalc(20);
+  @media all and (max-width: $layout-breakpoint-end-tablette) {
+    font-size: pixelsCalc(18);
+  }
+}
+.filters-select{
+  font-family: $font-main-400;
+  font-size: pixelsCalc(14);
+  optgroup {
+    font-family: $font-main-400;
+    font-size: pixelsCalc(14);
   }
 }
