@@ -130,6 +130,10 @@ h2 {
   font-family: "PlayfairDisplay-Medium";
 }
 
+p {
+  font-family: "Montserrat-Regular";
+}
+
 /**
  * --------------------------------------------------------------------------------------------------------------
  *                                                  FONT-SIZES BY ELEMENTS
@@ -254,7 +258,6 @@ footer .site-navigation .menu li a, footer .site-navigation .social-media-menu l
 }
 
 .cpt-section-container .cpt-section-header-title p {
-  font-family: "Montserrat-Regular";
   font-size: 12px;
 }
 .cpt-section-container .cpt-section-header-title a {
@@ -298,7 +301,6 @@ footer .site-navigation .menu li a, footer .site-navigation .social-media-menu l
   }
 }
 .realisation-card-content p {
-  font-family: "Montserrat-Regular";
   font-size: 16px;
 }
 .realisation-card-content a {
@@ -311,7 +313,6 @@ footer .site-navigation .menu li a, footer .site-navigation .social-media-menu l
   font-family: "PlayfairDisplay-Medium";
 }
 .contact-section-container .contact-section-header-title p {
-  font-family: "Montserrat-Regular";
   font-size: 12px;
 }
 .contact-section-container .contact-section-card-wrapper h3 {
@@ -324,7 +325,6 @@ footer .site-navigation .menu li a, footer .site-navigation .social-media-menu l
   }
 }
 .contact-section-container .contact-section-card-wrapper p {
-  font-family: "Montserrat-Regular";
   font-size: 16px;
 }
 .contact-section-container .contact-section-card-wrapper a {
@@ -363,7 +363,6 @@ footer .site-navigation .menu li a, footer .site-navigation .social-media-menu l
 }
 
 .single-influence-end-section p {
-  font-family: "Montserrat-Regular";
   font-size: 16px;
 }
 .single-influence-end-section p span {
@@ -380,9 +379,6 @@ footer .site-navigation .menu li a, footer .site-navigation .social-media-menu l
 
 .equipe-card-footer h3 {
   font-family: "Montserrat-Medium";
-}
-.equipe-card-footer p {
-  font-family: "Montserrat-Regular";
 }
 
 .equipe-card-container-paragraphe {
@@ -430,6 +426,26 @@ footer .site-navigation .menu li a, footer .site-navigation .social-media-menu l
 }
 .filters-select optgroup {
   font-family: "Montserrat-Regular";
+  font-size: 14px;
+}
+
+.boldy {
+  font-family: "Montserrat-Medium";
+}
+
+.gsection_title {
+  font-family: "Montserrat-Regular";
+  font-size: 12px;
+  line-height: 14px;
+  font-weight: 100;
+}
+
+.gfield .ginput_container input {
+  font-family: "Montserrat-Regular";
+}
+
+.gform_footer input {
+  font-family: "Montserrat-Medium";
   font-size: 14px;
 }
 

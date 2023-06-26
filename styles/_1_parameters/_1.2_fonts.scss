@@ -141,6 +141,10 @@ h2 {
   font-family: $font-secondary-500;; // Playfair
 }
 
+p{
+  font-family: $font-main-400;
+}
+
 
 /**
  * --------------------------------------------------------------------------------------------------------------
@@ -282,7 +286,6 @@ footer {
 .cpt-section-container{
   .cpt-section-header-title{
     p {
-      font-family: $font-main-400;
       font-size: pixelsCalc(12);
     }
     a {
@@ -325,7 +328,6 @@ footer {
     }
   }
   p {
-    font-family: $font-main-400;
     font-size: pixelsCalc(16);
   }
   a {
@@ -340,7 +342,6 @@ footer {
       font-family: $font-secondary-500;
     }
     p {
-      font-family: $font-main-400;
       font-size: pixelsCalc(12);
     }
   }
@@ -353,7 +354,6 @@ footer {
       }
     }
     p {
-      font-family: $font-main-400;
       font-size: pixelsCalc(16);
     }
     a {
@@ -393,7 +393,6 @@ footer {
 }
 .single-influence-end-section{
   p{
-    font-family: $font-main-400;
     font-size: pixelsCalc(16);
     span {
       font-family: $font-main-500;
@@ -410,9 +409,6 @@ footer {
 .equipe-card-footer{
   h3{
     font-family: $font-main-500;
-  }
-  p{
-    font-family: $font-main-400;
   }
 }
 .equipe-card-container-paragraphe{
@@ -462,4 +458,24 @@ footer {
     font-family: $font-main-400;
     font-size: pixelsCalc(14);
   }
+}
+.boldy{
+  font-family: $font-main-500;
+}
+.gsection_title{
+  font-family: $font-main-400;
+  font-size: pixelsCalc(12);
+  line-height: pixelsCalc(14);
+  font-weight: 100;
+}
+.gfield {
+  .ginput_container {
+    input {
+      font-family: $font-main-400;
+    }
+  }
+}
+.gform_footer input{
+  font-family: $font-main-500;
+  font-size: pixelsCalc(14);
 }
