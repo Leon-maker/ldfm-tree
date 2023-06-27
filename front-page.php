@@ -67,13 +67,3 @@ paginationBullets.forEach((bullet, index) => {
 
 
 </script>
-
-<!-- <?php
-// $img_bkg = wp_get_attachment_image_src(21412, 'full')[0];
-// $title_page = 'Boutique';
-// $description_page = "Découvrez l’ensemble de nos produits.";
-// $button1_page = "Catalogue indoor";
-// $button2_page = "Catalogue indoor";
-
-// echo do_shortcode('[shortcode-header-section img-bkg="' . $img_bkg . '" title="' . $title_page . '" description="'. $description_page .'" button1="'. $button1_page .'" button2="'. $button2_page .'"]'); 
-?> -->

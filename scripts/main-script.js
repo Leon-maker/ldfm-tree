@@ -528,7 +528,7 @@ for (i = 0; i < acc.length; i++) {
 // init Isotope
 /* ------------------------------------------------------------------------ */
 jQuery(document).ready(function ($) {
-    if($('body.page-template-influence').length) {
+    if($('body.page-template-influence').length || $('body.page-template-boutique').length) {
 
         var itemSelector = '.blog-item'; 
 

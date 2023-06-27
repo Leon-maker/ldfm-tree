@@ -4,8 +4,6 @@
  */
 ?>
 
-<?php get_header(); ?>
-
 <?php 
 $slug = "nos-realisations";
 $alternate = false; 
