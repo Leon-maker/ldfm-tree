@@ -21,6 +21,7 @@ require_once get_template_directory() . '/shortcodes/shortcode-produit-realisati
 require_once get_template_directory() . '/shortcodes/shortcode-description-contact.php';
 require_once get_template_directory() . '/shortcodes/shortcode-equipe-section.php';
 require_once get_template_directory() . '/shortcodes/shortcode-equipe-card.php';
+require_once get_template_directory() . '/shortcodes/shortcode-map.php';
 
 
 

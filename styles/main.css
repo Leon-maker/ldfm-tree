@@ -782,6 +782,23 @@ html {
   background-color: #ffffff;
 }
 
+.acf-map {
+  width: 100%;
+  margin: 150px 0;
+  height: 80vh;
+  border: #ccc solid 1px;
+}
+@media all and (max-width: 1024px) {
+  .acf-map {
+    max-width: 440px;
+    margin: 120px auto;
+  }
+}
+
+.acf-map img {
+  max-width: inherit !important;
+}
+
 /**
  * --------------------------------------------------------------------------------------------------------------
  *                                                  DEDICATED VARIABLES 

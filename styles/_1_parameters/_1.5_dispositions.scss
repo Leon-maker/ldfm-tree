@@ -70,3 +70,18 @@ html {
 .pagination-bullet.active {
 background-color: $color-white;
 }
+
+.acf-map {
+  width: 100%;
+  margin: 150px 0;
+  @media all and (max-width: $layout-breakpoint-end-tablette) {
+    max-width: 440px;
+    margin: 120px auto;
+  }
+  height: 80vh;
+  border: #ccc solid 1px;
+}
+
+.acf-map img {
+ max-width: inherit !important;
+}

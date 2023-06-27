@@ -323,10 +323,8 @@ function fr_phone_format( $phone_formats ) {
  */
 /**/
 function my_acf_init() {
-
-    acf_update_setting('google_api_key', 'AIzaSyDQ0WsLxXd1iLKfVckXKbOo8NIpxJ5OLHk');
+    acf_update_setting('google_api_key', 'AIzaSyC2p1nVSwcAVGXQYMEkC1cQwfL1kLcum3U');
 }
-
 add_action('acf/init', 'my_acf_init');
 
 /**
