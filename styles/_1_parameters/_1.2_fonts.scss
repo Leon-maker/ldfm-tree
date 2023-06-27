@@ -479,3 +479,40 @@ footer {
   font-family: $font-main-500;
   font-size: pixelsCalc(14);
 }
+.single-produit{
+  h1{
+    font-size: pixelsCalc(40);
+    line-height: pixelsCalc(45);
+    @media all and (max-width: $layout-breakpoint-end-tablette) {
+      font-size: pixelsCalc(30);
+      line-height: pixelsCalc(35);
+    }
+  }
+  .caracteristiques{
+    p{
+      font-size: pixelsCalc(16) !important;
+      line-height: pixelsCalc(21) !important;
+      @media all and (max-width: $layout-breakpoint-end-tablette) {
+        font-size: pixelsCalc(14) !important;
+        line-height: pixelsCalc(17) !important;
+      }
+    }
+  }
+  .plus{
+    font-family: $font-main-500;
+  }
+  .description{
+    opacity: 0.7;
+  }
+  .marque, .ref{
+    font-size: pixelsCalc(14);
+    span{
+      opacity: 0.7;
+      &.value{
+        opacity: 1;
+        font-family: $font-main-500;
+      }
+    }
+  }
+
+}

@@ -1,8 +1,20 @@
 <?php
-function SHORTCODE_Produit_Realisation_section()
+function SHORTCODE_Produit_Realisation_section($arg)
 {
     ob_start();
-    $produits = get_field("details_realisation")["produits_association"];
+    $arguments_array = shortcode_atts( array(
+        "produit" => "",
+    ), $arg );
+    if ($arguments_array['produit'] === "fiche") $produits = get_field('produits_similaires');
+    else $produits = get_field("details_realisation")["produits_association"];
+    
+    if ($arguments_array['produit'] === "fiche") {
+        $titre = "Nos produits similaires";
+    } else {
+        $titre = "PRODUITS UTILISÉS POUR CE PROJET";
+    }
+
+
     if ($produits!=null) {
         $args = array(
             'post_type' => 'produit',
@@ -10,14 +22,12 @@ function SHORTCODE_Produit_Realisation_section()
             'posts_per_page' => -1,
         );
         $query = new WP_Query($args);  
-        
         if ($query->have_posts()){?> 
-        
         <section class="cpt-section-container detail-realisation-slider produit-realisation-section-container">
             <div class="cpt-section-header-title">
                 <p>BOUTIQUE</p>
                 <div class="cpt-section-header-sub-content-container">
-                    <h2>PRODUITS UTILISÉS POUR CE PROJET</h2> 
+                        <h2 class="uppercase"><?php echo $titre; ?></h2> 
                     <a href="" class="cta-secondary">Parcourir la boutique</a>
                 </div>
             </div>

@@ -101,7 +101,7 @@ function SHORTCODE_contact($atts)
               </p>
             </li>
           </ul>
-      </div>
+        </div>
       </div>
       <div class="right-contact bkg-grey ">
         <?php echo do_shortcode('[gravityform id="'.$id_form.'" title="false"]'); ?>
