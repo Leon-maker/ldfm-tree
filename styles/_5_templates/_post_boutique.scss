@@ -1,15 +1,64 @@
 .page-template-boutique{
-    .header-filtre{
-        display: flex;
-        justify-content: space-between;
-        i {
-            margin: auto 0;
+    .filter-container{
+        position: relative;
+        .bkg-opacity{
+            position: absolute;
+            top: 0;
+            width: 100%;
+            z-index: 2;
+            background-color: rgba($color: $color-black, $alpha: 0.36);
+            .tab-filters{
+                background-color: white;
+                width: 550px;
+                margin-left: auto;
+                .header-filtre{
+                    padding: 60px 60px 50px 60px;
+                    display: flex;
+                    justify-content: space-between;
+                    i {
+                        margin: auto 0;
+                    }
+                }
+                .tri_afficher-container{
+                    padding: 0 60px 0 60px;
+                    .category-div{
+                        display: grid;
+                        position: relative;
+                        .parent{
+                            border-bottom: 1px solid rgba($color: $color-black, $alpha: 0.1);
+                            padding-bottom: 24px;
+                            margin-bottom: 24px;
+                            i{
+                                position: absolute;
+                                right: 0;
+                                font-size: 12px;
+                            }
+                        }
+                        .child{
+                            padding-bottom: 15px;
+                            span{
+                                margin-left: 10px;
+                            }
+                            &:last-child{
+                                padding-bottom: 30px;
+                            }
+                        }
+                    }
+                    
+                }
+            }
         }
     }
-    .tri_afficher-container{
-        display: grid;
+    .boutique-container{
+        .product-list{
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            column-gap: 22px;
+            row-gap: 75px;
+            .card-item{
+                position: relative !important;
+            }
+        }
     }
-    .card-item{
-        position: relative !important;
-    }
+    
 }
