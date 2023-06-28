@@ -1,0 +1,15 @@
+.page-template-boutique{
+    .header-filtre{
+        display: flex;
+        justify-content: space-between;
+        i {
+            margin: auto 0;
+        }
+    }
+    .tri_afficher-container{
+        display: grid;
+    }
+    .card-item{
+        position: relative !important;
+    }
+}

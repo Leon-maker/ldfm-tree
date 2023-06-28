@@ -3643,6 +3643,25 @@ section.section-half .columns-wrapper .right-container {
   visibility: visible;
 }
 
+.page-template-boutique .header-filtre {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.page-template-boutique .header-filtre i {
+  margin: auto 0;
+}
+.page-template-boutique .tri_afficher-container {
+  display: -ms-grid;
+  display: grid;
+}
+.page-template-boutique .card-item {
+  position: relative !important;
+}
+
 /**
  * --------------------------------------------------------------------------------------------------------------
  *                                                  6 : PAGES

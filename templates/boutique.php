@@ -24,61 +24,106 @@ if ($last_segment === "boutique"){
     $query = new WP_Query($args);
     if ($query->have_posts()) :
         // Récupérer toutes les catégories d'influences
-        $influence_categories = get_terms(array(
-            'taxonomy' => 'influence-categorie',
+        $categories = get_terms(array(
+            'taxonomy' => 'category',
             'hide_empty' => false,
+            'parent' => 0, // Récupérer uniquement les catégories parentes        
         ));
     endif;
 ?>
 
-<section class="blog-container lateral-margin no-margin-top">
-    <div class="heading-wrapper">
-        <section class="tab-filters" id="id-filters">
-            <div class="menu desktop-only ">
-                <div class="tabs tri_afficher-container filter-inline tab button-group filter-button-group champs">
-                    <button id="all-posts" class="subtitle afficher-select tab tablinks filters-select active" data-filter="*" data-sort-value="original-order">Tout voir</button>
-                    <?php
-                        foreach ($influence_categories as $category) { ?>
-                            <button class="subtitle afficher-select tab tablinks filters-select" data-filter="<?php echo '.' . $category->slug; ?>" data-sort-value="original-order"><?php echo $category->name; ?></button>
-                    <?php 
-                    } ?>
-                </div>
-            </div>
-            <div class="mobile-menu mobile-only">
-                <div id="filter-select" class="tab button-group sort-by-button-group container-button-filter">
-                    <select id="filters-list" class="filters-select uppercase subtitle" value="Tout">
-                        <option value="*" data-sort-value="original-order">Tout voir</option>
-                        <?php
-                        foreach ($influence_categories as $category) { ?>
-                            <option class="uppercase subtitle afficher-select tab tablinks filters-select" value="<?php echo '.' . $category->slug; ?>" data-sort-value="original-order"><?php echo $category->name; ?></option>
-                        <?php 
-                        } ?>
-                    </select>
-                </div>
-            </div>
-        </section>
-    </div>
-    <div class="columns-wrapper">
-        <div class="main-container">
-            <div class="wrapper-container blog-isotope">
-                <?php if ($query->have_posts()) {
-                    while ($query->have_posts()) {
-                        $query->the_post();
-                        $link = get_the_permalink();
+<section class="boutique-container lateral-margin no-margin-top">
+    <div class="tab-filters" id="id-filters">
+        <div class="header-filtre">
+            <h3>Filtrer par</h3>
+            <i class="fa fa-times" aria-hidden="true"></i>
+        </div>
+        <div class="tabs tri_afficher-container filter-inline tab button-group filter-button-group champs">
+            <?php
+            // Récupérer toutes les catégories
+            $categories = get_categories();
 
-                        // Get Actualité custom fields
-                        $terms = get_the_terms(get_the_ID(), 'influence-categorie'); ?>
-                        <div class="card-item article-item-container isotope-item blog-item <?php echo $terms[0]->slug; ?>">
-                            <?php echo do_shortcode('[shortcode-influence-card influence-class="influence-category-' . $terms[0]->term_id . '"]');?>
-                        </div>
-                        <?php
+            // Tableaux pour les catégories parentes et enfants
+            $parent_categories = array();
+            $child_categories = array();
+
+            // Organiser les catégories dans les tableaux correspondants
+            foreach ($categories as $category) {
+                if ($category->parent == 0) {
+                    // Catégorie parente
+                    $parent_categories[] = $category;
+                } else {
+                    // Catégorie enfant
+                    $child_categories[$category->parent][] = $category;
+                }
+            }
+
+            // Fonction de comparaison pour trier les catégories parentes par ordre alphabétique
+            function compareCategories($category1, $category2) {
+                return strcasecmp($category1->name, $category2->name);
+            }
+
+            // Trier les catégories parentes par ordre alphabétique
+            usort($parent_categories, 'compareCategories');
+
+            // Afficher les catégories parentes suivies de leurs catégories enfants
+            foreach ($parent_categories as $parent_category) {
+                echo '<label class="category-label">';
+                echo '<span class="subtitle afficher-select tab tablinks filters-select parent-category">' . $parent_category->name . '</span>';
+                echo '</label>';
+
+                if (isset($child_categories[$parent_category->term_id])) {
+                    foreach ($child_categories[$parent_category->term_id] as $child_category) {
+                        echo '<label class="category-label">';
+                        echo '<input type="checkbox" class="category-checkbox"  data-category="' . $child_category->slug . '">';
+                        echo '<span class="subtitle afficher-select tab tablinks filters-select" data-filter="' . '.' . $child_category->slug . '" data-sort-value="original-order">' . $child_category->name . '</span>';
+                        echo '</label>';
                     }
                 }
-                wp_reset_postdata();
-                ?>
-
-            </div>
+            }
+            ?>
         </div>
+    </div>
+    <div class="product-list">
+        <?php if ($query->have_posts()) {
+            $parent_slugs = array(); // Tableau pour stocker les slugs des grands-parents
+
+            while ($query->have_posts()) {
+                $query->the_post();
+                $link = get_the_permalink();
+            
+                // Get Actualité custom fields
+                $terms = get_the_terms(get_the_ID(), 'category');
+            
+                if (!empty($terms)) {
+                    $category_classes = '';
+            
+                    foreach ($terms as $term) {
+                        $ancestors = get_ancestors($term->term_id, 'category');
+            
+                        // Vérifier si la catégorie a des grands-parents
+                        if (count($ancestors) > 1) {
+                            $parent = get_term($ancestors[0], 'category');
+                            $parent_slug = $parent->slug;
+            
+                            // Vérifier si le grand-parent est déjà ajouté
+                            if (!in_array($parent_slug, $parent_slugs)) {
+                                $category_classes .= $parent_slug . ' ';
+                                $parent_slugs[] = $parent_slug; // Ajouter le slug du grand-parent au tableau
+                            }
+                        }
+            
+                        $category_classes .= $term->slug . ' ';
+                    }
+                }
+                ?>
+            
+                <div class="card-item article-item-container <?php echo $category_classes; ?>">
+                    <?php echo do_shortcode('[shortcode-produit-card]'); ?>
+                </div>
+                <?php
+            }                                                     
+        }?>
     </div>
 </section>
 
@@ -88,45 +133,16 @@ if ($last_segment === "boutique"){
 
 <?php get_footer(); ?>
 
-<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
-
 <script>
-// Version desktop
-const desktopButtons = document.querySelectorAll('.desktop-only .tablinks');
-desktopButtons.forEach(button => {
-  button.addEventListener('click', function() {
-    const mobileSelect = document.querySelector('.mobile-only #filters-list');
-    const selectedValue = this.getAttribute('data-filter');
-    mobileSelect.value = selectedValue;
-  });
-});
-
-// Version mobile
-const mobileSelect = document.querySelector('.mobile-only #filters-list');
-mobileSelect.addEventListener('change', function() {
-  const desktopButton = document.querySelector('.desktop-only .tablinks[data-filter="' + this.value + '"]');
-  desktopButton.click();
-});
-
-document.addEventListener('DOMContentLoaded', function() {
-  // Sélectionner tous les liens <a> à l'intérieur de la pagination
-  var paginationLinks = document.querySelectorAll('.isotope-pagination-container a');
-
-  // Parcourir les liens et ajouter un gestionnaire d'événements de clic
-  paginationLinks.forEach(function(link) {
-    link.addEventListener('click', function(event) {
-      event.preventDefault(); // Empêcher le comportement par défaut du lien
-
-      // Rediriger vers l'élément avec l'ID "id-filters"
-      window.location.href = '#id-filters';
+    document.addEventListener('DOMContentLoaded', function () {
+        const checkboxes = document.querySelectorAll('.category-checkbox');
+        checkboxes.forEach(function (checkbox) {
+            checkbox.addEventListener('change', function () {
+                if (this.checked) {
+                    const category = this.getAttribute('data-category');
+                    console.log('Checkbox sélectionnée : ' + category);
+                }
+            });
+        });
     });
-  });
-});
-
-
-
 </script>
-
-
-
-

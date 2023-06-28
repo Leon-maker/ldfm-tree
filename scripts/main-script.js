@@ -528,7 +528,7 @@ for (i = 0; i < acc.length; i++) {
 // init Isotope
 /* ------------------------------------------------------------------------ */
 jQuery(document).ready(function ($) {
-    if($('body.page-template-influence').length || $('body.page-template-boutique').length) {
+    if($('body.page-template-influence').length) {
 
         var itemSelector = '.blog-item'; 
 
@@ -779,7 +779,389 @@ jQuery(document).ready(function ($) {
         $('.filter-button-group').on('click', 'button', function () {
             $('.filter-button-group button.active').removeClass('active');
             $(this).addClass('active');
-            console.log("hey");
+            var filter = $(this).attr(filterAttribute);
+            currentFilter = filter;
+            setPagination(currentFilter);
+            goToPage(1, currentFilter);
+        });
+
+        // MOBILE bind filter on select change
+        /* ------------------------------------------------------------------------ */
+        $('#filters-list').on( 'change', function() {
+            // get filter value from option value
+            var currentFilter = $(this).val();
+            setPagination(currentFilter);
+            goToPage(1, currentFilter);
+        });
+
+        // Force 1st tab to be active on loading
+        /* ------------------------------------------------------------------------ */
+        var allPosts = document.querySelector('#all-posts')
+        window.onload = (event) => {
+            /*var url = new URL(location);
+            url.searchParams.delete('dir');
+            history.pushState(null, document.title, url);*/
+            $('.filter-button-group button.active').removeClass('active');
+            $(this).addClass('active');
+            allPosts.click();
+            clearAll();
+        };
+
+        // Function on resizing window
+        /* ------------------------------------------------------------------------ */
+        if (!isMobile.any()) {
+            $(window).resize(function(){
+                itemsPerPage = defineItemsPerPage();
+                var currentFilter = $('.filter-button-group button.active').attr(filterAttribute);
+                setPagination(currentFilter);
+                goToPage(1, currentFilter);
+            });         
+        }
+
+        // Change Chronological order Event handler
+        /* ------------------------------------------------------------------------ */
+
+        // bind sort button hover
+        $('.sort-by-button-group').on("mouseenter", 'button', function() {
+
+            /* Get the sorting direction: asc||desc */
+            var directionText = $(this).find('span.text');
+
+            directionText.text($(this).text() == 'Les plus récents' ? 'Les moins récents' : 'Les plus récents');
+            
+            var span = $(this).find('.sort-icon');
+            span.toggleClass('chevron-up chevron-down');
+            
+        });
+
+        // bind sort button hover
+        $('.sort-by-button-group').on("mouseleave", 'button', function() {
+
+            /* Get the sorting direction: asc||desc */
+            var direction = $(this).attr('data-sort-direction');
+
+            /* convert it to a boolean */
+            var isAscending = (direction == 'asc');
+            /* change button text */
+            var newText = (isAscending) ? 'Les moins récents' : 'Les plus récents';
+            $(this).find('span.text').text(newText);
+            
+            var span = $(this).find('.sort-icon');
+            var newChevronClass = (isAscending) ? 'chevron-up' : 'chevron-down';
+            span.removeClass("chevron-up");
+            span.removeClass("chevron-down");
+            span.addClass(newChevronClass);
+            
+        });
+
+        // bind sort button click
+        $('.sort-by-button-group').on( 'click', 'button', function() {
+
+            $(this).off("mouseenter");
+            
+            /* Get the element name to sort */
+            var sortValue = $(this).attr('data-sort-value');
+
+            /* Get the sorting direction: asc||desc */
+            var direction = $(this).attr('data-sort-direction');
+            /* convert it to a boolean */
+            var isAscending = (direction == 'desc');
+            var newDirection = (isAscending) ? 'asc' : 'desc';
+
+            /* pass it to isotope */
+            $grid.isotope({ sortBy: sortValue, sortAscending: isAscending });
+
+            $(this).attr('data-sort-direction', newDirection);
+
+            /* change button text */
+            var newText = (isAscending) ? 'Les plus récents' : 'Les moins récents';
+            /* change a href direction */
+            $(this).find('span.text').text(newText);
+            // $(this).attr("href", newDirection);
+            
+            var span = $(this).find('.sort-icon');
+            var newChevronClass = (isAscending) ? 'chevron-up' : 'chevron-down';
+            span.removeClass("chevron-up");
+            span.removeClass("chevron-down");
+            span.addClass(newChevronClass);
+
+            if (isMobile.any()) {
+                var currentFilter = $('#filters-list').val();
+            } else {
+                var currentFilter = $('.filter-button-group button.active').attr(filterAttribute);
+            }
+            setPagination(currentFilter);
+            goToPage(1, currentFilter);
+
+            $(this).off("mouseleave");
+
+        });
+ 
+    }
+});
+
+
+/**
+ * --------------------------------------------------------------------------------------------------------------
+ *                                                  Boutique filter
+ * --------------------------------------------------------------------------------------------------------------
+ */
+/**/
+
+// init Isotope
+/* ------------------------------------------------------------------------ */
+jQuery(document).ready(function ($) {
+    if($('body.page-template-boutique').length) {
+
+        var itemSelector = '.blog-item'; 
+
+        var $grid = $('.blog-isotope').isotope({
+            itemSelector: itemSelector, // the elements to filter
+            stamp: '.stamp',
+            layoutMode: 'fitRows',
+            percentPosition: true,
+            fitRows: {
+                columnWidth: '.item-sizer',
+                gutter: '.gutter-sizer'
+            },
+            getSortData: {
+                postDate: '.news__date'
+            }
+        });
+
+        var responsiveIsotope = [ [480, 4] , [720, 6] ];
+        var itemsPerPageDefault = 6;
+        var itemsPerPage = defineItemsPerPage();
+        var currentNumberPages = 1;
+        var currentPage = 1;
+        var startPage=1;
+        var currentFilter = '*';
+        var filterAttribute = 'data-filter';
+        var filterValue = "";
+        var pageAttribute = 'data-page';
+        var pagerClass = 'isotope-pagination-container';
+
+        // Change isotope filter
+        /* ------------------------------------------------------------------------ */
+        function changeFilter(selector) {
+            $grid.isotope({
+                filter: selector
+            });
+        }
+
+        // Grab all checked filters and goto page on fresh isotope output
+        /* ------------------------------------------------------------------------ */
+        function goToPage(n, tabSelected) {
+            currentPage = n;
+            var selector = itemSelector;
+            var exclusives = [];
+
+                // for the tab checked, add its value and push to array
+                selector = tabSelected;
+                exclusives.push(selector);
+
+                // smash all values back together for 'and' filtering
+                filterValue = exclusives.length ? exclusives.join('') : '*';
+                
+                // add page number to the string of filters
+                var wordPage = currentPage.toString();
+                filterValue += ('.'+wordPage);
+           
+            changeFilter(filterValue);
+            if (currentPage == 1) {
+                console.log('Page : 1 / ' + currentNumberPages);
+                $('.isotope-pagination-item-prev').addClass('disabled');
+                $('.isotope-pagination-item-next').removeClass('disabled');
+            } else if (currentPage == currentNumberPages) {
+                console.log('Page : ' + currentPage + ' / ' + currentNumberPages);
+                $('.isotope-pagination-item-next').addClass('disabled');
+                $('.isotope-pagination-item-prev').removeClass('disabled');
+            } else {
+                console.log('Page : ' + currentPage + ' / ' + currentNumberPages);
+                $('.isotope-pagination-item-prev').removeClass('disabled');
+                $('.isotope-pagination-item-next').removeClass('disabled');
+            }
+            // Sélectionner l'élément cible avec l'ID "id-filters"
+            var targetElement = document.getElementById('id-filters');
+
+            // Définir les options de défilement
+            var scrollOptions = {
+                behavior: 'smooth', // Défilement en douceur
+                block: 'start' // Défilement vers le début de l'élément
+            };
+
+            // Défiler vers l'élément cible avec animation
+            targetElement.scrollIntoView(scrollOptions);
+
+        }
+
+        // Determine page breaks based on window width and preset values
+        /* ------------------------------------------------------------------------ */
+        function defineItemsPerPage() {
+            var pages = itemsPerPageDefault;
+    
+            for( var i = 0; i < responsiveIsotope.length; i++ ) {
+                if( $(window).width() <= responsiveIsotope[i][0] ) {
+                    pages = responsiveIsotope[i][1];
+                    break;
+                }
+            }
+            return pages;
+        }
+       
+        // Set pagination 
+        /* ------------------------------------------------------------------------ */
+        function setPagination(tabSelected) {
+
+             /* convert it to a boolean */
+             /*var isDescending = (direction == 'desc');
+             var getSortValue =$('.sort-by-button-group button').attr('data-sort-value');
+             var getDirection = $('.sort-by-button-group button').find('span.text').text();
+ 
+             /* pass it to isotope */
+             /*$grid.isotope({ sortBy: getSortValue, sortAscending: getDirection });*/
+    
+            var SettingsPagesOnItems = function(){
+                var itemsLength = $grid.children(itemSelector).length;
+                var pages = Math.ceil(itemsLength / itemsPerPage);
+                var item = 1;
+                var page = 1;
+                var selector = itemSelector;
+                var exclusives = [];
+                    // filter items on button click
+        
+                    // for the tab checked, add its value and push to array
+                    selector = tabSelected;
+                    exclusives.push(selector);
+            
+                    // smash all values back together for 'and' filtering
+                    filterValue = exclusives.length ? exclusives.join('') : '*';
+                    // find each child element with current filter values
+                    $grid.children(filterValue).not('.gutter-sizer').each(function(){
+                        // increment page if a new one is needed
+                        if( item > itemsPerPage ) {
+                            page++;
+                            item = 1;
+                        }
+                        // add page number to element as a class
+                        var wordPage = page.toString();
+                        
+                        var classes = $(this).attr('class').split(' ');
+                        var lastClass = classes[classes.length-1];
+                        // last class shorter than 4 will be a page number, if so, grab and replace
+                        if(lastClass.length < 6){
+                            $(this).removeClass();
+                            classes.pop();
+                            classes.push(wordPage);
+                            classes = classes.join(' ');
+                            $(this).addClass(classes);
+                        } else {
+                            // if there was no page number, add it
+                           $(this).addClass(wordPage); 
+                        }
+                        item++;
+                    });
+                currentNumberPages = page;
+            }();
+    
+            // create page number navigation
+            var CreatePagers = function() {
+    
+                if (isMobile.any()) {
+                    var currentFilter = $('#filters-list').val();
+                } else {
+                    var currentFilter = $('.filter-button-group button.active').attr(filterAttribute);
+                }
+                var $isotopePager = ( $('.'+pagerClass).length == 0 ) ? $('<div class="'+pagerClass+'"></div>') : $('.'+pagerClass);
+    
+                $isotopePager.html('');
+
+                var $page_prev_btn=$('<a href="#isotope-grid" type="button" class="isotope-pagination-item isotope-pagination-item-prev"><img class="img-arrow left" src="/wp-content/uploads/2023/06/right-arrow.png"></a>');  
+                var $page_next_btn=$('<a href="#isotope-grid" type="button" class="isotope-pagination-item isotope-pagination-item-next"><img class="img-arrow right" src="/wp-content/uploads/2023/06/right-arrow.png"></a>');
+                $page_prev_btn.appendTo($isotopePager);
+                
+                var $pagerContainer = $('<div class="isotope-pagination-item numbers-of-page-container"></div>');
+                $pagerContainer.html('');
+
+                for( var i = 0; i < currentNumberPages; i++ ) {
+                    var $pager = $('<a href="#isotope-grid" class="nb-page-item pager" '+pageAttribute+'="'+(i+1)+'"></a>'); //  <a href ="javascript:void(0);"
+                        $pager.html(i+1);
+                        
+                        $pager.click(function(){
+                            var page = $(this).eq(0).attr(pageAttribute);
+                            $('.isotope-pagination-container a').removeClass("active");
+                            $(this).addClass("active");
+                            goToPage(page, currentFilter);
+                        });
+    
+                    $pager.appendTo($pagerContainer);
+                    $pagerContainer.appendTo($isotopePager);
+                    $isotopePager.find('a.pager:first').addClass('active');
+                } 
+
+                // Cacher la pagination lorsqu'1 seule page
+                if( (currentNumberPages == 1) || (currentNumberPages == "") ) {
+                    $page_prev_btn.hide();
+                    $pagerContainer.hide();
+                    $page_next_btn.hide();
+                }
+
+                $page_next_btn.appendTo($isotopePager)
+                $grid.after($isotopePager);
+    
+                $page_prev_btn.click(function(){
+                    if( currentPage > startPage) {
+                        $('.isotope-pagination-item-prev').removeAttr('disabled');
+                        var page=  currentPage - 1;
+                        var page=currentPage - 1 < startPage ? startPage : currentPage - 1;
+                        $('.isotope-pagination-container a').removeClass("active");
+                        $('.pager[data-page="'+page+'"]').addClass('active');
+                        goToPage(page, currentFilter);
+                    }
+                    else {
+                        $('.isotope-pagination-item-prev').attr('disabled','disabled');
+                    }
+    
+                });
+
+                $page_next_btn.click(function(){
+                    if( currentPage < currentNumberPages) {
+                        $('.isotope-pagination-item-next').removeAttr('disabled');
+                        var page=currentPage + 1 > currentNumberPages ? currentNumberPages : currentPage + 1;
+                        $('.isotope-pagination-container a').removeClass("active");
+                        $('.pager[data-page="'+page+'"]').addClass('active');
+                        goToPage(page, currentFilter);
+                    }
+                    else {
+                        $('.isotope-pagination-item-next').attr('disabled','disabled');
+                    }
+                });
+            }();
+        }
+
+        // Remove checks from all boxes and refilter
+        /* ------------------------------------------------------------------------ */
+        function clearAll(){
+           currentFilter = '*';
+           setPagination(currentFilter);
+           goToPage(1, currentFilter);
+        }
+ 
+        // Set pagination et go to page
+        /* ------------------------------------------------------------------------ */
+        if (isMobile.any()) {
+            var currentFilter = $('#filters-list').val();
+        } else {
+            var currentFilter = $('.filter-button-group button.active').attr(filterAttribute);
+        }
+        setPagination(currentFilter);
+        goToPage(1, currentFilter);
+     
+        // Change Filters tabs Event handler
+        /* ------------------------------------------------------------------------ */
+        $('.filter-button-group').on('click', 'button', function () {
+            $('.filter-button-group button.active').removeClass('active');
+            $(this).addClass('active');
             var filter = $(this).attr(filterAttribute);
             currentFilter = filter;
             setPagination(currentFilter);
