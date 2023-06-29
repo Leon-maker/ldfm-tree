@@ -92,6 +92,9 @@ footer  {
                 }
                 
             }
+            p{
+                opacity: 0.8;
+            }
 
             & .wrap-legal{
                 @media (min-width: $layout-breakpoint-start-noburger) {

@@ -486,6 +486,12 @@ footer .site-navigation .menu li a, footer .site-navigation .social-media-menu l
   font-family: "Montserrat-Medium";
 }
 
+.footer-navigation p, .footer-navigation a {
+  font-size: 12px !important;
+  line-height: 14px !important;
+  font-family: "Montserrat-Regular";
+}
+
 /**
  * --------------------------------------------------------------------------------------------------------------
  *                                                  DEDICATED VARIABLES 
@@ -560,7 +566,7 @@ footer .site-navigation .menu li a, footer .site-navigation .social-media-menu l
 }
 @media (min-width: 1024px) {
   .padding-top-header .text-center {
-    margin: 0 auto;
+    margin: 20vh auto;
     width: 60%;
   }
 }
@@ -1333,11 +1339,15 @@ a[href]:not(.std-link) {
 
 /** influence card **/
 .influence-card {
-  max-width: 440px;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
   position: relative;
+}
+@media (max-width: 1024px) {
+  .influence-card {
+    max-width: 440px;
+  }
 }
 .influence-card .influence-card-img {
   width: 100%;
@@ -1587,25 +1597,25 @@ header .wrap {
           justify-content: space-between;
   margin: auto;
 }
-@media all and (min-width: 1024px) {
+@media (max-width: 1300px) {
+  header .wrap.burger.menu-clicked .burger-header {
+    background-color: #ffffff;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+}
+@media (min-width: 1024px) {
   header .wrap {
     height: 100px;
   }
 }
-@media (max-width: 1024px) and (min-width: 768px) {
+@media (max-width: 768px) and (min-width: 768px) {
   header .wrap.burger .burger-header {
-    padding: 20px 60px;
+    padding: 20px 40px;
   }
 }
-@media (max-width: 1024px) and (max-width: 767px) {
+@media (max-width: 768px) and (max-width: 767px) {
   header .wrap.burger .burger-header {
     padding: 20px;
-  }
-}
-@media all and (max-width: 1024px) {
-  header .wrap.burger.menu-clicked .burger-header {
-    background-color: #ffffff;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   }
 }
 
@@ -1823,7 +1833,7 @@ header li.menu-item-has-children ul.sub-menu.panel li:last-child {
   border-bottom: 0;
 }
 header li.menu-item-has-children ul.sub-menu:not(.panel) {
-  padding: 17px 0 0 0;
+  padding: 0;
 }
 @media (min-width: 1300px) {
   header li.menu-item-has-children ul.sub-menu {
@@ -2366,6 +2376,9 @@ footer section .footer-navigation #menu-two > li ul > li > a {
   padding: 0px !important;
   opacity: 0.4;
   color: #000000;
+}
+footer section .footer-navigation p {
+  opacity: 0.8;
 }
 footer section .footer-navigation .wrap-legal {
   border-top: solid rgba(0, 0, 0, 0.1) 1px;
@@ -3036,7 +3049,7 @@ section.section-half .columns-wrapper .right-container {
 }
 
 .home .cta-swiper-first {
-  top: var(--swiper-navigation-top-offset, 40%);
+  top: var(--swiper-navigation-top-offset, 50vh);
 }
 @media (max-width: 1024px) {
   .home .realisation-section-container {

@@ -167,7 +167,9 @@
 /** influence card **/
 
 .influence-card{
-    max-width: 440px;
+    @media (max-width: $layout-breakpoint-end-tablette) {
+        max-width: 440px;
+    }
     height: fit-content;
     position: relative;
 

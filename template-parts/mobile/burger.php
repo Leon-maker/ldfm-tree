@@ -20,7 +20,7 @@ $header_id    = $args['header-id'];
         </div>
     </div>
 
-    <div class="burger-header" style="background-color: <?php //echo $header_color; ?>">
+    <div class="burger-header">
         <div class="logo">
             <div class="wrap">
                 <?php the_custom_logo(); ?>

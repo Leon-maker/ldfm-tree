@@ -516,3 +516,11 @@ footer {
   }
 
 }
+
+.footer-navigation {
+  p, a {
+    font-size: pixelsCalc(12) !important;
+    line-height: pixelsCalc(14) !important;
+    font-family: $font-main-400;
+  }
+}

@@ -25,7 +25,7 @@ function SHORTCODE_realisation_section($atts)
                 <p>Projets</p>
                 <div class="cpt-section-header-sub-content-container">
                     <h2><?php echo $titre; ?></h2>
-                    <a href="" class="cta-secondary">Voir nos réalisations</a>
+                    <a href="/nos-realisations" class="cta-secondary">Voir nos réalisations</a>
                 </div>
             </div>
             <div class="cpt-section-card-wrapper">

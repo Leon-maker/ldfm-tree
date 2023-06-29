@@ -196,7 +196,7 @@
 
 .home{
     .cta-swiper-first {
-        top: var(--swiper-navigation-top-offset,40%);
+        top: var(--swiper-navigation-top-offset, 50vh);
     }
     @media (max-width: $layout-breakpoint-end-tablette) {
         .realisation-section-container{

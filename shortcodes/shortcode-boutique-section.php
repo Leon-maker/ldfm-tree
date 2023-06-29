@@ -16,7 +16,7 @@ function SHORTCODE_Boutique_section()
                 <p>BOUTIQUE</p>
                 <div class="cpt-section-header-sub-content-container">
                     <h2>NOS PRODUITS</h2> 
-                    <a href="" class="cta-secondary">Parcourir la boutique</a>
+                    <a href="/boutique" class="cta-secondary">Parcourir la boutique</a>
                 </div>
                 
             </div>

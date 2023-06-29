@@ -16,7 +16,7 @@ function SHORTCODE_Influence_section()
                 <p>Inspirations</p>
                 <div class="cpt-section-header-sub-content-container">
                     <h2 class="uppercase">Nos influences</h2> 
-                    <a href="" class="cta-secondary">Toutes nos influences</a>
+                    <a href="/nos-influences" class="cta-secondary">Toutes nos influences</a>
                 </div>
                 
             </div>
