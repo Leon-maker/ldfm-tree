@@ -188,6 +188,7 @@ if ($last_segment === "boutique"){
     </div>
 </section>
 
+<?php echo do_shortcode('[shortcode-marque-section]'); ?>
 
 <?php echo do_shortcode('[shortcode-contact-section]'); ?>
 

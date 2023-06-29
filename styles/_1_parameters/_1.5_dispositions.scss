@@ -50,6 +50,9 @@ html {
 .capital{
   text-transform: capitalize;
 }
+.produit-card-img {
+  transition: opacity 0.3s ease-in-out;
+}
 
 .full-width {
   width: 100%;

@@ -764,6 +764,11 @@ html {
   text-transform: capitalize;
 }
 
+.produit-card-img {
+  -webkit-transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
+}
+
 .full-width {
   width: 100%;
   width: -moz-available; /* WebKit-based browsers will ignore this. */
@@ -3657,6 +3662,12 @@ section.section-half .columns-wrapper .right-container {
   visibility: visible;
 }
 
+.page-template-boutique .header-button {
+  margin-top: 190px;
+}
+.page-template-boutique .marque-section-container {
+  padding-bottom: 0;
+}
 .page-template-boutique .filter-container {
   position: relative;
 }
