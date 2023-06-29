@@ -940,6 +940,7 @@ jQuery(document).ready(function ($) {
 
         const checkboxes = document.querySelectorAll('.category-checkbox');
         const cards = document.querySelectorAll('.card-item');
+        const buttonTotal = document.querySelector('.totalProduct button span');
         var totalItems = cards.length;
 
         function applyFilters() {
@@ -962,7 +963,7 @@ jQuery(document).ready(function ($) {
 
             totalItems = filteredCards.length; // Mettre à jour le nombre total d'éléments après la filtration
             currentPage = 1; // Réinitialiser la page actuelle à la première page
-
+            buttonTotal.textContent = `(${totalItems})`;
             updatePagination(totalItems, itemsPerPage);
             showItems(currentPage);
         }

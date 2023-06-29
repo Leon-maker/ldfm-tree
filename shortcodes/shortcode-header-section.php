@@ -73,10 +73,10 @@ function SHORTCODE_SectionHeader($arguments)
                 <?php } ?>
                 <div class="header-button">
                     <?php if (!empty($button1)) { ?>
-                        <a class="cta-third" href=""><?php echo $button1; ?></a>
+                        <a class="cta-third" href="/boutique-indoor"><?php echo $button1; ?></a>
                     <?php } ?>
                     <?php if (!empty($button2)) { ?>
-                        <a class="cta-third" href=""><?php echo $button2; ?></a>
+                        <a class="cta-third" href="/boutique-outdoor"><?php echo $button2; ?></a>
                     <?php } ?>
                 </div>
             </div>

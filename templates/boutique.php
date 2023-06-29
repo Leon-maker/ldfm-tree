@@ -8,13 +8,10 @@ $path = trim($parsed_url['path'], '/');
 $segments = explode('/', $path);
 $last_segment = end($segments);
 $button1_page = "Catalogue indoor";
-$button2_page = "Catalogue indoor";
+$button2_page = "Catalogue outdoor";
 if ($last_segment === "boutique"){
     echo do_shortcode('[shortcode-header-section slug-section="' . $last_segment . '" button1="'. $button1_page .'" button2="'. $button2_page .'"]'); 
-}
-?>
 
-<?php
     $args = array(
         'post_type' => 'produit',
         'posts_per_page' => -1,
@@ -30,6 +27,57 @@ if ($last_segment === "boutique"){
             'parent' => 0, // Récupérer uniquement les catégories parentes        
         ));
     endif;
+}
+if ($last_segment === "boutique-indoor"){
+    echo do_shortcode('[shortcode-header-section slug-section="' . $last_segment . '" button2="'. $button2_page .'"]'); 
+
+    $args = array(
+        'post_type' => 'produit',
+        'posts_per_page' => -1,
+        'tax_query' => array(
+            array(
+                'taxonomy' => 'category',
+                'field' => 'slug',
+                'terms' => 'produits-interieur',
+                'include_children' => false, // Ne pas inclure les produits des sous-catégories
+            ),
+        ),
+    );
+    $query = new WP_Query($args);
+    if ($query->have_posts()) :
+        // Récupérer toutes les catégories d'influences
+        $categories = get_terms(array(
+            'taxonomy' => 'category',
+            'hide_empty' => false,
+            'parent' => 0, // Récupérer uniquement les catégories parentes        
+        ));
+    endif;
+}
+if ($last_segment === "boutique-outdoor"){
+    echo do_shortcode('[shortcode-header-section slug-section="' . $last_segment . '" button1="'. $button1_page .'"]'); 
+
+    $args = array(
+        'post_type' => 'produit',
+        'posts_per_page' => -1,
+        'tax_query' => array(
+            array(
+                'taxonomy' => 'category',
+                'field' => 'slug',
+                'terms' => 'produits-exterieur',
+                'include_children' => false, // Ne pas inclure les produits des sous-catégories
+            ),
+        ),
+    );
+    $query = new WP_Query($args);
+    if ($query->have_posts()) :
+        // Récupérer toutes les catégories d'influences
+        $categories = get_terms(array(
+            'taxonomy' => 'category',
+            'hide_empty' => false,
+            'parent' => 0, // Récupérer uniquement les catégories parentes        
+        ));
+    endif;
+}
 ?>
 <div class="filter-container">
     <div class="bkg-opacity">
@@ -99,8 +147,9 @@ if ($last_segment === "boutique"){
                 </div>
             </div>
             <div class="totalProduct">
-                <button>
-                    Voir les resultats
+                <button onclick=hideOverlay()>
+                    <?php $count = $query->found_posts; ?>
+                    Voir les resultats <span class="resultat">(<?php echo $count ?>)</span>
                 </button>
             </div>
         </div>
@@ -174,7 +223,9 @@ if ($last_segment === "boutique"){
                 </div>
                 <?php
             }                                                     
-        }?>
+        } else {?>
+            <h2>Aucun produit trouvé.</h2>
+        <?php } ?>
     </div>
     <div class="isotope-pagination-container">
         <a href="#isotope-grid" type="button" class="isotope-pagination-item isotope-pagination-item-prev disabled">
@@ -275,4 +326,39 @@ function toggleCategory(parentId, childClass) {
         toggleIcon.classList.replace('fa-plus', 'fa-minus');
     }
 }
+
 </script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var produitCardImages = document.querySelectorAll('.produit-card-img.produit-card-hover');
+
+        produitCardImages.forEach(function(img) {
+            var hoverImage = img.dataset.hoverImage;
+            var originalImage = img.getAttribute('src');
+
+            if (hoverImage) {
+                img.addEventListener('mouseenter', function() {
+                    img.style.opacity = 0; // Réduire l'opacité à 0
+
+                    // Attendre un court délai pour permettre la transition
+                    setTimeout(function() {
+                        img.src = hoverImage;
+                        img.style.opacity = 1; // Rétablir l'opacité à 1
+                    }, 200);
+                });
+
+                img.addEventListener('mouseleave', function() {
+                    img.style.opacity = 0; // Réduire l'opacité à 0
+
+                    // Attendre un court délai pour permettre la transition
+                    setTimeout(function() {
+                        img.src = originalImage;
+                        img.style.opacity = 1; // Rétablir l'opacité à 1
+                    }, 200);
+                });
+            }
+        });
+    });
+</script>
+

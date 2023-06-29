@@ -16,7 +16,13 @@
             background-color: rgba($color: $color-black, $alpha: 0.36);
             .tab-filters{
                 background-color: white;
-                width: 550px;
+                @media (min-width: $layout-breakpoint-end-tablette) {
+                    width: 550px;
+                }
+                @media (max-width: $layout-breakpoint-end-tablette) {
+                    max-width: 440px;
+                    margin: auto;
+                }
                 margin-left: auto;
                 .header-filtre{
                     padding: 60px 60px 50px 60px;
@@ -92,13 +98,26 @@
     .boutique-container{
         padding-top: 0;
         .link-category-button{
-            padding: 50px 0 40px 0;
+            @media (max-width: $layout-breakpoint-end-tablette) {
+                padding: 40px 0;
+                margin: auto;
+                .others-filters{
+                    display: none;
+                }
+                .all-filters{
+                    margin: auto;
+                }
+            }
+            @media (min-width: $layout-breakpoint-end-tablette) {
+                padding: 50px 0 40px 0;
+            }
             display: inline-flex;
             justify-content: space-between;
             width: 100%;
             a{
                 padding: 16px 23px;
                 margin-right: 15px;
+                cursor: pointer;
                 border-radius: 25px;
                 background-color: rgba(0,0,0,0.1);
                 font-size: 14px;
@@ -110,10 +129,16 @@
             }
         }
         .product-list{
-            display: grid;
-            grid-template-columns: repeat(2,1fr);
-            column-gap: 22px;
-            row-gap: 75px;
+            @media (min-width: $layout-breakpoint-end-tablette) {
+                display: grid;
+                grid-template-columns: repeat(2,1fr);
+                column-gap: 22px;
+                row-gap: 75px;
+            }
+            @media (max-width: $layout-breakpoint-end-tablette) {
+                max-width: 440px;
+                margin: auto;
+            }
             .card-item{
                 position: relative !important;
             }

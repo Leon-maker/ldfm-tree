@@ -62,7 +62,7 @@ function SHORTCODE_HomeSection()
                     <div class="swiper-button-next cta-swiper-first"></div>
                 </div>
                 <div class="mouse-div">
-                    <a class="cta-mouse white" href="">
+                    <a class="cta-mouse white">
                         <span class="arrow">
                         </span>
                     </a>
