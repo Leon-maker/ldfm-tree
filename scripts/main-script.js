@@ -904,6 +904,11 @@ jQuery(document).ready(function ($) {
 jQuery(document).ready(function ($) {
     if ($('body.page-template-boutique').length) {
 
+        function scrollToTop() {
+            window.scrollTo({ top: 500, behavior: 'smooth' });
+        }
+
+
         function updatePagination(totalItems, itemsPerPage) {
             const paginationContainer = document.querySelector('.isotope-pagination-container');
             const totalPages = Math.ceil(totalItems / itemsPerPage); // Calculer le nombre total de pages
@@ -961,7 +966,6 @@ jQuery(document).ready(function ($) {
             updatePagination(totalItems, itemsPerPage);
             showItems(currentPage);
         }
-
         function showItems(page) {
             const startIndex = (page - 1) * itemsPerPage; // Index de départ des éléments à afficher
             const endIndex = page * itemsPerPage; // Index de fin des éléments à afficher
@@ -1006,9 +1010,7 @@ jQuery(document).ready(function ($) {
             } else {
                 prevButton.classList.remove('disabled');
                 nextButton.classList.remove('disabled');
-            }
-            const categoriesSection = document.getElementById('categories-section');
-            window.scrollTo({ top: categoriesSection.offsetTop, behavior: 'smooth' });          
+            }         
         }
         applyFilters(); // Appliquer les filtres lors du chargement de la page
         updatePagination(totalItems, itemsPerPage);
@@ -1023,6 +1025,7 @@ jQuery(document).ready(function ($) {
             const page = parseInt($(this).data('page'));
             currentPage = page;
             showItems(currentPage);
+            scrollToTop();
         });
 
         $('.isotope-pagination-item-prev').on('click', function (e) {
@@ -1030,6 +1033,7 @@ jQuery(document).ready(function ($) {
             if (currentPage > 1) {
                 currentPage--;
                 showItems(currentPage);
+                scrollToTop();
             }
         });
 
@@ -1039,6 +1043,7 @@ jQuery(document).ready(function ($) {
             if (currentPage < totalPages) {
                 currentPage++;
                 showItems(currentPage);
+                scrollToTop();
             }
         });
     }

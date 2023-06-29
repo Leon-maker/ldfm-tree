@@ -3661,6 +3661,7 @@ section.section-half .columns-wrapper .right-container {
   position: relative;
 }
 .page-template-boutique .filter-container .bkg-opacity {
+  display: none;
   position: absolute;
   top: 0;
   width: 100%;
@@ -3683,33 +3684,90 @@ section.section-half .columns-wrapper .right-container {
 }
 .page-template-boutique .filter-container .bkg-opacity .tab-filters .header-filtre i {
   margin: auto 0;
+  cursor: pointer;
 }
-.page-template-boutique .filter-container .bkg-opacity .tab-filters .tri_afficher-container {
-  padding: 0 60px 0 60px;
+.page-template-boutique .filter-container .bkg-opacity .tab-filters .bkg-bottom-opacity {
+  position: relative;
 }
-.page-template-boutique .filter-container .bkg-opacity .tab-filters .tri_afficher-container .category-div {
+.page-template-boutique .filter-container .bkg-opacity .tab-filters .bkg-bottom-opacity::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.1)), to(rgba(255, 255, 255, 0)));
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.1), rgba(255, 255, 255, 0));
+  z-index: 0;
+  pointer-events: none;
+}
+.page-template-boutique .filter-container .bkg-opacity .tab-filters .bkg-bottom-opacity .tri_afficher-container {
+  margin: 0 60px 0 60px;
+  max-height: 500px;
+  overflow: scroll;
+  position: relative;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+.page-template-boutique .filter-container .bkg-opacity .tab-filters .bkg-bottom-opacity .tri_afficher-container .category-div {
   display: -ms-grid;
   display: grid;
   position: relative;
 }
-.page-template-boutique .filter-container .bkg-opacity .tab-filters .tri_afficher-container .category-div .parent {
+.page-template-boutique .filter-container .bkg-opacity .tab-filters .bkg-bottom-opacity .tri_afficher-container .category-div .parent {
+  cursor: pointer;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   padding-bottom: 24px;
   margin-bottom: 24px;
 }
-.page-template-boutique .filter-container .bkg-opacity .tab-filters .tri_afficher-container .category-div .parent i {
+.page-template-boutique .filter-container .bkg-opacity .tab-filters .bkg-bottom-opacity .tri_afficher-container .category-div .parent i {
   position: absolute;
   right: 0;
+  margin-top: 3px;
   font-size: 12px;
 }
-.page-template-boutique .filter-container .bkg-opacity .tab-filters .tri_afficher-container .category-div .child {
+.page-template-boutique .filter-container .bkg-opacity .tab-filters .bkg-bottom-opacity .tri_afficher-container .category-div .child {
+  display: none;
   padding-bottom: 15px;
 }
-.page-template-boutique .filter-container .bkg-opacity .tab-filters .tri_afficher-container .category-div .child span {
+.page-template-boutique .filter-container .bkg-opacity .tab-filters .bkg-bottom-opacity .tri_afficher-container .category-div .child span {
   margin-left: 10px;
 }
-.page-template-boutique .filter-container .bkg-opacity .tab-filters .tri_afficher-container .category-div .child:last-child {
+.page-template-boutique .filter-container .bkg-opacity .tab-filters .bkg-bottom-opacity .tri_afficher-container .category-div .child:last-child {
   padding-bottom: 30px;
+}
+.page-template-boutique .filter-container .bkg-opacity .tab-filters .totalProduct {
+  padding: 27px 60px;
+}
+.page-template-boutique .filter-container .bkg-opacity .tab-filters .totalProduct button {
+  padding: 15px 0;
+  border: 1px solid;
+  background-color: transparent;
+  width: 100%;
+  border-radius: 25px;
+}
+.page-template-boutique .boutique-container {
+  padding-top: 0;
+}
+.page-template-boutique .boutique-container .link-category-button {
+  padding: 50px 0 40px 0;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+}
+.page-template-boutique .boutique-container .link-category-button a {
+  padding: 16px 23px;
+  margin-right: 15px;
+  border-radius: 25px;
+  background-color: rgba(0, 0, 0, 0.1);
+  font-size: 14px;
+}
+.page-template-boutique .boutique-container .link-category-button .all-filters a {
+  margin: 0;
 }
 .page-template-boutique .boutique-container .product-list {
   display: -ms-grid;
