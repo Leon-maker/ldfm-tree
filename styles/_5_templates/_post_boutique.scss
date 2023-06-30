@@ -14,6 +14,7 @@
             width: 100%;
             z-index: 2;
             background-color: rgba($color: $color-black, $alpha: 0.36);
+            transition: opacity 0.3s ease-in-out;
             .tab-filters{
                 background-color: white;
                 @media (min-width: $layout-breakpoint-end-tablette) {
@@ -92,6 +93,10 @@
                         border-radius: 25px;
                     }
                 }
+            }
+            &.show {
+                display: block;
+                opacity: 1;
             }
         }
     }

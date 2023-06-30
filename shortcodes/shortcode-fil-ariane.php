@@ -50,6 +50,19 @@ function SHORTCODE_fil_ariane($args)
             </ul>
         </nav>
     </div>
+    <script>
+    // Sélectionner le dernier élément <li> dans la liste du fil d'Ariane
+    var filArianeList = document.querySelectorAll('.fil-ariane-container li');
+    var lastListItem = filArianeList[filArianeList.length - 1];
+
+    // Récupérer l'élément <a> à l'intérieur du dernier <li>
+    var lastLink = lastListItem.querySelector('a');
+
+    // Récupérer l'URL et le texte du lien
+    var linkUrl = lastLink.href;
+    lastLink.innerText = "<?= html_entity_decode(get_the_title()) ?>";
+
+    </script>
     <?php
     return ob_get_clean();
 }

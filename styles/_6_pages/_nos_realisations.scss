@@ -40,6 +40,7 @@
                 position: relative; /* Positionnement relatif pour li */
                 padding-left: 25px; /* Espacement entre le marqueur et le contenu, ajustez si nécessaire */
                 border-bottom: 1px solid rgba($color: $color-black, $alpha: 0.1);
+                color: $color-black;
                 &:first-child{
                     border-top: 1px solid rgba($color: $color-black, $alpha: 0.1);
                 }
@@ -60,7 +61,6 @@
                 &::marker{
                     font-size: 10px;
                 }
-                opacity: 0.7;
                 &:first-child{
                     margin-top: 25px;
                 }

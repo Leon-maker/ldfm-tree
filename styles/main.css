@@ -768,6 +768,16 @@ html {
   opacity: 1;
 }
 
+.transition-fade {
+  opacity: 0;
+  -webkit-transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.transition-fade.show {
+  opacity: 1;
+}
+
 .uppercase {
   text-transform: uppercase;
 }
@@ -777,8 +787,8 @@ html {
 }
 
 .produit-card-img {
-  -webkit-transition: opacity 0.3s ease-in-out;
-  transition: opacity 0.3s ease-in-out;
+  -webkit-transition: opacity 3s ease-in-out;
+  transition: opacity 3s ease-in-out;
 }
 
 .full-width {
@@ -3579,6 +3589,7 @@ section.section-half .columns-wrapper .right-container {
           justify-content: flex-start;
   opacity: 0.7;
 }
+
 .single-produit .detail-realisation-slider {
   padding-bottom: 0;
 }
@@ -3734,6 +3745,8 @@ section.section-half .columns-wrapper .right-container {
   width: 100%;
   z-index: 2;
   background-color: rgba(0, 0, 0, 0.36);
+  -webkit-transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
 }
 .page-template-boutique .filter-container .bkg-opacity .tab-filters {
   background-color: white;
@@ -3822,6 +3835,10 @@ section.section-half .columns-wrapper .right-container {
   background-color: transparent;
   width: 100%;
   border-radius: 25px;
+}
+.page-template-boutique .filter-container .bkg-opacity.show {
+  display: block;
+  opacity: 1;
 }
 .page-template-boutique .boutique-container {
   padding-top: 0;
@@ -4043,6 +4060,7 @@ section.section-half .columns-wrapper .right-container {
   position: relative; /* Positionnement relatif pour li */
   padding-left: 25px; /* Espacement entre le marqueur et le contenu, ajustez si nécessaire */
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  color: #000000;
 }
 .page-template-prestations .section-archive-all-realisations ol li:first-child {
   border-top: 1px solid rgba(0, 0, 0, 0.1);
@@ -4059,7 +4077,6 @@ section.section-half .columns-wrapper .right-container {
   margin: 0;
 }
 .page-template-prestations .section-archive-all-realisations ul li {
-  opacity: 0.7;
   margin-bottom: 20px;
   padding-left: 10px;
   text-indent: -10px;
@@ -4216,6 +4233,7 @@ section.section-half .columns-wrapper .right-container {
   }
   .page-template-agence .equipe-section-container {
     padding-bottom: 0px;
+    padding-top: 0px;
   }
   .page-template-agence .equipe-section-container a {
     position: absolute;
@@ -4237,6 +4255,7 @@ section.section-half .columns-wrapper .right-container {
   }
   .page-template-agence .equipe-section-container .cpt-section-card-wrapper .equipe-card-content-container .equipe-card-paragraphe {
     margin-bottom: 60px;
+    color: rgba(0, 0, 0, 0.7);
   }
   .page-template-agence .equipe-section-container .cpt-section-card-wrapper .equipe-card:last-child .equipe-card-paragraphe {
     margin-bottom: 0;

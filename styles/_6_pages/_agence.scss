@@ -127,6 +127,7 @@
         }
         .equipe-section-container{
             padding-bottom: 0px;
+            padding-top: 0px;
             a {
                 position: absolute;
             }
@@ -147,6 +148,7 @@
                     }
                     .equipe-card-paragraphe{
                         margin-bottom: 60px;
+                        color: rgba($color: $color-black, $alpha: 0.7);
                     }
                 }
                 .equipe-card:last-child{

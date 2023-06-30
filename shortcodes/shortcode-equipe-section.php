@@ -18,7 +18,7 @@ function SHORTCODE_Equipe_section()
                 <p>PROFILS</p>
                 <div class="cpt-section-header-sub-content-container">
                     <h2>Notre équipe</h2> 
-                    <a href="" class="cta-secondary">Rejoindre l'équipe</a>
+                    <a href="/contact" class="cta-secondary">Rejoindre l'équipe</a>
                 </div>
                 
             </div>

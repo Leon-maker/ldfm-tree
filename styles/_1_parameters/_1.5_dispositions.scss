@@ -44,6 +44,14 @@ html {
 .card-visible {
   opacity: 1;
 }
+.transition-fade {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.transition-fade.show {
+  opacity: 1;
+}
 .uppercase {
   text-transform: uppercase;
 }
@@ -51,7 +59,7 @@ html {
   text-transform: capitalize;
 }
 .produit-card-img {
-  transition: opacity 0.3s ease-in-out;
+  transition: opacity 3s ease-in-out;
 }
 
 .full-width {
