@@ -524,3 +524,8 @@ footer {
     font-family: $font-main-400;
   }
 }
+.header-button, .category-button{
+  font-size: pixelsCalc(14);
+  line-height: pixelsCalc(17);
+  font-family: $font-main-500;
+}

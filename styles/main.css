@@ -492,6 +492,12 @@ footer .site-navigation .menu li a, footer .site-navigation .social-media-menu l
   font-family: "Montserrat-Regular";
 }
 
+.header-button, .category-button {
+  font-size: 14px;
+  line-height: 17px;
+  font-family: "Montserrat-Medium";
+}
+
 /**
  * --------------------------------------------------------------------------------------------------------------
  *                                                  DEDICATED VARIABLES 
@@ -566,7 +572,7 @@ footer .site-navigation .menu li a, footer .site-navigation .social-media-menu l
 }
 @media (min-width: 1024px) {
   .padding-top-header .text-center {
-    margin: 20vh auto;
+    margin: 20vh auto 0 auto;
     width: 60%;
   }
 }
@@ -2990,6 +2996,24 @@ section.section-half .columns-wrapper .right-container {
     -webkit-box-pack: unset !important;
         -ms-flex-pack: unset !important;
             justify-content: unset !important;
+    -ms-grid-columns: 1fr 20px 1fr;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .boutique-section-container .cpt-section-card-wrapper > *:nth-child(1) {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+  }
+  .boutique-section-container .cpt-section-card-wrapper > *:nth-child(2) {
+    -ms-grid-row: 1;
+    -ms-grid-column: 3;
+  }
+  .boutique-section-container .cpt-section-card-wrapper > *:nth-child(3) {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+  }
+  .boutique-section-container .cpt-section-card-wrapper > *:nth-child(4) {
+    -ms-grid-row: 3;
+    -ms-grid-column: 3;
   }
   .boutique-section-container .cpt-section-card-wrapper > *:nth-child(1) {
     -ms-grid-row: 1;

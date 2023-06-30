@@ -12,8 +12,10 @@ function SHORTCODE_descriptionContact($atts)
     ), $atts);
 
     ob_start();
+    $attsId = strtolower($atts['title']);
+    $attsId = iconv('UTF-8', 'ASCII//TRANSLIT', $attsId);
     ?>
-    <div class="realisation-card card-mobile-<?= $atts["alternate"]==="1" ? "1" : "0" ?>">
+    <div  id="<?= $attsId; ?>" class="realisation-card card-mobile-<?= $atts["alternate"]==="1" ? "1" : "0" ?>">
     <?php if($atts["alternate"]!==null && $atts["alternate"]==="1"){ ?>
             <img class="realisation-card-img" src="<?= $atts['image_id'];  ?>" alt="Image d'illustration contact"/>
             <div class="realisation-card-content-container">

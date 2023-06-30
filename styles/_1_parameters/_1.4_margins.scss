@@ -129,7 +129,7 @@ $lateral-padding-width-mobile: 50px;
   }
   .text-center{
     @media (min-width: $layout-breakpoint-end-tablette) {
-      margin: 20vh auto;
+      margin: 20vh auto 0 auto;
       width: 60%;
     }
     @media (max-width: $layout-breakpoint-end-tablette) {

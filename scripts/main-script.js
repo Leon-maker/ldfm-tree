@@ -908,7 +908,6 @@ jQuery(document).ready(function ($) {
             window.scrollTo({ top: 500, behavior: 'smooth' });
         }
 
-
         function updatePagination(totalItems, itemsPerPage) {
             const paginationContainer = document.querySelector('.isotope-pagination-container');
             const totalPages = Math.ceil(totalItems / itemsPerPage); // Calculer le nombre total de pages
@@ -1048,6 +1047,42 @@ jQuery(document).ready(function ($) {
             }
         });
     }
+
+    /**
+     * --------------------------------------------------------------------------------------------------------------
+     *                                                  Change Hover Image
+     * --------------------------------------------------------------------------------------------------------------
+     */
+    /**/
+
+    var produitCardImages = document.querySelectorAll('.produit-card-img.produit-card-hover');
+    console.log("hey")
+    produitCardImages.forEach(function(img) {
+        var hoverImage = img.dataset.hoverImage;
+        var originalImage = img.getAttribute('src');
+
+        if (hoverImage) {
+            img.addEventListener('mouseenter', function() {
+                img.style.opacity = 0; // Réduire l'opacité à 0
+
+                // Attendre un court délai pour permettre la transition
+                setTimeout(function() {
+                    img.src = hoverImage;
+                    img.style.opacity = 1; // Rétablir l'opacité à 1
+                }, 200);
+            });
+
+            img.addEventListener('mouseleave', function() {
+                img.style.opacity = 0; // Réduire l'opacité à 0
+
+                // Attendre un court délai pour permettre la transition
+                setTimeout(function() {
+                    img.src = originalImage;
+                    img.style.opacity = 1; // Rétablir l'opacité à 1
+                }, 200);
+            });
+        }
+    });
 });
 
 

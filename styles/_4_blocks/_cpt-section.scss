@@ -132,6 +132,7 @@
             grid-template-columns: auto auto; /* Deux colonnes de largeur automatique */
             gap: 80px 20px; /* Espacement entre les éléments de la grille */
             justify-content: unset !important;
+            grid-template-columns: repeat(2, 1fr);
         }
    }
   

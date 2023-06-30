@@ -116,7 +116,7 @@ $categories_json = json_encode($influence_categories);
           var aElementExtra = document.createElement('a');
           aElementExtra.setAttribute('href', '#');
           aElementExtra.setAttribute('class', 'default-link-hover');
-          aElementExtra.textContent = 'Voir plus';
+          aElementExtra.textContent = 'Voir tout';
           liElementExtra.appendChild(aElementExtra);
           ulElement.appendChild(liElementExtra);
           break;
@@ -137,6 +137,10 @@ $categories_json = json_encode($influence_categories);
           
           if (title === 'Réalisations') {
             aElement.setAttribute('href', realisations_links[i]); // Utiliser le lien de réalisation correspondant à l'index i
+          }
+          if (title === 'Prestations') {
+            console.log(element);
+            aElement.setAttribute('href', elementHref + '/#'+element['post_name']); // Utiliser le lien de réalisation correspondant à l'index i
           }
         }
         liElement.appendChild(aElement);
