@@ -68,7 +68,6 @@
 /** Marque Card **/
 
 .marque-card{
-    max-width: 440px;
     position: relative;
     transition: background-color .4s ease-in-out;
     @media (min-width: $layout-breakpoint-end-tablette) {
@@ -129,9 +128,16 @@
     }
 
     @media (max-width: $layout-breakpoint-end-tablette) {
+        max-width: 440px;
+        margin: auto;
+        margin-bottom: 60px;
+        &:last-child{
+            margin-bottom: 0;
+        }
         & .marque-card-container-paragraphe{
             & .marque-card-paragraphe{
                 margin-top: 30px;
+                color: rgba($color: $color-black, $alpha: 0.7);
             }
         }
         & .marque-card-img{

@@ -133,7 +133,8 @@ $lateral-padding-width-mobile: 50px;
       width: 60%;
     }
     @media (max-width: $layout-breakpoint-end-tablette) {
-      margin: 0 $lateral-margin-width-mobile;
+      margin: 0 auto;
+      width: 80%;
     }
     h1{
       margin-bottom: 0px;
@@ -239,13 +240,8 @@ $lateral-padding-width-mobile: 50px;
 }
 .section-archive-all-marque{
   @media (min-width: $layout-breakpoint-start-desktop) {
-    padding-top: 100px;
-  }
-  & .marque-card{
-    margin: 40px 20px;
-    @media (max-width: $layout-breakpoint-start-desktop) {
-      margin: 30px auto;
-    }
+    padding-top: 150px;
+    padding-bottom: 150px;
   }
 }
 .prduit-card-content {

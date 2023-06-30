@@ -23,16 +23,9 @@
     }
     .influence-section-container{
         & .cpt-section-card-wrapper {
-            .influence{
-                .influence-card{
-                    margin-right: 20px;
-                }
-                &:last-child{
-                    .influence-card{
-                        margin-right: 0;
-                    }
-                }
-            }
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            column-gap: 20px;
         }
     }
     .realisation-section-container{

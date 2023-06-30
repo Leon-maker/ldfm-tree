@@ -117,6 +117,7 @@ $categories_json = json_encode($influence_categories);
           aElementExtra.setAttribute('href', '#');
           aElementExtra.setAttribute('class', 'default-link-hover');
           aElementExtra.textContent = 'Voir tout';
+          aElementExtra.setAttribute('href', elementHref);
           liElementExtra.appendChild(aElementExtra);
           ulElement.appendChild(liElementExtra);
           break;
