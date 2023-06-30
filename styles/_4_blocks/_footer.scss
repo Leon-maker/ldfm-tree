@@ -58,6 +58,23 @@ footer  {
                 padding:0px;
                 flex-direction: column;
             }
+            .wrap{
+                & #menu-two>li{
+                    & >a {
+                        text-decoration: none;
+                        padding-bottom: 4px;
+                        background-image: linear-gradient(black, black),
+                            linear-gradient(black, black);
+                        background-size: 0% 0px, 0% 1px;
+                        background-position: 0 0, 0% 100%;
+                        background-repeat: no-repeat;
+                        transition: background-size 0.2s linear; 
+                        &:hover{
+                            background-size: 0 2px, 100% 1px;
+                        }
+                    }
+                }
+            }
             & #menu-two{
                 justify-content: space-between;
             }
@@ -72,9 +89,10 @@ footer  {
                     margin-bottom: 50px;
                 }
                 & >a{
-                    padding:0px !important;
+                    padding:0px;
                     opacity: 0.8;
                     color :$color-black;
+                    width: fit-content;
                     margin-bottom:29px;
                     @media all and (max-width: $layout-breakpoint-start-noburger) {
                         margin-bottom: 15px;
@@ -87,7 +105,8 @@ footer  {
                     & >a{
                         padding:0px !important;
                         opacity: 0.4;
-                       color : $color-black;
+                        color : $color-black;
+                        cursor: pointer;
                     }
                 }
                 

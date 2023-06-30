@@ -1833,7 +1833,7 @@ header li.menu-item-has-children ul.sub-menu.panel li:last-child {
   border-bottom: 0;
 }
 header li.menu-item-has-children ul.sub-menu:not(.panel) {
-  padding: 0;
+  padding: 17px 0 0 0;
 }
 @media (min-width: 1300px) {
   header li.menu-item-has-children ul.sub-menu {
@@ -2329,6 +2329,20 @@ footer section .footer-navigation .sub-menu {
       -ms-flex-direction: column;
           flex-direction: column;
 }
+footer section .footer-navigation .wrap #menu-two > li > a {
+  text-decoration: none;
+  padding-bottom: 4px;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(black), to(black)), -webkit-gradient(linear, left top, left bottom, from(black), to(black));
+  background-image: linear-gradient(black, black), linear-gradient(black, black);
+  background-size: 0% 0px, 0% 1px;
+  background-position: 0 0, 0% 100%;
+  background-repeat: no-repeat;
+  -webkit-transition: background-size 0.2s linear;
+  transition: background-size 0.2s linear;
+}
+footer section .footer-navigation .wrap #menu-two > li > a:hover {
+  background-size: 0 2px, 100% 1px;
+}
 footer section .footer-navigation #menu-two {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
@@ -2357,9 +2371,12 @@ footer section .footer-navigation #menu-two > li {
   }
 }
 footer section .footer-navigation #menu-two > li > a {
-  padding: 0px !important;
+  padding: 0px;
   opacity: 0.8;
   color: #000000;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   margin-bottom: 29px;
 }
 @media all and (max-width: 1300px) {
@@ -2376,6 +2393,7 @@ footer section .footer-navigation #menu-two > li ul > li > a {
   padding: 0px !important;
   opacity: 0.4;
   color: #000000;
+  cursor: pointer;
 }
 footer section .footer-navigation p {
   opacity: 0.8;

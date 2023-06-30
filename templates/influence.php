@@ -121,8 +121,23 @@ document.addEventListener('DOMContentLoaded', function() {
       window.location.href = '#id-filters';
     });
   });
-});
 
+    var urlParams = new URLSearchParams(window.location.search);
+    var filter = urlParams.get('filter');
+    console.log(filter);
+    if (filter) {
+        // Trouver le bouton de filtre correspondant
+        var filterButton = document.querySelector('.filters-select[data-filter=".' + filter + '"]');
+
+        if (filterButton) {
+        // Simuler le clic sur le bouton de filtre
+            setTimeout(function() {
+                filterButton.click();
+
+            }, 200);
+        }
+    }
+});
 
 
 </script>
