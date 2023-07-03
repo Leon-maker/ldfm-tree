@@ -73,9 +73,9 @@
                                 display: none;
                                 padding-bottom: 15px;
                                 cursor: pointer;
-                                @extend %checkbox-black;
+                                @extend %checkbox-black-span;
                                 &.active, &:hover{
-                                    @extend %checkbox-black-white;
+                                    @extend %checkbox-black-white-span;
                                 }
                                 span{
                                     margin-left: 10px;

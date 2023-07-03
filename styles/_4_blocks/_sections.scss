@@ -156,13 +156,11 @@ section {
           display: none;
         }
         .ginput_container_consent{
-          cursor: pointer;
           @extend %checkbox-black;
           &.active, &:hover{
             @extend %checkbox-black-white;
           }
           label{
-            padding-left: 20px;
             position: relative;
           }
           .gfield_required_asterisk{
