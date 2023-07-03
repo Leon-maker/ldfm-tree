@@ -156,6 +156,7 @@ section {
           display: none;
         }
         .ginput_container_consent{
+          cursor: pointer;
           @extend %checkbox-black;
           &.active, &:hover{
             @extend %checkbox-black-white;
@@ -212,6 +213,7 @@ section {
         display: none;
       }
       .gform_footer {
+        cursor: pointer;
         width: fit-content;
         bottom: 50px;
         position: relative;

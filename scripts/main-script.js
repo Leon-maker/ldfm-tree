@@ -530,6 +530,22 @@ for (i = 0; i < acc.length; i++) {
 jQuery(document).ready(function ($) {
     if($('body.page-template-influence').length) {
 
+        function scrollToTop() {
+            var targetElement = document.getElementById('id-filters');
+
+            // Définir les options de défilement
+            var scrollOptions = {
+                behavior: 'smooth', // Défilement en douceur
+                block: 'start' // Défilement vers le début de l'élément
+            };
+
+            setTimeout(function() {
+                // Défiler vers l'élément cible avec animation
+                targetElement.scrollIntoView(scrollOptions);
+
+            }, 200);
+        }
+
         var itemSelector = '.blog-item'; 
 
         var $grid = $('.blog-isotope').isotope({
@@ -684,6 +700,7 @@ jQuery(document).ready(function ($) {
                         $pager.html(i+1);
                         
                         $pager.click(function(){
+                            scrollToTop();
                             var page = $(this).eq(0).attr(pageAttribute);
                             $('.isotope-pagination-container a').removeClass("active");
                             $(this).addClass("active");
@@ -706,6 +723,7 @@ jQuery(document).ready(function ($) {
                 $grid.after($isotopePager);
     
                 $page_prev_btn.click(function(){
+                    scrollToTop();
                     if( currentPage > startPage) {
                         $('.isotope-pagination-item-prev').removeAttr('disabled');
                         var page=  currentPage - 1;
@@ -721,6 +739,7 @@ jQuery(document).ready(function ($) {
                 });
 
                 $page_next_btn.click(function(){
+                    scrollToTop();
                     if( currentPage < currentNumberPages) {
                         $('.isotope-pagination-item-next').removeAttr('disabled');
                         var page=currentPage + 1 > currentNumberPages ? currentNumberPages : currentPage + 1;

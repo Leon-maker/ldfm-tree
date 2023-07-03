@@ -35,10 +35,17 @@ if ($last_segment === "boutique-indoor"){
         'post_type' => 'produit',
         'posts_per_page' => -1,
         'tax_query' => array(
+            'relation' => 'OR',
             array(
                 'taxonomy' => 'category',
                 'field' => 'slug',
                 'terms' => 'produits-interieur',
+                'include_children' => false, // Ne pas inclure les produits des sous-catégories
+            ),
+            array(
+                'taxonomy' => 'category',
+                'field' => 'slug',
+                'terms' => 'toutes_gammes',
                 'include_children' => false, // Ne pas inclure les produits des sous-catégories
             ),
         ),
@@ -60,10 +67,17 @@ if ($last_segment === "boutique-outdoor"){
         'post_type' => 'produit',
         'posts_per_page' => -1,
         'tax_query' => array(
+            'relation' => 'OR',
             array(
                 'taxonomy' => 'category',
                 'field' => 'slug',
                 'terms' => 'produits-exterieur',
+                'include_children' => false, // Ne pas inclure les produits des sous-catégories
+            ),
+            array(
+                'taxonomy' => 'category',
+                'field' => 'slug',
+                'terms' => 'toutes_gammes',
                 'include_children' => false, // Ne pas inclure les produits des sous-catégories
             ),
         ),
@@ -330,3 +344,30 @@ function toggleCategory(parentId, childClass) {
 </script>
 
 
+<script>
+// Fonction pour cocher ou décocher la case à cocher
+function toggleCheckbox() {
+  var checkbox = this.querySelector('input[type=checkbox]');
+
+  if (checkbox) {
+    checkbox.checked = !checkbox.checked;
+
+    if (checkbox.checked) {
+      this.classList.add('active');
+    } else {
+      this.classList.remove('active');
+    }
+  }
+}
+
+// Sélectionner tous les éléments avec la classe category-label.child
+var elements = document.querySelectorAll('.category-label.child');
+
+// Ajouter un gestionnaire d'événements à chaque élément
+if (elements) {
+  elements.forEach(function(element) {
+    element.addEventListener('click', toggleCheckbox);
+  });
+}
+
+</script>

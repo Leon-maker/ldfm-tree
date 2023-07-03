@@ -1,16 +1,17 @@
 <?php
-function SHORTCODE_Map()
+function SHORTCODE_Map($atts)
 {
     ob_start();
     $map = get_field("informations_pratiques");
     $mapp = $map['adresse'];
-    ?>
-    <div class="acf-map" data-zoom="16">
-            <div class="marker" data-lat="<?php echo esc_attr($mapp['lat']); ?>" data-lng="<?php echo esc_attr($mapp['lng']); ?>"></div>
-    </div>
-    <?php
     $lat = floatval($mapp['lat']);
     $lng = floatval($mapp['lng']);
+    ?>
+    <div class="acf-map" data-zoom="16">
+            <div class="marker" data-lat="<?php echo esc_attr($lat); ?>" data-lng="<?php echo esc_attr($lng); ?>"></div>
+    </div>
+    <?php
+
 
     $img_marker = wp_get_attachment_image_src(21720, 'full')[0];
 

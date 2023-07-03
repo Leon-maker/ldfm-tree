@@ -72,6 +72,11 @@
                             .child{
                                 display: none;
                                 padding-bottom: 15px;
+                                cursor: pointer;
+                                @extend %checkbox-black;
+                                &.active, &:hover{
+                                    @extend %checkbox-black-white;
+                                }
                                 span{
                                     margin-left: 10px;
                                 }

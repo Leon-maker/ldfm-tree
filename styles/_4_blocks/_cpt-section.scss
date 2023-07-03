@@ -211,6 +211,12 @@
         top: var(--swiper-navigation-top-offset, 50vh);
     }
     @media (max-width: $layout-breakpoint-end-tablette) {
+        .bkg-filter{
+            height: 560px;
+            .text-center{
+                margin: 10vh auto;
+            }
+        }
         .realisation-section-container{
             margin-bottom: 120px;
         }
@@ -219,7 +225,6 @@
         }
         .padding-top-header{
             .text-center {
-                margin: 100px 25px;
                 display: flex;
                 flex-direction: column;
             }

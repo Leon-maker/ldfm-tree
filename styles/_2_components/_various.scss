@@ -30,7 +30,7 @@ a[href] {
   input{
     display: none;
   }
-  label{
+  label, span{
     display: flex;
     align-items: center;
 
@@ -41,16 +41,18 @@ a[href] {
       height: 15px;
       border: 1px solid rgba($color: $color-black, $alpha: 0.3);
       margin-right: 5px;
-      position: absolute;
       left: 0;
       top: 3px;
+    }
+    &label::before{
+      position: absolute;
     }
   }  
 }
 
 // checkbox with fa checked
 %checkbox-black-white {
-  label{
+  label, span{
     &::before {
       content: '\f00c';
       font-weight: 900;
@@ -65,8 +67,10 @@ a[href] {
       left: 0;
       top: 3px;
       background-color: #000;
+    }  
+    &label::before{
       position: absolute;
-    }   
+    } 
   }
 }
 

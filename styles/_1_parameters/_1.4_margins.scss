@@ -129,12 +129,12 @@ $lateral-padding-width-mobile: 50px;
   }
   .text-center{
     @media (min-width: $layout-breakpoint-end-tablette) {
-      margin: 20vh auto 0 auto;
       width: 60%;
+      margin: 20vh auto 0 auto;
     }
     @media (max-width: $layout-breakpoint-end-tablette) {
-      margin: 0 auto;
       width: 80%;
+      margin: 0 auto 10vh auto;
     }
     h1{
       margin-bottom: 0px;
@@ -251,14 +251,17 @@ $lateral-padding-width-mobile: 50px;
 }
 
 .bkg-filter{
-  padding: 100px 0 70px 0;
-  height: calc(100vh - 170px);
+  @media (min-width: $layout-breakpoint-end-tablette) {
+    height: calc(100vh - 170px);
+    padding: 100px 0 70px 0;
+  }
   @media (max-width: $layout-breakpoint-end-tablette) {
     padding: 85px 0 70px 0;
-    height: calc(100vh - 155px);
+    max-height: 560px;
   }
   background-color: rgba(0, 0, 0, 0.5);
 }
+
 
 .influence-card-content{
   h3{

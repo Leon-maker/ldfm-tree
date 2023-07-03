@@ -305,9 +305,9 @@
 
 .all-card-link{
     background-size: 20% 2px, 0 2px ;
+    cursor: pointer;
     &:hover{
         background-size: 0 2px, 100% 2px !important;
-        cursor: pointer;
     }
 }
 

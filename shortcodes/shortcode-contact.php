@@ -9,6 +9,7 @@ function SHORTCODE_contact($atts)
 
     // Extraire les valeurs des attributs en variables distinctes
     $id_form = $atts['id_form'];
+    $mapp = $atts['map'];
     $subtitle = $atts['subtitle'];
 
     // Récupérer les autres valeurs nécessaires
@@ -109,31 +110,31 @@ function SHORTCODE_contact($atts)
     </section>
 
     <script>
-// Fonction pour cocher ou décocher la case à cocher
-function toggleCheckbox() {
-  var container = document.querySelector('.ginput_container_consent');
-  var checkbox = container.querySelector('input[type=checkbox]');
+    // Fonction pour cocher ou décocher la case à cocher
+    function toggleCheckbox() {
+      var container = document.querySelector('.ginput_container_consent');
+      var checkbox = container.querySelector('input[type=checkbox]');
 
-  if (checkbox && container) {
-    checkbox.checked = !checkbox.checked;
-      
-    if (checkbox.checked) {
-      container.classList.add('active');
-    } else {
-      container.classList.remove('active');
+      if (checkbox && container) {
+        checkbox.checked = !checkbox.checked;
+          
+        if (checkbox.checked) {
+          container.classList.add('active');
+        } else {
+          container.classList.remove('active');
+        }
+      }
     }
-  }
-}
 
-// Ajout d'un gestionnaire d'événement sur l'élément HTML
-var element = document.querySelector('.ginput_container_consent');
-if (element) {
-  console.log(element);
-  element.addEventListener('click', toggleCheckbox);
-}
-</script>
+    // Ajout d'un gestionnaire d'événement sur l'élément HTML
+    var element = document.querySelector('.ginput_container_consent');
+    if (element) {
+      console.log(element);
+      element.addEventListener('click', toggleCheckbox);
+    }
+    </script>
     <?php
-    echo do_shortcode('[shortcode-map]'); 
+    echo do_shortcode('[shortcode-map map="'.$mapp.'"]'); 
     
     return ob_get_clean();
 }
