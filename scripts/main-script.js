@@ -598,18 +598,6 @@ jQuery(document).ready(function ($) {
                 $('.isotope-pagination-item-prev').removeClass('disabled');
                 $('.isotope-pagination-item-next').removeClass('disabled');
             }
-            // Sélectionner l'élément cible avec l'ID "id-filters"
-            var targetElement = document.getElementById('id-filters');
-
-            // Définir les options de défilement
-            var scrollOptions = {
-                behavior: 'smooth', // Défilement en douceur
-                block: 'start' // Défilement vers le début de l'élément
-            };
-
-            // Défiler vers l'élément cible avec animation
-            targetElement.scrollIntoView(scrollOptions);
-
         }
 
         // Determine page breaks based on window width and preset values
@@ -905,7 +893,19 @@ jQuery(document).ready(function ($) {
     if ($('body.page-template-boutique').length) {
 
         function scrollToTop() {
-            window.scrollTo({ top: 500, behavior: 'smooth' });
+            var targetElement = document.getElementById('id-filters');
+
+            // Définir les options de défilement
+            var scrollOptions = {
+                behavior: 'smooth', // Défilement en douceur
+                block: 'start' // Défilement vers le début de l'élément
+            };
+
+            setTimeout(function() {
+                // Défiler vers l'élément cible avec animation
+                targetElement.scrollIntoView(scrollOptions);
+
+            }, 200);
         }
 
         function updatePagination(totalItems, itemsPerPage) {
@@ -1056,7 +1056,6 @@ jQuery(document).ready(function ($) {
     /**/
 
     var produitCardImages = document.querySelectorAll('.produit-card-img.produit-card-hover');
-    console.log("hey")
     produitCardImages.forEach(function(img) {
         var hoverImage = img.dataset.hoverImage;
         var originalImage = img.getAttribute('src');

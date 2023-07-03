@@ -60,8 +60,8 @@ if (!empty($categories)) {
         }
     }
 }
-?>
 
+?>
 <div class="product">
     <?php if (isMobile()){
         echo do_shortcode('[shortcode-fil-ariane type="black"]'); 
@@ -107,14 +107,18 @@ if (!empty($categories)) {
             <h1><?php
                 echo $title_page;?>
             </h1>
-            <p class="marque"><span>Marque: </span><span class="value"><?= $marque[0]->post_title ?></span></p>
+            <?php if (!empty($marque)) { ?>
+                <p class="marque"><span>Marque: </span><span class="value"><?= $marque[0]->post_title ?></span></p>
+            <?php } if (!empty($reference)) {?>
             <p class="ref"><span>Référence: </span><span class="value"><?= $reference ?></span></p>
+            <?php } ?>
             <p class="description"><?php
                 echo $description;?>
             </p>
             <p class="plus">
                 Pour connaitre toutes les finitions possibles et les détails sur ce produit, contactez notre équipe !
             </p>
+            <?php if (!empty($caracteristiques)){?>
             <div class="caracteristiques">
                 <h3>
                     Caractéristiques techniques
@@ -163,6 +167,7 @@ if (!empty($categories)) {
                     </li>
                 </ul>
             </div>
+            <?php } ?>
         </div>
     </div>
 </div>

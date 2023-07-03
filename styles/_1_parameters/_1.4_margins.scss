@@ -252,10 +252,11 @@ $lateral-padding-width-mobile: 50px;
 
 .bkg-filter{
   padding: 100px 0 70px 0;
+  height: calc(100vh - 170px);
   @media (max-width: $layout-breakpoint-end-tablette) {
     padding: 85px 0 70px 0;
+    height: calc(100vh - 155px);
   }
-  min-height: 570px;
   background-color: rgba(0, 0, 0, 0.5);
 }
 

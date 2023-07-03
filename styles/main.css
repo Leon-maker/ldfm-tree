@@ -711,12 +711,13 @@ footer .site-navigation .menu li a, footer .site-navigation .social-media-menu l
 
 .bkg-filter {
   padding: 100px 0 70px 0;
-  min-height: 570px;
+  height: calc(100vh - 170px);
   background-color: rgba(0, 0, 0, 0.5);
 }
 @media (max-width: 1024px) {
   .bkg-filter {
     padding: 85px 0 70px 0;
+    height: calc(100vh - 155px);
   }
 }
 
@@ -2865,14 +2866,34 @@ section.section-half .columns-wrapper .right-container {
 /** Structure principale des sections Nos influences / Nos réalisations **/
 @media (min-width: 1024px) {
   .cpt-section-container .cpt-section-header-title .cpt-section-header-sub-content-container {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
     margin-bottom: 45px;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1300px) {
+  .cpt-section-container .cpt-section-header-title .cpt-section-header-sub-content-container {
+    display: inline;
   }
   .cpt-section-container .cpt-section-header-title .cpt-section-header-sub-content-container h2 {
     margin: 0px;
+    margin-bottom: 30px;
   }
+  .cpt-section-container .cpt-section-header-title .cpt-section-header-sub-content-container a {
+    display: inline-block;
+    margin-left: 0;
+  }
+}
+@media (min-width: 1024px) and (min-width: 1300px) {
+  .cpt-section-container .cpt-section-header-title .cpt-section-header-sub-content-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .cpt-section-container .cpt-section-header-title .cpt-section-header-sub-content-container h2 {
+    margin: 0px;
+    margin-bottom: 30px;
+  }
+}
+@media (min-width: 1024px) {
   .cpt-section-container .cpt-section-card-wrapper {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -2917,7 +2938,11 @@ section.section-half .columns-wrapper .right-container {
     margin-top: 0px;
   }
   .cpt-section-container .cpt-section-header-title .cpt-section-header-sub-content-container, .cpt-section-container .contact-section-header-title .cpt-section-header-sub-content-container, .contact-section-container .cpt-section-header-title .cpt-section-header-sub-content-container, .contact-section-container .contact-section-header-title .cpt-section-header-sub-content-container {
-    margin-bottom: 65px;
+    margin-bottom: 40px;
+  }
+  .cpt-section-container .cpt-section-header-title .cpt-section-header-sub-content-container a, .cpt-section-container .contact-section-header-title .cpt-section-header-sub-content-container a, .contact-section-container .cpt-section-header-title .cpt-section-header-sub-content-container a, .contact-section-container .contact-section-header-title .cpt-section-header-sub-content-container a {
+    display: inline-block;
+    margin-left: 0;
   }
   .cpt-section-container .cpt-section-card-wrapper .influence-card, .contact-section-container .cpt-section-card-wrapper .influence-card {
     margin-bottom: 60px;
@@ -2976,7 +3001,6 @@ section.section-half .columns-wrapper .right-container {
 
 /** Adaptation si nécessaire **/
 .realisation-section-container .cpt-section-header-title h2 {
-  margin-bottom: 40px !important;
   text-transform: uppercase;
 }
 .realisation-section-container .cpt-section-header-sub-content-container {
@@ -3075,7 +3099,7 @@ section.section-half .columns-wrapper .right-container {
 }
 @media (max-width: 1024px) {
   .produit-realisation-section-container .swiper-container .swiper-button-container div {
-    top: var(--swiper-navigation-top-offset, 57%) !important;
+    top: var(--swiper-navigation-top-offset, 52%) !important;
     margin: 0;
     background-color: rgba(255, 255, 255, 0.9);
   }
@@ -3129,7 +3153,7 @@ section.section-half .columns-wrapper .right-container {
     margin-top: 50px;
   }
   .home .boutique-section-container h2 {
-    margin-bottom: 40px;
+    margin-bottom: 22px;
   }
   .home .influence-card-content h3 {
     margin: 25px 0;
@@ -3158,6 +3182,9 @@ section.section-half .columns-wrapper .right-container {
   }
 }
 
+.page-template-influence #filters-list {
+  cursor: pointer;
+}
 @media (min-width: 1024px) {
   .page-template-influence .cpt-section-container {
     padding: 0;
@@ -3557,7 +3584,7 @@ section.section-half .columns-wrapper .right-container {
     margin-top: 40px;
   }
   .single-realisation-main-section .single-realisation-img-container .test {
-    padding-bottom: 40px;
+    padding-bottom: 20px;
   }
   .single-realisation-main-section .single-realisation-img-container .test img {
     width: 100%;
@@ -3718,6 +3745,8 @@ section.section-half .columns-wrapper .right-container {
 }
 .single-produit .product .right-container .container-gallery-thumbs .gallery-thumbs .swiper-slide {
   opacity: 0.4;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .single-produit .product .right-container .container-gallery-thumbs .gallery-thumbs .swiper-slide-thumb-active {
   opacity: 1;

@@ -112,16 +112,6 @@ document.addEventListener('DOMContentLoaded', function() {
   // Sélectionner tous les liens <a> à l'intérieur de la pagination
   var paginationLinks = document.querySelectorAll('.isotope-pagination-container a');
 
-  // Parcourir les liens et ajouter un gestionnaire d'événements de clic
-  paginationLinks.forEach(function(link) {
-    link.addEventListener('click', function(event) {
-      event.preventDefault(); // Empêcher le comportement par défaut du lien
-
-      // Rediriger vers l'élément avec l'ID "id-filters"
-      window.location.href = '#id-filters';
-    });
-  });
-
     var urlParams = new URLSearchParams(window.location.search);
     var filter = urlParams.get('filter');
     console.log(filter);
