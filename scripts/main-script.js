@@ -912,7 +912,7 @@ jQuery(document).ready(function ($) {
     if ($('body.page-template-boutique').length) {
 
         function scrollToTop() {
-            var targetElement = document.getElementById('id-filters');
+            var targetElement = document.getElementById('link-category');
 
             // Définir les options de défilement
             var scrollOptions = {
@@ -974,7 +974,6 @@ jQuery(document).ready(function ($) {
             filteredCards = Array.from(cards).filter(function (card) {
                 const cardCategory = $(card).data('category').toLowerCase();
                 const cardCategoryArray = cardCategory.split(" ");
-
                 const allElementsIncluded = selectedCategories.every(category => cardCategoryArray.includes(category));
                 return allElementsIncluded;
             });

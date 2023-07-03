@@ -1,6 +1,6 @@
 .page-template-boutique{
     .header-button{
-        margin-top: 190px;
+        margin-top: 150px;
     }
     .marque-section-container{
         padding-bottom: 0;
@@ -52,8 +52,12 @@
                         max-height: 500px;
                         overflow: scroll;
                         position: relative;
-                        overflow-y: hidden;
                         overflow-x: hidden;
+                        -ms-overflow-style: none;  /* Internet Explorer 10+ */
+                        scrollbar-width: none;  /* Firefox */
+                        &::-webkit-scrollbar { 
+                            display: none;  /* Safari and Chrome */
+                        }
                         .category-div{
                             display: grid;
                             position: relative;
@@ -91,6 +95,7 @@
                 .totalProduct{
                     padding: 27px 60px;
                     button{
+                        cursor: pointer;
                         padding: 15px 0;
                         border: 1px solid;
                         background-color: transparent;

@@ -26,6 +26,23 @@ if ($last_segment === "boutique"){
             'hide_empty' => false,
             'parent' => 0, // Récupérer uniquement les catégories parentes        
         ));
+        $name_categories = array();
+        while ($query->have_posts()) : $query->the_post();
+
+            // Récupérer les catégories du post actuel
+            $post_categories = get_the_terms(get_the_ID(), 'category');
+
+            if (!empty($post_categories)) {
+                foreach ($post_categories as $post_category) {
+                    $name_categories[] = $post_category->name;
+                }
+            }
+
+        endwhile;
+
+        // Supprimer les doublons des catégories parentes
+        $name_categories = array_unique($name_categories, SORT_REGULAR);
+
     endif;
 }
 if ($last_segment === "boutique-indoor"){
@@ -58,6 +75,30 @@ if ($last_segment === "boutique-indoor"){
             'hide_empty' => false,
             'parent' => 0, // Récupérer uniquement les catégories parentes        
         ));
+        $name_categories = array();
+        while ($query->have_posts()) : $query->the_post();
+
+            // Récupérer les catégories du post actuel
+            $post_categories = get_the_terms(get_the_ID(), 'category');
+
+            if (!empty($post_categories)) {
+                foreach ($post_categories as $post_category) {
+                    $ancestors = get_ancestors($post_category->term_id, 'category');
+                    
+                    // Vérifier si la catégorie a des grands-parents
+                    if (count($ancestors) > 1) {
+                        $parent = get_term($ancestors[0], 'category');
+                        $name_categories[] = $parent->name;
+                    } else {
+                        $name_categories[] = $post_category->name;
+                    }
+                }
+            }
+
+        endwhile;
+
+        // Supprimer les doublons des catégories parentes
+        $name_categories = array_unique($name_categories, SORT_REGULAR);
     endif;
 }
 if ($last_segment === "boutique-outdoor"){
@@ -90,6 +131,23 @@ if ($last_segment === "boutique-outdoor"){
             'hide_empty' => false,
             'parent' => 0, // Récupérer uniquement les catégories parentes        
         ));
+        $name_categories = array();
+        while ($query->have_posts()) : $query->the_post();
+
+            // Récupérer les catégories du post actuel
+            $post_categories = get_the_terms(get_the_ID(), 'category');
+
+            if (!empty($post_categories)) {
+                foreach ($post_categories as $post_category) {
+                    $name_categories[] = $post_category->name;
+                }
+            }
+
+        endwhile;
+
+        // Supprimer les doublons des catégories parentes
+        $name_categories = array_unique($name_categories, SORT_REGULAR);
+
     endif;
 }
 ?>
@@ -103,7 +161,8 @@ if ($last_segment === "boutique-outdoor"){
             <div class="bkg-bottom-opacity">
                 <div id="categories-section" class="tabs tri_afficher-container filter-inline tab button-group filter-button-group champs">
                     <?php
-                    // Récupérer toutes les catégories
+
+                    //Récupérer toutes les catégories
                     $categories = get_categories();
 
                     // Tableaux pour les catégories parentes et enfants
@@ -117,42 +176,41 @@ if ($last_segment === "boutique-outdoor"){
                             $parent_categories[] = $category;
                         } else {
                             // Catégorie enfant
-                            $child_categories[$category->parent][] = $category;
+                            $child_categories[$category->parent][] = $category->name;
                         }
                     }
 
-                    // Fonction de comparaison pour trier les catégories parentes par ordre alphabétique
-                    function compareCategories($category1, $category2) {
-                        return strcasecmp($category1->name, $category2->name);
-                    }
-
-                    // Trier les catégories parentes par ordre alphabétique
-                    usort($parent_categories, 'compareCategories');
-
-                    // Afficher les catégories parentes suivies de leurs catégories enfants
+                    // Parcourir les catégories parentes et filtrer les catégories enfants
                     foreach ($parent_categories as $parent_category) {
-                        if (sanitize_title($parent_category->name)!="non-classe"){
+                        if (sanitize_title($parent_category->name) != "non-classe") {
+                            // Catégorie parente
                             echo '<div class="category-div">';
-                    
                             $parent_category_id = 'category-parent-' . sanitize_title($parent_category->name); // ID de la catégorie parente
                             $child_category_class = 'category-child-' . sanitize_title($parent_category->name); // Classe pour les catégories enfants du parent correspondant
-                        
-                            echo '<label class="category-label parent '.sanitize_title($parent_category->name).'" onclick="toggleCategory(\'' . $parent_category_id . '\', \'' . $child_category_class . '\')">';
+
+                            echo '<label class="category-label parent ' . sanitize_title($parent_category->name) . '" onclick="toggleCategory(\'' . $parent_category_id . '\', \'' . $child_category_class . '\')">';
                             echo '<span id="' . $parent_category_id . '" class="subtitle afficher-select tab tablinks filters-select parent-category">' . $parent_category->name . '</span>';
                             echo '<i id="toggle-icon-' . $parent_category_id . '" class="fa-solid fa-plus"></i>';
                             echo '</label>';
 
                             echo '<div class="category-div-child">';
 
+                            // Catégories enfants
                             if (isset($child_categories[$parent_category->term_id])) {
                                 foreach ($child_categories[$parent_category->term_id] as $child_category) {
-                                    $child_category_id = 'category-child-' . sanitize_title($child_category->name); // ID de la catégorie enfant
-                                    echo '<label class="category-label child ' . $child_category_class . '">';
-                                    echo '<input type="checkbox" class="category-checkbox"  data-category="' . $child_category->slug . '">';
-                                    echo '<span id="' . $child_category_id . '" class="subtitle afficher-select tab tablinks filters-select" data-filter="' . '.' . $child_category->slug . '" data-sort-value="original-order">' . $child_category->name . '</span>';
-                                    echo '</label>';
+                                    if (in_array($child_category, $name_categories)) {
+                                        $child_category_id = 'category-child-' . sanitize_title($child_category); // ID de la catégorie enfant
+                                        echo '<label class="category-label child ' . $child_category_class . '">';
+                                        echo '<input type="checkbox" class="category-checkbox"  data-category="' . sanitize_title($child_category) . '">';
+                                        echo '<span id="' . $child_category_id . '" class="subtitle afficher-select tab tablinks filters-select" data-filter="' . '.' . sanitize_title($child_category) . '" data-sort-value="original-order">' . $child_category . '</span>';
+                                        echo '</label>';
+                                        
+                                        // Ajouter la catégorie enfant filtrée au tableau des catégories filtrées
+                                        $filtered_child_categories[$parent_category->term_id][] = $child_category;
+                                    }
                                 }
                             }
+
                             echo '</div>';
                             echo '</div>';
                         }
@@ -161,9 +219,9 @@ if ($last_segment === "boutique-outdoor"){
                 </div>
             </div>
             <div class="totalProduct">
-                <button onclick=hideOverlay()>
+                <button onclick="hideOverlay()">
                     <?php $count = $query->found_posts; ?>
-                    Voir les resultats <span class="resultat">(<?php echo $count ?>)</span>
+                    Voir les résultats <span class="resultat">(<?php echo $count ?>)</span>
                 </button>
             </div>
         </div>
@@ -172,7 +230,7 @@ if ($last_segment === "boutique-outdoor"){
 
 
 <section class="boutique-container lateral-margin no-margin-top">
-    <div class="link-category-button">
+    <div  id="link-category" class="link-category-button">
         <div class="others-filters">
             <?php
             $categories = get_categories();
@@ -226,9 +284,11 @@ if ($last_segment === "boutique-outdoor"){
                                 $parent_slugs[] = $parent_slug; // Ajouter le slug du grand-parent au tableau
                             }
                         }
-            
-                        $category_classes .= $term->slug . ' ';
+                        
+                        $category_classes .= sanitize_title($term->name) . ' ';
                     }
+                } else {
+                    $category_classes = '';
                 }
                 ?>
             

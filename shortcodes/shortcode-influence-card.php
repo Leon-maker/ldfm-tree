@@ -2,10 +2,21 @@
 function SHORTCODE_Influence_card()
 {
     ob_start();
+    $choixGroup = get_field('image_ou_video');
+    $choix = $choixGroup['choix'];
     $terms = get_the_terms(get_the_ID(), 'influence-categorie'); ?>
     <div class="influence influence-category-<?php echo $terms[0]->term_id; ?>">
+        
         <div class="influence-card">
-            <img class="influence-card-img" src="<?= wp_get_attachment_image_src(get_field('image_principale') , 'full')[0];  ?>" alt="Image d'illustration influence"/>
+            <?php
+            if ($choix=='video'){ ?>
+                <video class="influence-card-img" playsinline autoplay muted loop>
+                    <source src="<?php echo $choixGroup["video"] ?>">
+                </video> <?php
+            } 
+            if ($choix=='image'){ ?>
+                <img class="influence-card-img" src="<?= wp_get_attachment_image_src($choixGroup["image"] , 'full')[0];  ?>" alt="Image d'illustration influence"/> <?php
+            } ?>
             <p class="influence-card-categorie"><?= $terms[0]->name; ?></p>
             <div class="influence-card-content">
                 <h3 class="influence-card-title"><?= get_the_title()?></h3>
