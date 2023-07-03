@@ -1059,21 +1059,23 @@ jQuery(document).ready(function ($) {
     produitCardImages.forEach(function(img) {
         var hoverImage = img.dataset.hoverImage;
         var originalImage = img.getAttribute('src');
-
+    
         if (hoverImage) {
             img.addEventListener('mouseenter', function() {
                 img.style.opacity = 0; // Réduire l'opacité à 0
-
+                img.style.transition = 'opacity 0.1s'; // Ajouter une transition d'opacité de 0.2 seconde
+    
                 // Attendre un court délai pour permettre la transition
                 setTimeout(function() {
                     img.src = hoverImage;
                     img.style.opacity = 1; // Rétablir l'opacité à 1
                 }, 200);
             });
-
+    
             img.addEventListener('mouseleave', function() {
                 img.style.opacity = 0; // Réduire l'opacité à 0
-
+                img.style.transition = 'opacity 0.1s'; // Ajouter une transition d'opacité de 0.2 seconde
+    
                 // Attendre un court délai pour permettre la transition
                 setTimeout(function() {
                     img.src = originalImage;
@@ -1081,7 +1083,7 @@ jQuery(document).ready(function ($) {
                 }, 200);
             });
         }
-    });
+    });    
 });
 
 

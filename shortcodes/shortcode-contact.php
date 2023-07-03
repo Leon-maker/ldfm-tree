@@ -109,30 +109,32 @@ function SHORTCODE_contact($atts)
     </section>
 
     <script>
-        // Fonction pour cocher ou décocher la case à cocher
-        function toggleCheckbox() {
-            var checkbox = document.getElementById('input_1_52_1');
-            var container = document.querySelector('.ginput_container_consent');
-            
-            if (checkbox && container) {
-                checkbox.checked = !checkbox.checked;
-                
-                if (checkbox.checked) {
-                    container.classList.add('active');
-                } else {
-                    container.classList.remove('active');
-                }
-            }
-        }
+// Fonction pour cocher ou décocher la case à cocher
+function toggleCheckbox() {
+  var container = document.querySelector('.ginput_container_consent');
+  var checkbox = container.querySelector('input[type=checkbox]');
 
-        // Ajout d'un gestionnaire d'événement sur l'élément HTML
-        var element = document.querySelector('.ginput_container_consent');
-        if (element) {
-            element.addEventListener('click', toggleCheckbox);
-        }
-    </script>
+  if (checkbox && container) {
+    checkbox.checked = !checkbox.checked;
+      
+    if (checkbox.checked) {
+      container.classList.add('active');
+    } else {
+      container.classList.remove('active');
+    }
+  }
+}
+
+// Ajout d'un gestionnaire d'événement sur l'élément HTML
+var element = document.querySelector('.ginput_container_consent');
+if (element) {
+  console.log(element);
+  element.addEventListener('click', toggleCheckbox);
+}
+</script>
     <?php
-
+    echo do_shortcode('[shortcode-map]'); 
+    
     return ob_get_clean();
 }
 

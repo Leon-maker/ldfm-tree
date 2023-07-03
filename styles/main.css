@@ -2669,6 +2669,10 @@ section.section-half .columns-wrapper .right-container {
 .section-contact .informations-pratiques ul .infos:last-child {
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
+.section-contact .right-contact .gform_confirmation_wrapper {
+  width: 80%;
+  margin: auto;
+}
 .section-contact .right-contact .gform_wrapper h3, .section-contact .right-contact .gform_wrapper label {
   margin: 0;
   font-size: 12px;
@@ -2790,6 +2794,16 @@ section.section-half .columns-wrapper .right-container {
 @media (max-width: 1024px) {
   .page-template-showroom .card-mobile-1, .page-template-showroom .card-mobile-0, .page-template-bureau .card-mobile-1, .page-template-bureau .card-mobile-0 {
     display: inherit;
+  }
+}
+@media (min-width: 1024px) {
+  .page-template-showroom .realisation-card, .page-template-bureau .realisation-card {
+    margin-bottom: 150px;
+  }
+}
+@media (max-width: 1024px) {
+  .page-template-showroom .realisation-card, .page-template-bureau .realisation-card {
+    margin-bottom: 120px;
   }
 }
 

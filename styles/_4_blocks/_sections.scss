@@ -100,6 +100,10 @@ section {
     }
   }
   .right-contact{
+    .gform_confirmation_wrapper{
+      width: 80%;
+      margin: auto;
+    }
     .gform_wrapper{
       h3, label{
         margin: 0;
@@ -235,6 +239,14 @@ section {
   .card-mobile-1, .card-mobile-0 {
     @media (max-width: $layout-breakpoint-end-tablette) {
       display: inherit;
+    }
+  }
+  .realisation-card {
+    @media (min-width: $layout-breakpoint-end-tablette) {
+      margin-bottom: 150px;
+    }
+    @media (max-width: $layout-breakpoint-end-tablette) {
+      margin-bottom: 120px;
     }
   }
 }
