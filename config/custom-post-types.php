@@ -115,37 +115,6 @@ function thrive_register_post_types_REALISATION() {
 }
 add_action( 'init', 'thrive_register_post_types_REALISATION' );
 
-// CPT des Sections du site
-function thrive_register_post_types_Sections() {
-
-    $labels = array(
-        'name' => 'Sections',
-        'all_items' => 'Toutes les sections',
-        'singular_name' => 'Sections',
-        'add_new_item' => 'Ajouter une section',
-        'add_new' => 'Ajouter une section',
-        'edit_item' => 'Modifier une sections',
-        'menu_name' => 'Sections',
-    );
-
-    $args = array(
-        'labels' => $labels,
-        'public' => true,
-        'show_in_rest' => true,
-        'has_archive' => true,
-        'supports' => array ( 'title', 'revisions', 'author', 'page-attributes', 'thumbnail', 'custom-fields', 'post-formats' ),
-        'menu_position' => 5,
-        'menu_icon' => 'dashicons-admin-customizer',
-        'show_in_menu' => true
-    );
-    register_post_type('sections', $args);
-
-}
-add_action( 'init', 'thrive_register_post_types_Sections' );
-
-
-
-
 function thrive_register_post_types_PRODUIT() {
 
     $labels = array(

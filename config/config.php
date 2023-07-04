@@ -337,3 +337,14 @@ function remove_editor() {
     remove_post_type_support('page', 'editor');
   }
   add_action('admin_init', 'remove_editor');
+
+/**
+ * --------------------------------------------------------------------------------------------------------------
+ *                                                 Masquer Articles
+ * --------------------------------------------------------------------------------------------------------------
+ */
+/**/
+function masquer_cpt_articles() {
+    remove_menu_page('edit.php');
+}
+add_action('admin_menu', 'masquer_cpt_articles');

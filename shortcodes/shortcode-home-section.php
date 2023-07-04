@@ -4,9 +4,9 @@ function SHORTCODE_HomeSection()
 {
     ob_start();
 
-    $header_section_slug = 'home-page-header';
+    $header_section_slug = 'accueil';
     $args = array(
-    'post_type'   => 'sections',
+    'post_type'   => 'page',
     'name'        => $header_section_slug,
     'post_status' => 'publish',
     'numberposts' => 1
