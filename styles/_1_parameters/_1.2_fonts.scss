@@ -488,16 +488,6 @@ footer {
       line-height: pixelsCalc(35);
     }
   }
-  .caracteristiques{
-    p{
-      font-size: pixelsCalc(16) !important;
-      line-height: pixelsCalc(21) !important;
-      @media all and (max-width: $layout-breakpoint-end-tablette) {
-        font-size: pixelsCalc(14) !important;
-        line-height: pixelsCalc(17) !important;
-      }
-    }
-  }
   .plus{
     font-family: $font-main-500;
   }
@@ -527,5 +517,4 @@ footer {
 .header-button, .category-button{
   font-size: pixelsCalc(14);
   line-height: pixelsCalc(17);
-  font-family: $font-main-500;
 }

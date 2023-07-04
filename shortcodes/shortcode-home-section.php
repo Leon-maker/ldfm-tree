@@ -47,7 +47,7 @@ function SHORTCODE_HomeSection()
                                             <?php echo $slide['sous-titre_de_la_slide']; ?> 
                                         </h3>
                                     <?php } ?>
-                                    <div class="header-button">
+                                    <div class="header-button boldy">
                                         <?php if (!empty($slide['bouton'])) { ?>
                                             <a class="cta-secondary white" href="<?php echo $slide['bouton']['lien_bouton']; ?>"><?php echo $slide['bouton']['titre_bouton']; ?></a>
                                         <?php } ?>

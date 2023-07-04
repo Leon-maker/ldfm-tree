@@ -15,7 +15,7 @@ function SHORTCODE_HistoireSection()
             <h3>
                 Le mariage de deux univers.
             </h3>
-            <div class="header-button">
+            <div class="header-button boldy">
                 <a class="cta-secondary white" href="/lagence">En savoir plus</a>
             </div>
         </div>

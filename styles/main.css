@@ -459,16 +459,6 @@ footer .site-navigation .menu li a, footer .site-navigation .social-media-menu l
     line-height: 35px;
   }
 }
-.single-produit .caracteristiques p {
-  font-size: 16px !important;
-  line-height: 21px !important;
-}
-@media all and (max-width: 1024px) {
-  .single-produit .caracteristiques p {
-    font-size: 14px !important;
-    line-height: 17px !important;
-  }
-}
 .single-produit .plus {
   font-family: "Montserrat-Medium";
 }
@@ -495,7 +485,6 @@ footer .site-navigation .menu li a, footer .site-navigation .social-media-menu l
 .header-button, .category-button {
   font-size: 14px;
   line-height: 17px;
-  font-family: "Montserrat-Medium";
 }
 
 /**
