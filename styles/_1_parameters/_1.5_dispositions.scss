@@ -94,7 +94,7 @@ background-color: $color-white;
   width: 100%;
   margin: 150px 0;
   @media all and (max-width: $layout-breakpoint-end-tablette) {
-    max-width: 440px;
+    //max-width: 440px;
     margin: 120px auto;
   }
   height: 80vh;

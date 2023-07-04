@@ -830,7 +830,6 @@ html {
 }
 @media all and (max-width: 1024px) {
   .acf-map {
-    max-width: 440px;
     margin: 120px auto;
   }
 }
@@ -2732,6 +2731,7 @@ section.section-half .columns-wrapper .right-container {
 }
 .section-contact .right-contact .gform_confirmation_wrapper {
   width: 80%;
+  font-family: "Montserrat-Regular";
   margin: auto;
 }
 .section-contact .right-contact .gform_wrapper h3, .section-contact .right-contact .gform_wrapper label {
@@ -2830,7 +2830,6 @@ section.section-half .columns-wrapper .right-container {
   display: none;
 }
 .section-contact .right-contact .gform_wrapper .gform_footer {
-  cursor: pointer;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -2839,6 +2838,7 @@ section.section-half .columns-wrapper .right-container {
   float: right;
 }
 .section-contact .right-contact .gform_wrapper .gform_footer input {
+  cursor: pointer;
   background-color: transparent;
   padding: 15px 23px;
   border-radius: 25px;
@@ -3802,6 +3802,8 @@ section.section-half .columns-wrapper .right-container {
 }
 @media (max-width: 1024px) {
   .single-produit .product .right-container .container-gallery-top img {
+    -o-object-fit: cover;
+       object-fit: cover;
     height: 360px;
   }
 }

@@ -83,6 +83,7 @@
             @media(max-width: $layout-breakpoint-end-tablette) {
                 .container-gallery-top {
                     img{
+                        object-fit: cover;
                         height: 360px;
                     }
                 }

@@ -7,13 +7,11 @@ function SHORTCODE_Produit_Realisation_section($arg)
     ), $arg );
     if ($arguments_array['produit'] === "fiche") $produits = get_field('produits_similaires');
     else $produits = get_field("details_realisation")["produits_association"];
-    
     if ($arguments_array['produit'] === "fiche") {
         $titre = "Nos produits similaires";
     } else {
         $titre = "PRODUITS UTILISÉS POUR CE PROJET";
     }
-
 
     if ($produits!=null) {
         $args = array(

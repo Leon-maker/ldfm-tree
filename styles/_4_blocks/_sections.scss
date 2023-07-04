@@ -102,6 +102,7 @@ section {
   .right-contact{
     .gform_confirmation_wrapper{
       width: 80%;
+      font-family: $font-main-400;
       margin: auto;
     }
     .gform_wrapper{
@@ -211,13 +212,13 @@ section {
         display: none;
       }
       .gform_footer {
-        cursor: pointer;
         width: fit-content;
         bottom: 50px;
         position: relative;
         float: right;
 
         input {
+          cursor: pointer;
           background-color: transparent;
           padding: 15px 23px;
           border-radius: 25px;

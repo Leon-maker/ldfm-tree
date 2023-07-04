@@ -93,10 +93,6 @@ if (!empty($categories)) {
                     ?>
                 </div>
             </div>
-            <div class="swiper-button-container">
-                <div class="swiper-button-prev cta-primary"></div>
-                <div class="swiper-button-next cta-primary"></div>
-            </div>
         </div>
     </div>
     <div class="left-container">
@@ -124,19 +120,21 @@ if (!empty($categories)) {
                     Caractéristiques techniques
                 </h3>
                 <ul class="infos-container list-in-rows-border">
-                    <li class="infos">
-                    <p class="label">
-                        Dimensions
-                    </p>
-                    <p class="value boldy">
-                        <?php
-                        foreach ($dimensions as $dim) { 
-                            echo $dim['dimension']; ?>
-                            <br>
+                    <?php if (!empty($dimensions)){?>
+                        <li class="infos">
+                        <p class="label">
+                            Dimensions
+                        </p>
+                        <p class="value boldy">
                             <?php
-                        }?>
-                    </p>
-                    </li>
+                            foreach ($dimensions as $dim) { 
+                                echo $dim['dimension']; ?>
+                                <br>
+                                <?php
+                            }?>
+                        </p>
+                        </li>
+                    <?php }?>
                     <?php if (!empty($materiaireElements)) { ?>
                         <li class="infos">
                         <p class="label">
@@ -221,15 +219,10 @@ get_footer();
                 swiper: galleryThumbs
             },
             slidesPerView: 0.99,
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev"
-            },
         });
 
         // Make the next and previous buttons change the active slide and not the pagination
         galleryTop.on("slideChangeTransitionStart", function () {
-            console.log("je");
             galleryThumbs.slideTo(galleryTop.activeIndex);
         });
     });
