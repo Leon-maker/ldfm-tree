@@ -1,33 +1,4 @@
 <?php
-/** ========== CUSTOM POSTS TYPES ========== **/
-// CPT EXAMPLE, REMPLACER <NOM DU CPT> PAR LE NOM DU CPT
-//function thrive_register_post_types_<NOMDUCPT>() {
-//
-//    $labels = array(
-//        'name' => '<NOM DU CPT>',
-//        'all_items' => 'Toutes les <NOM DES CPTs>',
-//        'singular_name' => '<NOM DU CPT>',
-//        'add_new_item' => 'Ajouter une <NOM DU CPT>',
-//        'add_new' => 'Ajouter une <NOM DU CPT>',
-//        'edit_item' => 'Modifier la <NOM DU CPT>',
-//        'menu_name' => '<NOM DES CPTs>'
-//    );
-//
-//    $args = array(
-//        'labels' => $labels,
-//        'public' => true,
-//        'show_in_rest' => true,
-//        'has_archive' => true,
-//        'supports' => array('title', 'custom-fields'),
-//        'menu_position' => 5,
-//        'menu_icon' => 'dashicons-admin-customizer',
-//        'show_in_menu' => true
-//    );
-//    register_post_type('<NOM DU CPT>', $args);
-//
-//}
-//add_action( 'init', 'thrive_register_post_types_<NOM DU CPT>' );
-
 
 function thrive_register_post_types_MARQUE() {
 
@@ -47,8 +18,8 @@ function thrive_register_post_types_MARQUE() {
         'show_in_rest' => true,
         'has_archive' => true,
         'supports' => array('title', 'custom-fields'),
-        'menu_position' => 5,
-        'menu_icon' => 'dashicons-admin-customizer',
+        'menu_position' => 35,
+        'menu_icon' => 'dashicons-welcome-write-blog',
         'show_in_menu' => true
     );
     register_post_type('marque', $args);
@@ -76,8 +47,8 @@ function thrive_register_post_types_INFLUENCE() {
         'show_in_rest' => true,
         'has_archive' => true,
         'supports' => array('title', 'custom-fields'),
-        'menu_position' => 5,
-        'menu_icon' => 'dashicons-admin-customizer',
+        'menu_position' => 34,
+        'menu_icon' => 'dashicons-welcome-widgets-menus',
         'show_in_menu' => true
     );
     register_post_type('influence', $args);
@@ -106,8 +77,8 @@ function thrive_register_post_types_REALISATION() {
         'show_in_rest' => true,
         'has_archive' => true,
         'supports' => array('title', 'custom-fields'),
-        'menu_position' => 5,
-        'menu_icon' => 'dashicons-admin-customizer',
+        'menu_position' => 33,
+        'menu_icon' => 'dashicons-hammer',
         'show_in_menu' => true
     );
     register_post_type('realisation', $args);
@@ -133,8 +104,8 @@ function thrive_register_post_types_PRODUIT() {
         'show_in_rest' => true,
         'has_archive' => true,
         'supports' => array('title', 'custom-fields'),
-        'menu_position' => 5,
-        'menu_icon' => 'dashicons-admin-customizer',
+        'menu_position' => 32,
+        'menu_icon' => 'dashicons-archive',
         'show_in_menu' => true,
         'taxonomies' => array('category') // Ajout de cette ligne pour les catégories
     );
@@ -163,7 +134,7 @@ function thrive_register_post_types_Prestations() {
         'show_in_rest' => true,
         'has_archive' => true,
         'supports' => array('title', 'custom-fields'),
-        'menu_position' => 5,
+        'menu_position' => 31,
         'menu_icon' => 'dashicons-admin-customizer',
         'show_in_menu' => true
     );
@@ -190,8 +161,8 @@ function thrive_register_post_types_EQUIPE() {
         'show_in_rest' => true,
         'has_archive' => true,
         'supports' => array('title', 'custom-fields'),
-        'menu_position' => 5,
-        'menu_icon' => 'dashicons-admin-customizer',
+        'menu_position' => 30,
+        'menu_icon' => 'dashicons-groups',
         'show_in_menu' => true
     );
     register_post_type('equipe', $args);

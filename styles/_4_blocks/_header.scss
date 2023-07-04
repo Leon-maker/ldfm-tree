@@ -208,6 +208,7 @@ header {
     .site-navigation{
         .menu {
             >li {
+                cursor: pointer;
                 @media (min-width: $layout-breakpoint-end-burger) {
                     padding: 50px 25px;
                 }

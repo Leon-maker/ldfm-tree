@@ -340,11 +340,14 @@ function remove_editor() {
 
 /**
  * --------------------------------------------------------------------------------------------------------------
- *                                                 Masquer Articles
+ *                                                 Masquer Articles/ Comments
  * --------------------------------------------------------------------------------------------------------------
  */
 /**/
-function masquer_cpt_articles() {
+
+function masquer_cpt_comments() {
     remove_menu_page('edit.php');
+    remove_menu_page('edit-comments.php');
 }
-add_action('admin_menu', 'masquer_cpt_articles');
+add_action('admin_menu', 'masquer_cpt_comments');
+

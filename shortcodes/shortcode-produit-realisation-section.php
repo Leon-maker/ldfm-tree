@@ -26,7 +26,7 @@ function SHORTCODE_Produit_Realisation_section($arg)
                 <p>BOUTIQUE</p>
                 <div class="cpt-section-header-sub-content-container">
                         <h2 class="uppercase"><?php echo $titre; ?></h2> 
-                    <a href="" class="cta-secondary">Parcourir la boutique</a>
+                    <a href="/boutique" class="cta-secondary">Parcourir la boutique</a>
                 </div>
             </div>
             <div class="swiper-container ">

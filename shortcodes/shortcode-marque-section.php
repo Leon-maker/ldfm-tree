@@ -16,7 +16,7 @@ function SHORTCODE_Marque_section()
                 <p>MARQUES</p>
                 <div class="cpt-section-header-sub-content-container">
                     <h2>Decouvrir nos marques</h2> 
-                    <a href="" class="cta-secondary">Toutes nos marques</a>
+                    <a href="/nos-marques" class="cta-secondary">Toutes nos marques</a>
                 </div>
                 
             </div>
