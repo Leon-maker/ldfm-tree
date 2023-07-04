@@ -1,6 +1,12 @@
 .page-template-boutique{
     .header-button{
         margin-top: 150px;
+        @media (max-width: $layout-breakpoint-end-tablette) {
+            display: inline-grid;
+            a:first-child{
+                margin-bottom: 0;
+            }
+        }
     }
     .marque-section-container{
         padding-bottom: 0;

@@ -207,8 +207,8 @@ p {
   font-size: pixelsCalc(16);
   line-height: pixelsCalc(21);
   @media all and (max-width: $layout-breakpoint-end-tablette) {
-    font-size: pixelsCalc(18);
-    line-height: pixelsCalc(21);
+    font-size: pixelsCalc(14);
+    line-height: pixelsCalc(19);
   }
 }
 
