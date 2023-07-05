@@ -10,6 +10,8 @@ get_header();
 $img_bkg = wp_get_attachment_image_src(get_field("image_principale"), 'full')[0];
 $title_page = get_the_title();
 
+
+
 echo do_shortcode('[shortcode-header-section img-bkg="' . $img_bkg . '" title="' . $title_page . '"]'); 
 
 ?>
