@@ -230,7 +230,7 @@ if ($last_segment === "boutique-outdoor"){
 
 
 <section class="boutique-container lateral-margin no-margin-top">
-    <div  id="link-category" class="link-category-button">
+    <div  id="link-category" class="link-category-button boldy">
         <div class="others-filters">
             <?php
             $categories = get_categories();
@@ -248,12 +248,12 @@ if ($last_segment === "boutique-outdoor"){
                 $segments_categorie = explode('/', $path_categorie);
                 $last_segment_categorie = end($segments_categorie);
                 if (sanitize_title($categorie->name)!="non-classe"){
-                    echo '<a class="category-button ' . sanitize_title($categorie->name) . '" onclick="showOverlay(this); event.stopPropagation();">' . $categorie->name . '</a>';   
+                    echo '<a class="boldy category-button ' . sanitize_title($categorie->name) . '" onclick="showOverlay(this); event.stopPropagation();">' . $categorie->name . '</a>';   
                 }
             } ?>
         </div>
         <div class="all-filters">
-            <a class="category-button" onclick="showOverlay(); event.stopPropagation();">Tous les filtres</a>
+            <a class="boldy category-button" onclick="showOverlay(); event.stopPropagation();">Tous les filtres</a>
         </div>
     </div>
     <div class="product-list blog-isotope">
@@ -371,7 +371,6 @@ window.addEventListener('click', function(e) {
 
         setTimeout(function() {
             var displayValue = computedStyle.getPropertyValue('display');
-            console.log(displayValue);
             if (displayValue && displayValue === 'block') {
                 hideOverlay();
             }
@@ -380,8 +379,6 @@ window.addEventListener('click', function(e) {
 });
 
 function toggleCategory(parentId, childClass) {
-    console.log(parentId);
-    console.log(childClass);
     var parentLabel = document.getElementById(parentId);
     var childLabels = document.querySelectorAll('.' + childClass);
     var toggleIcon = document.getElementById('toggle-icon-' + parentId);

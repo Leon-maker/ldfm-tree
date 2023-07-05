@@ -114,7 +114,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     var urlParams = new URLSearchParams(window.location.search);
     var filter = urlParams.get('filter');
-    console.log(filter);
     if (filter) {
         // Trouver le bouton de filtre correspondant
         var filterButton = document.querySelector('.filters-select[data-filter=".' + filter + '"]');

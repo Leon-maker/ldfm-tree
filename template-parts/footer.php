@@ -140,7 +140,6 @@ $categories_json = json_encode($influence_categories);
             aElement.setAttribute('href', realisations_links[i]); // Utiliser le lien de réalisation correspondant à l'index i
           }
           if (title === 'Prestations') {
-            console.log(element);
             aElement.setAttribute('href', elementHref + '/#'+element['post_name']); // Utiliser le lien de réalisation correspondant à l'index i
           }
         }

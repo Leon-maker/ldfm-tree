@@ -129,7 +129,6 @@ function SHORTCODE_contact($atts)
     // Ajout d'un gestionnaire d'événement sur l'élément HTML
     var element = document.querySelector('.ginput_container_consent');
     if (element) {
-      console.log(element);
       element.addEventListener('click', toggleCheckbox);
     }
     </script>
