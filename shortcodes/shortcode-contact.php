@@ -54,7 +54,7 @@ function SHORTCODE_contact($atts)
                 Nous contacter
               </p>
               <p class="value boldy">
-                <?php echo $telephone; ?>
+                <a href="tel:<?= str_replace(' ', '', $telephone) ?>"><?php echo $telephone; ?></a>
               </p>
             </li>
             <li class="infos">

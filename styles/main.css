@@ -118,20 +118,24 @@ ex :
 /**/
 h3 {
   font-family: "Montserrat-Medium";
+  font-weight: normal;
 }
 
 h4,
 h5 {
   font-family: "Montserrat-Regular";
+  font-weight: normal;
 }
 
 h1,
 h2 {
   font-family: "PlayfairDisplay-Medium";
+  font-weight: normal;
 }
 
 p {
   font-family: "Montserrat-Regular";
+  font-weight: normal;
 }
 
 /**
@@ -2614,6 +2618,8 @@ footer section.legals a:hover {
 /**/
 body {
   margin: auto;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
 
 /**

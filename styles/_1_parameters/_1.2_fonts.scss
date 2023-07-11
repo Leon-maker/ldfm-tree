@@ -127,11 +127,13 @@ ex :
 
 h3{
   font-family: $font-main-500;
+  font-weight: normal;
 }
 
 h4,
 h5 {
   font-family: $font-main-400; // Montserrat
+  font-weight: normal;
 }
 
 // SECONDARY FONT :-------------------------------- //
@@ -139,10 +141,12 @@ h5 {
 h1,
 h2 {
   font-family: $font-secondary-500;; // Playfair
+  font-weight: normal;
 }
 
 p{
   font-family: $font-main-400;
+  font-weight: normal;
 }
 
 

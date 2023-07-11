@@ -42,7 +42,9 @@
 /**/
 
 body {
-    margin: auto;
+  margin: auto;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
 
 /**
