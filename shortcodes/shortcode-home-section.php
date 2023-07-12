@@ -25,11 +25,13 @@ function SHORTCODE_HomeSection()
         }
         $slider = get_field('slider');
         $slide_repeater = $slider['slide'];
+        $title_seo = $slider['titre_seo'];
     }
     get_header();
     ?>
 
     <section class="home-section header-bkg header-slider no-margin-top no-margin-bottom">
+        <h1 class="hidden"><?= $title_seo ?></h1>
         <div class="header-wrapper">
             <div class="swiper-container">
                 <div class="swiper-wrapper">
@@ -39,9 +41,9 @@ function SHORTCODE_HomeSection()
                         <section class="padding-top-header swiper-slide" style="background-image: url('<?php echo $slide['image_de_la_slide']; ?>');" role="img" aria-label="Image d'illustration 1 de la première section de la page." class="illustration illu1" style="width: 100%;">
                             <div class="bkg-filter">
                                 <div class="text-center white">
-                                    <h1 class="uppercase">
+                                    <h2 class="copyH1">
                                         <?php echo $slide['titre_de_la_slide']; ?>
-                                    </h1>
+                                    </h2>
                                     <?php if (!empty($slide['sous-titre_de_la_slide'])) { ?>
                                         <h3>
                                             <?php echo $slide['sous-titre_de_la_slide']; ?> 

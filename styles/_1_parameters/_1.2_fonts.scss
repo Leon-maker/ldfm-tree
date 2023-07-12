@@ -157,7 +157,7 @@ p{
 
 // FONTS :---------------------------------------- // SIZE 1
 
-h1 {
+h1, .copyH1 {
   font-size: pixelsCalc(80);
   line-height: pixelsCalc(80);
   @media all and (max-width: $layout-breakpoint-end-tablette) {
