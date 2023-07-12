@@ -142,12 +142,12 @@ p {
  * --------------------------------------------------------------------------------------------------------------
  *                                                  FONT-SIZES BY ELEMENTS
 /**/
-h1 {
+h1, .copyH1 {
   font-size: 80px;
   line-height: 80px;
 }
 @media all and (max-width: 1024px) {
-  h1 {
+  h1, .copyH1 {
     font-size: 45px;
     line-height: 45px;
   }
