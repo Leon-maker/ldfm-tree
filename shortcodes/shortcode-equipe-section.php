@@ -13,6 +13,7 @@ function SHORTCODE_Equipe_section()
         $query->the_post();
         $employes = get_field('employe');
     ?>
+    <div class="fade-section">
         <section class="cpt-section-container equipe-section-container">
             <div class="cpt-section-header-title">
                 <p>PROFILS</p>
@@ -29,7 +30,7 @@ function SHORTCODE_Equipe_section()
                 } ?>
             </div>
         </section>
-
+    </div>
     <?php endif; 
     return ob_get_clean();
 }

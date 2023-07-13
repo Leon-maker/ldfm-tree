@@ -5,7 +5,7 @@ function SHORTCODE_contact_section()
     $img_showroom = wp_get_attachment_image_src(21538, 'full')[0];
     $img_bureau_etudes = wp_get_attachment_image_src(21548, 'full')[0];
     ?>
-
+    <div class="fade-section">
     <section class="contact-section-container">
        <div class="contact-section-header-title uppercase">
             <p>Contact</p>
@@ -34,7 +34,7 @@ function SHORTCODE_contact_section()
             </div>
        </div>
     </section>
-
+    </div>
     <?php
     return ob_get_clean();
 }

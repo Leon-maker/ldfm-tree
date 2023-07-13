@@ -10,7 +10,7 @@ function SHORTCODE_Marque_section()
     );
     $query = new WP_Query($args);
     if ($query->have_posts()) :?>
-
+    <div class="fade-section">
         <section class="cpt-section-container marque-section-container">
             <div class="cpt-section-header-title">
                 <p>MARQUES</p>
@@ -27,7 +27,7 @@ function SHORTCODE_Marque_section()
                 endwhile; ?>
             </div>
         </section>
-
+    </div>
     <?php endif; 
     return ob_get_clean();
 }

@@ -15,6 +15,7 @@ function SHORTCODE_descriptionContact($atts)
     $attsId = strtolower($atts['title']);
     $attsId = iconv('UTF-8', 'ASCII//TRANSLIT', $attsId);
     ?>
+    <div class="fade-section">
     <div  id="<?= $attsId; ?>" class="realisation-card card-mobile-<?= $atts["alternate"]==="1" ? "1" : "0" ?>">
     <?php if($atts["alternate"]!==null && $atts["alternate"]==="1"){ ?>
             <img class="realisation-card-img" src="<?= $atts['image_id'];  ?>" alt="Image d'illustration contact"/>
@@ -39,6 +40,7 @@ function SHORTCODE_descriptionContact($atts)
             </div>
             <img class="realisation-card-img" src="<?= $atts['image_id'];  ?>" alt="Image d'illustration contact"/>
         <?php } ?>
+    </div>
     </div>
     <?php
     return ob_get_clean();

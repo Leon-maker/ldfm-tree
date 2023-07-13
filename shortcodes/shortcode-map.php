@@ -7,8 +7,10 @@ function SHORTCODE_Map($atts)
     $lat = floatval($mapp['lat']);
     $lng = floatval($mapp['lng']);
     ?>
+    <div class="fade-section">
     <div class="acf-map" data-zoom="16">
             <div class="marker" data-lat="<?php echo esc_attr($lat); ?>" data-lng="<?php echo esc_attr($lng); ?>"></div>
+    </div>
     </div>
     <?php
 

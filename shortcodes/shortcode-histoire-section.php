@@ -6,6 +6,7 @@ function SHORTCODE_HistoireSection()
     $img_bkg = wp_get_attachment_image_src(21496, 'full')[0];
 
     ?>
+    <div class="fade-section">
 
     <section class="padding-histoire" style="background-image: url('<?php echo $img_bkg; ?>');" role="img" aria-label="Image d'illustration 1 de la première section de la page." class="illustration illu1" style="width: 100%;">
         <div class="text-center white">
@@ -20,6 +21,7 @@ function SHORTCODE_HistoireSection()
             </div>
         </div>
     </section>
+    </div>
 
     <?php
     return ob_get_clean();

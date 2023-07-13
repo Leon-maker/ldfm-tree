@@ -7,13 +7,13 @@
 
 echo do_shortcode('[shortcode-home-section]'); 
 
-echo '<div class="fade-section">' . do_shortcode('[shortcode-boutique-section]') . '</div>';
+echo do_shortcode('[shortcode-boutique-section]');
 
 $realisation_title = "Nos réalisations";
-echo '<div class="fade-section">' . do_shortcode('[shortcode-histoire-section]') . '</div>';
-echo '<div class="fade-section">' . do_shortcode('[shortcode-realisation-section titre="'.$realisation_title.'"]') . '</div>';
-echo '<div class="fade-section">' . do_shortcode('[shortcode-influence-section]') . '</div>';
-echo '<div class="fade-section">' . do_shortcode('[shortcode-contact-section]') . '</div>';
+echo do_shortcode('[shortcode-histoire-section]');
+echo do_shortcode('[shortcode-realisation-section titre="'.$realisation_title.'"]');
+echo do_shortcode('[shortcode-influence-section]');
+echo do_shortcode('[shortcode-contact-section]');
 
 get_footer() ?>
 

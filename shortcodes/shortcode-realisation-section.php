@@ -20,6 +20,7 @@ function SHORTCODE_realisation_section($atts)
 
     if ($query->have_posts()) :
 ?>
+    <div class="fade-section">
         <section class="cpt-section-container realisation-section-container">
             <div class="cpt-section-header-title">
                 <p>Projets</p>
@@ -36,6 +37,7 @@ function SHORTCODE_realisation_section($atts)
                 endwhile; ?>
             </div>
         </section>
+    </div>
 <?php
     endif;
 

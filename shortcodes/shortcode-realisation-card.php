@@ -7,6 +7,7 @@ function SHORTCODE_realisation_card($atts)
 
     ob_start();
     ?>
+    <div class="fade-section">
     <div class="realisation-card card-mobile-<?= $atts["alternate"]==="1" ? "1" : "0" ?>">
 
         <?php if($args["alternate"]!==null && $args["alternate"]==="1"){ ?>
@@ -34,7 +35,7 @@ function SHORTCODE_realisation_card($atts)
             <?php } ?>
 
     </div>
-
+    </div>
     <?php
     return ob_get_clean();
 }

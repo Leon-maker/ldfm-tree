@@ -10,7 +10,7 @@ function SHORTCODE_Boutique_section()
     );
     $query = new WP_Query($args);
     if ($query->have_posts()) :?>
-
+    <div class="fade-section">
         <section class="cpt-section-container boutique-section-container">
             <div class="cpt-section-header-title">
                 <p>BOUTIQUE</p>
@@ -27,7 +27,7 @@ function SHORTCODE_Boutique_section()
                 endwhile; ?>
             </div>
         </section>
-
+    </div>
     <?php endif; 
     return ob_get_clean();
 }
