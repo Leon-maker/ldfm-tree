@@ -2857,8 +2857,18 @@ section.section-half .columns-wrapper .right-container {
   color: #c02b0a !important;
   font-size: 12px;
 }
-.section-contact .right-contact .gform_wrapper .gform_required_legend, .section-contact .right-contact .gform_wrapper .gform_validation_errors {
+.section-contact .right-contact .gform_wrapper .gform_required_legend, .section-contact .right-contact .gform_wrapper .gform_heading {
   display: none;
+}
+
+.fade-section {
+  opacity: 0;
+  -webkit-transition: opacity 1s ease;
+  transition: opacity 1s ease;
+}
+
+.fade-section.fade-in {
+  opacity: 1;
 }
 
 @media (max-width: 1024px) {

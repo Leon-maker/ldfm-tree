@@ -10,8 +10,9 @@ function SHORTCODE_produit_card()
     ?>
 
     <div class="produit-card">
-        <img class="produit-card-img produit-card-hover" src="<?= $premiere_image;  ?>" alt="Image d'illustration " data-hover-image="<?= $deuxieme_image; ?>"/>
-        <div class="prduit-card-content">
+        <a href="<?php the_permalink(); ?>">
+            <img class="produit-card-img produit-card-hover" src="<?= $premiere_image; ?>" alt="Image d'illustration " data-hover-image="<?= $deuxieme_image; ?>" />
+        </a>        <div class="prduit-card-content">
             <h3 class="produit-card-title"><?= the_title(); ?></h3>
             <a href="<?php the_permalink(); ?>" class="all-card-link cta-primary">Voir le produit</a>
         </div>
