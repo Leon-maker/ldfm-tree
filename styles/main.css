@@ -594,7 +594,7 @@ footer .site-navigation .menu li a, footer .site-navigation .social-media-menu l
 }
 
 .padding-histoire {
-  min-height: 600px;
+  padding: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -602,9 +602,24 @@ footer .site-navigation .menu li a, footer .site-navigation .social-media-menu l
       -ms-flex-align: center;
           align-items: center;
 }
+.padding-histoire .bkg-filter {
+  height: auto;
+  min-height: 600px;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
 @media (max-width: 1025px) {
   .padding-histoire {
     margin-bottom: 120px;
+  }
+  .padding-histoire .text-center {
+    -ms-flex-line-pack: center;
+        align-content: center;
+    display: -ms-grid;
+    display: grid;
   }
   .padding-histoire .text-center h2 {
     margin-bottom: 14px;
