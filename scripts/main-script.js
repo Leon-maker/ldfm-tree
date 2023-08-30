@@ -952,7 +952,7 @@ jQuery(document).ready(function ($) {
             }
         }
 
-        var itemsPerPage = 4; // Nombre d'éléments par page
+        var itemsPerPage = -1; // Nombre d'éléments par page
         var currentPage = 1; // Page actuelle
         var filteredCards = []; // Tableau pour stocker les cartes filtrées
 
