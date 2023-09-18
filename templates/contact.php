@@ -5,7 +5,13 @@
 $title_page = get_the_title(); ?> 
 
 <?php 
-$img_bkg = wp_get_attachment_image_src(21533, 'full')[0];
+if ( has_post_thumbnail() ) {
+    $post_thumbnail_id = get_post_thumbnail_id( $post );
+    if ( ! $post_thumbnail_id ) {
+        return false;
+    }
+    $img_bkg = wp_get_attachment_image_url( $post_thumbnail_id, $size );
+}
 $title_page = 'Contactez-nous';
 $ArianeTitle = "Contact";
 $ArianeLink1 = get_the_permalink()  ;

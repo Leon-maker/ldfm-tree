@@ -11,28 +11,44 @@ function SHORTCODE_contact_section()
             <p>Contact</p>
             <h2>Nous contacter</h2>
        </div>
+
        <div class="contact-section-card-wrapper">
-            <div class="contact-section-card showroom-card">
-                <div class="contact-section-card-img-container">
-                    <img class="contact-section-card-img" src="<?= $img_showroom ?>" alt="Image d'illustration Showroom"/>
+        <?php
+            $args = array(
+                'post_parent' => '21249',
+                'post_type' => 'page',
+                'orderby' => 'menu_order'
+            );
+
+            $index = 1;
+            $child_query = new WP_Query( $args );
+            ?>
+
+            <?php while ( $child_query->have_posts() ) : $child_query->the_post(); 
+                $title          = get_field('carte_contact_titre');
+                $description    = get_field('carte_contact_description');
+                $image          = get_field('carte_contact_image');
+                ?>
+
+                <div class="contact-section-card card-<?= $index ?>">
+                    <div class="contact-section-card-img-container">
+                        <img class="contact-section-card-img" src="<?= $image ?>" alt="Image d'illustration Showroom"/>
+                    </div>
+                    <div class="contact-section-card-content">
+                        <h3 class="contact-section-card-title"><?= $title ?></h3>
+                        <p class="contact-section-card-paragraphe"><?= $description ?></p>
+                        <a href="<?= the_permalink() ?>" class="contact-section-card-link cta-primary ">Prendre rendez-vous</a>
+                    </div>
                 </div>
-                <div class="contact-section-card-content">
-                    <h3 class="contact-section-card-title">Prendre rendez-vous au showroom</h3>
-                    <p class="contact-section-card-paragraphe">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore.</p>
-                    <a href="/rdv-showroom" class="contact-section-card-link cta-primary ">Prendre rendez-vous</a>
-                </div>
-            </div>
-            <div class="contact-section-card bureau-etude-card">
-                <div class="contact-section-card-img-container">
-                    <img class="contact-section-card-img" src=" <?= $img_bureau_etudes ?>" alt="Image d'illustration Showroom"/>
-                </div>
-                <div class="contact-section-card-content">
-                    <h3 class="contact-section-card-title">Prendre rendez-vous au bureau d'études</h3>
-                    <p class="contact-section-card-paragraphe">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore.</p>
-                    <a href="/rdv-bureau-detudes" class="contact-section-card-link cta-primary ">Prendre rendez-vous</a>
-                </div>
-            </div>
-       </div>
+
+            <?php 
+            $index++;
+            endwhile; ?>
+
+        <?php
+        wp_reset_postdata();?>
+        </div>
+
     </section>
     </div>
     <?php

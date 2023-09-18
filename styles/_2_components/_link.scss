@@ -58,7 +58,7 @@
 .mouse-div {
     width: 100%;
     position: absolute;
-    top: 550px;
+    top: calc(100% * 0.8);
     z-index: 2;
     .cta-mouse {    
         border: 1px solid $color-white;

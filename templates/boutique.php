@@ -215,7 +215,54 @@ if ($last_segment === "boutique-outdoor"){
                             echo '</div>';
                         }
                     }
+                    
+                    // Marques
+                    echo '<div class="category-div">';
+                    $parent_marque_id = 'category-parent-marque'; // ID de la catégorie parente
+                    $child_marque_class = 'category-child-marque'; // Classe pour les catégories enfants du parent correspondant
+
+                        echo '<label class="category-label parent ' . 'marque' . '" onclick="toggleCategory(\'' . $parent_marque_id . '\', \'' . $child_marque_class . '\')">';
+                        echo '<span id="'  . $parent_marque_id . '" class="subtitle afficher-select tab tablinks filters-select parent-category">Marque</span>';
+                        echo '<i id="toggle-icon-'  . $parent_marque_id . '" class="fa-solid fa-plus"></i>';
+                        echo '</label>';
+
+                        echo '<div class="category-div-child">';
+
+                            //Récupérer toutes les marques
+                            $args = array(
+                                'post_type' => 'marque',
+                                'orderby' => 'name',
+                                'order' => 'asc',
+                                'posts_per_page' => -1, // Retrieve all posts
+                            );
+
+                            $query_marques = new WP_Query($args);
+
+                            if ($query_marques->have_posts()) {
+                                while ($query_marques->have_posts()) {
+                                    $query_marques->the_post();
+                                    $marque = get_the_title();
+                                    $marque_id = get_the_ID();
+
+                                    $child_marque_id = 'category-child-' . sanitize_title($marque); // ID de la catégorie enfant
+                                    echo '<label class="category-label child ' . $child_marque_class . '">';
+                                    echo '<input type="checkbox" class="category-checkbox"  data-category="' . sanitize_title($marque) . '">';
+                                    echo '<span id="' . $child_marque_id . '" class="subtitle afficher-select tab tablinks filters-select" data-filter="' . '.' . sanitize_title($marque) . '" data-sort-value="original-order">' . $marque . '</span>';
+                                    echo '</label>';
+                                    
+                                    // Ajouter la catégorie enfant filtrée au tableau des catégories filtrées
+                                    // $filtered_child_categories[$parent_category->term_id][] = $child_category;
+                                }
+                                wp_reset_postdata(); // Reset post data
+                            } else {
+                                echo 'No posts found.';
+                            }
+                        echo '</div>';
+
+                    echo '</div>';
+                    
                     ?>
+
                 </div>
             </div>
             <div class="totalProduct">
@@ -289,6 +336,17 @@ if ($last_segment === "boutique-outdoor"){
                     }
                 } else {
                     $category_classes = '';
+                }
+
+                // Get Marque
+                // Get the related posts from the ACF relationship field
+                $related_marque_posts = get_field('marque', get_the_ID());
+                if ($related_marque_posts) {
+                    // Loop through the related posts and retrieve their names
+                    foreach ($related_marque_posts as $related_marque) {
+                        $related_marque_name = get_post_field('post_name', $related_marque->ID);
+                        $category_classes .= sanitize_title($related_marque_name) . ' ';
+                    }
                 }
                 ?>
             
