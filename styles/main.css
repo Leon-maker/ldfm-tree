@@ -3428,8 +3428,8 @@ section.section-half .columns-wrapper .right-container {
   .page-template-influence .blog-isotope {
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: 1fr 25px 1fr 25px 1fr;
-    grid-template-columns: repeat(3, 1fr);
+    -ms-grid-columns: 1fr 25px 1fr;
+    grid-template-columns: repeat(2, 1fr);
     grid-column-gap: 25px;
     grid-row-gap: 75px;
     height: auto !important;
@@ -4624,4 +4624,3 @@ section.section-half .columns-wrapper .right-container {
     margin-bottom: 0;
   }
 }
-/*# sourceMappingURL=main.css.map */

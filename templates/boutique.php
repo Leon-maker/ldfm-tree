@@ -15,6 +15,7 @@ if ($last_segment === "boutique"){
     $args = array(
         'post_type' => 'produit',
         'posts_per_page' => -1,
+        // 'posts_per_page' => 3,
         'orderby' => 'date',
         'order' => 'DESC'
     );
@@ -359,15 +360,8 @@ if ($last_segment === "boutique-outdoor"){
             <h2>Aucun produit trouvé.</h2>
         <?php } ?>
     </div>
-    <div class="isotope-pagination-container">
-        <a href="#isotope-grid" type="button" class="isotope-pagination-item isotope-pagination-item-prev disabled">
-            <img class="img-arrow left" src="/wp-content/uploads/2023/06/right-arrow.png">
-        </a>
-        <div class="isotope-pagination-item numbers-of-page-container">
-        </div>
-        <a href="#isotope-grid" type="button" class="isotope-pagination-item isotope-pagination-item-next">
-            <img class="img-arrow right" src="/wp-content/uploads/2023/06/right-arrow.png">
-        </a>
+    <div class="isotope-button-container">
+        <button id="charger-plus">Charger plus</button>
     </div>
 </section>
 

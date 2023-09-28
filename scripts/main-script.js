@@ -633,125 +633,9 @@ jQuery(document).ready(function ($) {
         // Set pagination 
         /* ------------------------------------------------------------------------ */
         function setPagination(tabSelected) {
-    
-            var SettingsPagesOnItems = function(){
-                var itemsLength = $grid.children(itemSelector).length;
-                var pages = Math.ceil(itemsLength / itemsPerPage);
-                var item = 1;
-                var page = 1;
-                var selector = itemSelector;
-                var exclusives = [];
-        
-                    // for the tab checked, add its value and push to array
-                    selector = tabSelected;
-                    exclusives.push(selector);
-            
-                    // smash all values back together for 'and' filtering
-                    filterValue = exclusives.length ? exclusives.join('') : '*';
-                    // find each child element with current filter values
-                    $grid.children(filterValue).not('.gutter-sizer').each(function(){
-                        // increment page if a new one is needed
-                        if( item > itemsPerPage ) {
-                            page++;
-                            item = 1;
-                        }
-                        // add page number to element as a class
-                        var wordPage = page.toString();
-                        
-                        var classes = $(this).attr('class').split(' ');
-                        var lastClass = classes[classes.length-1];
-                        // last class shorter than 4 will be a page number, if so, grab and replace
-                        if(lastClass.length < 6){
-                            $(this).removeClass();
-                            classes.pop();
-                            classes.push(wordPage);
-                            classes = classes.join(' ');
-                            $(this).addClass(classes);
-                        } else {
-                            // if there was no page number, add it
-                           $(this).addClass(wordPage); 
-                        }
-                        item++;
-                    });
-                currentNumberPages = page;
-            }();
-    
-            // create page number navigation
-            var CreatePagers = function() {
-    
-                if (isMobile.any()) {
-                    var currentFilter = $('#filters-list').val();
-                } else {
-                    var currentFilter = $('.filter-button-group button.active').attr(filterAttribute);
-                }
-                var $isotopePager = ( $('.'+pagerClass).length == 0 ) ? $('<div class="'+pagerClass+'"></div>') : $('.'+pagerClass);
-    
-                $isotopePager.html('');
-
-                var $page_prev_btn=$('<a href="#isotope-grid" type="button" class="isotope-pagination-item isotope-pagination-item-prev"><img class="img-arrow left" src="/wp-content/uploads/2023/06/right-arrow.png"></a>');  
-                var $page_next_btn=$('<a href="#isotope-grid" type="button" class="isotope-pagination-item isotope-pagination-item-next"><img class="img-arrow right" src="/wp-content/uploads/2023/06/right-arrow.png"></a>');
-                $page_prev_btn.appendTo($isotopePager);
-                
-                var $pagerContainer = $('<div class="isotope-pagination-item numbers-of-page-container"></div>');
-                $pagerContainer.html('');
-
-                for( var i = 0; i < currentNumberPages; i++ ) {
-                    var $pager = $('<a href="#isotope-grid" class="nb-page-item pager" '+pageAttribute+'="'+(i+1)+'"></a>'); //  <a href ="javascript:void(0);"
-                        $pager.html(i+1);
-                        
-                        $pager.click(function(){
-                            scrollToTop();
-                            var page = $(this).eq(0).attr(pageAttribute);
-                            $('.isotope-pagination-container a').removeClass("active");
-                            $(this).addClass("active");
-                            goToPage(page, currentFilter);
-                        });
-    
-                    $pager.appendTo($pagerContainer);
-                    $pagerContainer.appendTo($isotopePager);
-                    $isotopePager.find('a.pager:first').addClass('active');
-                } 
-
-                // Cacher la pagination lorsqu'1 seule page
-                if( (currentNumberPages == 1) || (currentNumberPages == "") ) {
-                    $page_prev_btn.hide();
-                    $pagerContainer.hide();
-                    $page_next_btn.hide();
-                }
-
-                $page_next_btn.appendTo($isotopePager)
-                $grid.after($isotopePager);
-    
-                $page_prev_btn.click(function(){
-                    scrollToTop();
-                    if( currentPage > startPage) {
-                        $('.isotope-pagination-item-prev').removeAttr('disabled');
-                        var page=  currentPage - 1;
-                        var page=currentPage - 1 < startPage ? startPage : currentPage - 1;
-                        $('.isotope-pagination-container a').removeClass("active");
-                        $('.pager[data-page="'+page+'"]').addClass('active');
-                        goToPage(page, currentFilter);
-                    }
-                    else {
-                        $('.isotope-pagination-item-prev').attr('disabled','disabled');
-                    }
-    
-                });
-
-                $page_next_btn.click(function(){
-                    scrollToTop();
-                    if( currentPage < currentNumberPages) {
-                        $('.isotope-pagination-item-next').removeAttr('disabled');
-                        var page=currentPage + 1 > currentNumberPages ? currentNumberPages : currentPage + 1;
-                        $('.isotope-pagination-container a').removeClass("active");
-                        $('.pager[data-page="'+page+'"]').addClass('active');
-                        goToPage(page, currentFilter);
-                    }
-                    else {
-                        $('.isotope-pagination-item-next').attr('disabled','disabled');
-                    }
-                });
-            }();
+            var $grid = $('.votre-grid'); // Remplacez avec votre propre sélecteur
+            var itemsPerPage = 12;
+            var currentStartIndex = 0;
         }
 
         // Remove checks from all boxes and refilter
@@ -759,7 +643,7 @@ jQuery(document).ready(function ($) {
         function clearAll(){
            currentFilter = '*';
            setPagination(currentFilter);
-           goToPage(1, currentFilter);
+           goToPage(1, currentFilter); //Attention pagination
         }
  
         // Set pagination et go to page
@@ -911,55 +795,22 @@ jQuery(document).ready(function ($) {
 jQuery(document).ready(function ($) {
     if ($('body.page-template-boutique').length) {
 
-        function scrollToTop() {
-            var targetElement = document.getElementById('link-category');
-
-            // Définir les options de défilement
-            var scrollOptions = {
-                behavior: 'smooth', // Défilement en douceur
-                block: 'start' // Défilement vers le début de l'élément
-            };
-
-            setTimeout(function() {
-                // Défiler vers l'élément cible avec animation
-                targetElement.scrollIntoView(scrollOptions);
-
-            }, 200);
-        }
-
-        function updatePagination(totalItems, itemsPerPage) {
-            const paginationContainer = document.querySelector('.isotope-pagination-container');
-            const totalPages = Math.ceil(totalItems / itemsPerPage); // Calculer le nombre total de pages
-
-            if (totalPages <= 1) {
-                paginationContainer.classList.add('hidden');
-            } else {
-                paginationContainer.classList.remove('hidden');
-                const paginationNumbersContainer = document.querySelector('.numbers-of-page-container');
-                paginationNumbersContainer.innerHTML = ''; // Réinitialiser le contenu de la pagination
-
-                for (let i = 1; i <= totalPages; i++) {
-                    const pageLink = document.createElement('a');
-                    pageLink.href = '#isotope-grid';
-                    pageLink.classList.add('nb-page-item', 'pager');
-                    pageLink.dataset.page = i;
-                    pageLink.textContent = i;
-                    if (i === 1) {
-                        pageLink.classList.add('active');
-                    }
-                    paginationNumbersContainer.appendChild(pageLink);
-                }
-            }
-        }
-
         var itemsPerPage = 12; // Nombre d'éléments par page
-        var currentPage = 1; // Page actuelle
+        var currentPage = 1; // Nombre de pages
         var filteredCards = []; // Tableau pour stocker les cartes filtrées
 
         const checkboxes = document.querySelectorAll('.category-checkbox');
         const cards = document.querySelectorAll('.card-item');
         const buttonTotal = document.querySelector('.totalProduct button span');
         var totalItems = cards.length;
+
+        $('.isotope-button-container button').on('click', function() {
+            currentPage+=1;
+            showItems();
+            if (totalItems <= itemsPerPage * currentPage) {
+                $(this).css('display', 'none');
+            }
+        });
 
         function applyFilters() {
             const selectedCategories = [];
@@ -981,88 +832,36 @@ jQuery(document).ready(function ($) {
             totalItems = filteredCards.length; // Mettre à jour le nombre total d'éléments après la filtration
             currentPage = 1; // Réinitialiser la page actuelle à la première page
             buttonTotal.textContent = `(${totalItems})`;
-            updatePagination(totalItems, itemsPerPage);
-            showItems(currentPage);
+
         }
-        function showItems(page) {
-            const startIndex = (page - 1) * itemsPerPage; // Index de départ des éléments à afficher
-            const endIndex = page * itemsPerPage; // Index de fin des éléments à afficher
 
-            cards.forEach(function (card) {
-                card.classList.remove('card-visible');
-                card.classList.remove('card-transition');
-                card.classList.add('hidden');
+        function showItems() {
+            const numberCard = itemsPerPage * currentPage;
+            if (totalItems <= numberCard) {
+                $('.isotope-button-container button').css('display', 'none');
+            }
+            filteredCards.forEach(function (card) {
+                card.style.display = 'none';
             });
-
-            filteredCards.slice(startIndex, endIndex).forEach(function (card) {
-                card.classList.remove('hidden');
-                card.classList.add('card-transition');
-                setTimeout(function() {
-                card.classList.add('card-visible');
-                }, 0);
-            });
-
-            // Gérer la classe "active" sur les numéros de page
-            const pageLinks = document.querySelectorAll('.nb-page-item');
-
-            pageLinks.forEach(function (link) {
-                const pageNumber = parseInt(link.dataset.page);
-
-                if (pageNumber === page) {
-                    link.classList.add('active');
-                } else {
-                    link.classList.remove('active');
+            for (i = 0; i < numberCard; i++ ){
+                if (filteredCards[i]) {
+                    filteredCards[i].style.display = 'block';
                 }
-            });
-
-            // Gérer les boutons de pagination
-            const prevButton = document.querySelector('.isotope-pagination-item-prev');
-            const nextButton = document.querySelector('.isotope-pagination-item-next');
-
-            if (page === 1) {
-                prevButton.classList.add('disabled');
-                nextButton.classList.remove('disabled');
-            } else if (page === Math.ceil(totalItems / itemsPerPage)) {
-                prevButton.classList.remove('disabled');
-                nextButton.classList.add('disabled');
-            } else {
-                prevButton.classList.remove('disabled');
-                nextButton.classList.remove('disabled');
-            }         
+            }
         }
         applyFilters(); // Appliquer les filtres lors du chargement de la page
-        updatePagination(totalItems, itemsPerPage);
-        showItems(currentPage);
+        showItems();
+        $(".totalProduct button").click(function() {
+            var cardItems = document.querySelectorAll('.product-list .card-item');
+            // Applique display: none; à chaque élément
+            cardItems.forEach(function(item) {
+                item.style.display = 'none';
+            });
+            showItems();
+        });
 
         checkboxes.forEach(function (checkbox) {
             checkbox.addEventListener('change', applyFilters);
-        });
-
-        $('.numbers-of-page-container').on('click', '.nb-page-item', function (e) {
-            e.preventDefault();
-            const page = parseInt($(this).data('page'));
-            currentPage = page;
-            showItems(currentPage);
-            scrollToTop();
-        });
-
-        $('.isotope-pagination-item-prev').on('click', function (e) {
-            e.preventDefault();
-            if (currentPage > 1) {
-                currentPage--;
-                showItems(currentPage);
-                scrollToTop();
-            }
-        });
-
-        $('.isotope-pagination-item-next').on('click', function (e) {
-            e.preventDefault();
-            const totalPages = Math.ceil(totalItems / itemsPerPage);
-            if (currentPage < totalPages) {
-                currentPage++;
-                showItems(currentPage);
-                scrollToTop();
-            }
         });
     }
 
