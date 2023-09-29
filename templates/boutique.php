@@ -360,7 +360,7 @@ if ($last_segment === "boutique-outdoor"){
             <h2>Aucun produit trouvé.</h2>
         <?php } ?>
     </div>
-    <div class="isotope-button-container">
+    <div class="isotope-button-container charger-plus">
         <button id="charger-plus">Charger plus</button>
     </div>
 </section>
@@ -387,9 +387,11 @@ function showOverlay(clickedElement) {
         overlay.style.display = 'block';
     }
     if(clickedElement){
-        parent_category_id = 'category-parent-' + clickedElement.classList[1]; // ID de la catégorie parente
-        child_category_class = 'category-child-' + clickedElement.classList[1]; // Classe pour les catégories enfants du parent correspondant             
-        toggleCategory(parent_category_id, child_category_class);
+
+        // Vérifier si la catégorie parente est déjà ouverte
+        var element = clickedElement.classList[2];
+        var label = document.querySelector(".category-div label." + element);
+        label.click();
     }
 }
 function closeAllParentCategories() {

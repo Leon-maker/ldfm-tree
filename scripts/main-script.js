@@ -530,21 +530,21 @@ for (i = 0; i < acc.length; i++) {
 jQuery(document).ready(function ($) {
     if($('body.page-template-influence').length) {
 
-        function scrollToTop() {
-            var targetElement = document.getElementById('id-filters');
+        // function scrollToTop() {
+        //     var targetElement = document.getElementById('id-filters');
 
-            // Définir les options de défilement
-            var scrollOptions = {
-                behavior: 'smooth', // Défilement en douceur
-                block: 'start' // Défilement vers le début de l'élément
-            };
+        //     // Définir les options de défilement
+        //     var scrollOptions = {
+        //         behavior: 'smooth', // Défilement en douceur
+        //         block: 'start' // Défilement vers le début de l'élément
+        //     };
 
-            setTimeout(function() {
-                // Défiler vers l'élément cible avec animation
-                targetElement.scrollIntoView(scrollOptions);
+        //     setTimeout(function() {
+        //         // Défiler vers l'élément cible avec animation
+        //         targetElement.scrollIntoView(scrollOptions);
 
-            }, 200);
-        }
+        //     }, 200);
+        // }
 
         var itemSelector = '.blog-item'; 
 
@@ -633,9 +633,125 @@ jQuery(document).ready(function ($) {
         // Set pagination 
         /* ------------------------------------------------------------------------ */
         function setPagination(tabSelected) {
-            var $grid = $('.votre-grid'); // Remplacez avec votre propre sélecteur
-            var itemsPerPage = 12;
-            var currentStartIndex = 0;
+    
+            var SettingsPagesOnItems = function(){
+                var itemsLength = $grid.children(itemSelector).length;
+                var pages = Math.ceil(itemsLength / itemsPerPage);
+                var item = 1;
+                var page = 1;
+                var selector = itemSelector;
+                var exclusives = [];
+        
+                    // for the tab checked, add its value and push to array
+                    selector = tabSelected;
+                    exclusives.push(selector);
+            
+                    // smash all values back together for 'and' filtering
+                    filterValue = exclusives.length ? exclusives.join('') : '*';
+                    // find each child element with current filter values
+                    $grid.children(filterValue).not('.gutter-sizer').each(function(){
+                        // increment page if a new one is needed
+                        if( item > itemsPerPage ) {
+                            page++;
+                            item = 1;
+                        }
+                        // add page number to element as a class
+                        var wordPage = page.toString();
+                        
+                        var classes = $(this).attr('class').split(' ');
+                        var lastClass = classes[classes.length-1];
+                        // last class shorter than 4 will be a page number, if so, grab and replace
+                        if(lastClass.length < 6){
+                            $(this).removeClass();
+                            classes.pop();
+                            classes.push(wordPage);
+                            classes = classes.join(' ');
+                            $(this).addClass(classes);
+                        } else {
+                            // if there was no page number, add it
+                           $(this).addClass(wordPage); 
+                        }
+                        item++;
+                    });
+                currentNumberPages = page;
+            }();
+    
+            // create page number navigation
+            var CreatePagers = function() {
+    
+                if (isMobile.any()) {
+                    var currentFilter = $('#filters-list').val();
+                } else {
+                    var currentFilter = $('.filter-button-group button.active').attr(filterAttribute);
+                }
+                var $isotopePager = ( $('.'+pagerClass).length == 0 ) ? $('<div class="'+pagerClass+'"></div>') : $('.'+pagerClass);
+    
+                $isotopePager.html('');
+
+                var $page_prev_btn=$('<a href="#isotope-grid" type="button" class="isotope-pagination-item isotope-pagination-item-prev"><img class="img-arrow left" src="/wp-content/uploads/2023/06/right-arrow.png"></a>');  
+                var $page_next_btn=$('<a href="#isotope-grid" type="button" class="isotope-pagination-item isotope-pagination-item-next"><img class="img-arrow right" src="/wp-content/uploads/2023/06/right-arrow.png"></a>');
+                $page_prev_btn.appendTo($isotopePager);
+                
+                var $pagerContainer = $('<div class="isotope-pagination-item numbers-of-page-container"></div>');
+                $pagerContainer.html('');
+
+                for( var i = 0; i < currentNumberPages; i++ ) {
+                    var $pager = $('<a href="#isotope-grid" class="nb-page-item pager" '+pageAttribute+'="'+(i+1)+'"></a>'); //  <a href ="javascript:void(0);"
+                        $pager.html(i+1);
+                        
+                        $pager.click(function(){
+                            scrollToTop();
+                            var page = $(this).eq(0).attr(pageAttribute);
+                            $('.isotope-pagination-container a').removeClass("active");
+                            $(this).addClass("active");
+                            goToPage(page, currentFilter);
+                        });
+    
+                    $pager.appendTo($pagerContainer);
+                    $pagerContainer.appendTo($isotopePager);
+                    $isotopePager.find('a.pager:first').addClass('active');
+                } 
+
+                // Cacher la pagination lorsqu'1 seule page
+                if( (currentNumberPages == 1) || (currentNumberPages == "") ) {
+                    $page_prev_btn.hide();
+                    $pagerContainer.hide();
+                    $page_next_btn.hide();
+                }
+
+                $page_next_btn.appendTo($isotopePager)
+                $grid.after($isotopePager);
+    
+                $page_prev_btn.click(function(){
+                    scrollToTop();
+                    if( currentPage > startPage) {
+                        $('.isotope-pagination-item-prev').removeAttr('disabled');
+                        var page=  currentPage - 1;
+                        var page=currentPage - 1 < startPage ? startPage : currentPage - 1;
+                        $('.isotope-pagination-container a').removeClass("active");
+                        $('.pager[data-page="'+page+'"]').addClass('active');
+                        goToPage(page, currentFilter);
+                    }
+                    else {
+                        $('.isotope-pagination-item-prev').attr('disabled','disabled');
+                    }
+    
+                });
+
+                $page_next_btn.click(function(){
+                    scrollToTop();
+                    if( currentPage < currentNumberPages) {
+                        $('.isotope-pagination-item-next').removeAttr('disabled');
+                        var page=currentPage + 1 > currentNumberPages ? currentNumberPages : currentPage + 1;
+                        $('.isotope-pagination-container a').removeClass("active");
+                        $('.pager[data-page="'+page+'"]').addClass('active');
+                        goToPage(page, currentFilter);
+                    }
+                    else {
+                        $('.isotope-pagination-item-next').attr('disabled','disabled');
+                    }
+                });
+            }();
         }
 
         // Remove checks from all boxes and refilter
