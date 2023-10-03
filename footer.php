@@ -26,11 +26,25 @@ window.addEventListener('DOMContentLoaded', function() {
       var windowHeight = Math.round(window.innerHeight);
 	  console.log(sectionTop);
 	  console.log(windowHeight);
-
+      if (isMobile()){
+        if ((sectionTop + 100 ) < windowHeight) {
+          section.classList.add('fade-in');
+        }
+      }
       if ((sectionTop + 400) < windowHeight) {
         section.classList.add('fade-in');
       }
     });
+  }
+
+  function isMobile() {
+    return navigator.userAgent.match(/Android/i)
+      || navigator.userAgent.match(/webOS/i)
+      || navigator.userAgent.match(/iPhone/i)
+      || navigator.userAgent.match(/iPad/i)
+      || navigator.userAgent.match(/iPod/i)
+      || navigator.userAgent.match(/BlackBerry/i)
+      || navigator.userAgent.match(/Windows Phone/i);
   }
 
   window.addEventListener('scroll', checkScroll);

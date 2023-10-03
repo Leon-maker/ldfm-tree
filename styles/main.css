@@ -2332,7 +2332,7 @@ header .menu-item-has-children ul li a {
 }
 @media (max-width: 1300px) {
   .burger .burger-menu .burger-menu-wrapper .principal-menu-burger {
-    margin-top: 100px;
+    margin-top: 75px;
     border-top: 1px solid #ffffff;
   }
 }
@@ -2348,6 +2348,11 @@ header .menu-item-has-children ul li a {
 }
 .burger .burger-menu .burger-menu-wrapper .social-media-menu {
   width: 100%;
+}
+@media (max-width: 1300px) {
+  .burger .burger-menu .burger-menu-wrapper .social-media-menu {
+    margin-top: -20px;
+  }
 }
 
 @media all and (min-width: 1300px) {
@@ -3601,7 +3606,7 @@ section.section-half .columns-wrapper .right-container {
 }
 @media (min-width: 1025px) {
   .influence-template-default .single-influence-main-section > .section-post .swiper {
-    height: ptr(536, tablet) !important;
+    height: 85vh;
   }
 }
 .influence-template-default .single-influence-main-section > .section-post .swiper .swiper-slide {
@@ -4244,6 +4249,25 @@ section.section-half .columns-wrapper .right-container {
   position: relative !important;
 }
 
+.confirm-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 100px;
+}
+
+@media (max-width: 767px) {
+  .gform_wrapper.gravity-theme .gfield.gfield--width-full {
+    width: 100% !important;
+  }
+}
+
 /**
  * --------------------------------------------------------------------------------------------------------------
  *                                                  6 : PAGES
@@ -4381,7 +4405,7 @@ section.section-half .columns-wrapper .right-container {
 
 @media (max-width: 1024px) {
   .realisation-card:last-child .realisation-card-content {
-    margin-bottom: 0;
+    margin-bottom: 10px;
   }
 }
 .section-archive-all-realisations {

@@ -119,7 +119,7 @@ document.addEventListener('DOMContentLoaded', function() {
             setTimeout(function() {
                 filterButton.click();
 
-            }, 200);
+            }, 1000);
         }
     }
 });

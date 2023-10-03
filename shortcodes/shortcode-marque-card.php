@@ -2,6 +2,8 @@
 function SHORTCODE_nos_marques_card()
 {
     ob_start();
+    $description = get_field('description');
+    $description = wp_trim_words($description, 100, '...');
     ?>
 
     <div class="marque-card">
@@ -9,7 +11,7 @@ function SHORTCODE_nos_marques_card()
         <div class="marque-card-content-container">
             <h3 class="marque-card-title"><?= get_the_title()?></h3>
             <div class="marque-card-container-paragraphe">
-                <p class="marque-card-paragraphe"><?= get_field('description'); ?></p>
+                <p class="marque-card-paragraphe"><?= $description; ?></p>
             </div>
         </div>
     </div>

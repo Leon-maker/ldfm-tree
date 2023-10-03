@@ -62,7 +62,8 @@
 
                 @media (min-width: $layout-breakpoint-start-desktop) {
                     //height: ptr(600, desktop) !important;
-                    height: ptr(536, tablet) !important;
+                    // height: ptr(536, tablet) !important;
+                    height: 85vh;
                 }
 
                 .swiper-slide {

@@ -561,7 +561,8 @@ header {
             .principal-menu-burger{
                 margin-top: calc( $header-inside-height + (2 * $header-padding-y-start-tablette) );
                 @media (max-width: $layout-breakpoint-end-burger) {
-                    margin-top: 100px;
+                    // margin-top: 100px;
+                    margin-top: 75px;
                     border-top: 1px solid $header-top-reached-font-color;
                 }
                 @media (min-width: $layout-breakpoint-start-tablette) {
@@ -574,6 +575,9 @@ header {
             }
             .social-media-menu {
                 width: 100%;
+                @media (max-width: $layout-breakpoint-end-burger) {
+                    margin-top: -20px;
+                }
             }
         }
     }
