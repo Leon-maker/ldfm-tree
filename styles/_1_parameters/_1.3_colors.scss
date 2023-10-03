@@ -5,20 +5,20 @@
 
 // -------------- * Primary colors * --------------
 
-$color-white   : #ffffff;
-$color-black   : #000000;
-$color-grey    : #FAFAFA;
+$color-white   : #FFF5F5;
+$color-black   : #1C1C1C;
+$color-yellow  : #FFEB00;
+$color-pink    : #FF82D5;
+$color-green   : #1ED356;
+$color-violet  : #C31CB2;
+$color-blue    : #0080EC;
 
 // ------------- * Secondary colors * -------------
 
 $color-red     : #FF2E47;
 $color-orange  : #F85B3A;
 $color-green   : #00A95B;
-$color-yellow  : #FFEB00;
-$color-pink    : #FF82D5;
-$color-green   : #1ED356;
-$color-violet  : #C31CB2;
-$color-blue    : #0080EC;
+$color-grey    : #f5f7fc;
 
 /* Réseaux sociaux */
 $color-blue-facebook : #3b5998;
@@ -48,7 +48,7 @@ $color-blue-linkedIn : #0077b5;
 // -------------- * Color classes * --------------
 
 .white {
-  color: $color-white !important;
+  color: $color-white;
 }
 .black {
   color: $color-black;
@@ -72,14 +72,9 @@ $color-blue-linkedIn : #0077b5;
     $bkg-color: $color-black
   )
 }
-.bkg-grey {
+.bkg-blue {
   @include bkg-color(
-    $bkg-color: $color-grey
+    $bkg-color: $color-blue
   )
 }
-.agence-side-description-container, .realisation-card-content{
-  color: rgba($color: $color-black, $alpha: 0.7);
-  h3, h2, a {
-    color: $color-black;
-  }
-}
+

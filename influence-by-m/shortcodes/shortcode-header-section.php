@@ -19,11 +19,6 @@ function SHORTCODE_SectionHeader($arguments)
     ), $arguments );
 
     $header_section_slug = $arguments_array['slug-section'];
-
-    $choixGroup = get_field('image_ou_video');
-    if (!empty($choixGroup)){
-        $choix = $choixGroup['choix'];
-    }
     
     if (!empty($header_section_slug)) {
         $args = array(
@@ -47,11 +42,6 @@ function SHORTCODE_SectionHeader($arguments)
         $img_bkg = $arguments_array['img-bkg']; // Récupération de la valeur de l'image
         $title = $arguments_array['title']; // Récupération de la valeur du titre
         $description = $arguments_array['description']; // Récupération de la valeur de la description
-        if (!empty($choix)){
-            if ($choix=='image'){
-                $img_bkg = wp_get_attachment_url($choixGroup["image"]);
-            }
-        }
     }
 
     $button1 = $arguments_array['button1']; // Récupération de la valeur du bouton
@@ -69,15 +59,7 @@ function SHORTCODE_SectionHeader($arguments)
         get_header();
     ?>
 
-    <?php if (empty($choix) || $choix=='image'){ ?>
     <section class="padding-top-header" style="background-image: url('<?php echo $img_bkg; ?>');" role="img" aria-label="Image d'illustration 1 de la première section de la page." class="illustration illu1" style="width: 100%;">
-    <?php } ?> 
-    <?php if ($choix=='video'){ ?>
-        <section class="padding-top-header" style="width: 100%;">
-             <video class="influence-card-img" playsinline autoplay muted loop>
-                 <source src="<?php echo $choixGroup["video"] ?>">
-             </video><?php 
-         } ?>
         <div class="bkg-filter">
             <?php echo do_shortcode('[shortcode-fil-ariane]');  ?>    
             <div class="text-center white">
@@ -89,12 +71,12 @@ function SHORTCODE_SectionHeader($arguments)
                         <?php echo $description; ?> 
                     </h3>
                 <?php } ?>
-                <div class="header-button boldy">
+                <div class="header-button">
                     <?php if (!empty($button1)) { ?>
-                        <a class="cta-third" href="/boutique-indoor"><?php echo $button1; ?></a>
+                        <a class="cta-third" href=""><?php echo $button1; ?></a>
                     <?php } ?>
                     <?php if (!empty($button2)) { ?>
-                        <a class="cta-third" href="/boutique-outdoor"><?php echo $button2; ?></a>
+                        <a class="cta-third" href=""><?php echo $button2; ?></a>
                     <?php } ?>
                 </div>
             </div>

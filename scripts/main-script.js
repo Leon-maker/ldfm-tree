@@ -4,7 +4,7 @@
 // Import des managers
 /*import HomePageManager from "./managers/HomePageManager";
 import BlogPageManager from "./managers/BlogPageManager";*/
-import SwiperManager from "./managers/SwiperManager";
+import SwiperManager from "./managers/SwiperManager.js";
 
 // Initialisation des variables
 const homePage = document.querySelector('.home');
