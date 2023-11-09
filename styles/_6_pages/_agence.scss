@@ -1,0 +1,163 @@
+.page-template-agence{
+    @media (min-width: $layout-breakpoint-end-tablette) {
+        .agence-main-section{
+            padding: 120px 180px;
+            & .agence-description-container{
+                display: grid;
+                grid-template-rows: repeat(1);
+                grid-template-columns: repeat(2, 1fr);
+        
+                & .agence-side-description-container{
+                    display:flex;
+                    justify-content: center;
+                    align-items: flex-start;
+        
+                    &:first-child{
+                        margin-right: 30px;
+                    }
+                    &:last-child{
+                        margin-left: 30px;
+                    }
+                    p{
+                        display: flex;
+                        justify-content: flex-start;
+                        opacity: 0.7;
+                    }
+                }
+            }
+        }
+        .equipe-section-container{
+
+            .equipe-card{
+                margin:35px;
+
+                & .equipe-card-content-container{
+                    max-width: 410px;
+                    max-height:410px ;
+                    position: relative;
+                    transition: background-color .4s ease-in-out;
+                    &::after{
+                        content: "";
+                        position: absolute;
+                        bottom: 4px;
+                        left: 0;
+                        width: 100%;
+                        height: 100px;
+                        background: linear-gradient(to top, black, rgba(255, 255, 255, 0));
+                        z-index: 10;
+                        opacity: 0;
+                    }
+                    &:hover {
+                        &::after{
+                            opacity: 1;
+                        }
+                    }
+                }
+                
+                & .equipe-card-container-paragraphe{
+                    position: absolute;
+                    transition: opacity .4s ease-in-out;
+                    bottom: 4px;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background:rgba(0, 0, 0, 0.8);
+                    opacity: 0;
+                    overflow: hidden;
+                    overflow-y: scroll;
+                    & .equipe-card-paragraphe{
+                        color: $color-white;
+                        padding: 20px;
+                        margin-bottom: 0px !important;
+                        padding: 60px 50px;
+                    }
+                }
+                
+                & .equipe-card-footer{
+                    flex-direction: column;
+                    display: flex;
+                    align-items: center;
+            
+                    & .equipe-card-title{
+                        margin-top: 24px;
+                        margin-bottom: 10px;
+                        text-transform:capitalize !important;
+                        & span{
+                            text-transform: uppercase;
+                        }
+                    }
+            
+                    & .equipe-card-metier{
+                        margin: 0px;
+                    }
+                }
+            
+                &:hover {
+                    & .equipe-card-container-paragraphe{
+                        transition: opacity .4s ease-in-out;
+                        opacity: 1;
+                        z-index: 10;
+                    }
+                } 
+            }
+        
+            & .cpt-section-card-wrapper{
+                flex-wrap: wrap;
+                margin-left: -35px;
+            }
+        }
+        
+    }
+    @media (max-width: $layout-breakpoint-end-tablette) {
+        .agence-main-section{
+            padding: 60px 25px 120px 25px;
+            max-width: 440px;
+            margin: auto;
+            & .agence-side-description-container{
+                &:first-child{
+                    margin-bottom: 20px;
+                }
+            }
+        }
+        .realisation-card-content{
+            margin: 25px 25px 120px 25px;
+            a{
+                margin-top: 30px !important;
+            }
+        }
+        .equipe-section-container{
+            padding-bottom: 0px;
+            padding-top: 0px;
+            a {
+                position: absolute;
+            }
+            & .cpt-section-card-wrapper{
+                margin-top: 30px;
+                .equipe-card-content-container{
+                    .equipe-card-footer {
+                        text-align: center;
+                        h3{
+                            margin-bottom: 10px;
+                        }
+                        p{
+                            margin-top: 0px;
+                        }
+                    }
+                    .equipe-card-img{
+                        width: 100%;
+                    }
+                    .equipe-card-paragraphe{
+                        margin-bottom: 60px;
+                        color: rgba($color: $color-black, $alpha: 0.7);
+                    }
+                }
+                .equipe-card:last-child{
+                    .equipe-card-paragraphe{
+                        margin-bottom: 0;
+                    }
+                }
+            }
+
+        }
+    }
+}

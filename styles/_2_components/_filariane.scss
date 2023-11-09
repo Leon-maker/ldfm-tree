@@ -1,0 +1,65 @@
+.breadcrumb-container{
+    & .whited-filariane{
+        & .dot-filariane{
+           background: white !important;
+        }
+        & li a{
+            color: $color-white !important;
+        }
+        & li:hover{
+            & a{
+                transition: all .4s ease-in-out;
+                opacity: 1 !important;
+            }
+        }
+        & li:last-child{
+            color: $color-white !important;
+            & a{
+                opacity: 1 !important;
+                color: $color-white !important;
+            }
+        }
+
+    }
+    & .fil-ariane-wrapper{
+        & .fil-ariane-container{
+            display: flex;
+            & li{
+                list-style-type: none;
+                font-size: 14px;
+                color: $color-black;
+                display: flex;
+                align-items: center;
+                width: fit-content;
+                font-family: $font-main-400;
+                & a{
+                    opacity: 0.4;
+                }
+                &:hover{
+                    & a{
+                        transition: all .4s ease-in-out;
+                        opacity: 1 ;
+                        color: $color-black ;
+                    }
+                }
+            }
+            & li:last-child a{
+                opacity: 1;
+            }
+            & li:nth-last-child(2) .dot-filariane {
+                opacity: 1 ;
+            }
+            & .dot-filariane{
+                content: "";
+                width: 5px;
+                height: 5px;
+                background-color: $color-black;
+                display: block;
+                border-radius: 50%;
+                opacity: 0.4;
+                margin-left: 10px;
+                margin-right: 10px;
+            }
+        }
+    }
+}

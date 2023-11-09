@@ -7,3 +7,83 @@
  * --------------------------------------------------------------------------------------------------------------
  *                                                  LEGAL PAGES 
 /**/
+.page-template-legals{
+    @media (max-width: $layout-breakpoint-end-burger) and (min-width: $layout-breakpoint-end-tablette){
+        footer{
+            .nav{
+                max-width: 70%;
+            }
+        }
+    }
+    @media (max-width: $layout-breakpoint-end-tablette){
+        footer{
+            .nav{
+                max-width: none;
+            }
+        }
+    }
+    @media (min-width: $layout-breakpoint-start-desktop) {
+        .bkg-wrapper{
+            padding: 120px $lateral-margin-width-desktop 0 $lateral-margin-width-desktop;
+        }
+        .legal-section{
+            padding: 60px 0 160px 0;
+            & .terms_content{
+                max-width: 70%;
+            }
+        }
+    }    
+    @media (min-width: $layout-breakpoint-start-tablette) and (max-width: $layout-breakpoint-start-desktop) {
+        .bkg-wrapper{
+            padding: 120px $lateral-margin-width-desktop 0 $lateral-margin-width-desktop;
+
+        }
+        .legal-section{
+            padding: 50px 0 120px 0;
+            & .terms_content{
+                width: 100%;
+                padding: 0 $lateral-margin-width-desktop;
+            }
+        }
+        footer {
+            .nav {
+                padding: 50px $lateral-margin-width-desktop;
+            }
+        }
+    }
+    @media (max-width: $layout-breakpoint-start-tablette) {
+        .bkg-wrapper{
+            padding: 100px $lateral-margin-width-mobile 0 $lateral-margin-width-mobile;
+        }
+        .legal-section{
+            padding: 50px $lateral-margin-width-mobile 120px $lateral-margin-width-mobile;
+        }
+    }
+    .bkg-wrapper{
+        ul {
+            padding: 0;
+        }
+    }
+    .legal-section{
+
+        & .columns-wrapper{
+            display: flex;
+            justify-content: center;
+        }
+        & .terms_content{
+            word-break: break-word;
+            h1 {
+                margin-top: 0;
+            }
+            & h2{
+                color: black;
+                margin-bottom: 30px;
+                margin-top: 50px;
+            }
+            & .main-title{
+                text-align: left !important;
+                text-transform: uppercase;
+            }
+        }
+    }
+}

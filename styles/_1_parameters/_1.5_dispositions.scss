@@ -26,9 +26,80 @@
  * --------------------------------------------------------------------------------------------------------------
  *                                                  DEDICATED CLASSES 
 /**/
-
+html {
+  scroll-behavior: smooth;
+}
 // -------------- * Text positions classes * --------------
 
 .text-center {
   text-align: center;
+}
+.hidden {
+  display: none !important;
+}
+.card-transition {
+  transition: opacity 1s ease;
+  opacity: 0;
+}
+.card-visible {
+  opacity: 1;
+}
+.transition-fade {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+.transition-fade.show {
+  opacity: 1;
+}
+.uppercase {
+  text-transform: uppercase;
+}
+.capital{
+  text-transform: capitalize;
+}
+.produit-card-img {
+  transition: opacity 3s ease-in-out;
+}
+
+.full-width {
+  width: 100%;
+  width: -moz-available;          /* WebKit-based browsers will ignore this. */
+  width: -webkit-fill-available;  /* Mozilla-based browsers will ignore this. */
+  width: fill-available;
+}
+
+//pagination
+.pagination-container {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  top: -30px;
+}
+
+.pagination-bullet {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: rgba($color: $color-white, $alpha: 0.3);
+  z-index: 23;
+  margin: 0 5px;
+}
+
+.pagination-bullet.active {
+background-color: $color-white;
+}
+
+.acf-map {
+  width: 100%;
+  margin: 150px 0;
+  @media all and (max-width: $layout-breakpoint-end-tablette) {
+    //max-width: 440px;
+    margin: 120px auto;
+  }
+  height: 80vh;
+  border: #ccc solid 1px;
+}
+
+.acf-map img {
+ max-width: inherit !important;
 }

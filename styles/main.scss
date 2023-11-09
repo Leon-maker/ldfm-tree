@@ -24,6 +24,10 @@
 /**/
 @import '_2_components/_forms';
 @import '_2_components/_various';
+@import '_2_components/_filariane';
+@import '_2_components/_link';
+@import '_2_components/_swiper-next_prev';
+
 
 /**
  * --------------------------------------------------------------------------------------------------------------
@@ -40,6 +44,9 @@
 @import '_4_blocks/_header'; 
 @import '_4_blocks/_footer'; 
 @import '_4_blocks/_sections'; 
+@import '_4_blocks/_contact-section'; 
+@import '_4_blocks/_cpt-section'; 
+
 
 /**
  * --------------------------------------------------------------------------------------------------------------
@@ -48,6 +55,12 @@
 /**/
 @import '_5_templates/_posts_archive';
 @import '_5_templates/_post_single';
+@import '_5_templates/_post_single_influence';
+@import '_5_templates/_post_single_realisation';
+@import '_5_templates/_post_single_produit';
+@import '_5_templates/_post_boutique';
+@import '_5_templates/_post_confirm_form';
+
 
 /**
  * --------------------------------------------------------------------------------------------------------------
@@ -58,3 +71,7 @@
 @import '_6_pages/_legals';
 @import '_6_pages/_contact';
 @import '_6_pages/_partial_prod';
+@import '_6_pages/_nos_marques';
+@import '_6_pages/_nos_realisations';
+@import '_6_pages/_agence';
+@import '_6_pages/_boutique';

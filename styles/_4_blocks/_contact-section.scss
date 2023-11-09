@@ -1,0 +1,46 @@
+.contact-section-container{
+    display: flex;
+    flex-direction: column;
+    @media (min-width: $layout-breakpoint-end-tablette) {
+        padding-top: 150px;
+        padding-bottom: 150px;
+    }
+    @media (max-width: $layout-breakpoint-end-tablette) {
+        padding-top: 120px;
+        padding-bottom: 120px;
+    }
+
+    & .contact-section-header-title{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+
+        & >p{
+            opacity: 0.5;
+            color: $color-black;
+            margin:0px;
+        }
+        & >h2{
+            color: $color-black;
+        }
+    }
+
+    & .contact-section-card-wrapper{
+        @media (max-width: $layout-breakpoint-end-tablette) {
+            flex-direction: column;
+
+            & .contact-section-card{
+                width: 100% !important;
+            }
+            .showroom-card{
+                margin-bottom: 60px;
+            }
+        }
+        @media (min-width: $layout-breakpoint-end-tablette) {
+            margin-top: 20px;
+        }
+        display: flex;
+        flex-direction: row;
+        //justify-content: space-between;
+    }
+}

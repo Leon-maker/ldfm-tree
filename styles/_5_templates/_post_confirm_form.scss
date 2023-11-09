@@ -1,0 +1,12 @@
+.confirm-form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
+
+.gform_wrapper.gravity-theme .gfield.gfield--width-full {
+    @media (max-width: $layout-breakpoint-end-smartphone) {
+        width: 100% !important;
+    }
+}
