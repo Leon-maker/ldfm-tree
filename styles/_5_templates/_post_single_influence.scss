@@ -22,20 +22,23 @@
                 width: 100% !important;
                 max-height: 500px;
                 object-fit: cover;
-                margin: 60px 0px 0 0;
+                margin: 30px 0px 0 0;
             }
             & p{
                 font-family: $font-main-400;
                 text-align: left;
                 font-size: 16px;
                 color: $color-black;
+                margin-top: 10px;
             }
 
             & h1,h2,h3{
                 font-family: $font-main-500;
                 text-align: left;
-                font-size: 20px;
+                //font-size: 20px;
                 color: $color-black;
+                margin-top: 50px;
+                margin-bottom: 10px;
             }
             @media (min-width: $layout-breakpoint-end-tablette) {
                 width: 70%;
