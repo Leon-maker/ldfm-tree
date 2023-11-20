@@ -8,3 +8,110 @@
  *                                                  FORMS 
 /**/
 
+/**
+ * --------------------------------------------------------------------------------------------------------------
+ *                                                  DEDICATED VARIABLES 
+/**/
+
+/**
+ * --------------------------------------------------------------------------------------------------------------
+ *                                                  FORMS 
+/**/
+
+header {
+    .headerSearchBar {
+        .search-form-icon {
+            position: relative;
+            right: 5px;
+        }
+        form {
+            display: flex;
+            flex-direction: row-reverse;
+            width: 100%;
+            padding: 0px;
+            //border: 1px solid var(--theme-color-black);
+            input {
+                background: transparent;
+                color: var(--theme-color-black);
+                padding: 0px;
+                border: none;
+                &::placeholder {
+                    font-size: 12px;
+                    line-height: 18px;
+                    font-family: "Montserrat-Regular";
+                    color: black;
+                }
+                &:focus-visible {
+                    outline: none;
+                }
+                &::-webkit-search-cancel-button{ 
+                    position:relative;                
+                    -webkit-appearance: none;
+                    height: 15px;
+                    width: 15px;
+                    background: url(https://pro.fontawesome.com/releases/v5.10.0/svgs/solid/times.svg) no-repeat 50% 50%;
+                }
+            }
+        }
+        .search_result {
+            position: absolute;
+            width: -webkit-fill-available;
+            margin: 45px 0 0 0;
+            background-color: white;
+            border: solid 1px var(--theme-color-black);
+            border-top: none;
+            display: none;
+            ul {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                background-color: white;
+                padding: 5px 10%;
+                li {
+                    padding: 15px 0 15px 0;
+                    a {
+                        //padding: 10px 20px 10px 40px;
+                        color: rgba(0, 0, 0, 0.4);
+                        &:hover {
+                            color: black;
+                        }
+                    }
+                    p {
+                        font-size: 12px;
+                        line-height: 18px;
+                        font-family: "Montserrat-Regular";
+                        color: black;
+                    }
+                }
+            }
+        }
+        @media (max-width: $layout-breakpoint-end-tablette) {
+            display: none;
+        }
+    }  
+    &.top-reached {
+        .headerSearchBar {
+            form {
+                input {
+                    color: white;
+                    &::placeholder {
+                        color: white;
+                    }
+                    &::-webkit-search-cancel-button{ 
+                        //background-color: white;
+                    }
+                }
+            }
+            .search_result {
+                background-color: var(--theme-color-black);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                display: none;
+                ul {
+                    background-color: var(--theme-color-black);
+                }
+            }
+        }
+    }
+}
+
+

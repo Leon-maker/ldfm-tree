@@ -1020,5 +1020,68 @@ jQuery(document).ready(function ($) {
 });
 
 
+/**
+ * --------------------------------------------------------------------------------------------------------------
+ *                                                  Model : Search Bar
+ * --------------------------------------------------------------------------------------------------------------
+ */
+/**/
+
+if(document.querySelectorAll('.headerSearchBar')){ // search bar
+
+    document.querySelectorAll('.headerSearchBar').forEach(e => {
+        const searchResults = document.createElement('div')
+        searchResults.classList.add('search_result')
+        searchResults.id = 'datafetch'
+        searchResults.innerHTML = `<ul class="sub-menu"><li style="display:flex;justify-content:center;"> <img src="/wp-content/uploads/2023/11/loading.gif" width="20"></li></ul>`
+        // console.log(e);
+        e.append(searchResults)
+    })
+    
+    jQuery(document).ready(function($) { // wordpress native search minimaliste
+        document.querySelectorAll('.headerSearchBar').forEach(e => {
+            e.addEventListener('input', (e) => {
+                if (e.target.value.length > 1) {
+                    // console.log(e.target.parentElement.querySelector('.search-form-icon'));
+                    fetch();
+                    e.target.parentElement.parentElement.parentElement.parentElement.querySelector(".search_result").style.display = "block"
+                } else {
+                    e.target.parentElement.parentElement.parentElement.parentElement.querySelector(".search_result").style.display = "none"
+                }
+                if (e.target.value.length > 0) {
+                    e.target.classList.add('cross')
+                    e.target.parentElement.querySelector('.search-form-icon').style.display = "none"
+                    //e.target.parentElement.querySelector('.search-form-icon i').classList.remove('fa-search');
+                    //e.target.parentElement.querySelector('.search-form-icon i').classList.add('fa-times');
+
+                } else {
+                    e.target.parentElement.querySelector('.search-form-icon').style.display = "flex"
+                    e.target.classList.remove('cross')
+                    //e.target.parentElement.querySelector('.search-form-icon i').classList.remove('fa-times');
+                    //e.target.parentElement.querySelector('.search-form-icon i').classList.add('fa-search');
+                }
+
+                jQuery.ajax({
+                    url: '/wp-admin/admin-ajax.php',
+                    type: 'post',
+                    data: { 
+                        action: 'data_fetch',
+                        keyword: e.target.value 
+                    },
+                    success: function(data) {
+                        if(data){
+                            e.target.parentElement.parentElement.parentElement.parentElement.querySelector(".search_result").innerHTML = data;
+                        }else{
+                            e.target.parentElement.parentElement.parentElement.parentElement.querySelector(".search_result").innerHTML = `<ul class="sub-menu"><li style="display:flex;justify-content:center;"><p class="noResults" style="margin-bottom:0;">Pas de résultats.<p/></ul>`
+                        } 
+                    }
+                });
+
+            })
+        })
+    })
+}
+
+
 
 

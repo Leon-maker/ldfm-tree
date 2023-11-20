@@ -341,3 +341,57 @@ function masquer_cpt_comments() {
 }
 add_action('admin_menu', 'masquer_cpt_comments');
 
+
+/**
+ * --------------------------------------------------------------------------------------------------------------
+ *                                                 GLOBAL SEARCH
+ * --------------------------------------------------------------------------------------------------------------
+ */
+
+ add_action('wp_ajax_data_fetch' , 'data_fetch');
+ add_action('wp_ajax_nopriv_data_fetch','data_fetch');
+ function data_fetch(){
+ 
+    $the_query = new WP_Query( array( 
+         'posts_per_page' => -1,
+         'post_status' => 'publish',
+         's' => esc_attr( $_POST['keyword'] ), 
+         'post_type' => array(
+             'produit',
+             'marque', 
+         )
+    ) ); 
+ 
+    /* $termsResults = get_terms( array(
+        taxonomy' => 'cat-name',
+        'hide_empty' => false,
+        // only in posts with acf field 'type' = 'post'
+        'meta_query' => array(
+            array(
+                'key' => 'is_category',
+                'value' => 'post',
+                'compare' => '='
+            )
+        ),
+        'name__like' => esc_attr( $_POST['keyword'] ),
+    )); // search in taxonomy */
+ 
+     if( $the_query->have_posts() || $termsResults ) :
+         echo '<ul class="sub-menu">';
+         while( $the_query->have_posts() ): $the_query->the_post(); ?>
+            <li>
+                <a href="<?php echo esc_url( post_permalink() ); ?>"><?php the_title();?></a>
+            </li>
+         <?php endwhile;
+ 
+         // foreach($termsResults as $termResult) : ?>
+             <!--a href="<?php //echo esc_url( get_term_link($termResult->term_id, 'solution') ); ?>"><?php //echo $termResult->name; ?></!--a-->
+         <?php // endforeach;
+ 
+        echo '</ul>';
+         wp_reset_postdata();  
+     endif;
+ 
+     die();
+ }
+
