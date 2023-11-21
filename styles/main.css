@@ -884,6 +884,44 @@ html {
  * --------------------------------------------------------------------------------------------------------------
  *                                                  FORMS 
 /**/
+@media (max-width: 1300px) {
+  header ul#menu-two li:nth-child(7) {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+  header ul#menu-two li:nth-child(1) {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+  header ul#menu-two li:nth-child(2) {
+    -webkit-box-ordinal-group: 4;
+        -ms-flex-order: 3;
+            order: 3;
+  }
+  header ul#menu-two li:nth-child(3) {
+    -webkit-box-ordinal-group: 5;
+        -ms-flex-order: 4;
+            order: 4;
+  }
+  header ul#menu-two li:nth-child(4) {
+    -webkit-box-ordinal-group: 6;
+        -ms-flex-order: 5;
+            order: 5;
+  }
+  header ul#menu-two li:nth-child(5) {
+    -webkit-box-ordinal-group: 7;
+        -ms-flex-order: 6;
+            order: 6;
+  }
+  header ul#menu-two li:nth-child(6) {
+    -webkit-box-ordinal-group: 8;
+        -ms-flex-order: 7;
+            order: 7;
+  }
+}
+
 header .headerSearchBar .search-form-icon {
   position: relative;
   right: 5px;
@@ -946,13 +984,17 @@ header .headerSearchBar form input::-webkit-search-cancel-button {
   background: url(https://pro.fontawesome.com/releases/v5.10.0/svgs/solid/times.svg) no-repeat 50% 50%;
 }
 header .headerSearchBar .search_result {
-  position: absolute;
   width: -webkit-fill-available;
-  margin: 45px 0 0 0;
   background-color: white;
   border: solid 1px var(--theme-color-black);
   border-top: none;
   display: none;
+}
+@media (min-width: 1300px) {
+  header .headerSearchBar .search_result {
+    position: absolute;
+    margin: 45px 0 0 0;
+  }
 }
 header .headerSearchBar .search_result ul {
   display: -webkit-box;
@@ -983,11 +1025,6 @@ header .headerSearchBar .search_result ul li p {
   font-family: "Montserrat-Regular";
   color: black;
 }
-@media (max-width: 1024px) {
-  header .headerSearchBar {
-    display: none;
-  }
-}
 header.top-reached .headerSearchBar form input {
   color: white;
 }
@@ -1013,6 +1050,16 @@ header.top-reached .headerSearchBar .search_result {
 }
 header.top-reached .headerSearchBar .search_result ul {
   background-color: var(--theme-color-black);
+}
+@media (max-width: 1300px) {
+  header .headerSearchBar {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  header .headerSearchBar form input {
+    width: 100%;
+  }
 }
 
 /**
@@ -2543,8 +2590,10 @@ header.top-reached .menu > span {
  * --------------------------------------------------------------------------------------------------------------
  */
 /**/
-header .menu-principal-container {
-  margin-right: 25px;
+@media (min-width: 1300px) {
+  header .menu-principal-container {
+    margin-right: 25px;
+  }
 }
 header .menu-principal-container .menu-item-has-children > a {
   position: relative;

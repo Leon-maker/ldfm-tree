@@ -1041,6 +1041,7 @@ if(document.querySelectorAll('.headerSearchBar')){ // search bar
     jQuery(document).ready(function($) { // wordpress native search minimaliste
         document.querySelectorAll('.headerSearchBar').forEach(e => {
             e.addEventListener('input', (e) => {
+                e.preventDefault();
                 if (e.target.value.length > 1) {
                     // console.log(e.target.parentElement.querySelector('.search-form-icon'));
                     fetch();

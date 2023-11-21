@@ -660,7 +660,9 @@ header {
 /**/
 header{
     .menu-principal-container{
-        margin-right: 25px;
+        @media (min-width: $layout-breakpoint-end-burger) {
+            margin-right: 25px;
+        }
         .menu-item-has-children {
             > a {
 

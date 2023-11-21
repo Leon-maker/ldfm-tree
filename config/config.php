@@ -357,8 +357,9 @@ add_action('admin_menu', 'masquer_cpt_comments');
          'post_status' => 'publish',
          's' => esc_attr( $_POST['keyword'] ), 
          'post_type' => array(
-             'produit',
-             'marque', 
+            'post',
+            'produit',
+            'marque', 
          )
     ) ); 
  
