@@ -7,6 +7,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 } ?>
 
+<section class="type-social-feed">
+	<div class="wrapper">
+		<div class="container">
+			<?php echo do_shortcode('[instagram-feed feed=1]'); ?>
+		</div>
+	</div>
+</section>
 
 <footer id="site-footer" class="site-footer bkg-green" role="contentinfo">
 	<div class="wrap">
