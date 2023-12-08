@@ -3210,6 +3210,10 @@ section.section-half .columns-wrapper .right-container {
   }
 }
 
+.type-social-feed {
+  display: none;
+}
+
 .contact-section-container {
   display: -webkit-box;
   display: -ms-flexbox;
