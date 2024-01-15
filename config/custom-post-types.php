@@ -169,3 +169,34 @@ function thrive_register_post_types_EQUIPE() {
 
 }
 add_action( 'init', 'thrive_register_post_types_EQUIPE' );
+
+
+/**
+ * --------------------------------------------------------------------------------------------------------------
+ *      GET POPUP DATAS :                            
+ * --------------------------------------------------------------------------------------------------------------
+ */
+/**/
+
+if ( ! function_exists( 'get_popup_datas' ) ) {
+
+    function get_popup_datas( 
+        $popup_id,
+        ) {
+        if ($popup_id) :
+            $datas = get_field('sections', $popup_id);
+            $content_type = $datas[0]['acf_fc_layout'];
+            $datas =  $datas[0];
+
+            //------------- Template-part call : -------------		
+
+            get_template_part(
+                'template-parts/components/popups/popup',
+                $content_type,
+                array(
+                    'datas' => $datas,
+                )
+            );
+        endif;
+    }
+}

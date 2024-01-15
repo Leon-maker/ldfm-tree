@@ -1,0 +1,88 @@
+/**
+ * --------------------------------------------------------------------------------------------------------------
+ *                                                  DEDICATED VARIABLES 
+/**/
+
+/**
+ * --------------------------------------------------------------------------------------------------------------
+ *                                                  DEDICATED FUNCTIONS 
+/**/
+
+/**
+ * --------------------------------------------------------------------------------------------------------------
+ *                                                  DEDICATED CLASSES 
+/**/
+
+// -------------- * Popups * --------------
+
+body {
+  &:has(.popup-container:target) {
+    overflow: hidden!important;
+  }
+  .popup-container {
+    position: fixed;
+    z-index: 9;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(21, 17, 17,0.61);
+    display: flex;
+    align-items: center;
+    /* On click Popups */
+    &.click {
+      visibility: hidden;
+      opacity: 0;
+      transition: all 0.3s ease-in-out;
+      transform: scale(1.3);
+      &:target {
+        visibility: visible;
+        opacity: 1;
+        transform: scale(1);
+        top:0;
+        /* Adjust body's overflow when popup is visible */
+        body & {
+          overflow: hidden!important;
+        }
+      }
+    }
+    .popup-content {
+      background-color: $color-white;
+      margin: auto;
+      padding: 20px;
+      border: 1px solid #00000060;
+      width: 50%;
+      @media (max-width: $layout-breakpoint-end-tablette) {
+        width: 80%;
+      }
+      a.close{
+        color: #00000060;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+        background: none;
+        padding: 0;
+        margin: 0;
+        text-decoration:none;
+        &:hover{
+          color:$color-black;
+        }
+      }
+      h3{
+        margin:10px;
+      }
+      p{
+        font-size: 17px;
+        padding: 10px;
+        line-height: 20px;
+      }
+      &.image {
+        display: flex;
+        flex-direction: column;
+        a.close {
+          align-self: flex-end;
+        }
+      }
+    }
+  }
+}

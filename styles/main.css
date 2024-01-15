@@ -1546,6 +1546,103 @@ a[href]:not(.std-link) {
 
 /**
  * --------------------------------------------------------------------------------------------------------------
+ *                                                  DEDICATED VARIABLES 
+/**/
+/**
+ * --------------------------------------------------------------------------------------------------------------
+ *                                                  DEDICATED FUNCTIONS 
+/**/
+/**
+ * --------------------------------------------------------------------------------------------------------------
+ *                                                  DEDICATED CLASSES 
+/**/
+body:has(.popup-container:target) {
+  overflow: hidden !important;
+}
+body .popup-container {
+  position: fixed;
+  z-index: 9;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(21, 17, 17, 0.61);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  /* On click Popups */
+}
+body .popup-container.click {
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  -webkit-transform: scale(1.3);
+          transform: scale(1.3);
+}
+body .popup-container.click:target {
+  visibility: visible;
+  opacity: 1;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  top: 0;
+  /* Adjust body's overflow when popup is visible */
+}
+body body .popup-container.click:target {
+  overflow: hidden !important;
+}
+body .popup-container .popup-content {
+  background-color: #ffffff;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.3764705882);
+  width: 50%;
+}
+@media (max-width: 1024px) {
+  body .popup-container .popup-content {
+    width: 80%;
+  }
+}
+body .popup-container .popup-content a.close {
+  color: rgba(0, 0, 0, 0.3764705882);
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  background: none;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+}
+body .popup-container .popup-content a.close:hover {
+  color: #000000;
+}
+body .popup-container .popup-content h3 {
+  margin: 10px;
+}
+body .popup-container .popup-content p {
+  font-size: 17px;
+  padding: 10px;
+  line-height: 20px;
+}
+body .popup-container .popup-content.image {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+body .popup-container .popup-content.image a.close {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+
+/**
+ * --------------------------------------------------------------------------------------------------------------
  *                                                  3 : CARDS
 //                              * CSS des cards
 /**/

@@ -71,6 +71,22 @@ if (empty($header_color)) {
 <?php
 $image_url_black = wp_get_attachment_image_src(21399, 'full')[0];
 $image_url_white = wp_get_attachment_image_src(21398, 'full')[0];
+
+/**
+ * --------------------------------------------------------------------------------------------------------------
+ *                                                  OPTIONNAL POPUP
+*/
+
+$popup_id	= 22584;
+
+/* POPUP */
+
+//------------- Datas : -------------
+
+$popupDatas = get_popup_datas( 
+	$popup_id,
+);
+
 ?>
 
 <script>
