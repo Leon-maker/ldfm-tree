@@ -1575,6 +1575,11 @@ body .popup-container {
           align-items: center;
   /* On click Popups */
 }
+@media (min-width: 1025px) {
+  body .popup-container {
+    top: 55px;
+  }
+}
 body .popup-container.click {
   visibility: hidden;
   opacity: 0;
