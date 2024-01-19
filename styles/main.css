@@ -1604,7 +1604,7 @@ body .popup-container .popup-content {
   margin: auto;
   padding: 20px;
   border: 1px solid rgba(0, 0, 0, 0.3764705882);
-  width: 50%;
+  width: 35%;
 }
 @media (max-width: 1024px) {
   body .popup-container .popup-content {
