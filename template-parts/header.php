@@ -77,15 +77,15 @@ $image_url_white = wp_get_attachment_image_src(21398, 'full')[0];
  *                                                  OPTIONNAL POPUP
 */
 
-$popup_id	= 22584;
+// $popup_id	= 22584;
 
-/* POPUP */
+// /* POPUP */
 
-//------------- Datas : -------------
+// //------------- Datas : -------------
 
-$popupDatas = get_popup_datas( 
-	$popup_id,
-);
+// $popupDatas = get_popup_datas( 
+// 	$popup_id,
+// );
 
 ?>
 

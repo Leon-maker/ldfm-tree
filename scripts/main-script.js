@@ -19,25 +19,25 @@ let currentIndex = 0; // Variable pour stocker l'index courant
 window.onload = () => {
 
     // Popup
-    jQuery(document).ready(function ($) {
-        if(localStorage.getItem('popState') != 'shown'){
-            $("#popup_1").delay(2000).fadeIn();
-            localStorage.setItem('popState','shown')
-        }
-        else {
-            // DELETE THIS ELSE ON PRODUCTION
-            // Remove the 'popState' item from local storage
-            localStorage.removeItem('popState');
-            console.log('popup_1 is allready shown previously')
-        }
+    // jQuery(document).ready(function ($) {
+    //     if(localStorage.getItem('popState') != 'shown'){
+    //         $("#popup_1").delay(2000).fadeIn();
+    //         localStorage.setItem('popState','shown')
+    //     }
+    //     else {
+    //         // DELETE THIS ELSE ON PRODUCTION
+    //         // Remove the 'popState' item from local storage
+    //         localStorage.removeItem('popState');
+    //         console.log('popup_1 is allready shown previously')
+    //     }
     
-        $('#popup_1 .close').click(function(e) { // You are clicking the close button
-            $('#popup_1').fadeOut(); // Now the pop up is hiden.
-        });
-        $('#popup_1').click(function(e) {
-            $('#popup_1').fadeOut(); 
-        });
-    });
+    //     $('#popup_1 .close').click(function(e) { // You are clicking the close button
+    //         $('#popup_1').fadeOut(); // Now the pop up is hiden.
+    //     });
+    //     $('#popup_1').click(function(e) {
+    //         $('#popup_1').fadeOut(); 
+    //     });
+    // });
 
     if (homePage) {
         //const homePageManager = new HomePageManager();
