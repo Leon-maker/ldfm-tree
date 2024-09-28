@@ -11,24 +11,13 @@
 function init_theme() {
 
 	add_theme_support('post-thumbnails');
-	add_theme_support('html5');
+    add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption' ) );
 	add_theme_support('title-tag');
-	add_theme_support( 'align-wide' ); // https://capitainewp.io/formations/wordpress-creer-blocs-gutenberg/pleine-largeur-contenu-gutenberg/
-	add_theme_support( 'custom-logo', array(
-        'height'      => 175,
-        'width'       => 400,
-        'flex-width'  => true,
-        'flex-height' => true,
-     ) );
-    // Register navigations menus
+    add_theme_support('custom-logo');
 	register_nav_menus( array(
-        'top-left'              => 'Top Left',
+        'top-middle'            => 'Top Middle',
         'top-right'             => 'Top Right',
-        'bottom'                => 'Bottom',
-        'bottom-end'            => 'Bottom End',
-        'burger-end'            => 'Burger End',
     ));
-
 }
 add_action('after_setup_theme', 'init_theme');
 
@@ -43,14 +32,14 @@ function admin_css() {
 add_action('admin_print_styles', 'admin_css', 11);
 
 
-// Javascript
-wp_register_script(
-    'script', 
-    get_theme_file_uri('/scripts/main-script.js'), 
-    array( 'jquery' ), 
-    '1.0'
-);
-wp_enqueue_script('script');
+// // Javascript
+// wp_register_script(
+//     'script', 
+//     get_theme_file_uri('/scripts/main-script.js'), 
+//     array( 'jquery' ), 
+//     '1.0'
+// );
+// wp_enqueue_script('script');
 
 // Active l'import de modules JS
 add_filter("script_loader_tag", "make_script_a_module", 10, 3);
@@ -66,12 +55,16 @@ function make_script_a_module($tag, $handle, $src)
 add_theme_support('post-thumbnails');
 
 // CSS
-wp_enqueue_style(
-    'thrive',
-    get_template_directory_uri() . '/styles/main.css',
-    array(),
-    '1.0'
-);
+function enqueue_custom_styles() {
+    wp_enqueue_style(
+        'ldfm',
+        get_template_directory_uri() . '/styles/main.css',
+        array(),
+        date('YmdHis') 
+    );
+}
+add_action('wp_enqueue_scripts', 'enqueue_custom_styles');
+
 
 
 /**
@@ -85,7 +78,7 @@ wp_enqueue_style(
 add_filter( 'wp_check_filetype_and_ext', function($data, $file, $filename, $mimes) {
     global $wp_version;
     if ( $wp_version !== '4.7.1' ) {
-       return $data;
+        return $data;
     }
     $filetype = wp_check_filetype( $filename, $mimes );
     return [
@@ -93,7 +86,7 @@ add_filter( 'wp_check_filetype_and_ext', function($data, $file, $filename, $mime
         'type'            => $filetype['type'],
         'proper_filename' => $data['proper_filename']
     ];
-  }, 10, 4 );
+}, 10, 4 );
   function cc_mime_types( $mimes ){
     $mimes['svg'] = 'image/svg+xml';
     return $mimes;
@@ -312,21 +305,9 @@ function fr_phone_format( $phone_formats ) {
         'regex'       => '/^0[1-9](\d{2}){4}$/',
         'instruction' => 'Introduisez les 10 chiffres sans espaces ni tirets.',
     );
- 
+
     return $phone_formats;
 }
-
-/**
- * --------------------------------------------------------------------------------------------------------------
- *                                                 Google Maps API
- * --------------------------------------------------------------------------------------------------------------
- */
-/**/
-function my_acf_init() {
-    acf_update_setting('google_api_key', 'AIzaSyC2p1nVSwcAVGXQYMEkC1cQwfL1kLcum3U');
-}
-add_action('acf/init', 'my_acf_init');
-
 
 /**
  * --------------------------------------------------------------------------------------------------------------
@@ -376,23 +357,27 @@ add_action('admin_menu', 'masquer_cpt_comments');
         ),
         'name__like' => esc_attr( $_POST['keyword'] ),
     )); // search in taxonomy */
- 
-     if( $the_query->have_posts() || $termsResults ) :
-         echo '<ul class="sub-menu">';
-         while( $the_query->have_posts() ): $the_query->the_post(); ?>
+
+    if( $the_query->have_posts() || $termsResults ) :
+        echo '<ul class="sub-menu">';
+        while( $the_query->have_posts() ): $the_query->the_post(); ?>
             <li>
                 <a href="<?php echo esc_url( post_permalink() ); ?>"><?php the_title();?></a>
             </li>
-         <?php endwhile;
- 
+        <?php endwhile;
+
          // foreach($termsResults as $termResult) : ?>
              <!--a href="<?php //echo esc_url( get_term_link($termResult->term_id, 'solution') ); ?>"><?php //echo $termResult->name; ?></!--a-->
          <?php // endforeach;
- 
-        echo '</ul>';
-         wp_reset_postdata();  
-     endif;
- 
-     die();
- }
 
+        echo '</ul>';
+        wp_reset_postdata();  
+    endif;
+
+    die();
+}
+
+//Empeche d'eventuelles attaques
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly.
+}

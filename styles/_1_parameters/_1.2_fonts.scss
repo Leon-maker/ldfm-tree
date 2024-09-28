@@ -1,524 +1,448 @@
-/**
- * --------------------------------------------------------------------------------------------------------------
- *                                                  DEDICATED VARIABLES 
-/**/
-
-// ------------- * Main Font library * -------------
-
-@font-face {
-  font-family: 'Montserrat-Regular'; // FW-400
-  src: url('/wp-content/themes/thrive-custom-theme/fonts/Montserrat/Montserrat-Regular.otf') format('opentype');
-}
-@font-face {
-  font-family: 'Montserrat-Medium'; // FW-500
-  src: url('/wp-content/themes/thrive-custom-theme/fonts/Montserrat/Montserrat-Medium.otf') format('opentype');
-}
-@font-face {
-  font-family: 'Montserrat-SemiBold'; // FW-600
-  src: url('/wp-content/themes/thrive-custom-theme/fonts/Montserrat/Montserrat-SemiBold.otf') format('opentype');
-}
-@font-face {
-  font-family: 'Montserrat-Bold'; // FW-700
-  src: url('/wp-content/themes/thrive-custom-theme/fonts/Montserrat/Montserrat-Bold.otf') format('opentype');
-}
-@font-face {
-  font-family: 'Montserrat-ExtraBold'; // FW-800
-  src: url('/wp-content/themes/thrive-custom-theme/fonts/Montserrat/Montserrat-ExtraBold.otf') format('opentype');
-}
-@font-face {
-  font-family: 'Montserrat-Black'; // FW-900
-  src: url('/wp-content/themes/thrive-custom-theme/fonts/Montserrat/Montserrat-Black.otf') format('opentype');
-}
 
 
-// ------------- * Main Font Family * -------------
+// /**
+//  * --------------------------------------------------------------------------------------------------------------
+//  *                                                  DEDICATED FUNCTIONS 
+// /**/
 
-$font-main-400: "Montserrat-Regular";        // FW-400
-$font-main-500: "Montserrat-Medium";         // FW-500
-$font-main-600: "Montserrat-SemiBold";       // FW-600
-$font-main-700: "Montserrat-Bold";           // FW-700
-$font-main-800: "Montserrat-ExtraBold";      // FW-800
-$font-main-900: 'Montserrat-Black';          // FW-900
+// // ------------- * Font Sizes * -------------
 
-// ------------- * Secondary Font library * -------------
+// // Global referent Font Size quotient
+// $font-size-quotient: 1;
 
-@font-face {
-  font-family: 'PlayfairDisplay-Regular'; // FW-400
-  src: url('/wp-content/themes/thrive-custom-theme/fonts/Playfair_Display/static/PlayfairDisplay-Regular.ttf') format('truetype'),
-}
-@font-face {
-  font-family: 'PlayfairDisplay-Medium'; // FW-500
-  src: url('/wp-content/themes/thrive-custom-theme/fonts/Playfair_Display/static/PlayfairDisplay-Medium.ttf') format('truetype'),
-}
-@font-face {
-  font-family: 'PlayfairDisplay-SemiBold'; // FW-600
-  src: url('/wp-content/themes/thrive-custom-theme/fonts/Playfair_Display/static/PlayfairDisplay-SemiBold.ttf') format('truetype'),
-}
-@font-face {
-  font-family: 'PlayfairDisplay-Bold'; // FW-700
-  src: url('/wp-content/themes/thrive-custom-theme/fonts/Playfair_Display/static/PlayfairDisplay-Bold.ttf') format('truetype'),
-}
-@font-face {
-  font-family: 'PlayfairDisplay-ExtraBold'; // FW-800
-  src: url('/wp-content/themes/thrive-custom-theme/fonts/Playfair_Display/static/PlayfairDisplay-ExtraBold.ttf') format('truetype'),
-}
-@font-face {
-  font-family: 'PlayfairDisplay-Black'; // FW-900
-  src: url('/wp-content/themes/thrive-custom-theme/fonts/Playfair_Display/static/PlayfairDisplay-Black.ttf') format('truetype'),
-}
+// // Font Size Function 
+// @function pixelsCalc($pxSize) {
+//   @return ($pxSize * $font-size-quotient) + px; 
+// }
 
-// ------------- * Secondary Font Family * -------------
+// // Font Size Function  pixel to Rem
+// @function pxToRem($pxSize) {
+//   @return $pxSize / 10 + rem; // standard size: 10px
+// }
 
-$font-secondary-400: "PlayfairDisplay-Regular";    // FW-400
-$font-secondary-500: "PlayfairDisplay-Medium";     // FW-500
-$font-secondary-600: "PlayfairDisplay-SemiBold";   // FW-600
-$font-secondary-700: "PlayfairDisplay-Bold";       // FW-700
-$font-secondary-800: "PlayfairDisplay-ExtraBold";  // FW-800
-$font-secondary-900: 'PlayfairDisplay-Black';      // FW-900
-
-/**
- * --------------------------------------------------------------------------------------------------------------
- *                                                  DEDICATED FUNCTIONS 
-/**/
-
-// ------------- * Font Sizes * -------------
-
-// Global referent Font Size quotient
-$font-size-quotient: 1;
-
-// Font Size Function 
-@function pixelsCalc($pxSize) {
-  @return ($pxSize * $font-size-quotient) + px; 
-}
-
-// Font Size Function  pixel to Rem
-@function pxToRem($pxSize) {
-  @return $pxSize / 10 + rem; // standard size: 10px
-}
-
-/* Font Size Function to create classes
-ex :
-.font-size-10 {
-  font-size: 1rem;
-}*/
-@mixin font-size() {
-  $font-size-list: 10 12 14 16 20 24;
-  @each $value in $font-size-list {
-    .font-size-#{$value} {
-      font-size: pxToRem($value);
-    }
-  }
-}
-@include font-size();
+// /* Font Size Function to create classes
+// ex :
+// .font-size-10 {
+//   font-size: 1rem;
+// }*/
+// @mixin font-size() {
+//   $font-size-list: 10 12 14 16 20 24;
+//   @each $value in $font-size-list {
+//     .font-size-#{$value} {
+//       font-size: pxToRem($value);
+//     }
+//   }
+// }
+// @include font-size();
 
 
-/**
- * --------------------------------------------------------------------------------------------------------------
- *                                                  DEDICATED CLASSES
-/**/
+// /**
+//  * --------------------------------------------------------------------------------------------------------------
+//  *                                                  DEDICATED CLASSES
+// /**/
 
 
-/**
- * --------------------------------------------------------------------------------------------------------------
- *                                                  FONT-FAMILIES BY ELEMENTS
-/**/
+// /**
+//  * --------------------------------------------------------------------------------------------------------------
+//  *                                                  FONT-FAMILIES BY ELEMENTS
+// /**/
 
-// MAIN FONT :-------------------------------- //
+// // MAIN FONT :-------------------------------- //
 
-h3{
-  font-family: $font-main-500;
-  font-weight: normal;
-}
+// h3{
+//   font-family: $font-main-500;
+//   font-weight: normal;
+// }
 
-h4,
-h5 {
-  font-family: $font-main-400; // Montserrat
-  font-weight: normal;
-}
+// h4,
+// h5 {
+//   font-family: $font-main-400; // Montserrat
+//   font-weight: normal;
+// }
 
-// SECONDARY FONT :-------------------------------- //
+// // SECONDARY FONT :-------------------------------- //
 
-h1,
-h2 {
-  font-family: $font-secondary-500;; // Playfair
-  font-weight: normal;
-}
+// h1,
+// h2 {
+//   font-family: $font-secondary-500;; // Playfair
+//   font-weight: normal;
+// }
 
-p{
-  font-family: $font-main-400;
-  font-weight: normal;
-}
+// p{
+//   font-family: $font-main-400;
+//   font-weight: normal;
+// }
 
 
-/**
- * --------------------------------------------------------------------------------------------------------------
- *                                                  FONT-SIZES BY ELEMENTS
-/**/
+// /**
+//  * --------------------------------------------------------------------------------------------------------------
+//  *                                                  FONT-SIZES BY ELEMENTS
+// /**/
 
-// FONTS :---------------------------------------- // SIZE 1
+// // FONTS :---------------------------------------- // SIZE 1
 
-h1, .copyH1 {
-  font-size: pixelsCalc(80);
-  line-height: pixelsCalc(80);
-  @media all and (max-width: $layout-breakpoint-end-tablette) {
-    font-size: pixelsCalc(45);
-    line-height: pixelsCalc(45);
-  }
-}
+// h1, .copyH1 {
+//   font-size: pixelsCalc(80);
+//   line-height: pixelsCalc(80);
+//   @media all and (max-width: $layout-breakpoint-end-tablette) {
+//     font-size: pixelsCalc(45);
+//     line-height: pixelsCalc(45);
+//   }
+// }
 
-// FONTS :---------------------------------------- // SIZE 2
-h2 {
-  font-size: pixelsCalc(40);
-  line-height: pixelsCalc(45);
-  @media all and (max-width: $layout-breakpoint-end-tablette) {
-    font-size: pixelsCalc(30);
-    line-height: pixelsCalc(35);
-  }
-}
+// // FONTS :---------------------------------------- // SIZE 2
+// h2 {
+//   font-size: pixelsCalc(40);
+//   line-height: pixelsCalc(45);
+//   @media all and (max-width: $layout-breakpoint-end-tablette) {
+//     font-size: pixelsCalc(30);
+//     line-height: pixelsCalc(35);
+//   }
+// }
 
-// FONTS :---------------------------------------- // SIZE 3
-h3 {
-  font-size: pixelsCalc(20);
-  line-height: pixelsCalc(23);
-  @media all and (max-width: $layout-breakpoint-end-tablette) {
-    font-size: pixelsCalc(18);
-    line-height: pixelsCalc(21);
-  }
-}
+// // FONTS :---------------------------------------- // SIZE 3
+// h3 {
+//   font-size: pixelsCalc(20);
+//   line-height: pixelsCalc(23);
+//   @media all and (max-width: $layout-breakpoint-end-tablette) {
+//     font-size: pixelsCalc(18);
+//     line-height: pixelsCalc(21);
+//   }
+// }
 
-// FONTS :---------------------------------------- // SIZE 4
-h4 {
-  font-size: pixelsCalc(14);
-  line-height: pixelsCalc(17);
-  @media all and (max-width: $layout-breakpoint-end-tablette) {
-    font-size: pixelsCalc(12);
-    line-height: pixelsCalc(15);
-  }
-}
+// // FONTS :---------------------------------------- // SIZE 4
+// h4 {
+//   font-size: pixelsCalc(14);
+//   line-height: pixelsCalc(17);
+//   @media all and (max-width: $layout-breakpoint-end-tablette) {
+//     font-size: pixelsCalc(12);
+//     line-height: pixelsCalc(15);
+//   }
+// }
 
-// FONTS :---------------------------------------- // SIZE 5
-h5 {
-  font-size: pixelsCalc(12) !important;
-  line-height: pixelsCalc(14) !important;
-  @media all and (max-width: $layout-breakpoint-end-tablette) {
-    font-size: pixelsCalc(12) !important;
-    line-height: pixelsCalc(14) !important;
-  }
-}
+// // FONTS :---------------------------------------- // SIZE 5
+// h5 {
+//   font-size: pixelsCalc(12) !important;
+//   line-height: pixelsCalc(14) !important;
+//   @media all and (max-width: $layout-breakpoint-end-tablette) {
+//     font-size: pixelsCalc(12) !important;
+//     line-height: pixelsCalc(14) !important;
+//   }
+// }
 
-// FONTS :---------------------------------------- //  P
-p {
-  font-size: pixelsCalc(16);
-  line-height: pixelsCalc(21);
-  @media all and (max-width: $layout-breakpoint-end-tablette) {
-    font-size: pixelsCalc(14);
-    line-height: pixelsCalc(19);
-  }
-}
+// // FONTS :---------------------------------------- //  P
+// p {
+//   font-size: pixelsCalc(16);
+//   line-height: pixelsCalc(21);
+//   @media all and (max-width: $layout-breakpoint-end-tablette) {
+//     font-size: pixelsCalc(14);
+//     line-height: pixelsCalc(19);
+//   }
+// }
 
-// FONTS :---------------------------------------- //  NAV LINKS
-header {
-  .site-navigation, .social-media-menu{
-    a {
-      font-size: pixelsCalc(12);
-      line-height: pixelsCalc(18);
-      font-family: $font-main-400;
-    }
-    @media all and (max-width: $layout-breakpoint-end-burger) {
-      .menu{
-        >li{
-          >a{
-            font-size: pixelsCalc(18);
-            font-family: $font-main-500;
-          }
-          li {
-            a {
-              font-size: pixelsCalc(14);
-              font-family: $font-main-400;
-            }
-          }
-        }
-      }
-    }
-  }
-}
+// // FONTS :---------------------------------------- //  NAV LINKS
+// header {
+//   .site-navigation, .social-media-menu{
+//     a {
+//       font-size: pixelsCalc(12);
+//       line-height: pixelsCalc(18);
+//       font-family: $font-main-400;
+//     }
+//     @media all and (max-width: $layout-breakpoint-end-burger) {
+//       .menu{
+//         >li{
+//           >a{
+//             font-size: pixelsCalc(18);
+//             font-family: $font-main-500;
+//           }
+//           li {
+//             a {
+//               font-size: pixelsCalc(14);
+//               font-family: $font-main-400;
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
 
-footer {
-  .site-navigation{
-    .menu, .social-media-menu {
-      li {
-        a {
-          font-family: $font-main-400;
-          font-size: pixelsCalc(12);
-        }
-      }
-    }
-  }
-}
+// footer {
+//   .site-navigation{
+//     .menu, .social-media-menu {
+//       li {
+//         a {
+//           font-family: $font-main-400;
+//           font-size: pixelsCalc(12);
+//         }
+//       }
+//     }
+//   }
+// }
 
-.padding-top-header{
-  h3 {
-    font-family: $font-main-400;
-    font-size: pixelsCalc(20);
-    line-height: pixelsCalc(23);
-    @media all and (max-width: $layout-breakpoint-end-tablette) {
-      font-size: pixelsCalc(18);
-      line-height: pixelsCalc(21);
-    }
-  }
-  .fil-ariane-link, .fil-ariane-item{
-    font-family: $font-main-400;
-    font-size: pixelsCalc(12);
-    line-height: pixelsCalc(14);
-  }
-}
-.marque-card-content-container {
-  .marque-card-title {
-    font-family: $font-main-500;
-    font-size: pixelsCalc(20);
-    @media all and (max-width: $layout-breakpoint-end-tablette) {
-      font-size: pixelsCalc(18);
-    }
-  }
-  .marque-card-paragraphe{
-    font-family: $font-main-400;
-    font-size: pixelsCalc(16);
-    line-height: pixelsCalc(21);
-  }
-}
+// .padding-top-header{
+//   h3 {
+//     font-family: $font-main-400;
+//     font-size: pixelsCalc(20);
+//     line-height: pixelsCalc(23);
+//     @media all and (max-width: $layout-breakpoint-end-tablette) {
+//       font-size: pixelsCalc(18);
+//       line-height: pixelsCalc(21);
+//     }
+//   }
+//   .fil-ariane-link, .fil-ariane-item{
+//     font-family: $font-main-400;
+//     font-size: pixelsCalc(12);
+//     line-height: pixelsCalc(14);
+//   }
+// }
+// .marque-card-content-container {
+//   .marque-card-title {
+//     font-family: $font-main-500;
+//     font-size: pixelsCalc(20);
+//     @media all and (max-width: $layout-breakpoint-end-tablette) {
+//       font-size: pixelsCalc(18);
+//     }
+//   }
+//   .marque-card-paragraphe{
+//     font-family: $font-main-400;
+//     font-size: pixelsCalc(16);
+//     line-height: pixelsCalc(21);
+//   }
+// }
 
-.cpt-section-container{
-  .cpt-section-header-title{
-    p {
-      font-size: pixelsCalc(12);
-    }
-    a {
-      font-family: $font-main-500;
-      font-size: pixelsCalc(14);
-    }
-  }
-  .cpt-section-card-wrapper{
-    .influence-card-categorie{
-      font-family: $font-main-600;
-      font-size: pixelsCalc(12);
-    }
-    .influence-card-title{
-      font-family: $font-main-500;
-      font-size: pixelsCalc(20);
-      @media all and (max-width: $layout-breakpoint-end-tablette) {
-        font-size: pixelsCalc(18);
-      }
-    }
-    .influence-card-text{
-      font-family: $font-main-400;
-      font-size: pixelsCalc(16);
-    }
-    a {
-      font-family: $font-main-500;
-      font-size: pixelsCalc(14);
-    }
-  }
-}
-.single-realisation-side-description{
-  font-family: $font-main-400;
-  font-size: pixelsCalc(16);
-}
-.realisation-card-content{
-  h3 {
-    font-family: $font-main-500;
-    font-size: pixelsCalc(20);
-    @media all and (max-width: $layout-breakpoint-end-tablette) {
-      font-size: pixelsCalc(18);
-    }
-  }
-  p {
-    font-size: pixelsCalc(16);
-  }
-  a {
-    font-family: $font-main-500;
-    font-size: pixelsCalc(14);
-  }
-}
-.contact-section-container{
-  .contact-section-header-title {
-    h2 {
-      margin-top: 10px;
-      font-family: $font-secondary-500;
-    }
-    p {
-      font-size: pixelsCalc(12);
-    }
-  }
-  .contact-section-card-wrapper{
-    h3 {
-      font-family: $font-main-500;
-      font-size: pixelsCalc(20);
-      @media all and (max-width: $layout-breakpoint-end-tablette) {
-        font-size: pixelsCalc(18);
-      }
-    }
-    p {
-      font-size: pixelsCalc(16);
-    }
-    a {
-      font-family: $font-main-500;
-    }
-  }
-}
-.prduit-card-content {
-  h3 {
-    font-family: $font-main-500;
-    font-size: pixelsCalc(20);
-    @media all and (max-width: $layout-breakpoint-end-tablette) {
-      font-size: pixelsCalc(18);
-    }
-  }
-}
-.terms_content {
-  h2, h3 {
-    font-family: $font-main-500;
-    font-size: pixelsCalc(20);
-    line-height: pixelsCalc(23);
-    @media all and (max-width: $layout-breakpoint-end-tablette) {
-      font-size: pixelsCalc(18);
-      line-height: pixelsCalc(21);
-    }
-  }
-  p, ul {
-    font-family: $font-main-400;
-    font-size: pixelsCalc(16);
-  }
-}
-.section-archive-all-realisations{
-  ul, ol {
-    font-family: $font-main-400;
-    font-size: pixelsCalc(16);
-  }
-}
-.single-influence-end-section{
-  p{
-    font-size: pixelsCalc(16);
-    span {
-      font-family: $font-main-500;
-    }
-  }
-  .date{
-    font-family: $font-main-500;
-  }
-}
-.agence-side-description-container, .realisation-card-content{
-  font-family: $font-main-400;
-  font-size: pixelsCalc(16);
-}
-.equipe-card-footer{
-  h3{
-    font-family: $font-main-500;
-  }
-}
-.equipe-card-container-paragraphe{
-  font-family: $font-main-400;
-}
-.home {
-  a{
-    font-size: pixelsCalc(14);
-    font-family: $font-main-500;
-  }
-}
-.influence-card{
-  p{
-    font-family: $font-main-600;
-    font-size: pixelsCalc(12);
-  }
-  .influence-card-text{
-    font-family: $font-main-400;
-    font-size: pixelsCalc(16);
-  }
-  a{
-    font-family: $font-main-500;
-  }
-  .influence-card-content{
-    h3{
-      font-family: $font-main-500;
-    }
-  }
-}
-.tri_afficher-container{
-  button{
-    font-family: $font-main-500;
-    font-size: pixelsCalc(14);
-  }
-}
-.isotope-pagination-container{
-  font-family: $font-main-400;
-  font-size: pixelsCalc(20);
-  @media all and (max-width: $layout-breakpoint-end-tablette) {
-    font-size: pixelsCalc(18);
-  }
-}
-.filters-select{
-  font-family: $font-main-400;
-  font-size: pixelsCalc(14);
-  optgroup {
-    font-family: $font-main-400;
-    font-size: pixelsCalc(14);
-  }
-}
-.boldy{
-  font-family: $font-main-500;
-}
-.gsection_title{
-  font-family: $font-main-400;
-  font-size: pixelsCalc(12);
-  line-height: pixelsCalc(14);
-  font-weight: 100;
-}
-.gfield {
-  .ginput_container {
-    input {
-      font-family: $font-main-400;
-    }
-  }
-}
-.gform_footer input{
-  font-family: $font-main-500;
-  font-size: pixelsCalc(14);
-}
-.single-produit{
-  h1{
-    font-size: pixelsCalc(40);
-    line-height: pixelsCalc(45);
-    @media all and (max-width: $layout-breakpoint-end-tablette) {
-      font-size: pixelsCalc(30);
-      line-height: pixelsCalc(35);
-    }
-  }
-  .plus{
-    font-family: $font-main-500;
-  }
-  .description{
-    opacity: 0.7;
-  }
-  .marque, .ref{
-    font-size: pixelsCalc(14);
-    span{
-      opacity: 0.7;
-      &.value{
-        opacity: 1;
-        font-family: $font-main-500;
-      }
-    }
-  }
+// .cpt-section-container{
+//   .cpt-section-header-title{
+//     p {
+//       font-size: pixelsCalc(12);
+//     }
+//     a {
+//       font-family: $font-main-500;
+//       font-size: pixelsCalc(14);
+//     }
+//   }
+//   .cpt-section-card-wrapper{
+//     .influence-card-categorie{
+//       font-family: $font-main-600;
+//       font-size: pixelsCalc(12);
+//     }
+//     .influence-card-title{
+//       font-family: $font-main-500;
+//       font-size: pixelsCalc(20);
+//       @media all and (max-width: $layout-breakpoint-end-tablette) {
+//         font-size: pixelsCalc(18);
+//       }
+//     }
+//     .influence-card-text{
+//       font-family: $font-main-400;
+//       font-size: pixelsCalc(16);
+//     }
+//     a {
+//       font-family: $font-main-500;
+//       font-size: pixelsCalc(14);
+//     }
+//   }
+// }
+// .single-realisation-side-description{
+//   font-family: $font-main-400;
+//   font-size: pixelsCalc(16);
+// }
+// .realisation-card-content{
+//   h3 {
+//     font-family: $font-main-500;
+//     font-size: pixelsCalc(20);
+//     @media all and (max-width: $layout-breakpoint-end-tablette) {
+//       font-size: pixelsCalc(18);
+//     }
+//   }
+//   p {
+//     font-size: pixelsCalc(16);
+//   }
+//   a {
+//     font-family: $font-main-500;
+//     font-size: pixelsCalc(14);
+//   }
+// }
+// .contact-section-container{
+//   .contact-section-header-title {
+//     h2 {
+//       margin-top: 10px;
+//       font-family: $font-secondary-500;
+//     }
+//     p {
+//       font-size: pixelsCalc(12);
+//     }
+//   }
+//   .contact-section-card-wrapper{
+//     h3 {
+//       font-family: $font-main-500;
+//       font-size: pixelsCalc(20);
+//       @media all and (max-width: $layout-breakpoint-end-tablette) {
+//         font-size: pixelsCalc(18);
+//       }
+//     }
+//     p {
+//       font-size: pixelsCalc(16);
+//     }
+//     a {
+//       font-family: $font-main-500;
+//     }
+//   }
+// }
+// .prduit-card-content {
+//   h3 {
+//     font-family: $font-main-500;
+//     font-size: pixelsCalc(20);
+//     @media all and (max-width: $layout-breakpoint-end-tablette) {
+//       font-size: pixelsCalc(18);
+//     }
+//   }
+// }
+// .terms_content {
+//   h2, h3 {
+//     font-family: $font-main-500;
+//     font-size: pixelsCalc(20);
+//     line-height: pixelsCalc(23);
+//     @media all and (max-width: $layout-breakpoint-end-tablette) {
+//       font-size: pixelsCalc(18);
+//       line-height: pixelsCalc(21);
+//     }
+//   }
+//   p, ul {
+//     font-family: $font-main-400;
+//     font-size: pixelsCalc(16);
+//   }
+// }
+// .section-archive-all-realisations{
+//   ul, ol {
+//     font-family: $font-main-400;
+//     font-size: pixelsCalc(16);
+//   }
+// }
+// .single-influence-end-section{
+//   p{
+//     font-size: pixelsCalc(16);
+//     span {
+//       font-family: $font-main-500;
+//     }
+//   }
+//   .date{
+//     font-family: $font-main-500;
+//   }
+// }
+// .agence-side-description-container, .realisation-card-content{
+//   font-family: $font-main-400;
+//   font-size: pixelsCalc(16);
+// }
+// .equipe-card-footer{
+//   h3{
+//     font-family: $font-main-500;
+//   }
+// }
+// .equipe-card-container-paragraphe{
+//   font-family: $font-main-400;
+// }
+// .home {
+//   a{
+//     font-size: pixelsCalc(14);
+//     font-family: $font-main-500;
+//   }
+// }
+// .influence-card{
+//   p{
+//     font-family: $font-main-600;
+//     font-size: pixelsCalc(12);
+//   }
+//   .influence-card-text{
+//     font-family: $font-main-400;
+//     font-size: pixelsCalc(16);
+//   }
+//   a{
+//     font-family: $font-main-500;
+//   }
+//   .influence-card-content{
+//     h3{
+//       font-family: $font-main-500;
+//     }
+//   }
+// }
+// .tri_afficher-container{
+//   button{
+//     font-family: $font-main-500;
+//     font-size: pixelsCalc(14);
+//   }
+// }
+// .isotope-pagination-container{
+//   font-family: $font-main-400;
+//   font-size: pixelsCalc(20);
+//   @media all and (max-width: $layout-breakpoint-end-tablette) {
+//     font-size: pixelsCalc(18);
+//   }
+// }
+// .filters-select{
+//   font-family: $font-main-400;
+//   font-size: pixelsCalc(14);
+//   optgroup {
+//     font-family: $font-main-400;
+//     font-size: pixelsCalc(14);
+//   }
+// }
+// .boldy{
+//   font-family: $font-main-500;
+// }
+// .gsection_title{
+//   font-family: $font-main-400;
+//   font-size: pixelsCalc(12);
+//   line-height: pixelsCalc(14);
+//   font-weight: 100;
+// }
+// .gfield {
+//   .ginput_container {
+//     input {
+//       font-family: $font-main-400;
+//     }
+//   }
+// }
+// .gform_footer input{
+//   font-family: $font-main-500;
+//   font-size: pixelsCalc(14);
+// }
+// .single-produit{
+//   h1{
+//     font-size: pixelsCalc(40);
+//     line-height: pixelsCalc(45);
+//     @media all and (max-width: $layout-breakpoint-end-tablette) {
+//       font-size: pixelsCalc(30);
+//       line-height: pixelsCalc(35);
+//     }
+//   }
+//   .plus{
+//     font-family: $font-main-500;
+//   }
+//   .description{
+//     opacity: 0.7;
+//   }
+//   .marque, .ref{
+//     font-size: pixelsCalc(14);
+//     span{
+//       opacity: 0.7;
+//       &.value{
+//         opacity: 1;
+//         font-family: $font-main-500;
+//       }
+//     }
+//   }
 
-}
+// }
 
-.footer-navigation {
-  p, a {
-    font-size: pixelsCalc(12) !important;
-    line-height: pixelsCalc(14) !important;
-    font-family: $font-main-400;
-  }
-}
-.header-button, .category-button{
-  font-size: pixelsCalc(14);
-  line-height: pixelsCalc(17);
-}
+// .footer-navigation {
+//   p, a {
+//     font-size: pixelsCalc(12) !important;
+//     line-height: pixelsCalc(14) !important;
+//     font-family: $font-main-400;
+//   }
+// }
+// .header-button, .category-button{
+//   font-size: pixelsCalc(14);
+//   line-height: pixelsCalc(17);
+// }

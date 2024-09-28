@@ -25,7 +25,6 @@
                 margin: 30px 0px 0 0;
             }
             & p{
-                font-family: $font-main-400;
                 text-align: left;
                 font-size: 16px;
                 color: $color-black;
@@ -33,7 +32,6 @@
             }
 
             & h1,h2,h3{
-                font-family: $font-main-500;
                 text-align: left;
                 //font-size: 20px;
                 color: $color-black;
@@ -94,7 +92,6 @@
             margin-top: 50px;
 
             & span, p:last-child{
-                font-family: $font-main-600;
                 font-weight: bold;
             }
         }
