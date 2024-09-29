@@ -1,14 +1,7 @@
-# THRIVE WP
+# LDFM WP
 Bienvenue sur le projet THRIVE WP.
 Trouvez ici toutes les informations relatives au projet.
 
-## Installation du projet
-
-### Prérequis
-Clonez le projet dans votre répertoire de travail.
-```
-git clone https://gitlab.com/AgenceThrive/escape-the-city.git
-```
 
 ### Paramétrez Prepros
 Ouvrez le projet dans Prepros et configurez les paramètres suivants :

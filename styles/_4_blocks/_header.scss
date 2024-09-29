@@ -27,60 +27,13 @@ $header-padding-y-start-tablette : 15px; // padding y others
 
 header {
     z-index: 999;
-    position: fixed;
+    position: sticky;
     top: 0;
     left: 0;
     right: 0;
-
-    &.top-reached {
-        border-bottom: 1px solid rgb(255, 255, 255, 0.1);
-    }
-
-    @extend %transition;
-
-    @media (max-width: $layout-breakpoint-end-tablette) {
-        padding: 0;
-        justify-content: space-between;
-    }
-
-    .wrap {
-        display: flex;
-        justify-content: space-between;
-        margin: auto;
-
-        @media (max-width: $layout-breakpoint-start-noburger) {
-            &.burger {
-                &.menu-clicked {
-                    .burger-header {
-                        //background-color: $color-white;
-                        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-                    }
-                }
-            }
-        }
-
-        @media (min-width: $layout-breakpoint-end-tablette) {
-            height: 100px;
-        }
-
-        @media all and (max-width: $layout-breakpoint-start-tablette) {
-            &.burger {
-                .burger-header {
-                    @media(min-width: $layout-breakpoint-start-tablette) {
-                        padding: $header-padding-y-end-smartphone 40px;
-                    }
-
-                    @media(max-width: $layout-breakpoint-end-smartphone) {
-                        padding: $header-padding-y-end-smartphone;
-                    }
-                }
-            }
-        }
-
-        // @media all and (min-width: $layout-breakpoint-start-tablette) {
-        //     height: $header-inside-height;
-        // }
-    }
+    display: flex;
+    background-color: antiquewhite;
+    padding: 10px 25px;
 
 }
 

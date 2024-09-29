@@ -385,7 +385,7 @@ html {
  * --------------------------------------------------------------------------------------------------------------
  *                                                  DEDICATED FUNCTIONS 
 /**/
-.burger-menu.open, .burger-menu, header li.menu-item-has-children ul.sub-menu li a:hover::after, .site-navigation ul, header {
+.burger-menu.open, .burger-menu, header li.menu-item-has-children ul.sub-menu li a:hover::after, .site-navigation ul {
   -webkit-transition: -webkit-all 0.4s ease-in-out 0s;
   -webkit-transition: all 0.4s ease-in-out 0s;
   transition: all 0.4s ease-in-out 0s;
@@ -1588,63 +1588,21 @@ body .popup-container .popup-content.image a.close {
 /**/
 header {
   z-index: 999;
-  position: fixed;
+  position: sticky;
   top: 0;
   left: 0;
   right: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-}
-header.top-reached {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-@media (max-width: 1024px) {
-  header {
-    padding: 0;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-  }
-}
-header .wrap {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  margin: auto;
-}
-@media (max-width: 1300px) {
-  header .wrap.burger.menu-clicked .burger-header {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  }
-}
-@media (min-width: 1024px) {
-  header .wrap {
-    height: 100px;
-  }
-}
-@media (max-width: 768px) and (min-width: 768px) {
-  header .wrap.burger .burger-header {
-    padding: 20px 40px;
-  }
-}
-@media (max-width: 768px) and (max-width: 767px) {
-  header .wrap.burger .burger-header {
-    padding: 20px;
-  }
+  background-color: antiquewhite;
+  padding: 10px 25px;
 }
 
 /**
  * --------------------------------------------------------------------------------------------------------------
  *                                                  LOGO 
 /**/
-header img {
-  width: 100%;
-}
-
 header .site-branding {
   position: relative;
   display: -webkit-box;
@@ -1653,6 +1611,7 @@ header .site-branding {
 }
 header .site-branding img {
   height: 50px;
+  width: 50px;
 }
 header .site-branding a {
   display: -webkit-box;
@@ -2651,12 +2610,14 @@ section.section-half .columns-wrapper .right-container {
  * --------------------------------------------------------------------------------------------------------------
  *                                                  SECTIONS HEADER
 /**/
-.padding-top-header, .padding-histoire {
+.padding-top-header,
+.padding-histoire {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
-.padding-top-header video, .padding-histoire video {
+.padding-top-header video,
+.padding-histoire video {
   width: 100%;
   height: 100vh;
   -o-object-fit: cover;
@@ -2699,20 +2660,26 @@ section.section-half .columns-wrapper .right-container {
   width: 80%;
   margin: auto;
 }
-.section-contact .right-contact .gform_wrapper h3, .section-contact .right-contact .gform_wrapper label {
+.section-contact .right-contact .gform_wrapper h3,
+.section-contact .right-contact .gform_wrapper label {
   margin: 0;
   font-size: 12px;
 }
 .section-contact .right-contact .gform_wrapper .gfield--width-full {
   width: 100%;
-  width: -moz-available; /* WebKit-based browsers will ignore this. */
-  width: -webkit-fill-available; /* Mozilla-based browsers will ignore this. */
+  width: -moz-available;
+  /* WebKit-based browsers will ignore this. */
+  width: -webkit-fill-available;
+  /* Mozilla-based browsers will ignore this. */
   width: fill-available;
 }
-.section-contact .right-contact .gform_wrapper .gfield--width-full textarea, .section-contact .right-contact .gform_wrapper .gfield--width-full input {
+.section-contact .right-contact .gform_wrapper .gfield--width-full textarea,
+.section-contact .right-contact .gform_wrapper .gfield--width-full input {
   width: 100%;
-  width: -moz-available; /* WebKit-based browsers will ignore this. */
-  width: -webkit-fill-available; /* Mozilla-based browsers will ignore this. */
+  width: -moz-available;
+  /* WebKit-based browsers will ignore this. */
+  width: -webkit-fill-available;
+  /* Mozilla-based browsers will ignore this. */
   width: fill-available;
 }
 .section-contact .right-contact .gform_wrapper .gfield {
@@ -2727,7 +2694,8 @@ section.section-half .columns-wrapper .right-container {
 .section-contact .right-contact .gform_wrapper .gfield .ginput_container {
   margin-top: 5px;
 }
-.section-contact .right-contact .gform_wrapper .gfield .ginput_container input, .section-contact .right-contact .gform_wrapper .gfield .ginput_container textarea {
+.section-contact .right-contact .gform_wrapper .gfield .ginput_container input,
+.section-contact .right-contact .gform_wrapper .gfield .ginput_container textarea {
   border: 1px solid rgba(0, 0, 0, 0.3);
 }
 .section-contact .right-contact .gform_wrapper .gfield .ginput_container input {
@@ -2756,38 +2724,47 @@ section.section-half .columns-wrapper .right-container {
 .section-contact .right-contact .gform_wrapper .gfield--type-section {
   margin-bottom: 0;
 }
-.section-contact .right-contact .gform_wrapper .gfield--type-date, .section-contact .right-contact .gform_wrapper .gfield--type-time {
+.section-contact .right-contact .gform_wrapper .gfield--type-date,
+.section-contact .right-contact .gform_wrapper .gfield--type-time {
   width: 45%;
   display: inline-block;
 }
-.section-contact .right-contact .gform_wrapper .gfield--type-date .gfield_label, .section-contact .right-contact .gform_wrapper .gfield--type-time .gfield_label {
+.section-contact .right-contact .gform_wrapper .gfield--type-date .gfield_label,
+.section-contact .right-contact .gform_wrapper .gfield--type-time .gfield_label {
   display: none;
 }
-.section-contact .right-contact .gform_wrapper .gfield--type-date .ginput_container, .section-contact .right-contact .gform_wrapper .gfield--type-time .ginput_container {
+.section-contact .right-contact .gform_wrapper .gfield--type-date .ginput_container,
+.section-contact .right-contact .gform_wrapper .gfield--type-time .ginput_container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
-.section-contact .right-contact .gform_wrapper .gfield--type-date.gfield--type-time, .section-contact .right-contact .gform_wrapper .gfield--type-time.gfield--type-time {
+.section-contact .right-contact .gform_wrapper .gfield--type-date.gfield--type-time,
+.section-contact .right-contact .gform_wrapper .gfield--type-time.gfield--type-time {
   border: none;
   position: relative;
   float: right;
   padding: 0;
   margin: 0;
 }
-.section-contact .right-contact .gform_wrapper .gfield--type-date.gfield--type-time legend, .section-contact .right-contact .gform_wrapper .gfield--type-time.gfield--type-time legend {
+.section-contact .right-contact .gform_wrapper .gfield--type-date.gfield--type-time legend,
+.section-contact .right-contact .gform_wrapper .gfield--type-time.gfield--type-time legend {
   display: none;
 }
-.section-contact .right-contact .gform_wrapper .gfield--type-date.gfield--type-time .ginput_container, .section-contact .right-contact .gform_wrapper .gfield--type-time.gfield--type-time .ginput_container {
+.section-contact .right-contact .gform_wrapper .gfield--type-date.gfield--type-time .ginput_container,
+.section-contact .right-contact .gform_wrapper .gfield--type-time.gfield--type-time .ginput_container {
   float: right;
 }
-.section-contact .right-contact .gform_wrapper .gfield--type-date.gfield--type-time .ginput_container .below, .section-contact .right-contact .gform_wrapper .gfield--type-time.gfield--type-time .ginput_container .below {
+.section-contact .right-contact .gform_wrapper .gfield--type-date.gfield--type-time .ginput_container .below,
+.section-contact .right-contact .gform_wrapper .gfield--type-time.gfield--type-time .ginput_container .below {
   margin: auto 5px;
 }
-.section-contact .right-contact .gform_wrapper .gfield--type-date.gfield--type-time .ginput_container .ginput_container, .section-contact .right-contact .gform_wrapper .gfield--type-time.gfield--type-time .ginput_container .ginput_container {
+.section-contact .right-contact .gform_wrapper .gfield--type-date.gfield--type-time .ginput_container .ginput_container,
+.section-contact .right-contact .gform_wrapper .gfield--type-time.gfield--type-time .ginput_container .ginput_container {
   margin: 0;
 }
-.section-contact .right-contact .gform_wrapper .gfield--type-date.gfield--type-time .ginput_container .ginput_container input, .section-contact .right-contact .gform_wrapper .gfield--type-time.gfield--type-time .ginput_container .ginput_container input {
+.section-contact .right-contact .gform_wrapper .gfield--type-date.gfield--type-time .ginput_container .ginput_container input,
+.section-contact .right-contact .gform_wrapper .gfield--type-time.gfield--type-time .ginput_container .ginput_container input {
   width: 50px;
 }
 .section-contact .right-contact .gform_wrapper .gfield--type-honeypot {
@@ -2812,7 +2789,8 @@ section.section-half .columns-wrapper .right-container {
   color: #c02b0a !important;
   font-size: 12px;
 }
-.section-contact .right-contact .gform_wrapper .gform_required_legend, .section-contact .right-contact .gform_wrapper .gform_heading {
+.section-contact .right-contact .gform_wrapper .gform_required_legend,
+.section-contact .right-contact .gform_wrapper .gform_heading {
   display: none;
 }
 
@@ -2827,114 +2805,28 @@ section.section-half .columns-wrapper .right-container {
 }
 
 @media (max-width: 1024px) {
-  .page-template-showroom .card-mobile-1, .page-template-showroom .card-mobile-0, .page-template-bureau .card-mobile-1, .page-template-bureau .card-mobile-0 {
+  .page-template-showroom .card-mobile-1,
+  .page-template-showroom .card-mobile-0,
+  .page-template-bureau .card-mobile-1,
+  .page-template-bureau .card-mobile-0 {
     display: inherit;
   }
 }
 @media (min-width: 1024px) {
-  .page-template-showroom .realisation-card, .page-template-bureau .realisation-card {
+  .page-template-showroom .realisation-card,
+  .page-template-bureau .realisation-card {
     margin-bottom: 150px;
   }
 }
 @media (max-width: 1024px) {
-  .page-template-showroom .realisation-card, .page-template-bureau .realisation-card {
+  .page-template-showroom .realisation-card,
+  .page-template-bureau .realisation-card {
     margin-bottom: 120px;
   }
 }
 
-* {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-body {
-  background-color: #f0f0e8;
-  font-size: 14px;
-  text-align: center;
-  margin: auto;
-}
-
-.tree [class^=card] {
-  -webkit-box-flex: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -ms-flex-preferred-size: 0%;
-  flex-basis: 0%;
-  padding: 10px;
-  border-radius: 3px;
-  margin: 10px;
-  color: #212c3c;
-}
-.tree .card-m {
-  background-color: #b8c9df;
-}
-.tree .card-f {
-  background-color: #dfb8d4;
-}
-.tree .pair, .tree .child {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-@media screen and (max-width: 700px) {
-  .tree #grandParents:before, .tree #grandParents:after {
-    border-top: 2px solid #c6d1cb;
-    height: calc(50% + 20px);
-    width: 10px;
-    top: 50%;
-  }
-  .tree #grandParents:before {
-    opacity: 1;
-    border-left: 2px solid #c6d1cb;
-    right: calc(100% + 3px);
-    border-top-left-radius: 3px;
-  }
-  .tree #grandParents:after {
-    border-right: 2px solid #c6d1cb;
-    left: calc(100% + 3px);
-    border-top-right-radius: 3px;
-  }
-  .tree #grandParents .pair {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-  }
-  .tree #grandParents .pair:after {
-    border: 0;
-  }
-  .tree #grandParents [class^=card]:before {
-    border-bottom: 2px solid #c6d1cb !important;
-    width: 10px;
-    height: 0;
-  }
-  .tree #grandParents [class^=card]:after {
-    width: calc(3px + 10px);
-    height: calc(50% + 10px + 3px * 2);
-  }
-  .tree #grandParents [class^=card]:first-child:before {
-    top: 50%;
-    bottom: auto;
-  }
-  .tree #grandParents [class^=card]:first-child:after {
-    border-top: 2px solid #c6d1cb;
-    top: 50%;
-    bottom: auto;
-  }
-  .tree #grandParents [class^=card]:last-child:before {
-    bottom: 50%;
-    top: auto;
-  }
-  .tree #grandParents [class^=card]:last-child:last-child:after {
-    border-bottom: 2px solid #c6d1cb;
-    bottom: 50%;
-    top: auto;
-  }
-}
 .family {
+  padding: 25px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2942,6 +2834,13 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.gt-container {
+  overflow: scroll;
 }
 
 .contact-section-container {
@@ -4605,3 +4504,4 @@ body {
   outline: 2px solid black;
   outline-offset: -1px;
 }
+/*# sourceMappingURL=main.css.map */
